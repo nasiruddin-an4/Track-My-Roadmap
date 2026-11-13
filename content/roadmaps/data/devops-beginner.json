@@ -1,0 +1,182 @@
+{
+  "slug": "devops-beginner",
+  "title": "DevOps for Beginners",
+  "tagline": "A short, practical path from scripting and Linux to Docker, AWS, Terraform, CI/CD and Nginx.",
+  "category": "Career path",
+  "level": "Beginner",
+  "localKey": "tmr-progress-devops-beginner",
+  "credit": {
+    "text": "Based on the DevOps Beginner roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Programming language",
+      "short": "Language",
+      "description": "Learn one language well enough to write your own automation scripts.",
+      "items": [
+        [
+          "Pick any Programming Language!",
+          [
+            "Python",
+            "Go"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Operating system",
+      "short": "Linux",
+      "description": "Get at home on a Linux server and its command line; Ubuntu is a good place to start.",
+      "items": [
+        [
+          "Operating System",
+          [
+            "Linux",
+            "File system",
+            "Package managers",
+            "Managing services",
+            "Checking logs",
+            "Bash scripting",
+            "Permissions",
+            "Pipes",
+            "Output redirection",
+            "Text manipulation tools",
+            "Process monitoring",
+            "Networking tools",
+            "CLI editors"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Networking and protocols",
+      "short": "Networking",
+      "description": "Understand how machines find and talk to each other so you can deploy and troubleshoot.",
+      "items": [
+        [
+          "Networking & Protocols",
+          [
+            "DNS",
+            "TCP/IP Protocols",
+            "SSH",
+            "Ports",
+            "Gateways",
+            "Routing",
+            "IP Addressing",
+            "Subnetting"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Docker",
+      "short": "Docker",
+      "description": "Package apps into containers and get comfortable building and debugging images.",
+      "items": [
+        [
+          "Docker",
+          [
+            "Containerization",
+            "Writing Dockerfiles",
+            "Troubleshooting",
+            "Alpine Linux",
+            "Security",
+            "Networking",
+            "Storage"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Git and GitHub",
+      "short": "Git & GitHub",
+      "description": "Version everything and work through pull requests, the way DevOps teams run changes.",
+      "items": [
+        [
+          "Git"
+        ],
+        [
+          "GitHub"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Cloud provider",
+      "short": "AWS",
+      "description": "Learn the core services of one cloud provider and deploy a real application to it.",
+      "items": [
+        [
+          "AWS",
+          [
+            "VPC",
+            "EC2",
+            "S3",
+            "IAM",
+            "RDS",
+            "Route53",
+            "CloudWatch",
+            "ECS",
+            "Deploy an application to AWS"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Infrastructure as code and configuration",
+      "short": "IaC & config",
+      "description": "Recreate your infrastructure from code and automate server setup.",
+      "items": [
+        [
+          "Terraform",
+          [
+            "What is IaC",
+            "Automating infrastructure creation"
+          ]
+        ],
+        [
+          "Ansible",
+          [
+            "Configuration management",
+            "Roles",
+            "Playbooks",
+            "Inventory management",
+            "Automation scripts"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "CI/CD and web servers",
+      "short": "CI/CD & Nginx",
+      "description": "Automate builds and deploys, then serve and protect your app behind a web server.",
+      "items": [
+        [
+          "GitHub Actions",
+          [
+            "CI/CD concepts",
+            "Integrate CI/CD into your app"
+          ]
+        ],
+        [
+          "Nginx",
+          [
+            "Basic config options",
+            "TLS setup",
+            "Rate limiting",
+            "Caching",
+            "Reverse proxying",
+            "Load balancing"
+          ]
+        ]
+      ]
+    }
+  ]
+}

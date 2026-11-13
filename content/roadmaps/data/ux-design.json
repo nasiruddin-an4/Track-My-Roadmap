@@ -1,0 +1,275 @@
+{
+  "slug": "ux-design",
+  "title": "UX Design",
+  "tagline": "Design products that change behaviour, from decision science and product framing to prototypes and testing.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-ux-design",
+  "credit": {
+    "text": "Based on the UX Design roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Human decision making",
+      "short": "Decisions",
+      "description": "Learn the models that explain why people act and the behavioural-science terms you will keep meeting.",
+      "items": [
+        [
+          "Frameworks",
+          [
+            "BJ Fogg's Behavior Model",
+            "CREATE Action Funnel",
+            "Spectrum of Thinking Interventions",
+            "Dual Process Theory"
+          ]
+        ],
+        [
+          "Buzzwords to lookout for",
+          [
+            "Nudge Theory",
+            "Persuasive Technology",
+            "Behavioral Science",
+            "Behavioral Economics",
+            "Behavior Design"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Behavior change strategies",
+      "short": "Behavior change",
+      "description": "Classify the behaviour you want and pick a strategy: work around the user, build habits or support conscious choices.",
+      "items": [
+        [
+          "Classifying Behavior",
+          [
+            "BJ Fogg's Behavior Grid"
+          ]
+        ],
+        [
+          "Cheating",
+          [
+            "Defaulting",
+            "Making it Incidental",
+            "Automate the Act of Repetition"
+          ]
+        ],
+        [
+          "Make or Change Habits"
+        ],
+        [
+          "Existing Behavior",
+          [
+            "Help user Avoiding the Cue",
+            "Replace the Routine",
+            "Use Consciousness to Interfere",
+            "Mindfulness to Avoid Acting on the Cue",
+            "Crowd Out Old Habit with New Behavior"
+          ]
+        ],
+        [
+          "New Behavior",
+          [
+            "Nir Eyal's Hook Model",
+            "Cue Routine Reward Model"
+          ]
+        ],
+        [
+          "Support Conscious Action",
+          [
+            "Educate & Encourage User",
+            "Help User think about their Action"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Understanding the product",
+      "short": "The product",
+      "description": "Clarify what the product should achieve, who it is for and how its business model works.",
+      "items": [
+        [
+          "Clarify Product",
+          [
+            "Target Outcome",
+            "Target Actor",
+            "Target Action"
+          ]
+        ],
+        [
+          "Define Target Users",
+          [
+            "Create User Personas"
+          ]
+        ],
+        [
+          "Existing Business Model",
+          [
+            "Business Model Canvas",
+            "Lean Canvas"
+          ]
+        ],
+        [
+          "New Business Model",
+          [
+            "Business Model Inspirator",
+            "Competitor Analysis",
+            "Five Forces Model",
+            "SWOT Analysis"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Conceptual design",
+      "short": "Concept",
+      "description": "Turn findings into a backlog and user flows, keeping tasks short, clear and rewarding.",
+      "items": [
+        [
+          "Create Product Backlog",
+          [
+            "User Stories"
+          ]
+        ],
+        [
+          "Things to lookout for",
+          [
+            "In general, keep it short and simple",
+            "Make it easy to understand and complete",
+            "Make progress visible to user",
+            "Make progress meaningful to reward user",
+            "Make successful completion clearly visible"
+          ]
+        ],
+        [
+          "Deliverables",
+          [
+            "Customer Experience Map by Mel Edwards",
+            "Simple Flowchart",
+            "Event-driven Process Chain Model (EPC)",
+            "Business Process Model & Notation (BPMN)"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Prototyping",
+      "short": "Prototyping",
+      "description": "Wireframe in a design tool, follow layout rules and apply proven UX patterns.",
+      "items": [
+        [
+          "Wireframing",
+          [
+            "Figma",
+            "Adobe XD",
+            "Sketch",
+            "Balsamiq"
+          ]
+        ],
+        [
+          "Good Layout Rules"
+        ],
+        [
+          "UX Patterns: when attention is fleeting and scarce",
+          [
+            "Call to Action",
+            "How-to-Tips",
+            "Status Reports",
+            "Reminders & Planning Prompts"
+          ]
+        ],
+        [
+          "UX Patterns: with many chances to influence user",
+          [
+            "Behavior Change Games",
+            "Decision-Making Support",
+            "Gamification",
+            "Goal Trackers",
+            "Reminders",
+            "Social Sharing",
+            "Tutorials",
+            "Planners"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "UX best practices",
+      "short": "Best practices",
+      "description": "Apply practical tactics that win attention, earn trust, prompt action now and make acting effortless.",
+      "items": [
+        [
+          "Getting Users Attention",
+          [
+            "Tell User what the Action is and ask for it",
+            "Clear the Page of Distractions",
+            "Make it Clear, Where to Act"
+          ]
+        ],
+        [
+          "Getting Positive Intuitive Reaction",
+          [
+            "Make UI Professional and Beautiful",
+            "Deploy Strong Authority on Subject",
+            "Be Authentic and Personal",
+            "Deploy Social Proof"
+          ]
+        ],
+        [
+          "Get a favorable Conscious Evaluation",
+          [
+            "Prime User-Relevant Associations",
+            "Avoid Direct Payments",
+            "Avoid Choice Overload",
+            "Avoid Cognitive Overhead",
+            "Leverage Loss-Aversion",
+            "Use Peer Comparisons",
+            "Use Competition"
+          ]
+        ],
+        [
+          "Creating Urgency to Act Now",
+          [
+            "Frame Text to Avoid Temporal Myopia",
+            "Remind of Prior Commitment to Act",
+            "Make Commitment to Friends",
+            "Make Reward Scarce"
+          ]
+        ],
+        [
+          "Make sure Users can do it Easily",
+          [
+            "Elicit Implementation Intentions",
+            "Default Everything",
+            "Lessen the Burden of Action / Info",
+            "Deploy Peer Comparisons"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Measuring the impact",
+      "short": "Measure",
+      "description": "Test design changes with experiments and feed what you learn back into the product.",
+      "items": [
+        [
+          "Testing",
+          [
+            "Multivariate Testing",
+            "Incremental A/B Testing"
+          ]
+        ],
+        [
+          "Gather Lessons, Prioritize & Integrate"
+        ]
+      ]
+    }
+  ]
+}

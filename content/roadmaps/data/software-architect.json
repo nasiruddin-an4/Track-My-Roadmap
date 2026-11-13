@@ -1,0 +1,346 @@
+{
+  "slug": "software-architect",
+  "title": "Software Architect",
+  "tagline": "The responsibilities, soft skills and broad technical knowledge needed to design and lead software systems.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-software-architect",
+  "credit": {
+    "text": "Based on the Software Architect roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Understand the Basics",
+      "short": "Basics",
+      "description": "Learn what software architecture is, what an architect does and the levels architecture works at.",
+      "items": [
+        [
+          "What is Software Architecture"
+        ],
+        [
+          "What is a Software Architect"
+        ],
+        [
+          "Levels of Architecture",
+          [
+            "Application Architecture",
+            "Solution Architecture",
+            "Enterprise Architecture"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Responsibilities",
+      "short": "Responsibilities",
+      "description": "Understand the decisions, documentation and guidance an architect is accountable for.",
+      "items": [
+        [
+          "Tech Decisions"
+        ],
+        [
+          "Design & Architecture Decisions"
+        ],
+        [
+          "Requirements Elicitation"
+        ],
+        [
+          "Documentation"
+        ],
+        [
+          "Enforcing Standards"
+        ],
+        [
+          "Collaborate with Others"
+        ],
+        [
+          "Consult & Coach Developers"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Important Skills to Learn",
+      "short": "Key skills",
+      "description": "Develop the design, decision-making and people skills that make an architect effective.",
+      "items": [
+        [
+          "Design & Architecture"
+        ],
+        [
+          "Decision Making"
+        ],
+        [
+          "Simplifying Things"
+        ],
+        [
+          "How to Code"
+        ],
+        [
+          "Documentation"
+        ],
+        [
+          "Communication"
+        ],
+        [
+          "Estimate and Evaluate"
+        ],
+        [
+          "Balance"
+        ],
+        [
+          "Consult & Coach"
+        ],
+        [
+          "Marketing Skills"
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Technical Skills",
+      "short": "Tech skills",
+      "description": "Know several programming languages, the key design patterns and principles, and everyday team tools.",
+      "items": [
+        [
+          "Programming Languages",
+          [
+            "Java / Kotlin / Scala",
+            "Python",
+            "Ruby",
+            "Go",
+            "JavaScript / TypeScript",
+            ".NET Framework Based"
+          ]
+        ],
+        [
+          "Patterns & Design Principles",
+          [
+            "MVC, MVP, MVVM",
+            "CQRS, Eventual Consistency",
+            "OOP",
+            "Actors",
+            "ACID, CAP Theorem",
+            "SOLID",
+            "TDD",
+            "DDD"
+          ]
+        ],
+        [
+          "Tools",
+          [
+            "Git",
+            "GitHub",
+            "Slack",
+            "Trello",
+            "Atlassian Tools"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Architecture",
+      "short": "Architecture",
+      "description": "Compare the main architectural styles and when each one fits.",
+      "items": [
+        [
+          "Microservices"
+        ],
+        [
+          "Serverless"
+        ],
+        [
+          "Client / Server"
+        ],
+        [
+          "Layered"
+        ],
+        [
+          "Distributed Systems"
+        ],
+        [
+          "Service Oriented"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Security & Working with Data",
+      "short": "Security & data",
+      "description": "Cover security essentials and the databases, pipelines and analytics platforms systems depend on.",
+      "items": [
+        [
+          "Security",
+          [
+            "Hashing Algorithms",
+            "PKI",
+            "OWASP",
+            "Auth Strategies"
+          ]
+        ],
+        [
+          "Working with Data",
+          [
+            "Hadoop, Spark, MapReduce",
+            "ETL, Datawarehouses",
+            "SQL Databases",
+            "NoSQL Databases"
+          ]
+        ],
+        [
+          "Analytics",
+          [
+            "Apache Spark",
+            "Hadoop",
+            "Datawarehouse Principles"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "APIs & Integrations",
+      "short": "APIs",
+      "description": "Connect systems with APIs, service buses, process engines and message queues.",
+      "items": [
+        [
+          "gRPC"
+        ],
+        [
+          "ESB, SOAP"
+        ],
+        [
+          "REST"
+        ],
+        [
+          "GraphQL"
+        ],
+        [
+          "BPM, BPEL"
+        ],
+        [
+          "Messaging Queues"
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Web, Mobile",
+      "short": "Web & mobile",
+      "description": "Understand modern frontend frameworks, rendering strategies and web standards.",
+      "items": [
+        [
+          "Reactive Programming"
+        ],
+        [
+          "Functional Programming"
+        ],
+        [
+          "React, Vue, Angular"
+        ],
+        [
+          "SPA, SSR, SSG"
+        ],
+        [
+          "Microfrontends"
+        ],
+        [
+          "W3C and WHATWG"
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Management",
+      "short": "Management",
+      "description": "Learn the architecture frameworks, management certifications and agile models used in organisations.",
+      "items": [
+        [
+          "Frameworks",
+          [
+            "BABOK",
+            "IAF",
+            "UML",
+            "TOGAF"
+          ]
+        ],
+        [
+          "Certifications",
+          [
+            "PMI",
+            "ITIL",
+            "RUP",
+            "Prince2"
+          ]
+        ],
+        [
+          "Agile Model",
+          [
+            "LeSS",
+            "SaFE",
+            "XP",
+            "Kanban",
+            "Scrum"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Networks & Operations",
+      "short": "Networks & ops",
+      "description": "Know how networks work and how systems are deployed and operated in the cloud.",
+      "items": [
+        [
+          "Networks",
+          [
+            "OSI",
+            "TCP/IP Model",
+            "HTTP, HTTPS",
+            "Proxies",
+            "Firewalls"
+          ]
+        ],
+        [
+          "Operations Knowledge",
+          [
+            "Infrastructure as Code",
+            "Cloud Providers",
+            "Serverless Concepts",
+            "Linux / Unix",
+            "Service Mesh",
+            "CI / CD",
+            "Containers",
+            "Cloud Design Patterns"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Enterprise Software",
+      "short": "Enterprise",
+      "description": "Get to know the large enterprise platforms that architects often have to integrate with.",
+      "items": [
+        [
+          "MS Dynamics"
+        ],
+        [
+          "SAP ERP, HANA, Business Objects"
+        ],
+        [
+          "EMC DMS"
+        ],
+        [
+          "IBM BPM"
+        ],
+        [
+          "Salesforce"
+        ]
+      ]
+    }
+  ]
+}

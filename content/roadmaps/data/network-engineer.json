@@ -1,0 +1,291 @@
+{
+  "slug": "network-engineer",
+  "title": "Network Engineer",
+  "tagline": "Networking from core terms and protocols through addressing and routing to security and observability.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-network-engineer",
+  "credit": {
+    "text": "Based on the Network Engineer roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction, terminology and core protocols",
+      "short": "Basics",
+      "description": "Learn how the internet works, the vocabulary of networking and the protocols you will meet daily.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "How does the Internet Work?"
+          ]
+        ],
+        [
+          "Basic Terminology",
+          [
+            "Client",
+            "Server",
+            "Host",
+            "Package",
+            "Frame",
+            "Bandwidth",
+            "Latency",
+            "Throughput",
+            "Protocol",
+            "Port",
+            "Socket",
+            "IP Address",
+            "Mac Address",
+            "ARP",
+            "Transmission Media Types"
+          ]
+        ],
+        [
+          "Core Protocols",
+          [
+            "HTTP / HTTPS",
+            "SSH",
+            "SSL / TLS",
+            "NTP",
+            "FTP / SFTP",
+            "SNTP",
+            "SMTP / IMAP",
+            "DHCP"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Networks and devices",
+      "short": "Networks & devices",
+      "description": "Tell the different kinds of networks apart and know what each piece of hardware does.",
+      "items": [
+        [
+          "Network Types",
+          [
+            "LAN",
+            "WAN",
+            "MAN",
+            "WLAN",
+            "PAN",
+            "SAN",
+            "VPN",
+            "Cloud",
+            "Client-Server Network",
+            "Peer-to-Peer Network"
+          ]
+        ],
+        [
+          "Network Devices",
+          [
+            "Routers",
+            "Switches",
+            "Hub",
+            "Modems",
+            "Access Points"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "OSI and TCP/IP models",
+      "short": "Network models",
+      "description": "Use the layered models to reason about where in the stack a problem lives.",
+      "items": [
+        [
+          "OSI Model",
+          [
+            "Physical",
+            "Data Link",
+            "Network",
+            "Transport",
+            "Session",
+            "Presentation",
+            "Application"
+          ]
+        ],
+        [
+          "TCP/IP Model",
+          [
+            "Network Access",
+            "Internet",
+            "Transport",
+            "Application"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "IP addressing and subnetting",
+      "short": "Addressing",
+      "description": "Plan address space, split it into subnets and understand how IP and MAC addresses relate.",
+      "items": [
+        [
+          "IP Addressing",
+          [
+            "IPv4 vs IPv6",
+            "Public vs Private Addresses",
+            "IP vs MAC vs ARP"
+          ]
+        ],
+        [
+          "Subnetting",
+          [
+            "Subnet Masks",
+            "CIDR",
+            "VLSM",
+            "Supernetting"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Routing and switching",
+      "short": "Routing",
+      "description": "Move packets between networks with routing protocols and within them with switches.",
+      "items": [
+        [
+          "Routing",
+          [
+            "Static vs Dynamic Routing",
+            "Default Gateway"
+          ]
+        ],
+        [
+          "Routing Protocols",
+          [
+            "BGP",
+            "OSPF",
+            "RIP",
+            "EIGRP",
+            "MPLS"
+          ]
+        ],
+        [
+          "Switching",
+          [
+            "VLANs",
+            "STP",
+            "Link Aggregation",
+            "MAC Address Tables"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "DNS and wireless networking",
+      "short": "DNS & wireless",
+      "description": "Resolve names reliably and design and secure wireless and mobile connectivity.",
+      "items": [
+        [
+          "DNS Servers",
+          [
+            "Cloudflare",
+            "Google",
+            "OpenDNS",
+            "Quad9"
+          ]
+        ],
+        [
+          "Wireless Networking",
+          [
+            "WiFi Standards",
+            "Access Points & Controllers",
+            "Bluetooth Basics",
+            "Hotspot and Tethering",
+            "Mobile Networks",
+            "Wireless Security",
+            "WPA vs WPS"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Load balancing and QoS",
+      "short": "LB & QoS",
+      "description": "Spread traffic across links and servers and give important traffic priority.",
+      "items": [
+        [
+          "Load Balancer",
+          [
+            "Round Robin",
+            "Least Connections",
+            "Failover"
+          ]
+        ],
+        [
+          "QoS (Quality of Service)",
+          [
+            "Traffic shaping",
+            "Packet prioritization"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Network security",
+      "short": "Security",
+      "description": "Protect networks with firewalls, VPNs and encryption and spot attacks as they happen.",
+      "items": [
+        [
+          "Firewall Types",
+          [
+            "Packet Filtering",
+            "Stateful Inspection",
+            "Next-Generation",
+            "Proxy",
+            "Circuit Level Gateway",
+            "Web Application"
+          ]
+        ],
+        [
+          "VPNs",
+          [
+            "IPSec vs SSL VPN",
+            "Site-to-Site vs Remote Access"
+          ]
+        ],
+        [
+          "Encryption Basics"
+        ],
+        [
+          "Network Attacks",
+          [
+            "DoS & DDoS"
+          ]
+        ],
+        [
+          "IDS / IPS"
+        ],
+        [
+          "Zero Trust Architecture"
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Observability",
+      "short": "Observability",
+      "description": "See what is happening on the wire with capture, scanning and flow monitoring tools.",
+      "items": [
+        [
+          "Network Observability Tools",
+          [
+            "Wireshark",
+            "Nmap",
+            "NetFlow / sFlow",
+            "SNMP"
+          ]
+        ]
+      ]
+    }
+  ]
+}

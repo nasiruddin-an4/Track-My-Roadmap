@@ -1,0 +1,331 @@
+{
+  "slug": "cpp",
+  "title": "C++",
+  "tagline": "From your first program through memory, OOP, templates and the STL to compilers, build tools and libraries.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-cpp",
+  "credit": {
+    "text": "Based on the C++ roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction and setup",
+      "short": "Setup",
+      "description": "Learn what C++ is for, how it relates to C, and get a compiler and editor running your first program.",
+      "items": [
+        [
+          "Introduction to Language",
+          [
+            "What is C++?",
+            "Why use C++",
+            "C vs C++"
+          ]
+        ],
+        [
+          "Setting up your Environment",
+          [
+            "Installing C++",
+            "Code Editors / IDEs",
+            "Running your First Program"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Basics: operators, control flow and functions",
+      "short": "Language basics",
+      "description": "Write expressions, branch and loop, and break code into functions, overloads and lambdas.",
+      "items": [
+        [
+          "Basic Operations",
+          [
+            "Arithmetic Operators",
+            "Logical Operators",
+            "Bitwise Operators"
+          ]
+        ],
+        [
+          "Control Flow & Statements",
+          [
+            "if else / switch / goto",
+            "for / while / do while loops"
+          ]
+        ],
+        [
+          "Functions",
+          [
+            "Operator Overloading",
+            "Lambdas",
+            "Static Polymorphism",
+            "Function Overloading"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Data types, pointers and memory",
+      "short": "Types & memory",
+      "description": "Understand the type system and how objects live in memory, from raw pointers to smart pointers.",
+      "items": [
+        [
+          "Data Types",
+          [
+            "Static Typing",
+            "Dynamic Typing",
+            "RTTI"
+          ]
+        ],
+        [
+          "Pointers and References",
+          [
+            "References",
+            "Memory Model",
+            "Lifetime of Objects"
+          ]
+        ],
+        [
+          "Smart Pointers",
+          [
+            "weak_ptr",
+            "shared_ptr",
+            "unique_ptr"
+          ]
+        ],
+        [
+          "Raw Pointers",
+          [
+            "New/Delete Operators",
+            "Memory Leakage"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Structuring code and OOP",
+      "short": "Code & OOP",
+      "description": "Split a codebase into headers, sources and namespaces, and model it with classes, inheritance and virtual dispatch.",
+      "items": [
+        [
+          "Structuring Codebase",
+          [
+            "Forward Declaration",
+            "Headers / CPP Files",
+            "Namespaces",
+            "Scope"
+          ]
+        ],
+        [
+          "Structures and Classes",
+          [
+            "Object Oriented Programming",
+            "Dynamic Polymorphism",
+            "Virtual Methods",
+            "Virtual Tables",
+            "Multiple Inheritance",
+            "Diamond Inheritance",
+            "Rule of Zero, Five, Three"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Exceptions and language concepts",
+      "short": "Language concepts",
+      "description": "Handle errors cleanly and dig into type deduction, casts, undefined behaviour and other corners of the language.",
+      "items": [
+        [
+          "Exception Handling",
+          [
+            "Exit Codes",
+            "Exceptions",
+            "Access Violations"
+          ]
+        ],
+        [
+          "Language Concepts",
+          [
+            "auto (Automatic Type Deduction)",
+            "Undefined Behavior (UB)",
+            "Argument Dependent Lookup (ADL)",
+            "Name Mangling?",
+            "Macros^"
+          ]
+        ],
+        [
+          "Type Casting",
+          [
+            "static_cast",
+            "const_cast",
+            "dynamic_cast",
+            "reinterpret_cast"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Standard library and templates",
+      "short": "STL & templates",
+      "description": "Use the STL's containers, iterators and algorithms, and write generic code with templates.",
+      "items": [
+        [
+          "Standard Library + STL",
+          [
+            "Iterators",
+            "iostream",
+            "Algorithms",
+            "Date / Time",
+            "Multithreading",
+            "Containers"
+          ]
+        ],
+        [
+          "Templates",
+          [
+            "Variadic Templates",
+            "Type Traits^",
+            "SFINAE^"
+          ]
+        ],
+        [
+          "Template Specialization",
+          [
+            "Full Template Specialization",
+            "Partial Template Specialization"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Standards and idioms",
+      "short": "Standards & idioms",
+      "description": "Track what each C++ standard added and learn the idioms experienced C++ developers rely on.",
+      "items": [
+        [
+          "Standards",
+          [
+            "C++ 11 / 14",
+            "C++ 17",
+            "C++ 20",
+            "Newest^",
+            "C++ 0x?"
+          ]
+        ],
+        [
+          "Idioms",
+          [
+            "Non-Copyable / Non-Moveable",
+            "Erase-Remove",
+            "Copy and Swap",
+            "Copy on Write",
+            "RAII",
+            "Pimpl",
+            "CRTP"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Debuggers and compilers",
+      "short": "Debug & compile",
+      "description": "Read debugger output, work with symbols, and understand how compilers turn source into binaries.",
+      "items": [
+        [
+          "Debuggers",
+          [
+            "Understanding Debugger Messages",
+            "Debugging Symbols",
+            "WinDBg?",
+            "GDB?"
+          ]
+        ],
+        [
+          "Compilers",
+          [
+            "Compiler Stages",
+            "Compilers and Features?",
+            "Clang++ / LLVM",
+            "Intel C++",
+            "MSVS C++",
+            "GCC",
+            "MinGW"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Build systems and package managers",
+      "short": "Build & packages",
+      "description": "Automate builds and pull in third-party dependencies with a package manager.",
+      "items": [
+        [
+          "Build Systems",
+          [
+            "CMAKE",
+            "Makefile?",
+            "Ninja?"
+          ]
+        ],
+        [
+          "Package Managers",
+          [
+            "vcpkg?",
+            "Spack?",
+            "Conan?",
+            "NuGet?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Libraries and frameworks",
+      "short": "Libraries",
+      "description": "Include and license third-party code, and explore the popular libraries and frameworks in the C++ ecosystem.",
+      "items": [
+        [
+          "Working with Libraries",
+          [
+            "Licensing",
+            "Library Inclusion"
+          ]
+        ],
+        [
+          "Libraries",
+          [
+            "Boost",
+            "OpenCV?",
+            "POCO?",
+            "Tensorflow?",
+            "protobuf?",
+            "spdlog?",
+            "gRPC?",
+            "pybind11?",
+            "fmt?",
+            "opencl?",
+            "ranges_v3?"
+          ]
+        ],
+        [
+          "Frameworks",
+          [
+            "gtest / gmock",
+            "Qt?",
+            "Catch2?",
+            "Orbit Profiler?",
+            "PyTorch C++?"
+          ]
+        ]
+      ]
+    }
+  ]
+}

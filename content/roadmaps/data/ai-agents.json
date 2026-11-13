@@ -1,0 +1,343 @@
+{
+  "slug": "ai-agents",
+  "title": "AI Agents",
+  "tagline": "From LLM basics to designing, building, testing and securing autonomous tool-using AI agents.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-ai-agents",
+  "credit": {
+    "text": "Based on the AI Agents roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Pre-requisites",
+      "short": "Pre-requisites",
+      "description": "Get comfortable with backend basics, Git, the terminal and REST APIs before working with agents.",
+      "items": [
+        [
+          "Basic Backend Development"
+        ],
+        [
+          "Git and Terminal Usage"
+        ],
+        [
+          "REST API Knowledge"
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "LLM Fundamentals",
+      "short": "LLM basics",
+      "description": "Understand how large language models work, how they are priced and which knobs control their output.",
+      "items": [
+        [
+          "Transformer Models and LLMs"
+        ],
+        [
+          "Model Mechanics",
+          [
+            "Tokenization",
+            "Context Windows",
+            "Token Based Pricing"
+          ]
+        ],
+        [
+          "Generation Controls",
+          [
+            "Temperature",
+            "Top-p",
+            "Frequency Penalty",
+            "Presence Penalty",
+            "Stopping Criteria",
+            "Max Length"
+          ]
+        ],
+        [
+          "Model Families and Licences",
+          [
+            "Open Weight Models",
+            "Closed Weight Models"
+          ]
+        ],
+        [
+          "Understand the Basics",
+          [
+            "Streamed vs Unstreamed Responses",
+            "Reasoning vs Standard Models",
+            "Fine-tuning vs Prompt Engineering",
+            "Embeddings and Vector Search",
+            "Understand the Basics of RAG",
+            "Pricing of Common Models"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "AI Agents 101",
+      "short": "Agents 101",
+      "description": "Learn what an agent is, how the perceive-plan-act-reflect loop works and where agents are useful.",
+      "items": [
+        [
+          "What are AI Agents?"
+        ],
+        [
+          "What are Tools?"
+        ],
+        [
+          "Agent Loop",
+          [
+            "Perception / User Input",
+            "Reason and Plan",
+            "Acting / Tool Invocation",
+            "Observation & Reflection"
+          ]
+        ],
+        [
+          "Example Usecases",
+          [
+            "Personal assistant",
+            "Code generation",
+            "Data analysis",
+            "Web Scraping / Crawling",
+            "NPC / Game AI"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Prompt Engineering",
+      "short": "Prompting",
+      "description": "Write clear, specific and well-tested prompts that steer models toward reliable results.",
+      "items": [
+        [
+          "What is Prompt Engineering"
+        ],
+        [
+          "Writing Good Prompts",
+          [
+            "Be specific in what you want",
+            "Provide additional context",
+            "Use relevant technical terms",
+            "Use Examples in your Prompt",
+            "Iterate and Test your Prompts",
+            "Specify Length, format etc"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Tools / Actions",
+      "short": "Tools",
+      "description": "Define tools an agent can call and explore the common kinds of actions agents take.",
+      "items": [
+        [
+          "Tool Definition",
+          [
+            "Name and Description",
+            "Input / Output Schema",
+            "Error Handling",
+            "Usage Examples"
+          ]
+        ],
+        [
+          "Examples of Tools",
+          [
+            "Web Search",
+            "Code Execution / REPL",
+            "Database Queries",
+            "API Requests",
+            "Email / Slack / SMS",
+            "File System Access"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Model Context Protocol (MCP)",
+      "short": "MCP",
+      "description": "Learn the MCP building blocks, how to build your own servers and where to run them.",
+      "items": [
+        [
+          "Model Context Protocol (MCP)"
+        ],
+        [
+          "Core Components",
+          [
+            "MCP Hosts",
+            "MCP Client",
+            "MCP Servers"
+          ]
+        ],
+        [
+          "Creating MCP Servers"
+        ],
+        [
+          "Deployment Modes",
+          [
+            "Local Desktop",
+            "Remote / Cloud"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Agent Memory",
+      "short": "Memory",
+      "description": "Give agents short and long term memory and keep it useful over time.",
+      "items": [
+        [
+          "What is Agent Memory?"
+        ],
+        [
+          "Short Term Memory"
+        ],
+        [
+          "Long Term Memory"
+        ],
+        [
+          "Episodic vs Semantic Memory"
+        ],
+        [
+          "Maintaining Memory",
+          [
+            "RAG and Vector Databases",
+            "User Profile Storage",
+            "Summarization / Compression",
+            "Forgetting / Aging Strategies"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Agent Architectures",
+      "short": "Architectures",
+      "description": "Compare the common reasoning and planning patterns used to structure agents.",
+      "items": [
+        [
+          "Common Architectures",
+          [
+            "RAG Agent",
+            "ReAct (Reason + Act)",
+            "Chain of Thought (CoT)"
+          ]
+        ],
+        [
+          "Other Architecture Patterns",
+          [
+            "Planner Executor",
+            "DAG Agents",
+            "Tree-of-Thought"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Building Agents",
+      "short": "Building",
+      "description": "Build agents by hand, with native function calling, or on top of popular agent frameworks.",
+      "items": [
+        [
+          "Manual (from scratch)",
+          [
+            "Direct LLM API calls",
+            "Implementing the agent loop",
+            "Parsing model output",
+            "Error & Rate-limit handling"
+          ]
+        ],
+        [
+          "LLM Native \"Function Calling\"",
+          [
+            "OpenAI Functions Calling",
+            "OpenAI Assistant API",
+            "Gemini Function Calling",
+            "Anthropic Tool Use"
+          ]
+        ],
+        [
+          "Building Using Frameworks",
+          [
+            "Langchain",
+            "LlamaIndex",
+            "Haystack",
+            "AutoGen",
+            "CrewAI",
+            "Smol Depot"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Evaluation, Debugging & Monitoring",
+      "short": "Eval & monitoring",
+      "description": "Test agents at every level and trace their behaviour in production with observability tools.",
+      "items": [
+        [
+          "Evaluation and Testing",
+          [
+            "Metrics to Track",
+            "Unit Testing for Individual Tools",
+            "Integration Testing for Flows",
+            "Human in the Loop Evaluation"
+          ]
+        ],
+        [
+          "Frameworks",
+          [
+            "LangSmith",
+            "DeepEval",
+            "Ragas"
+          ]
+        ],
+        [
+          "Debugging and Monitoring",
+          [
+            "Structured logging & tracing"
+          ]
+        ],
+        [
+          "Observability Tools",
+          [
+            "LangSmith",
+            "Helicone",
+            "LangFuse",
+            "openllmetry"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Security & Ethics",
+      "short": "Security & ethics",
+      "description": "Protect agents and their users from misuse, data leaks and harmful output.",
+      "items": [
+        [
+          "Prompt Injection / Jailbreaks"
+        ],
+        [
+          "Tool sandboxing / Permissioning"
+        ],
+        [
+          "Data Privacy + PII Redaction"
+        ],
+        [
+          "Bias & Toxicity Guardrails"
+        ],
+        [
+          "Safety + Red Team Testing"
+        ]
+      ]
+    }
+  ]
+}

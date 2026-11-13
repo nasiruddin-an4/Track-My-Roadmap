@@ -1,0 +1,336 @@
+{
+  "slug": "javascript",
+  "title": "JavaScript",
+  "tagline": "The JavaScript language from variables and types through functions and async code to memory and debugging.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-javascript",
+  "credit": {
+    "text": "Based on the JavaScript roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction and variables",
+      "short": "Intro & variables",
+      "description": "Learn what JavaScript is, where it runs and how variables are declared and scoped.",
+      "items": [
+        [
+          "Introduction to JavaScript",
+          [
+            "What is JavaScript",
+            "History of JavaScript",
+            "JavaScript Versions",
+            "How to run JavaScript"
+          ]
+        ],
+        [
+          "Variable Declarations",
+          [
+            "var",
+            "let",
+            "const"
+          ]
+        ],
+        [
+          "Hoisting"
+        ],
+        [
+          "Variable Naming Rules"
+        ],
+        [
+          "Variable Scopes",
+          [
+            "Block",
+            "Function",
+            "Global"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Data types and type casting",
+      "short": "Types",
+      "description": "Know the primitive types, how objects work and how values convert between types.",
+      "items": [
+        [
+          "Primitive Types",
+          [
+            "string",
+            "undefined",
+            "number",
+            "bigint",
+            "boolean",
+            "null",
+            "Symbol"
+          ]
+        ],
+        [
+          "Object",
+          [
+            "Object Prototype",
+            "Prototypal Inheritance",
+            "Built-in Objects"
+          ]
+        ],
+        [
+          "typeof operator"
+        ],
+        [
+          "Type Casting",
+          [
+            "Type Conversion vs Coercion",
+            "Implicit Type Casting",
+            "Explicit Type Casting"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Data structures and equality",
+      "short": "Structures",
+      "description": "Work with JSON, keyed and indexed collections, and understand how values are compared.",
+      "items": [
+        [
+          "Structured Data",
+          [
+            "JSON"
+          ]
+        ],
+        [
+          "Keyed Collections",
+          [
+            "Map",
+            "Weak Map",
+            "Set",
+            "Weak Set"
+          ]
+        ],
+        [
+          "Indexed Collections",
+          [
+            "Typed Arrays",
+            "Arrays"
+          ]
+        ],
+        [
+          "Value Comparison Operators",
+          [
+            "== (loose equality)",
+            "=== (strict equality)",
+            "Object.is"
+          ]
+        ],
+        [
+          "Equality Algorithms",
+          [
+            "isLooselyEqual^",
+            "isStrictlyEqual^",
+            "SameValueZero^",
+            "SameValue^"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Loops and control flow",
+      "short": "Control flow",
+      "description": "Repeat work with loops, branch with conditionals and handle errors gracefully.",
+      "items": [
+        [
+          "Loops and Iterations",
+          [
+            "for",
+            "do...while",
+            "while",
+            "break / continue",
+            "for...of loop",
+            "for...in loop"
+          ]
+        ],
+        [
+          "Conditional Statements",
+          [
+            "if...else",
+            "Switch"
+          ]
+        ],
+        [
+          "Exceptional Handling",
+          [
+            "throw statement",
+            "try/catch/finally",
+            "Error Objects"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Expressions and operators",
+      "short": "Operators",
+      "description": "Get comfortable with every family of operator the language provides.",
+      "items": [
+        [
+          "Expressions & Operators",
+          [
+            "Conditional Operators",
+            "Comma Operators",
+            "Unary Operators",
+            "Assignment Operators",
+            "Comparison Operators",
+            "Arithmetic Operators",
+            "Bitwise Operators",
+            "Logical Operators",
+            "BigInt Operators",
+            "String Operators"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Functions",
+      "short": "Functions",
+      "description": "Write functions in all their forms and understand scope, recursion and closures.",
+      "items": [
+        [
+          "Function Parameters",
+          [
+            "Default Params",
+            "Rest"
+          ]
+        ],
+        [
+          "Arrow Functions"
+        ],
+        [
+          "IIFEs"
+        ],
+        [
+          "arguments object"
+        ],
+        [
+          "Scope & Function Stack",
+          [
+            "Recursion",
+            "Lexical Scoping",
+            "Closures"
+          ]
+        ],
+        [
+          "Built-in Functions"
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "DOM, strict mode and this",
+      "short": "this & DOM",
+      "description": "Touch the DOM, opt into strict mode and master how this is bound in each context.",
+      "items": [
+        [
+          "DOM APIs"
+        ],
+        [
+          "Strict Mode"
+        ],
+        [
+          "Using (this) keyword",
+          [
+            "in a method",
+            "in a function",
+            "using it alone",
+            "in event handlers",
+            "in arrow functions"
+          ]
+        ],
+        [
+          "Function Borrowing"
+        ],
+        [
+          "Explicit Binding",
+          [
+            "call",
+            "apply",
+            "bind"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Asynchronous JavaScript",
+      "short": "Async",
+      "description": "Understand the event loop and write non-blocking code that talks to APIs.",
+      "items": [
+        [
+          "Asynchronous JavaScript",
+          [
+            "Event Loop^",
+            "setTimeout",
+            "setInterval",
+            "Callbacks",
+            "Callback Hell",
+            "Promises",
+            "async/await"
+          ]
+        ],
+        [
+          "Working with APIs",
+          [
+            "XMLHTTPRequest",
+            "Fetch"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Modules, classes and iterators",
+      "short": "Modules & classes",
+      "description": "Organise code into modules and classes and build custom iteration with generators.",
+      "items": [
+        [
+          "Modules in JavaScript",
+          [
+            "CommonJS",
+            "ESM"
+          ]
+        ],
+        [
+          "Iterators and Generators^"
+        ],
+        [
+          "Classes"
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Memory and debugging",
+      "short": "Memory & debug",
+      "description": "Learn how memory is managed and use browser DevTools to track down bugs and slowdowns.",
+      "items": [
+        [
+          "Memory Management^",
+          [
+            "Memory Lifecycle^",
+            "Garbage Collection^"
+          ]
+        ],
+        [
+          "Using Browser DevTools",
+          [
+            "Debugging Issues",
+            "Debugging Memory Leaks",
+            "Debugging Performance"
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "slug": "php",
+  "title": "PHP",
+  "tagline": "Learn PHP from syntax and functions to databases, OOP, the modern tooling ecosystem and performance.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-php",
+  "credit": {
+    "text": "Based on the PHP roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction and setup",
+      "short": "Setup",
+      "description": "Find out what PHP is and how it has evolved, then get it running on your machine.",
+      "items": [
+        [
+          "Introduction to PHP",
+          [
+            "What is PHP",
+            "Evolution and History",
+            "PHP Versions and Features"
+          ]
+        ],
+        [
+          "Installing PHP"
+        ],
+        [
+          "Local Server",
+          [
+            "WAMP",
+            "XAMPP",
+            "MAMP",
+            "LAMP"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Learn the fundamentals",
+      "short": "Fundamentals",
+      "description": "Cover syntax, types, output, arrays and the control flow every script uses.",
+      "items": [
+        [
+          "Learn the Fundamentals",
+          [
+            "Basic PHP Syntax",
+            "Variables and Scope",
+            "Data Types",
+            "Casting Data Types",
+            "Constants"
+          ]
+        ],
+        [
+          "Output and Debugging",
+          [
+            "echo",
+            "print",
+            "var_dump",
+            "print_r"
+          ]
+        ],
+        [
+          "Arrays",
+          [
+            "Indexed Arrays",
+            "Associative Arrays",
+            "Multi-dimensional Arrays"
+          ]
+        ],
+        [
+          "Conditionals",
+          [
+            "if/else",
+            "switch",
+            "match",
+            "Null Coalescing Operator",
+            "Null Safe Operator"
+          ]
+        ],
+        [
+          "Loops"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Functions",
+      "short": "Functions",
+      "description": "Write reusable functions and use PHP's flexible ways of passing and composing them.",
+      "items": [
+        [
+          "Functions",
+          [
+            "Function Declaration",
+            "Parameters / Return Values",
+            "Default / Optional Params",
+            "Named Arguments",
+            "Anonymous Functions",
+            "Callback Functions",
+            "Arrow Functions",
+            "Recursion",
+            "Variadic Functions"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "File handling",
+      "short": "Files",
+      "description": "Split code across files and read, write and parse data files.",
+      "items": [
+        [
+          "Include and Require Files",
+          [
+            "require",
+            "require_once",
+            "include",
+            "include_once"
+          ]
+        ],
+        [
+          "File Operations",
+          [
+            "Reading Files",
+            "Writing Files",
+            "File Permissions",
+            "CSV Processing",
+            "JSON Processing",
+            "XML Processing"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "HTTP and request handling",
+      "short": "HTTP & state",
+      "description": "Read incoming requests, handle forms and uploads, and remember users between requests.",
+      "items": [
+        [
+          "HTTP Methods"
+        ],
+        [
+          "Super Global Variables",
+          [
+            "$_GET",
+            "$_POST",
+            "$_REQUEST",
+            "$_SERVER"
+          ]
+        ],
+        [
+          "Form Processing"
+        ],
+        [
+          "File Uploads"
+        ],
+        [
+          "State Management",
+          [
+            "Cookies",
+            "Sessions"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Security basics",
+      "short": "Security",
+      "description": "Defend against the classic web attacks and handle passwords and authentication properly.",
+      "items": [
+        [
+          "Basics of Security",
+          [
+            "Input Validation",
+            "SQL Injection",
+            "XSS Prevention",
+            "CSRF Protection",
+            "Password Hashing",
+            "Auth Mechanisms",
+            "Sanitization Techniques"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Working with databases",
+      "short": "Databases",
+      "description": "Connect to a database safely and move on to ORMs, transactions and migrations.",
+      "items": [
+        [
+          "Database Connectivity",
+          [
+            "PDO",
+            "MySQLi"
+          ]
+        ],
+        [
+          "Advanced Database Techniques",
+          [
+            "Object-Relational Mapping (ORM)",
+            "Database Transactions",
+            "Connection Pooling",
+            "Performance Optimization",
+            "Database Migrations"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Object oriented programming",
+      "short": "OOP",
+      "description": "Model code with classes and objects, then use the richer OOP features of modern PHP.",
+      "items": [
+        [
+          "OOP Fundamentals",
+          [
+            "Classes and Objects",
+            "Constructor / Destructor",
+            "Properties and Methods",
+            "Access Specifiers",
+            "Static Methods and Properties",
+            "Inheritance"
+          ]
+        ],
+        [
+          "More OOP Concepts",
+          [
+            "Polymorphism",
+            "Abstract classes",
+            "Interfaces",
+            "Traits",
+            "Namespaces",
+            "Magic methods",
+            "Dependency injection",
+            "Type Declarations"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Frameworks and tools",
+      "short": "Frameworks & tools",
+      "description": "Work like a professional with a framework, Composer, tests, static analysis and shared standards.",
+      "items": [
+        [
+          "Popular Frameworks",
+          [
+            "Laravel",
+            "Symfony"
+          ]
+        ],
+        [
+          "Package Management",
+          [
+            "Composer",
+            "Packagist",
+            "Autoloading"
+          ]
+        ],
+        [
+          "Testing Tools",
+          [
+            "PHPUnit",
+            "Pest"
+          ]
+        ],
+        [
+          "Static Analysis",
+          [
+            "PHPStan",
+            "Psalm",
+            "Phan"
+          ]
+        ],
+        [
+          "Style Tools",
+          [
+            "PHPCodeSniffer",
+            "PHP CS Fixer"
+          ]
+        ],
+        [
+          "External Integrations",
+          [
+            "cURL",
+            "Guzzle"
+          ]
+        ],
+        [
+          "PHP-FIG",
+          [
+            "PSR Standards"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Advanced PHP topics",
+      "short": "Advanced",
+      "description": "Tune performance, interact with the system, debug deeply and serve PHP behind a web server.",
+      "items": [
+        [
+          "Performance Optimization",
+          [
+            "Profiling Techniques",
+            "Caching Strategies",
+            "Memory Management",
+            "Configuration Tuning",
+            "Opcode Caching",
+            "PHP-FPM"
+          ]
+        ],
+        [
+          "System Interactions",
+          [
+            "Executing System Commands",
+            "Process Control",
+            "Environment Variables",
+            "Configuration Files"
+          ]
+        ],
+        [
+          "Debugging Tools",
+          [
+            "Xdebug",
+            "Zend Debugger"
+          ]
+        ],
+        [
+          "Web Servers",
+          [
+            "Apache",
+            "Nginx"
+          ]
+        ]
+      ]
+    }
+  ]
+}

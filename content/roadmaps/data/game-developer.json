@@ -1,0 +1,348 @@
+{
+  "slug": "game-developer",
+  "title": "Game Developer",
+  "tagline": "Cover the maths, physics, engines, graphics and AI behind games, up to modern advanced rendering.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-game-developer",
+  "credit": {
+    "text": "Based on the Game Developer roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Game mathematics",
+      "short": "Game maths",
+      "description": "Focus on client-side game work and build the linear algebra, geometry and curve maths games depend on.",
+      "items": [
+        [
+          "Client Side Development"
+        ],
+        [
+          "Server Side?"
+        ],
+        [
+          "Game Mathematics",
+          [
+            "Linear Algebra",
+            "Vector",
+            "Matrix",
+            "Linear Transformation",
+            "Geometry",
+            "Affine Space",
+            "Affine Transformation"
+          ]
+        ],
+        [
+          "Projection",
+          [
+            "Perspective",
+            "Orthogonal"
+          ]
+        ],
+        [
+          "Orientation",
+          [
+            "Quaternion",
+            "Euler Angle"
+          ]
+        ],
+        [
+          "Curve",
+          [
+            "Spline",
+            "Hermite",
+            "Bezier",
+            "Catmull-Rom"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Game physics",
+      "short": "Physics",
+      "description": "Learn the rigid-body dynamics that make objects move, spin, bounce and float believably.",
+      "items": [
+        [
+          "Game Physics"
+        ],
+        [
+          "Dynamics",
+          [
+            "Center of Mass",
+            "Moment of Inertia",
+            "Acceleration",
+            "Joints",
+            "Restitution",
+            "Force",
+            "Angular Velocity",
+            "Buoyancy",
+            "Friction",
+            "Linear Velocity"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Collision detection",
+      "short": "Collisions",
+      "description": "Find out when and where objects touch, from cheap broad checks to exact narrow-phase tests.",
+      "items": [
+        [
+          "Collision Detection",
+          [
+            "CCD",
+            "Narrow Phase",
+            "Broad Phase"
+          ]
+        ],
+        [
+          "Intersection",
+          [
+            "SAT",
+            "GJK",
+            "EPA"
+          ]
+        ],
+        [
+          "Convexity",
+          [
+            "Convex",
+            "Concave",
+            "Convex Hull",
+            "Convex Decomposition"
+          ]
+        ],
+        [
+          "Bounding Volume",
+          [
+            "OBB",
+            "AABB"
+          ]
+        ],
+        [
+          "Spatial Partitioning",
+          [
+            "Sort & Sweep",
+            "DBVT",
+            "BVH"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Engines & languages",
+      "short": "Engines",
+      "description": "Pick up a game engine and the programming language that goes with it.",
+      "items": [
+        [
+          "Game Engine",
+          [
+            "Unity 3D",
+            "Unreal Engine",
+            "Native",
+            "Godot"
+          ]
+        ],
+        [
+          "Programming Languages",
+          [
+            "C#",
+            "C/C++",
+            "Rust",
+            "Python",
+            "GDScript"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Computer graphics",
+      "short": "Graphics",
+      "description": "Understand how images are rendered, from rasterization and shaders to colour and perception.",
+      "items": [
+        [
+          "Computer Graphics",
+          [
+            "Ray Tracing",
+            "Rasterization",
+            "Graphics Pipeline",
+            "Sampling",
+            "Shader",
+            "Rendering Equation",
+            "Computer Animation",
+            "Color",
+            "Visual Perception",
+            "Tone Reproduction"
+          ]
+        ],
+        [
+          "Reflection",
+          [
+            "Diffuse",
+            "Specular"
+          ]
+        ],
+        [
+          "Mapping",
+          [
+            "Texture",
+            "Bump",
+            "Parallax",
+            "Horizon"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Lighting & visibility",
+      "short": "Light & shadow",
+      "description": "Light a scene with different light sources and shadow techniques and skip work on what cannot be seen.",
+      "items": [
+        [
+          "Lighting and Shadow",
+          [
+            "Stencil Shadow",
+            "Shadow Map",
+            "Light Source"
+          ]
+        ],
+        [
+          "Shadow Map",
+          [
+            "2D",
+            "Cube",
+            "Cascaded"
+          ]
+        ],
+        [
+          "Light Source",
+          [
+            "Directional",
+            "Spot",
+            "Infinite",
+            "Point"
+          ]
+        ],
+        [
+          "Visibility and Occlusion",
+          [
+            "Occluder",
+            "Culling",
+            "Clipping",
+            "Fog",
+            "Frustum",
+            "Polygon",
+            "Light",
+            "Polyhedron",
+            "Shadow"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Graphics APIs",
+      "short": "Graphics APIs",
+      "description": "Talk to the GPU through the major graphics APIs and their shading languages.",
+      "items": [
+        [
+          "Graphics API",
+          [
+            "HLSL",
+            "GLSL",
+            "SPIR-V",
+            "DirectX",
+            "OpenGL",
+            "Vulkan",
+            "OpenGL ES",
+            "Metal",
+            "WebGL"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Game AI",
+      "short": "Game AI",
+      "description": "Give characters believable behaviour with decision-making techniques and game-tree search.",
+      "items": [
+        [
+          "Game AI"
+        ],
+        [
+          "Movement"
+        ],
+        [
+          "Decision Making",
+          [
+            "Decision Tree",
+            "State Machine",
+            "Behavior Tree",
+            "Fuzzy Logic",
+            "Markov System",
+            "Goal Oriented Behavior"
+          ]
+        ],
+        [
+          "Board Game",
+          [
+            "Minimax",
+            "AB Pruning",
+            "MCTS"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Learning-based AI",
+      "short": "AI learning",
+      "description": "Go further with machine learning approaches that let game agents learn from data and play.",
+      "items": [
+        [
+          "Learning",
+          [
+            "Naive Bayes Classifier",
+            "Decision Learning",
+            "Reinforcement Learning",
+            "Decision Tree Learning",
+            "Deep Learning",
+            "Artificial Neural Network"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Advanced rendering",
+      "short": "Adv. rendering",
+      "description": "Explore physically based materials and real-time ray tracing on modern GPUs.",
+      "items": [
+        [
+          "Physically-Based Rendering",
+          [
+            "Microsurface Scattering",
+            "Translucency & Transparency",
+            "Conservation of Energy",
+            "Metallicity"
+          ]
+        ],
+        [
+          "Real-time Ray Tracing",
+          [
+            "DirectX Ray Tracing",
+            "Vulkan Ray Tracing",
+            "OptiX"
+          ]
+        ]
+      ]
+    }
+  ]
+}

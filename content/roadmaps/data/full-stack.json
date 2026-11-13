@@ -1,0 +1,196 @@
+{
+  "slug": "full-stack",
+  "title": "Full Stack Developer",
+  "tagline": "A beginner's path from HTML to React, Node.js, databases and basic DevOps, with a project at each step.",
+  "category": "Career path",
+  "level": "Beginner",
+  "localKey": "tmr-progress-full-stack",
+  "credit": {
+    "text": "Based on the Full Stack roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "HTML and CSS",
+      "short": "HTML & CSS",
+      "description": "Structure and style pages, then prove it by building a few static webpages.",
+      "items": [
+        [
+          "HTML"
+        ],
+        [
+          "CSS"
+        ],
+        [
+          "Checkpoint - Static Webpages"
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "JavaScript and npm",
+      "short": "JavaScript & npm",
+      "description": "Make pages interactive with JavaScript and start pulling in packages from npm.",
+      "items": [
+        [
+          "JavaScript"
+        ],
+        [
+          "Checkpoint - Interactivity"
+        ],
+        [
+          "npm"
+        ],
+        [
+          "Checkpoint - External Packages"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Git and GitHub",
+      "short": "Git & GitHub",
+      "description": "Track your code with Git and collaborate with others on GitHub.",
+      "items": [
+        [
+          "Git"
+        ],
+        [
+          "GitHub"
+        ],
+        [
+          "Checkpoint - Collaborative Work"
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Frontend apps",
+      "short": "Frontend apps",
+      "description": "Build real frontend apps with React and Tailwind CSS (fine to revisit after the backend).",
+      "items": [
+        [
+          "Tailwind CSS"
+        ],
+        [
+          "React"
+        ],
+        [
+          "Checkpoint - Frontend Apps"
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Node.js",
+      "short": "Node.js",
+      "description": "Start backend work with Node.js and write some command-line apps.",
+      "items": [
+        [
+          "Node.js"
+        ],
+        [
+          "Checkpoint - CLI Apps"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Databases",
+      "short": "Databases",
+      "description": "Store data in PostgreSQL and build simple create, read, update and delete apps.",
+      "items": [
+        [
+          "PostgreSQL"
+        ],
+        [
+          "Checkpoint - Simple CRUD Apps"
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "APIs, auth and caching",
+      "short": "APIs & auth",
+      "description": "Design REST APIs, add token-based auth and cache with Redis to finish a complete app.",
+      "items": [
+        [
+          "RESTful APIs"
+        ],
+        [
+          "JWT Auth"
+        ],
+        [
+          "Redis"
+        ],
+        [
+          "Checkpoint - Complete App"
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Linux and AWS deployment",
+      "short": "Linux & AWS",
+      "description": "Learn enough Linux and core AWS services to put your app on a real server.",
+      "items": [
+        [
+          "Linux Basics"
+        ],
+        [
+          "Basic AWS Services",
+          [
+            "EC2",
+            "VPC",
+            "S3",
+            "Route53",
+            "SES"
+          ]
+        ],
+        [
+          "Checkpoint - Deployment"
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Monitoring and CI/CD",
+      "short": "Monitoring & CI",
+      "description": "Keep an eye on your server and automate builds and deployments.",
+      "items": [
+        [
+          "Monit"
+        ],
+        [
+          "Checkpoint - Monitoring"
+        ],
+        [
+          "GitHub Actions"
+        ],
+        [
+          "Checkpoint - CI / CD"
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Automation and infrastructure",
+      "short": "Automation & IaC",
+      "description": "Configure servers with Ansible and describe your infrastructure with Terraform.",
+      "items": [
+        [
+          "Ansible"
+        ],
+        [
+          "Checkpoint - Automation"
+        ],
+        [
+          "Terraform"
+        ],
+        [
+          "Checkpoint - Infrastructure"
+        ]
+      ]
+    }
+  ]
+}

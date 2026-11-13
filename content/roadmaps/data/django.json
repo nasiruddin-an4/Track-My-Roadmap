@@ -1,0 +1,339 @@
+{
+  "slug": "django",
+  "title": "Django",
+  "tagline": "Build Python web apps with Django: routing, views, templates, the ORM, auth, REST APIs and deployment.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-django",
+  "credit": {
+    "text": "Based on the Django roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Make sure your Python is solid and understand what a web framework does for you.",
+      "items": [
+        [
+          "Python"
+        ],
+        [
+          "Introduction",
+          [
+            "How the Web Works",
+            "Why use web frameworks",
+            "The MVC Model"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Your first project",
+      "short": "First project",
+      "description": "Install Django, create and run a project, and learn where every file lives.",
+      "items": [
+        [
+          "Your First Project",
+          [
+            "Virtual envs",
+            "Installing Django",
+            "Projects & Apps",
+            "Running your Project"
+          ]
+        ],
+        [
+          "Project Structure",
+          [
+            "manage.py",
+            "settings.py",
+            "urls.py"
+          ]
+        ],
+        [
+          "App Structure",
+          [
+            "models.py",
+            "views.py",
+            "tests.py",
+            "admin.py",
+            "migrations",
+            "urls.py"
+          ]
+        ],
+        [
+          "Other Files",
+          [
+            "static",
+            "media",
+            "templates"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Routing",
+      "short": "Routing",
+      "description": "Follow a request through Django and map URLs to the code that handles them.",
+      "items": [
+        [
+          "Request Response Flow"
+        ],
+        [
+          "Routing Fundamentals",
+          [
+            "URL patterns",
+            "Path converters",
+            "Grouping URLs",
+            "Regex Paths",
+            "Named URLs",
+            "Reverse URL",
+            "Routing Middleware"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Views",
+      "short": "Views",
+      "description": "Write function and class based views and lean on Django's generic views.",
+      "items": [
+        [
+          "Views",
+          [
+            "Function-based views",
+            "Class-based views"
+          ]
+        ],
+        [
+          "Generic views",
+          [
+            "ListView",
+            "DetailView",
+            "CreateView",
+            "UpdateView",
+            "DeleteView"
+          ]
+        ],
+        [
+          "Customizing Views"
+        ],
+        [
+          "Rendering Templates"
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Templates",
+      "short": "Templates",
+      "description": "Render HTML with the Django template language and reuse layouts through inheritance.",
+      "items": [
+        [
+          "Templates"
+        ],
+        [
+          "DTL Syntax",
+          [
+            "Variables",
+            "Filters & custom filters",
+            "Tags & custom tags",
+            "for",
+            "if",
+            "Comments"
+          ]
+        ],
+        [
+          "Template Inheritance"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Models, databases and ORM",
+      "short": "Models & ORM",
+      "description": "Define models, connect a database, run migrations and query data through the ORM.",
+      "items": [
+        [
+          "Models",
+          [
+            "Model relationships",
+            "Model methods",
+            "Model inheritance"
+          ]
+        ],
+        [
+          "Model Fields",
+          [
+            "Field types",
+            "Field options",
+            "Custom fields"
+          ]
+        ],
+        [
+          "Setting up the Database",
+          [
+            "SQLite",
+            "PostgreSQL",
+            "MySQL",
+            "MariaDB"
+          ]
+        ],
+        [
+          "Migrations"
+        ],
+        [
+          "Django ORM",
+          [
+            "Querying data",
+            "Create, Update, Delete",
+            "Aggregations",
+            "Filtering & lookups",
+            "Raw SQL",
+            "Query Optimization"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Forms, static files and utilities",
+      "short": "Forms & utilities",
+      "description": "Handle and validate user input, serve static files and use Django's built-in helpers.",
+      "items": [
+        [
+          "Validation",
+          [
+            "Django Forms",
+            "Model Forms",
+            "Form Validation"
+          ]
+        ],
+        [
+          "Static Files",
+          [
+            "Whitenoise"
+          ]
+        ],
+        [
+          "Pagination"
+        ],
+        [
+          "Message Framework"
+        ],
+        [
+          "Django Shell"
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Admin, middleware and auth",
+      "short": "Admin & auth",
+      "description": "Customise the admin, write middleware and control who can log in and do what.",
+      "items": [
+        [
+          "Django Admin",
+          [
+            "Admin Customization",
+            "Users & Permissions"
+          ]
+        ],
+        [
+          "Middleware",
+          [
+            "Customization"
+          ]
+        ],
+        [
+          "Authentication",
+          [
+            "Built-in user model",
+            "Custom user model",
+            "Protecting views",
+            "django-allauth"
+          ]
+        ],
+        [
+          "Authorization"
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "API development",
+      "short": "APIs",
+      "description": "Expose your data as a REST API with Django REST Framework.",
+      "items": [
+        [
+          "Django REST Framework",
+          [
+            "Serializers",
+            "Views & ViewSets",
+            "Routers"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Logging, debugging and testing",
+      "short": "Debug & test",
+      "description": "See what your app is doing, track down bugs and cover your code with tests.",
+      "items": [
+        [
+          "Logging",
+          [
+            "Loggers",
+            "Handlers",
+            "Filters",
+            "Formatters"
+          ]
+        ],
+        [
+          "Debugging",
+          [
+            "Error Pages",
+            "debug_toolbar",
+            "PDB, IPDB",
+            "django_silk"
+          ]
+        ],
+        [
+          "Django Test Framework",
+          [
+            "pytest",
+            "unittest & TestCase"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Advanced topics and deployment",
+      "short": "Advanced & deploy",
+      "description": "Add caching, async and background work, then get your project ready for production.",
+      "items": [
+        [
+          "Advanced Topics",
+          [
+            "Caching",
+            "Asynchronous Django",
+            "Background Tasks",
+            "Localization",
+            "Signals"
+          ]
+        ],
+        [
+          "Deployment",
+          [
+            "Production Checklist"
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+{
+  "slug": "angular",
+  "title": "Angular",
+  "tagline": "From TypeScript and components through routing, RxJS and signals to testing, SSR and performance.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-angular",
+  "credit": {
+    "text": "Based on the Angular roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Getting started",
+      "short": "Getting started",
+      "description": "Brush up on JavaScript, meet Angular and its architecture, spin up a project and learn enough TypeScript to read Angular code.",
+      "items": [
+        [
+          "JavaScript"
+        ],
+        [
+          "Introduction to Angular",
+          [
+            "Angular and History",
+            "Angular Architecture",
+            "Setting up a New Project"
+          ]
+        ],
+        [
+          "Learn TypeScript Basics"
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Components",
+      "short": "Components",
+      "description": "Understand how a component is built, configured through its metadata, wired to its neighbours and taken through its lifecycle.",
+      "items": [
+        [
+          "Components",
+          [
+            "Component Anatomy",
+            "Creating Components",
+            "Component Lifecycle",
+            "Dynamic Components"
+          ]
+        ],
+        [
+          "Metadata",
+          [
+            "Selector",
+            "Template",
+            "Styles",
+            "Standalone",
+            "Imports",
+            "Provider",
+            "viewProvider",
+            "Encapsulation",
+            "changeDetection"
+          ]
+        ],
+        [
+          "Communication",
+          [
+            "Parent-Child Interaction",
+            "ViewChild",
+            "ContentChild"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Modules",
+      "short": "Modules",
+      "description": "Organise an app into NgModules, split features apart and load them lazily.",
+      "items": [
+        [
+          "Modules",
+          [
+            "Module Architecture",
+            "Creating Modules",
+            "Feature Modules",
+            "Lazy Loading Modules",
+            "Dependencies"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Templates, syntax and pipes",
+      "short": "Templates",
+      "description": "Bind data into views, use the built-in control flow blocks and shape output with pipes.",
+      "items": [
+        [
+          "Templates",
+          [
+            "Interpolation",
+            "Template Statements",
+            "Control Flow",
+            "Template Ref Vars",
+            "@Input & @Output"
+          ]
+        ],
+        [
+          "Understand Binding",
+          [
+            "Data Binding",
+            "Property Binding",
+            "Attribute Binding",
+            "Event Binding",
+            "Two-way Binding"
+          ]
+        ],
+        [
+          "Template Syntax",
+          [
+            "@if",
+            "@else",
+            "@else if",
+            "@for",
+            "@switch",
+            "@case",
+            "@default",
+            "@let",
+            "@defer"
+          ]
+        ],
+        [
+          "Pipes",
+          [
+            "Pipes Precedence",
+            "Change Detection",
+            "Common Pipes",
+            "Custom Pipes"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Directives and routing",
+      "short": "Directives, router",
+      "description": "Extend the DOM with directives and move between views with the Angular router.",
+      "items": [
+        [
+          "Directives",
+          [
+            "Structural Directives",
+            "Attribute Directives",
+            "Custom Directives"
+          ]
+        ],
+        [
+          "Routing",
+          [
+            "Configuration",
+            "Lazy Loading",
+            "Router Outlets",
+            "Router Links",
+            "Router Events",
+            "Guards"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Services, forms and HTTP",
+      "short": "Services & forms",
+      "description": "Share logic through injectable services, build reactive and template-driven forms, and talk to back-end APIs.",
+      "items": [
+        [
+          "Services & Remote Data",
+          [
+            "Dependency Injection"
+          ]
+        ],
+        [
+          "Forms",
+          [
+            "Reactive Forms",
+            "Typed Forms",
+            "Template-driven Forms",
+            "Dynamic Forms",
+            "Custom Validators",
+            "Control Value Accessor"
+          ]
+        ],
+        [
+          "HTTP Client",
+          [
+            "Setting Up the Client",
+            "Making Requests",
+            "Writing Interceptors"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "RxJS and signals",
+      "short": "RxJS & signals",
+      "description": "Work with observable streams and operators, then use signals for fine-grained reactive state.",
+      "items": [
+        [
+          "RxJS Basics",
+          [
+            "Observable Pattern",
+            "Observable Lifecycle",
+            "RxJS vs Promises"
+          ]
+        ],
+        [
+          "Operators",
+          [
+            "Filtering",
+            "Rate Limiting",
+            "Transformation",
+            "Combination"
+          ]
+        ],
+        [
+          "Signals",
+          [
+            "RxJS Interop",
+            "Inputs as Signals",
+            "Queries as Signals",
+            "Model Inputs"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "State management and zones",
+      "short": "State & zones",
+      "description": "Pick a store library for app-wide state and learn how zones drive change detection, or how to go without them.",
+      "items": [
+        [
+          "State Management",
+          [
+            "NGXS",
+            "Elf",
+            "NgRx"
+          ]
+        ],
+        [
+          "Zones",
+          [
+            "Zoneless Applications"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Developer tools and libraries",
+      "short": "Tooling",
+      "description": "Get productive with the Angular CLI, browser and editor tooling, and reusable libraries.",
+      "items": [
+        [
+          "Angular CLI",
+          [
+            "Local Setup",
+            "Deployment",
+            "End-to-End Testing",
+            "Schematics",
+            "Build Environments",
+            "CLI Builders",
+            "AoT Compilation"
+          ]
+        ],
+        [
+          "Developer Tools",
+          [
+            "DevTools",
+            "Language Service"
+          ]
+        ],
+        [
+          "Libraries",
+          [
+            "Using Libraries",
+            "Creating Libraries"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Rendering and security",
+      "short": "SSR & security",
+      "description": "Render on the server or at build time and protect your app against common web attacks.",
+      "items": [
+        [
+          "SSR"
+        ],
+        [
+          "SSG",
+          [
+            "AnalogJS"
+          ]
+        ],
+        [
+          "Cross-site Scripting",
+          [
+            "Sanitization",
+            "Trusting Safe Values",
+            "Enforce Trusted Types"
+          ]
+        ],
+        [
+          "HTTP Vulnerabilities",
+          [
+            "Cross-site Request Forgery",
+            "HttpClient CSRF",
+            "XSRF protection",
+            "Cross-site Script Inclusion"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Accessibility and performance",
+      "short": "A11y & speed",
+      "description": "Make the app usable for everyone and keep it fast as it grows.",
+      "items": [
+        [
+          "Accessibility",
+          [
+            "Attributes",
+            "UI Components",
+            "Containers",
+            "Routing",
+            "Link Identification"
+          ]
+        ],
+        [
+          "Performance",
+          [
+            "Deferrable Views",
+            "Image Optimization",
+            "Zone Pollution",
+            "Slow Computations",
+            "Hydration"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Testing",
+      "short": "Testing",
+      "description": "Test services, pipes, directives and components, debug failing specs and track coverage.",
+      "items": [
+        [
+          "Testing",
+          [
+            "Testing Services",
+            "Testing Pipes",
+            "Testing Requests",
+            "Testing Directives",
+            "Services with Dependencies",
+            "Component Bindings",
+            "Debugging Tests",
+            "Component Templates",
+            "Code Coverage"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Internationalization and animation",
+      "short": "i18n & animation",
+      "description": "Ship the app in several languages and add polished motion between states and routes.",
+      "items": [
+        [
+          "Internationalization",
+          [
+            "Localize Package",
+            "Locales by ID",
+            "Translation Files",
+            "Multiple Locales"
+          ]
+        ],
+        [
+          "Animation",
+          [
+            "Transitions & Triggers",
+            "Complex Sequences",
+            "Reusable Animations",
+            "Route Transitions"
+          ]
+        ]
+      ]
+    }
+  ]
+}

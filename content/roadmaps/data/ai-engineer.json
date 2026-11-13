@@ -1,0 +1,361 @@
+{
+  "slug": "ai-engineer",
+  "title": "AI Engineer",
+  "tagline": "Build products on top of LLMs: APIs, safety, open models, embeddings, RAG, agents and multimodal AI.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-ai-engineer",
+  "credit": {
+    "text": "Based on the AI Engineer roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Understand what an AI engineer does and get comfortable with the vocabulary of modern AI.",
+      "items": [
+        [
+          "Pre-requisites!",
+          [
+            "Frontend",
+            "Backend",
+            "Full-Stack"
+          ]
+        ],
+        [
+          "Introduction",
+          [
+            "What is an AI Engineer",
+            "AI Engineer vs ML Engineer",
+            "Impact on Product Development",
+            "Roles and Responsibilities"
+          ]
+        ],
+        [
+          "Common Terminology",
+          [
+            "LLMs",
+            "AI vs AGI",
+            "Inference",
+            "Training",
+            "Embeddings",
+            "Vector Databases",
+            "AI Agents",
+            "RAG",
+            "Prompt Engineering"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Using pre-trained models",
+      "short": "Pre-trained models",
+      "description": "Learn why ready-made models are the starting point and survey the main model providers.",
+      "items": [
+        [
+          "Pre-trained Models",
+          [
+            "Benefits of Pre-trained Models",
+            "Limitations and Considerations"
+          ]
+        ],
+        [
+          "OpenAI Models",
+          [
+            "Open AI Models",
+            "Capabilities / Context Length",
+            "Cut-off Dates / Knowledge"
+          ]
+        ],
+        [
+          "Popular AI Models",
+          [
+            "Anthropic's Claude",
+            "Google's Gemini",
+            "Azure AI",
+            "AWS Sagemaker",
+            "Hugging Face Models",
+            "Mistral AI",
+            "Cohere",
+            "Replicate"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "OpenAI platform",
+      "short": "OpenAI platform",
+      "description": "Call a hosted model through its API, write prompts and keep token usage and cost under control.",
+      "items": [
+        [
+          "OpenAI API",
+          [
+            "Chat Completions API",
+            "Writing Prompts",
+            "Open AI Playground",
+            "Fine-tuning"
+          ]
+        ],
+        [
+          "Managing Tokens",
+          [
+            "Maximum Tokens",
+            "Token Counting",
+            "Pricing Considerations"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "AI safety and ethics",
+      "short": "Safety & ethics",
+      "description": "Recognise the ways AI features can go wrong and the habits that keep them safe and fair.",
+      "items": [
+        [
+          "Understanding AI Safety Issues",
+          [
+            "Prompt Injection Attacks",
+            "Security and Privacy Concerns",
+            "Bias and Fairness"
+          ]
+        ],
+        [
+          "Safety Best Practices",
+          [
+            "OpenAI Moderation API",
+            "Adding end-user IDs in prompts",
+            "Conducting adversarial testing",
+            "Robust prompt engineering",
+            "Know your Customers / Usecases",
+            "Constraining outputs and inputs"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Open-source AI",
+      "short": "Open-source AI",
+      "description": "Find, download and run open models yourself with Hugging Face and Ollama.",
+      "items": [
+        [
+          "OpenSource AI",
+          [
+            "Open vs Closed Source Models",
+            "Popular Open Source Models"
+          ]
+        ],
+        [
+          "Hugging Face"
+        ],
+        [
+          "Finding Open Source Models",
+          [
+            "Hugging Face Hub",
+            "Hugging Face Tasks"
+          ]
+        ],
+        [
+          "Using Open Source Models",
+          [
+            "Inference SDK",
+            "Transformers.js"
+          ]
+        ],
+        [
+          "Ollama",
+          [
+            "Ollama Models",
+            "Ollama SDK"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Embeddings",
+      "short": "Embeddings",
+      "description": "Turn text into vectors and use them for search, recommendations and classification.",
+      "items": [
+        [
+          "What are Embeddings"
+        ],
+        [
+          "Use Cases for Embeddings",
+          [
+            "Semantic Search",
+            "Data Classification",
+            "Recommendation Systems",
+            "Anomaly Detection"
+          ]
+        ],
+        [
+          "Open AI Embeddings API",
+          [
+            "Open AI Embedding Models",
+            "Pricing Considerations"
+          ]
+        ],
+        [
+          "Open-Source Embeddings",
+          [
+            "Sentence Transformers",
+            "Models on Hugging Face"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Vector databases",
+      "short": "Vector databases",
+      "description": "Store embeddings in a purpose-built database and run fast similarity searches over them.",
+      "items": [
+        [
+          "Vector Databases",
+          [
+            "Purpose and Functionality"
+          ]
+        ],
+        [
+          "Popular Vector DBs!",
+          [
+            "Chroma",
+            "Pinecone",
+            "Weaviate",
+            "FAISS",
+            "LanceDB",
+            "Qdrant",
+            "Supabase",
+            "MongoDB Atlas"
+          ]
+        ],
+        [
+          "Implementing Vector Search",
+          [
+            "Indexing Embeddings",
+            "Performing Similarity Search"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "RAG and implementation",
+      "short": "RAG",
+      "description": "Ground model answers in your own data by retrieving relevant chunks before generating.",
+      "items": [
+        [
+          "RAG & Implementation",
+          [
+            "RAG Usecases",
+            "RAG vs Fine-tuning"
+          ]
+        ],
+        [
+          "Implementing RAG",
+          [
+            "Chunking",
+            "Embedding",
+            "Vector Database",
+            "Retrieval Process",
+            "Generation"
+          ]
+        ],
+        [
+          "Ways of Implementing RAG",
+          [
+            "Using SDKs Directly",
+            "Langchain",
+            "Llama Index"
+          ]
+        ],
+        [
+          "RAG Alternative",
+          [
+            "Open AI Assistant API"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "AI agents",
+      "short": "AI agents",
+      "description": "Let models reason, pick tools and take actions, and build agents both by hand and with SDKs.",
+      "items": [
+        [
+          "AI Agents",
+          [
+            "Agents Usecases",
+            "Prompt Engineering",
+            "ReAct Prompting"
+          ]
+        ],
+        [
+          "Building AI Agents",
+          [
+            "Manual Implementation",
+            "OpenAI Functions / Tools",
+            "OpenAI Assistant API"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Multimodal AI",
+      "short": "Multimodal AI",
+      "description": "Go beyond text to work with images, video and audio in your applications.",
+      "items": [
+        [
+          "Multimodal AI",
+          [
+            "Multimodal AI Usecases"
+          ]
+        ],
+        [
+          "Multimodal AI Tasks",
+          [
+            "Image Understanding",
+            "Image Generation",
+            "Video Understanding",
+            "Audio Processing",
+            "Text-to-Speech",
+            "Speech-to-Text"
+          ]
+        ],
+        [
+          "Implementing Multimodal AI",
+          [
+            "OpenAI Vision API",
+            "DALL-E API",
+            "Whisper API",
+            "Hugging Face Models",
+            "LangChain for Multimodal Apps",
+            "LlamaIndex for Multimodal Apps"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Development tools",
+      "short": "Dev tools",
+      "description": "Use AI-assisted editors and completion tools to speed up your own coding.",
+      "items": [
+        [
+          "Development Tools",
+          [
+            "AI Code Editors",
+            "Code Completion Tools"
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "slug": "ai-data-scientist",
+  "title": "AI and Data Scientist",
+  "tagline": "Maths, statistics and econometrics, then coding, EDA, machine learning, deep learning and MLOps.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-ai-data-scientist",
+  "credit": {
+    "text": "Based on the AI and Data Scientist roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Mathematics",
+      "short": "Mathematics",
+      "description": "Build the linear algebra and calculus that machine learning methods are made of.",
+      "items": [
+        [
+          "Linear Algebra, Calculus, Mathematical Analysis",
+          [
+            "Mathematics for Machine Learning"
+          ]
+        ],
+        [
+          "Differential Calculus",
+          [
+            "Coursera: Algebra and Differential Calculus"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Statistics and experimentation",
+      "short": "Statistics",
+      "description": "Master probability, hypothesis tests and the practical side of running A/B experiments.",
+      "items": [
+        [
+          "Statistics, CLT",
+          [
+            "Coursera: Introduction to Statistics"
+          ]
+        ],
+        [
+          "Hypothesis Testing",
+          [
+            "Coursera: Hypothesis Testing"
+          ]
+        ],
+        [
+          "Probability and Sampling",
+          [
+            "Coursera: Probability and Statistics"
+          ]
+        ],
+        [
+          "AB Testing",
+          [
+            "Practitioner's Guide to Statistical Tests",
+            "Experiment Design Article"
+          ]
+        ],
+        [
+          "Increasing Test Sensitivity",
+          [
+            "Minimum Detectable Effect",
+            "Paper: Improving Test Sensitivity",
+            "Paper: Improving Sensitivity (CUPED)",
+            "CUPED at Booking.com",
+            "Doordash: CUPAC",
+            "Netflix: Stratification"
+          ]
+        ],
+        [
+          "Ratio Metrics",
+          [
+            "Microsoft: Delta Method in Metric Analytics",
+            "Paper: Ratio Metrics"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Econometrics",
+      "short": "Econometrics",
+      "description": "Model real-world data with regression, time series and fitted distributions.",
+      "items": [
+        [
+          "Pre-requisites of Econometrics",
+          [
+            "Fundamentals of Econometrics"
+          ]
+        ],
+        [
+          "Regression, Timeseries, Fitting Distributions",
+          [
+            "Intro to Econometrics",
+            "Coursera: Econometrics",
+            "Kaggle: Learn Time Series",
+            "Kaggle: Time Series Basics",
+            "ARIMA model for Time Series",
+            "Time Series Models",
+            "Forecasting Task with Solution",
+            "Coursera: Linear Regression"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Coding",
+      "short": "Coding",
+      "description": "Become fluent in Python, practise algorithms and learn to query data with SQL.",
+      "items": [
+        [
+          "Learn Python Programming Language",
+          [
+            "Learn Python: Kaggle",
+            "Google's Python Class"
+          ]
+        ],
+        [
+          "Data Structures and Algorithms (Python)",
+          [
+            "Algorithmic Exercises",
+            "Study Plans - Leetcode",
+            "Algorithms Specialization"
+          ]
+        ],
+        [
+          "Learn SQL",
+          [
+            "SQL Tutorial"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Exploratory data analysis",
+      "short": "EDA",
+      "description": "Understand a dataset by summarising it and visualising its patterns before modelling.",
+      "items": [
+        [
+          "Data understanding, Data Analysis and Visualization",
+          [
+            "Exploratory Data Analysis with Python and Pandas",
+            "Exploratory Data Analysis for Machine Learning",
+            "Exploratory Data Analysis with Seaborn"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Machine learning",
+      "short": "Machine learning",
+      "description": "Learn supervised and unsupervised methods through to ensembles and neural networks.",
+      "items": [
+        [
+          "Classic ML (Sup., Unsup.), Advanced ML (Ensembles, NNs)",
+          [
+            "Open Machine Learning Course - Open Data Science",
+            "Machine Learning Specialization",
+            "Pattern Recognition & ML by Christopher M. Bishop",
+            "GitHub repository with notes & code from the eBook above"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Deep learning",
+      "short": "Deep learning",
+      "description": "Study the main neural network architectures up to transformers and transfer learning.",
+      "items": [
+        [
+          "Fully Connected, CNN, RNN, LSTM, Transformers, TL",
+          [
+            "Deep Learning Specialization",
+            "Deep Learning Book",
+            "Attention is all you need",
+            "The Illustrated Transformer"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "MLOps",
+      "short": "MLOps",
+      "description": "Take models to production with deployment practices and CI/CD pipelines.",
+      "items": [
+        [
+          "Deployment Models, CI/CD",
+          [
+            "MLOps Specialization"
+          ]
+        ]
+      ]
+    }
+  ]
+}

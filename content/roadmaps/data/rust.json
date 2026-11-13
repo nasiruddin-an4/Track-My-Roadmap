@@ -1,0 +1,336 @@
+{
+  "slug": "rust",
+  "title": "Rust",
+  "tagline": "Learn Rust from ownership and traits to lifetimes, macros and the crates for web, CLI, games and embedded.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-rust",
+  "credit": {
+    "text": "Based on the Rust roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction & setup",
+      "short": "Setup",
+      "description": "See what Rust is good for and install the toolchain, an editor and the playground.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "What is Rust",
+            "Why use Rust"
+          ]
+        ],
+        [
+          "Environment Setup",
+          [
+            "Installing Rust and Cargo",
+            "IDEs and Rust Toolchains",
+            "Rust REPL (Rust Playground)"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Language basics",
+      "short": "Basics",
+      "description": "Learn the syntax, core constructs and built-in data structures of the language.",
+      "items": [
+        [
+          "Syntax and Semantics",
+          [
+            "Variables, Data Types and Constants",
+            "Control Flow and Constructs",
+            "Functions and Method Syntax",
+            "Pattern Matching & Destructuring"
+          ]
+        ],
+        [
+          "Constructs",
+          [
+            "Enums",
+            "Traits",
+            "Structs",
+            "Impl Blocks"
+          ]
+        ],
+        [
+          "Data Structures",
+          [
+            "Integers",
+            "Floats",
+            "Boolean",
+            "Character",
+            "String",
+            "Tuple",
+            "Array",
+            "Vector",
+            "Hashmap",
+            "Hashset",
+            "LinkedList",
+            "Stack",
+            "Queue",
+            "Binary Heap"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Ownership & smart pointers",
+      "short": "Ownership",
+      "description": "Understand ownership, borrowing and where data lives, then use shared and synchronised containers.",
+      "items": [
+        [
+          "Ownership System",
+          [
+            "Ownership Rules & Memory Safety",
+            "Borrowing, References and Slices",
+            "Deep Dive: Stack vs Heap"
+          ]
+        ],
+        [
+          "Advanced Topics",
+          [
+            "BTreeMap",
+            "BTreeSet",
+            "RC",
+            "Arc",
+            "Mutex",
+            "RwLock",
+            "Channels"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Errors, crates & testing",
+      "short": "Errors & crates",
+      "description": "Handle errors idiomatically, organise code into modules and crates, and write tests.",
+      "items": [
+        [
+          "Error Handling",
+          [
+            "Option and Result Enumerations",
+            "Propagating Errors and ? Operator",
+            "Custom Error Types and Traits"
+          ]
+        ],
+        [
+          "Modules & Crates",
+          [
+            "Code Organization & Namespacing",
+            "Dependency Management with Cargo",
+            "Publishing on Crates.io"
+          ]
+        ],
+        [
+          "Testing",
+          [
+            "Unit & Integration Testing",
+            "Mocking & Property Based Testing"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Concurrency & parallelism",
+      "short": "Concurrency",
+      "description": "Run work in parallel safely with threads, channels, atomics and async futures.",
+      "items": [
+        [
+          "Concurrency & Parallelism",
+          [
+            "Threads, Channels and Message Passing",
+            "Atomic Operations & Memory Barriers",
+            "Futures and Async/Await Paradigm"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Traits, generics & lifetimes",
+      "short": "Traits & lifetimes",
+      "description": "Write reusable abstractions with traits and generics and satisfy the borrow checker with lifetimes.",
+      "items": [
+        [
+          "Traits & Generics",
+          [
+            "Trait Definitions & Implementations",
+            "Trait Bounds and Associated Types",
+            "Generics & Type-Level Programming"
+          ]
+        ],
+        [
+          "Lifetimes & Borrow Checker",
+          [
+            "Explicit Lifetime Annotations",
+            "Lifetime Elision Rules",
+            "Covariant & Contravariant Lifetimes"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Macros & metaprogramming",
+      "short": "Macros",
+      "description": "Generate code with declarative and procedural macros and build small DSLs.",
+      "items": [
+        [
+          "Macros & Metaprogramming",
+          [
+            "Declarative Macros with macro_rules!",
+            "Procedural Macros & Custom Derive",
+            "Domain Specific Languages (DSLs)"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Web, async & networking",
+      "short": "Web & async",
+      "description": "Explore the ecosystem for web frameworks, async runtimes, networking and serialization.",
+      "items": [
+        [
+          "Web Development",
+          [
+            "Axum",
+            "Actix",
+            "Leptos",
+            "Loco",
+            "Rocket"
+          ]
+        ],
+        [
+          "Asynchronous Programming",
+          [
+            "Tokio",
+            "async-std",
+            "smol"
+          ]
+        ],
+        [
+          "Networking",
+          [
+            "reqwest",
+            "hyper",
+            "quinn"
+          ]
+        ],
+        [
+          "Serialization / Deserialization",
+          [
+            "Serde",
+            "json-rust",
+            "toml-rust"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Data, crypto & CLI",
+      "short": "Data & CLI",
+      "description": "Use crates for databases, cryptography and command line tools.",
+      "items": [
+        [
+          "Database and ORM",
+          [
+            "Diesel",
+            "sqlx",
+            "rusqlite"
+          ]
+        ],
+        [
+          "Cryptography",
+          [
+            "ring",
+            "rust-crypto",
+            "sodiumoxide"
+          ]
+        ],
+        [
+          "CLI Utilities",
+          [
+            "structopt",
+            "clap",
+            "termion"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Games, GUI, embedded & WASM",
+      "short": "Apps & targets",
+      "description": "Take Rust to games, desktop apps, microcontrollers and the browser through WebAssembly.",
+      "items": [
+        [
+          "Game Development",
+          [
+            "bevy",
+            "fyrox",
+            "ggez",
+            "macroquad",
+            "wgpu-rs"
+          ]
+        ],
+        [
+          "GUI Development",
+          [
+            "tauri",
+            "gtk-rs",
+            "relm"
+          ]
+        ],
+        [
+          "Embedded and Systems",
+          [
+            "embedded-hal",
+            "rppal",
+            "nrf-hal"
+          ]
+        ],
+        [
+          "WebAssembly (WASM)",
+          [
+            "wasm-pack",
+            "wasmer",
+            "wasm-bindgen"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Tooling & quality",
+      "short": "Tooling",
+      "description": "Document, debug and benchmark Rust code with the standard tools.",
+      "items": [
+        [
+          "Documenting with rustdoc"
+        ],
+        [
+          "Debugging",
+          [
+            "rust-gdb",
+            "rust-lldb"
+          ]
+        ],
+        [
+          "Performance and Profiling",
+          [
+            "Criterion.rs"
+          ]
+        ]
+      ]
+    }
+  ]
+}

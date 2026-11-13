@@ -1,0 +1,108 @@
+{
+  "slug": "forward-deployed-engineer",
+  "title": "Forward Deployed Engineer",
+  "tagline": "Full-stack, AI and DevOps skills plus the customer-facing craft needed to ship real solutions on site.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-forward-deployed-engineer",
+  "credit": {
+    "text": "Based on the Forward Deployed Engineer roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Understand what a forward deployed engineer does and how people usually move into the role.",
+      "items": [
+        [
+          "From X to FDE"
+        ],
+        [
+          "Roles & Responsibilities"
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Full-Stack Skills",
+      "short": "Full-stack",
+      "description": "Be able to build and run complete applications for customers across the frontend, backend and Linux.",
+      "items": [
+        [
+          "Frontend Skills"
+        ],
+        [
+          "Backend Skills"
+        ],
+        [
+          "Linux Skills"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "DSA & System Design",
+      "short": "DSA & design",
+      "description": "Master algorithms and system design, the first hurdle in most FDE interviews.",
+      "items": [
+        [
+          "DSA & System Design"
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "AI & DevOps Skills",
+      "short": "AI & DevOps",
+      "description": "Build AI-powered features and deploy them reliably on a major cloud with infrastructure as code.",
+      "items": [
+        [
+          "AI Engineering Skills"
+        ],
+        [
+          "DevOps Skills"
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Discovery & Scoping",
+      "short": "Discovery",
+      "description": "Turn a customer's needs into a well-scoped, sequenced plan with honest tradeoffs.",
+      "items": [
+        [
+          "Discovery & Scoping",
+          [
+            "Requirements Gathering",
+            "Technical Scoping & Sequencing",
+            "Tradeoffs: Scope, Speed, Quality"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Business Acumen & Communication",
+      "short": "Business & comms",
+      "description": "Understand the customer's business, manage stakeholders and communicate clearly in writing.",
+      "items": [
+        [
+          "Business Acumen",
+          [
+            "Enterprise Workflow",
+            "ROI & AI Impact",
+            "Stakeholder Management",
+            "Product Feedback Loop"
+          ]
+        ],
+        [
+          "Communication",
+          [
+            "Technical Writing"
+          ]
+        ]
+      ]
+    }
+  ]
+}

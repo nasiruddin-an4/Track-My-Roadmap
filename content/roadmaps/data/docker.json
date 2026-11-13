@@ -1,0 +1,225 @@
+{
+  "slug": "docker",
+  "title": "Docker",
+  "tagline": "Learn containers from the Linux basics underneath to building, securing and deploying images.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-docker",
+  "credit": {
+    "text": "Based on the Docker roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Prerequisites",
+      "short": "Prerequisites",
+      "description": "Get comfortable with the Linux shell and general app development before working with containers.",
+      "items": [
+        [
+          "Linux Fundamentals",
+          [
+            "Package Managers",
+            "Users / Groups Permissions",
+            "Shell Commands",
+            "Shell Scripting"
+          ]
+        ],
+        [
+          "Web Development",
+          [
+            "Programming Languages",
+            "Application Architecture"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Introduction & internals",
+      "short": "Introduction",
+      "description": "Understand what containers are, why they exist and the kernel features that make them work.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "What are Containers",
+            "Why do we need Containers",
+            "Bare Metal vs VMs vs Containers",
+            "Docker and OCI"
+          ]
+        ],
+        [
+          "Underlying Technologies",
+          [
+            "Namespaces",
+            "cgroups",
+            "Union Filesystems"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Installation & basics",
+      "short": "Install & basics",
+      "description": "Install Docker on your machine and learn the core ideas of images and containers.",
+      "items": [
+        [
+          "Installation / Setup",
+          [
+            "Docker Desktop (Win/Mac/Linux)",
+            "Docker Engine (Linux)"
+          ]
+        ],
+        [
+          "Basics of Docker"
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Data persistence",
+      "short": "Data persistence",
+      "description": "Learn why container filesystems are throwaway and how volumes and bind mounts keep data around.",
+      "items": [
+        [
+          "Data Persistence",
+          [
+            "Ephemeral Container Filesystem",
+            "Volume Mounts",
+            "Bind Mounts"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Third-party images",
+      "short": "3rd-party images",
+      "description": "Run ready-made images for databases and command line tools instead of installing them locally.",
+      "items": [
+        [
+          "Using 3rd Party Container Images",
+          [
+            "Databases",
+            "Command Line Utilities"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Building images",
+      "short": "Build images",
+      "description": "Write Dockerfiles that build quickly through good layer caching and produce small, safe images.",
+      "items": [
+        [
+          "Building Container Images",
+          [
+            "Dockerfiles",
+            "Efficient Layer Caching",
+            "Image Size and Security"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Container registries",
+      "short": "Registries",
+      "description": "Push and pull images through Docker Hub and other registries, tagging them sensibly.",
+      "items": [
+        [
+          "Container Registries",
+          [
+            "Dockerhub",
+            "Others (ghcr, ecr, gcr, acr, etc)",
+            "Image Tagging Best Practices"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Running containers",
+      "short": "Run containers",
+      "description": "Start single containers and multi-container setups and tune how they run.",
+      "items": [
+        [
+          "Running Containers",
+          [
+            "docker run",
+            "docker compose",
+            "Runtime Configuration Options"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Container security",
+      "short": "Security",
+      "description": "Harden both the images you ship and the containers while they run.",
+      "items": [
+        [
+          "Container Security",
+          [
+            "Image Security",
+            "Runtime Security"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Docker CLI",
+      "short": "Docker CLI",
+      "description": "Manage images, containers, volumes and networks confidently from the command line.",
+      "items": [
+        [
+          "Docker CLI",
+          [
+            "Images",
+            "Containers",
+            "Volumes",
+            "Networks"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Developer experience",
+      "short": "Dev experience",
+      "description": "Make day-to-day development in containers pleasant with live reload, debugging, tests and CI.",
+      "items": [
+        [
+          "Developer Experience",
+          [
+            "Hot Reloading",
+            "Debuggers",
+            "Tests",
+            "Continuous Integration"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Deploying containers",
+      "short": "Deploy",
+      "description": "Ship containers to production on a platform service or an orchestrator.",
+      "items": [
+        [
+          "Deploying Containers",
+          [
+            "PaaS Options",
+            "Kubernetes",
+            "Docker Swarm",
+            "Nomad"
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "slug": "server-side-game-developer",
+  "title": "Server-Side Game Developer",
+  "tagline": "From TCP, UDP and IP through sockets, threading and databases to async models, cloud and AI for game servers.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-server-side-game-developer",
+  "credit": {
+    "text": "Based on the Server-Side Game Developer roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "TCP",
+      "short": "TCP",
+      "description": "Learn how TCP structures segments, manages connections and data transfer, and where it can be attacked.",
+      "items": [
+        [
+          "TCP",
+          [
+            "Checksum",
+            "Segment Structure"
+          ]
+        ],
+        [
+          "Operations",
+          [
+            "Max Segment Size",
+            "Window Scaling",
+            "Connection",
+            "Resource Usage",
+            "Max Segment Scaling",
+            "Timestamp",
+            "Out-of-Band Data",
+            "Selective Acknowledgment"
+          ]
+        ],
+        [
+          "Data Transfer",
+          [
+            "Congestion Control",
+            "Reliable Transmission",
+            "Flow Control",
+            "Error Detection"
+          ]
+        ],
+        [
+          "Vulnerability",
+          [
+            "Denial of Service",
+            "Connection Hijacking",
+            "Veto"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "UDP and TCP vs UDP",
+      "short": "UDP",
+      "description": "Understand lightweight datagram transport and when a game should prefer it over TCP.",
+      "items": [
+        [
+          "UDP",
+          [
+            "Reliability",
+            "Datagram",
+            "Congestion Control",
+            "Checksum",
+            "Packet Structure"
+          ]
+        ],
+        [
+          "TCP vs UDP",
+          [
+            "Reliable vs Unreliable",
+            "Ordered vs Unordered",
+            "Heavy vs Lightweight",
+            "Packet vs Datagram",
+            "Streaming vs Broadcast"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "IP",
+      "short": "IP",
+      "description": "See how the internet layer addresses, routes and secures packets, and the protocols built around it.",
+      "items": [
+        [
+          "IP",
+          [
+            "Capability",
+            "Reliability",
+            "Link Capacity"
+          ]
+        ],
+        [
+          "Transactions",
+          [
+            "ARP",
+            "DNS",
+            "DHCP"
+          ]
+        ],
+        [
+          "Category",
+          [
+            "IPv6",
+            "IPv4"
+          ]
+        ],
+        [
+          "Security",
+          [
+            "TLS"
+          ]
+        ],
+        [
+          "Function",
+          [
+            "Datagram Construction",
+            "IP Addressing",
+            "Routing"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Languages, sockets and serialization",
+      "short": "Sockets & data",
+      "description": "Pick a server language, program network sockets directly and encode messages in a wire format.",
+      "items": [
+        [
+          "Programming Languages",
+          [
+            "Java",
+            "C#",
+            "C/C++",
+            "Erlang",
+            "JavaScript",
+            "Go"
+          ]
+        ],
+        [
+          "Socket Programming",
+          [
+            "Byte Manipulation",
+            "Address Conversion",
+            "Descriptor"
+          ]
+        ],
+        [
+          "API",
+          [
+            "BSD Socket",
+            "Winsock"
+          ]
+        ],
+        [
+          "Serialization",
+          [
+            "JSON",
+            "TOML",
+            "XML",
+            "YAML",
+            "Protobuf"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Multithreading and synchronization",
+      "short": "Threads & sync",
+      "description": "Run work in parallel safely using threads, thread-local storage and synchronization primitives.",
+      "items": [
+        [
+          "Multithreading",
+          [
+            "Sharding",
+            "Fiber"
+          ]
+        ],
+        [
+          "Thread Local Storage",
+          [
+            "Windows",
+            "pthread"
+          ]
+        ],
+        [
+          "Synchronization",
+          [
+            "Condition Variable",
+            "Spinlock",
+            "Barrier",
+            "Future & Promises",
+            "Mutex",
+            "Coroutine",
+            "Channel",
+            "Semaphore"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Programming techniques",
+      "short": "Techniques",
+      "description": "Write maintainable server code with patterns, tests, dependency injection and crash dump analysis.",
+      "items": [
+        [
+          "Programming Techniques",
+          [
+            "Design Patterns",
+            "TDD",
+            "Dependency Injection",
+            "Dump Analysis",
+            "Functional Programming"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Databases",
+      "short": "Databases",
+      "description": "Store game state in relational, NoSQL and key-value stores and access it through an ORM or data layer.",
+      "items": [
+        [
+          "RDBMS",
+          [
+            "MS SQL",
+            "MySQL",
+            "PostgreSQL"
+          ]
+        ],
+        [
+          "NoSQL",
+          [
+            "DynamoDB",
+            "MongoDB",
+            "Cassandra",
+            "Couchbase"
+          ]
+        ],
+        [
+          "Key-Value",
+          [
+            "Redis",
+            "Memcached"
+          ]
+        ],
+        [
+          "Databases",
+          [
+            "ORM",
+            "DAL"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Encryption, RPC and message queues",
+      "short": "Services & queues",
+      "description": "Encrypt traffic, let services call each other over RPC or REST, and decouple them with message queues.",
+      "items": [
+        [
+          "Cipher",
+          [
+            "SSL"
+          ]
+        ],
+        [
+          "RPC / REST",
+          [
+            "REST",
+            "gRPC"
+          ]
+        ],
+        [
+          "Message Queues",
+          [
+            "Apache Kafka",
+            "RabbitMQ"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Concurrency models (maximise your skills)",
+      "short": "Concurrency models",
+      "description": "Go beyond basic threads with task-based, actor, reactive and asynchronous I/O models used by high-load servers.",
+      "items": [
+        [
+          "Task-Based",
+          [
+            "Thread Building Block (C++)",
+            "Concurrency (Java)",
+            "Async-await (C#)",
+            "goroutine (Go)"
+          ]
+        ],
+        [
+          "Actor Model",
+          [
+            "Akka.NET (C#)",
+            "Akka (Java)"
+          ]
+        ],
+        [
+          "Reactive Model",
+          [
+            "Update Process",
+            "Determinism",
+            "Synchrony"
+          ]
+        ],
+        [
+          "Reactive Approach",
+          [
+            "OORP",
+            "FRP"
+          ]
+        ],
+        [
+          "Asynchronous"
+        ],
+        [
+          "Reactor",
+          [
+            "WSA Poll",
+            "select",
+            "kqueue",
+            "epoll"
+          ]
+        ],
+        [
+          "Proactor",
+          [
+            "IOCP",
+            "io_uring",
+            "Registered IO"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Cloud, clustering and containers",
+      "short": "Cloud & containers",
+      "description": "Host servers in the cloud, process data across clusters and ship services in containers.",
+      "items": [
+        [
+          "Cloud",
+          [
+            "Serverless",
+            "Azure",
+            "GCP",
+            "AWS"
+          ]
+        ],
+        [
+          "Data Clustering",
+          [
+            "Apache Spark"
+          ]
+        ],
+        [
+          "Containerization",
+          [
+            "Docker",
+            "Docker Compose",
+            "Kubernetes"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "AI",
+      "short": "AI",
+      "description": "Add machine learning to game back ends through managed cloud ML services or deep learning frameworks.",
+      "items": [
+        [
+          "Cloud ML",
+          [
+            "Amazon ML",
+            "Azure ML"
+          ]
+        ],
+        [
+          "Deep Learning",
+          [
+            "TensorFlow",
+            "PyTorch"
+          ]
+        ]
+      ]
+    }
+  ]
+}

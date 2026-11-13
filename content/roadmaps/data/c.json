@@ -1,0 +1,364 @@
+{
+  "slug": "c",
+  "title": "C Programming",
+  "tagline": "Learn C from types and pointers to memory management, tooling, testing and concurrency.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-c",
+  "credit": {
+    "text": "Based on the C Programming roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction & setup",
+      "short": "Setup",
+      "description": "See where C is used and how it compares to its neighbours, then get a compiler and editor working.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "Applications",
+            "C vs Assembly",
+            "C vs C++"
+          ]
+        ],
+        [
+          "Setting up",
+          [
+            "Installing C",
+            "Running your First Program"
+          ]
+        ],
+        [
+          "Code Editors / IDEs",
+          [
+            "vim / nvim",
+            "VSCode"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Variables & data types",
+      "short": "Types",
+      "description": "Declare and print variables and learn the built-in types, conversions and qualifiers.",
+      "items": [
+        [
+          "Variables",
+          [
+            "Declaration vs Definition",
+            "Initialization",
+            "Printing Variables"
+          ]
+        ],
+        [
+          "Basic Types",
+          [
+            "integers",
+            "float",
+            "double",
+            "char",
+            "Fixed-width integers",
+            "booleans",
+            "Extended Types"
+          ]
+        ],
+        [
+          "Data Types",
+          [
+            "Type Conversion"
+          ]
+        ],
+        [
+          "Type Qualifiers",
+          [
+            "const",
+            "volatile",
+            "restrict",
+            "_Atomic"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Operators & control flow",
+      "short": "Control flow",
+      "description": "Combine values with operators and steer a program with branches and loops.",
+      "items": [
+        [
+          "Operators",
+          [
+            "Arithmetic",
+            "Comparison",
+            "Logical",
+            "Ternary",
+            "Bitwise"
+          ]
+        ],
+        [
+          "Control Flow",
+          [
+            "if else / switch",
+            "for / while / do while loops",
+            "break / continue"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Functions",
+      "short": "Functions",
+      "description": "Split code into functions and understand scope, recursion, variadics and program arguments.",
+      "items": [
+        [
+          "Functions",
+          [
+            "main Function",
+            "Recursive Functions",
+            "Variable Scopes",
+            "Variadic Functions",
+            "Command-Line Arguments"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Pointers & memory",
+      "short": "Pointers",
+      "description": "Master how C lays out memory, how pointers work and how to allocate and free memory without bugs.",
+      "items": [
+        [
+          "Arrays"
+        ],
+        [
+          "Strings"
+        ],
+        [
+          "Memory",
+          [
+            "Memory Model",
+            "Stack vs Heap",
+            "Lifetime of Objects"
+          ]
+        ],
+        [
+          "Pointer Mechanics",
+          [
+            "Pointer Basics & Syntax",
+            "Null Pointers",
+            "void Pointers",
+            "Pointer Arithmetic"
+          ]
+        ],
+        [
+          "Memory Management",
+          [
+            "malloc",
+            "calloc",
+            "realloc",
+            "free",
+            "Dynamic Memory Allocation",
+            "Memory Leakage",
+            "Dangling Pointers",
+            "Undefined Behavior",
+            "Buffer Overflow"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Types & data structures",
+      "short": "Data structures",
+      "description": "Define your own types and build the common data structures C leaves to you.",
+      "items": [
+        [
+          "User-Defined Types",
+          [
+            "Structs",
+            "Typedef",
+            "Unions",
+            "Enums"
+          ]
+        ],
+        [
+          "Common Data Structures",
+          [
+            "Dynamic Arrays",
+            "Hash Maps",
+            "Linked Lists",
+            "Ring Buffers / FIFO Queues"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Code structure & errors",
+      "short": "Structure",
+      "description": "Organise a codebase across headers and files and report errors the C way.",
+      "items": [
+        [
+          "Structuring Codebase",
+          [
+            "Header Files",
+            "Linkage",
+            "static",
+            "extern"
+          ]
+        ],
+        [
+          "Error Handling",
+          [
+            "errno",
+            "Exit Codes",
+            "setjmp / longjmp"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Files & standard library",
+      "short": "I/O & stdlib",
+      "description": "Read and write files and know what the standard library already offers.",
+      "items": [
+        [
+          "File I/O",
+          [
+            "Streams",
+            "File Pointers",
+            "Binary vs Text Mode"
+          ]
+        ],
+        [
+          "Standard Library",
+          [
+            "Input / Output",
+            "Data Utilities",
+            "Text Processing",
+            "Math & Time",
+            "Diagnostics & Limits",
+            "OS & Signal Interfaces"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Build & compilation",
+      "short": "Build",
+      "description": "Understand the preprocessor, compilers and linkers, and drive builds with real build tools and package managers.",
+      "items": [
+        [
+          "Preprocessors",
+          [
+            "Macros",
+            "Conditional Compilation",
+            "Predefined Macros"
+          ]
+        ],
+        [
+          "Compilers",
+          [
+            "GCC / Clang",
+            "TinyCC",
+            "Optimization Levels",
+            "Symbol Tables",
+            "Linking",
+            "ABI"
+          ]
+        ],
+        [
+          "Build Systems",
+          [
+            "GNU Make",
+            "CMake",
+            "Ninja",
+            "Meson"
+          ]
+        ],
+        [
+          "Package Managers",
+          [
+            "vcpkg",
+            "Conan"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Debugging & testing",
+      "short": "Debug & test",
+      "description": "Track down crashes and leaks with debuggers and sanitizers and cover code with unit tests.",
+      "items": [
+        [
+          "Debugging",
+          [
+            "GDB",
+            "LLDB",
+            "WinDbg",
+            "Valgrind",
+            "strace",
+            "ASan & LSan"
+          ]
+        ],
+        [
+          "Testing",
+          [
+            "assert.h",
+            "Unity",
+            "CMocka",
+            "Check"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Advanced C",
+      "short": "Advanced C",
+      "description": "Use idiomatic design patterns, write concurrent code and know how the language standards evolved.",
+      "items": [
+        [
+          "Idioms & Design Patterns",
+          [
+            "Function pointers & Callbacks",
+            "Opaque Pointers",
+            "Object-Oriented C",
+            "RAII-Simulated Cleanup"
+          ]
+        ],
+        [
+          "Concurrency",
+          [
+            "POSIX Threads",
+            "Mutexes"
+          ]
+        ],
+        [
+          "Process Management",
+          [
+            "IPC"
+          ]
+        ],
+        [
+          "C Standards",
+          [
+            "C89 / C90",
+            "C99",
+            "C11",
+            "C17",
+            "C23"
+          ]
+        ]
+      ]
+    }
+  ]
+}

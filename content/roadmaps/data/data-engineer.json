@@ -1,0 +1,514 @@
+{
+  "slug": "data-engineer",
+  "title": "Data Engineer",
+  "tagline": "Design storage, pipelines and platforms that move data reliably from source to analytics and ML.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-data-engineer",
+  "credit": {
+    "text": "Based on the Data Engineer roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Get a clear picture of the data engineering role and how it differs from data science.",
+      "items": [
+        [
+          "Pre-requisites",
+          [
+            "Python",
+            "SQL"
+          ]
+        ],
+        [
+          "Introduction",
+          [
+            "What is Data Engineering",
+            "Data Engineering vs Data Science",
+            "Skills and Responsibilities",
+            "Data Engineering Lifecycle",
+            "Choosing the Right Technologies"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Learn the basics",
+      "short": "Basics",
+      "description": "Build the programming, systems and lifecycle foundations every data engineer relies on.",
+      "items": [
+        [
+          "Programming Skills!",
+          [
+            "Python",
+            "Java",
+            "Scala",
+            "Go"
+          ]
+        ],
+        [
+          "Data Structures and Algorithms"
+        ],
+        [
+          "Git and GitHub"
+        ],
+        [
+          "Linux Basics"
+        ],
+        [
+          "Networking Fundamentals"
+        ],
+        [
+          "Distributed Systems Basics"
+        ],
+        [
+          "Data Engineering Lifecycle",
+          [
+            "Data Generation",
+            "Data Storage",
+            "Data Ingestion",
+            "Data Serving"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Data generation",
+      "short": "Data generation",
+      "description": "Know where data comes from and what to think about before collecting it.",
+      "items": [
+        [
+          "Sources of Data",
+          [
+            "Database",
+            "APIs",
+            "Logs",
+            "Mobile Apps",
+            "IoT"
+          ]
+        ],
+        [
+          "Data Collection Considerations"
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Data storage and relational databases",
+      "short": "Data storage",
+      "description": "Model data well and work confidently with SQL databases.",
+      "items": [
+        [
+          "Database Fundamentals",
+          [
+            "Data Normalization",
+            "Data Modelling Techniques",
+            "CAP Theorem",
+            "OLTP vs OLAP",
+            "Slowly Changing Dimension - SCD",
+            "Horizontal vs Vertical Scaling",
+            "Star vs Snowflake Schema"
+          ]
+        ],
+        [
+          "Relational Databases",
+          [
+            "Learn SQL",
+            "Indexing",
+            "Transactions",
+            "MySQL",
+            "PostgreSQL",
+            "MariaDB",
+            "Aurora DB",
+            "Oracle",
+            "MS SQL"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "NoSQL databases",
+      "short": "NoSQL",
+      "description": "Learn the four main families of NoSQL stores and when each one fits.",
+      "items": [
+        [
+          "NoSQL Databases"
+        ],
+        [
+          "Document",
+          [
+            "MongoDB",
+            "ElasticSearch",
+            "CosmosDB",
+            "CouchDB"
+          ]
+        ],
+        [
+          "Column",
+          [
+            "Cassandra",
+            "BigTable",
+            "HBase"
+          ]
+        ],
+        [
+          "Graph",
+          [
+            "Neo4j",
+            "Neptune"
+          ]
+        ],
+        [
+          "Key-Value",
+          [
+            "Redis",
+            "Memcached",
+            "DynamoDB"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Data warehousing",
+      "short": "Warehousing",
+      "description": "Understand warehouses, lakes and the newer architectures used to organise analytical data.",
+      "items": [
+        [
+          "What is Data Warehouse"
+        ],
+        [
+          "Data Warehousing Architectures",
+          [
+            "Data Mart",
+            "Data Mesh"
+          ]
+        ],
+        [
+          "Data Warehouse",
+          [
+            "Google BigQuery",
+            "Snowflake",
+            "Amazon Redshift"
+          ]
+        ],
+        [
+          "Data Lake",
+          [
+            "Databricks Delta Lake",
+            "Snowflake",
+            "Onehouse"
+          ]
+        ],
+        [
+          "Other Data Architectures",
+          [
+            "Data Fabric",
+            "Data Hub",
+            "Metadata-first Architecture",
+            "Serverless Options"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Cloud computing",
+      "short": "Cloud",
+      "description": "Map the compute, storage, database and ETL services offered by the big cloud providers.",
+      "items": [
+        [
+          "Cloud Computing",
+          [
+            "Cloud Architectures"
+          ]
+        ],
+        [
+          "AWS",
+          [
+            "Amazon EC2 (Compute)",
+            "S3 (Storage)",
+            "Amazon RDS (Database)",
+            "Glue (ETL)"
+          ]
+        ],
+        [
+          "Azure",
+          [
+            "Azure Virtual Machines",
+            "Azure Blob Storage",
+            "Azure SQL Database",
+            "Data Factory (ETL)"
+          ]
+        ],
+        [
+          "Google Cloud",
+          [
+            "Compute Engine (Compute)",
+            "Google Cloud Storage",
+            "Cloud SQL (Database)",
+            "Dataflow"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Data ingestion and pipelines",
+      "short": "Ingestion",
+      "description": "Bring data in by batch or stream and orchestrate ETL pipelines with the common tools.",
+      "items": [
+        [
+          "Types of Data Ingestion",
+          [
+            "Batch",
+            "Hybrid",
+            "Streaming",
+            "Realtime"
+          ]
+        ],
+        [
+          "Data Pipelines"
+        ],
+        [
+          "ETL Process",
+          [
+            "Extract Data",
+            "Transform Data",
+            "Load Data"
+          ]
+        ],
+        [
+          "Data Pipeline Tools",
+          [
+            "Apache Airflow",
+            "dbt",
+            "Luigi",
+            "Prefect"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Cluster computing and big data",
+      "short": "Big data",
+      "description": "Process data across many machines with Hadoop, Spark and container orchestration.",
+      "items": [
+        [
+          "Cluster Computing Basics",
+          [
+            "What is Cluster Computing",
+            "Distributed File Systems",
+            "HDFS",
+            "Job Scheduling"
+          ]
+        ],
+        [
+          "Cluster Management Tools",
+          [
+            "Kubernetes",
+            "Apache Hadoop YARN"
+          ]
+        ],
+        [
+          "Big Data Tools",
+          [
+            "Apache Spark"
+          ]
+        ],
+        [
+          "Hadoop Ecosystem",
+          [
+            "HDFS",
+            "YARN",
+            "MapReduce"
+          ]
+        ],
+        [
+          "Containers & Orchestration",
+          [
+            "Docker",
+            "Kubernetes",
+            "Google Cloud GKE",
+            "AWS EKS"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "CI/CD, monitoring and testing",
+      "short": "CI/CD & testing",
+      "description": "Automate delivery, watch your systems in production and test data workloads properly.",
+      "items": [
+        [
+          "CI/CD",
+          [
+            "GitHub Actions",
+            "Circle CI",
+            "GitLab CI",
+            "ArgoCD"
+          ]
+        ],
+        [
+          "Monitoring",
+          [
+            "Prometheus",
+            "Datadog",
+            "Sentry",
+            "New Relic"
+          ]
+        ],
+        [
+          "Testing",
+          [
+            "Unit Testing",
+            "Integration Testing",
+            "End-to-End Testing",
+            "Functional Testing",
+            "A/B Testing",
+            "Load Testing",
+            "Smoke Testing"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Messaging and infrastructure as code",
+      "short": "Messaging & IaC",
+      "description": "Connect systems through message queues and streams, and define infrastructure in code.",
+      "items": [
+        [
+          "Messaging Systems",
+          [
+            "What and why use them",
+            "Async vs Sync Communication",
+            "Messages vs Streams",
+            "Best Practices"
+          ]
+        ],
+        [
+          "Messaging Tools",
+          [
+            "Apache Kafka",
+            "RabbitMQ",
+            "AWS SQS",
+            "AWS SNS"
+          ]
+        ],
+        [
+          "Infrastructure as Code - IaC",
+          [
+            "Declarative vs Imperative",
+            "Idempotency",
+            "Reusability",
+            "Environmental Management"
+          ]
+        ],
+        [
+          "IaC Tools",
+          [
+            "Terraform",
+            "OpenTofu",
+            "AWS CDK",
+            "Google Deployment Mgr."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Data serving",
+      "short": "Data serving",
+      "description": "Deliver data to analysts and business tools, and push it back into operational apps.",
+      "items": [
+        [
+          "Data Analytics"
+        ],
+        [
+          "Business Intelligence"
+        ],
+        [
+          "BI Tools",
+          [
+            "Microsoft Power BI",
+            "Streamlit",
+            "Tableau",
+            "Looker"
+          ]
+        ],
+        [
+          "Reverse ETL",
+          [
+            "ETL vs Reverse ETL",
+            "Reverse ETL Usecases"
+          ]
+        ],
+        [
+          "Reverse ETL Tools",
+          [
+            "Hightouch",
+            "Census",
+            "Segment"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Security and data governance",
+      "short": "Security & gov.",
+      "description": "Protect sensitive data and keep it accurate, traceable and well documented.",
+      "items": [
+        [
+          "Security",
+          [
+            "Authentication vs Authorization",
+            "Encryption",
+            "Tokenization",
+            "Data Masking",
+            "Data Obfuscation"
+          ]
+        ],
+        [
+          "Data Governance",
+          [
+            "Data Quality",
+            "Data Lineage",
+            "Metadata Management",
+            "Data Interoperability"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p14",
+      "title": "Privacy and machine learning",
+      "short": "Privacy & ML",
+      "description": "Respect data and AI regulations, then support machine learning work in production.",
+      "items": [
+        [
+          "Data and AI Regulations",
+          [
+            "GDPR",
+            "ECPA",
+            "EU AI Act"
+          ]
+        ],
+        [
+          "Machine Learning"
+        ],
+        [
+          "MLOps"
+        ]
+      ]
+    }
+  ]
+}

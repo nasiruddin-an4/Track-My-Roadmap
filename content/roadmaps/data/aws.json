@@ -1,0 +1,298 @@
+{
+  "slug": "aws",
+  "title": "AWS",
+  "tagline": "A practical tour of the core AWS services, from compute and networking to databases and serverless.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-aws",
+  "credit": {
+    "text": "Based on the AWS roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Learn the cloud computing basics and how AWS is organised and shared with its customers.",
+      "items": [
+        [
+          "What is Cloud Computing?"
+        ],
+        [
+          "IaaS vs PaaS vs SaaS"
+        ],
+        [
+          "Public vs Private vs Hybrid Cloud"
+        ],
+        [
+          "Introduction to AWS",
+          [
+            "AWS Global Infrastructure",
+            "Shared Responsibility Model",
+            "Well Architected Framework"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "EC2 - Compute",
+      "short": "EC2",
+      "description": "Launch and manage virtual servers, from picking an instance type to paying for it.",
+      "items": [
+        [
+          "Instance Types"
+        ],
+        [
+          "CPU Credits"
+        ],
+        [
+          "Storage / Volumes"
+        ],
+        [
+          "Keypairs"
+        ],
+        [
+          "Elastic IP"
+        ],
+        [
+          "User Data Scripts"
+        ],
+        [
+          "Purchasing Options"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "VPC - Network Layer",
+      "short": "VPC",
+      "description": "Design a private network in AWS with subnets, routing, gateways and security groups.",
+      "items": [
+        [
+          "CIDR Blocks"
+        ],
+        [
+          "Subnets",
+          [
+            "Private Subnet",
+            "Public Subnet"
+          ]
+        ],
+        [
+          "Route Tables"
+        ],
+        [
+          "Security Groups"
+        ],
+        [
+          "Internet Gateway"
+        ],
+        [
+          "NAT Gateway"
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "IAM - Access Control",
+      "short": "IAM",
+      "description": "Control who and what can access your AWS resources using users, roles and policies.",
+      "items": [
+        [
+          "Policies",
+          [
+            "Identity-based",
+            "Resource-based"
+          ]
+        ],
+        [
+          "Users / User Groups"
+        ],
+        [
+          "Roles",
+          [
+            "Instance Profiles",
+            "Assuming Roles"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Auto-Scaling",
+      "short": "Auto-Scaling",
+      "description": "Grow and shrink your fleet automatically and spread traffic across it with load balancers.",
+      "items": [
+        [
+          "AMIs"
+        ],
+        [
+          "Launch Templates"
+        ],
+        [
+          "Auto-Scaling Groups"
+        ],
+        [
+          "Scaling Policies"
+        ],
+        [
+          "Elastic Load Balancers"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "S3 - Storage",
+      "short": "S3",
+      "description": "Store objects durably, manage their lifecycle and pick the right storage class.",
+      "items": [
+        [
+          "Buckets / Objects"
+        ],
+        [
+          "Bucket / Object Lifecycle"
+        ],
+        [
+          "Storage Types",
+          [
+            "Standard",
+            "S3-IA",
+            "Glacier"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Email, DNS, CDN & Monitoring",
+      "short": "SES, DNS & CDN",
+      "description": "Send email with SES, route domains with Route53, cache content with Cloudfront and watch it all in Cloudwatch.",
+      "items": [
+        [
+          "SES",
+          [
+            "Sandbox / Sending Limits",
+            "Identity Verification",
+            "DKIM Setup",
+            "Feedback Handling",
+            "Configuration Sets",
+            "Sender Reputation",
+            "Dedicated IP"
+          ]
+        ],
+        [
+          "Route53",
+          [
+            "Hosted Zones",
+            "Routing Policies",
+            "Health Checks"
+          ]
+        ],
+        [
+          "Cloudwatch",
+          [
+            "Metrics",
+            "Events",
+            "Logs"
+          ]
+        ],
+        [
+          "Cloudfront",
+          [
+            "Distributions",
+            "Policies",
+            "Invalidations"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Databases & Caching",
+      "short": "Databases",
+      "description": "Run managed relational and NoSQL databases and add an in-memory cache in front of them.",
+      "items": [
+        [
+          "RDS",
+          [
+            "DB Instances",
+            "Backup / Restore"
+          ]
+        ],
+        [
+          "RDS Storage Types",
+          [
+            "General Purpose",
+            "Provisioned IOPS",
+            "Magnetic"
+          ]
+        ],
+        [
+          "DynamoDB",
+          [
+            "Tables / Items / Attributes",
+            "Primary Keys / Secondary Indexes",
+            "Data Modeling",
+            "Streams",
+            "Capacity Settings",
+            "Limits",
+            "Backup / Restore",
+            "DynamoDB Local"
+          ]
+        ],
+        [
+          "ElastiCache",
+          [
+            "Quotas"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Containers",
+      "short": "Containers",
+      "description": "Store container images and run containers on ECS, Fargate or Kubernetes with EKS.",
+      "items": [
+        [
+          "ECR"
+        ],
+        [
+          "ECS",
+          [
+            "Clusters / ECS Container Agents",
+            "Tasks",
+            "Services",
+            "Launch Config / Autoscaling Groups",
+            "Fargate"
+          ]
+        ],
+        [
+          "EKS"
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Serverless with Lambda",
+      "short": "Lambda",
+      "description": "Run code without managing servers and wire functions to events, schedules and APIs.",
+      "items": [
+        [
+          "Lambda",
+          [
+            "Creating / Invoking Functions",
+            "Layers",
+            "Custom Runtimes",
+            "Versioning / Aliases",
+            "Event Bridge / Scheduled Execution",
+            "Cold Start and Limitations",
+            "API Gateway",
+            "Lambda@Edge"
+          ]
+        ]
+      ]
+    }
+  ]
+}

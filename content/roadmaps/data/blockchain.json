@@ -1,0 +1,323 @@
+{
+  "slug": "blockchain",
+  "title": "Blockchain",
+  "tagline": "From how blockchains work to smart contracts, security, dApps and scaling solutions.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-blockchain",
+  "credit": {
+    "text": "Based on the Blockchain roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Basic blockchain knowledge",
+      "short": "Basics",
+      "description": "Learn what a blockchain is, why decentralisation matters and how blocks fit together.",
+      "items": [
+        [
+          "Basic Blockchain Knowledge",
+          [
+            "What is Blockchain",
+            "Decentralization",
+            "Why it matters",
+            "Blockchain Structure",
+            "Basic Blockchain Operations",
+            "Applications and Uses"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "General blockchain knowledge",
+      "short": "General knowledge",
+      "description": "Dig into the mechanics behind chains: mining, consensus, cryptography, forks and wallets.",
+      "items": [
+        [
+          "General Blockchain Knowledge",
+          [
+            "Storage",
+            "Mining and Incentive Models",
+            "Decentralization vs Trust",
+            "Blockchain Forking",
+            "Cryptocurrencies",
+            "Cryptowallets",
+            "Cryptography",
+            "Consensus Protocols",
+            "Blockchain Interoperability"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Blockchains",
+      "short": "Blockchains",
+      "description": "Survey the major chains, from EVM and TVM based networks to layer 2 solutions.",
+      "items": [
+        [
+          "Blockchains",
+          [
+            "Solana",
+            "TON"
+          ]
+        ],
+        [
+          "EVM-Based",
+          [
+            "Ethereum",
+            "Polygon",
+            "Binance Smart Chain",
+            "Gnosis Chain",
+            "Huobi Eco Chain",
+            "Avalanche",
+            "Fantom",
+            "Moonbeam / Moonriver"
+          ]
+        ],
+        [
+          "TVM-Based",
+          [
+            "Everscale",
+            "Gosh",
+            "Venom",
+            "TON"
+          ]
+        ],
+        [
+          "L2 Blockchains",
+          [
+            "Arbitrum",
+            "Moonbeam / Moonriver"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Oracles and smart contracts",
+      "short": "Smart contracts",
+      "description": "Write, test and ship smart contracts, and bring outside data in through oracles.",
+      "items": [
+        [
+          "Oracles",
+          [
+            "Hybrid Smart Contracts",
+            "Chainlink",
+            "Oracle Networks"
+          ]
+        ],
+        [
+          "Programming Languages",
+          [
+            "Solidity",
+            "Vyper?",
+            "Rust?"
+          ]
+        ],
+        [
+          "IDEs"
+        ],
+        [
+          "Testing",
+          [
+            "Unit Tests",
+            "Integration Tests",
+            "Code Coverage"
+          ]
+        ],
+        [
+          "Deployment"
+        ],
+        [
+          "Monitoring"
+        ],
+        [
+          "Upgrades"
+        ],
+        [
+          "ERC Tokens"
+        ],
+        [
+          "Crypto Wallets"
+        ],
+        [
+          "Crypto Faucets"
+        ],
+        [
+          "Decentralized Storage"
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Frameworks and security",
+      "short": "Frameworks & sec",
+      "description": "Pick a smart contract framework and learn the practices and tools that keep contracts safe.",
+      "items": [
+        [
+          "Smart Contract Frameworks",
+          [
+            "Hardhat",
+            "Truffle?",
+            "Brownie?",
+            "Foundry?"
+          ]
+        ],
+        [
+          "Security Practices",
+          [
+            "Fuzz Testing & Static Analysis",
+            "Common Threat Vectors",
+            "Source of Randomness Attacks"
+          ]
+        ],
+        [
+          "Security Tools",
+          [
+            "Slither",
+            "Manticore",
+            "MythX?",
+            "Echidna?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Management and version control",
+      "short": "Version control",
+      "description": "Manage deployed contracts and keep your code in version control and a hosted repo.",
+      "items": [
+        [
+          "Management Platforms",
+          [
+            "OpenZeppelin"
+          ]
+        ],
+        [
+          "Version Control Systems",
+          [
+            "Git"
+          ]
+        ],
+        [
+          "Repo Hosting Services",
+          [
+            "GitHub",
+            "GitLab?",
+            "Bitbucket?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "dApps",
+      "short": "dApps",
+      "description": "Build decentralised applications end to end, from use cases and frontends to testing and security.",
+      "items": [
+        [
+          "dApps - Decentralized Applications"
+        ],
+        [
+          "Applicability",
+          [
+            "Defi",
+            "DAOs",
+            "NFTs",
+            "Payments",
+            "Insurance"
+          ]
+        ],
+        [
+          "Supporting Languages",
+          [
+            "JavaScript",
+            "Go?",
+            "Python?"
+          ]
+        ],
+        [
+          "Frontend Frameworks",
+          [
+            "React",
+            "Vue?",
+            "Angular?"
+          ]
+        ],
+        [
+          "Testing"
+        ],
+        [
+          "Deployment"
+        ],
+        [
+          "Maintenance"
+        ],
+        [
+          "Architecture"
+        ],
+        [
+          "Security"
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "dApp infrastructure",
+      "short": "dApp infra",
+      "description": "Connect your dApp to the chain through client libraries, nodes and node providers.",
+      "items": [
+        [
+          "Client Libraries",
+          [
+            "ethers.js",
+            "web3.js?",
+            "Moralis?"
+          ]
+        ],
+        [
+          "Client Nodes",
+          [
+            "Geth",
+            "Besu",
+            "Nethermind",
+            "Substrate"
+          ]
+        ],
+        [
+          "Node as a Service",
+          [
+            "Alchemy",
+            "Infura",
+            "Moralis",
+            "Quicknode"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Building for scale",
+      "short": "Scaling",
+      "description": "Learn the off-chain and on-chain techniques that let blockchains handle more traffic.",
+      "items": [
+        [
+          "Building for Scale",
+          [
+            "State & Payment Channels",
+            "Optimistic Rollups & Fraud Proofs",
+            "Zk Rollups & Zero Knowledge Proof",
+            "Validium",
+            "Plasma",
+            "Sidechains",
+            "Ethereum 2.0",
+            "On-Chain Scaling"
+          ]
+        ]
+      ]
+    }
+  ]
+}

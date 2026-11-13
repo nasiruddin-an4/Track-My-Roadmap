@@ -1,0 +1,348 @@
+{
+  "slug": "nodejs",
+  "title": "Node.js",
+  "tagline": "Learn server-side JavaScript: modules, npm, async code, CLIs, APIs, databases and runtime internals.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-nodejs",
+  "credit": {
+    "text": "Based on the Node.js roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction to Node.js",
+      "short": "Introduction",
+      "description": "Learn what Node.js is, how it differs from the browser and how to run code with it.",
+      "items": [
+        [
+          "Introduction to Node.js",
+          [
+            "What is Node.js",
+            "Why use Node.js",
+            "History of Node.js",
+            "Node.js vs Browser",
+            "Running Node.js Code"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Modules",
+      "short": "Modules",
+      "description": "Split code into modules with CommonJS and ES modules and understand the global scope.",
+      "items": [
+        [
+          "Modules",
+          [
+            "CommonJS",
+            "ESM",
+            "Creating & Importing",
+            "[global] keyword"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "npm",
+      "short": "npm",
+      "description": "Install, update and publish packages and run project scripts with npm.",
+      "items": [
+        [
+          "npm",
+          [
+            "npx",
+            "Semantic Versioning",
+            "Updating Packages",
+            "Running Scripts",
+            "npm workspaces",
+            "Creating Packages^"
+          ]
+        ],
+        [
+          "Installing Packages",
+          [
+            "Global Installation",
+            "Local Installation"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Error handling",
+      "short": "Errors",
+      "description": "Recognise the kinds of errors Node throws and handle sync and async failures cleanly.",
+      "items": [
+        [
+          "Types of Errors",
+          [
+            "System Errors",
+            "User Specified Errors",
+            "Assertion Errors",
+            "JavaScript Errors"
+          ]
+        ],
+        [
+          "Error Handling",
+          [
+            "Uncaught Exceptions",
+            "Handling Async Errors",
+            "Callstack / Stack Trace",
+            "Using Debugger"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Async programming",
+      "short": "Async",
+      "description": "Write non-blocking code with callbacks, promises and timers and understand the event loop.",
+      "items": [
+        [
+          "Async Programming",
+          [
+            "Event Emitter",
+            "Event Loop^"
+          ]
+        ],
+        [
+          "Writing Async Code",
+          [
+            "Promises",
+            "async/await",
+            "Callbacks",
+            "setTimeout",
+            "setInterval",
+            "setImmediate",
+            "process.nextTick"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Working with files",
+      "short": "Files",
+      "description": "Read, write and watch files and paths with built-in modules and popular helpers.",
+      "items": [
+        [
+          "Working with Files",
+          [
+            "__dirname",
+            "__filename",
+            "process.cwd()",
+            "path module",
+            "fs module"
+          ]
+        ],
+        [
+          "Opensource Packages",
+          [
+            "glob",
+            "globby",
+            "fs-extra",
+            "chokidar"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Command line apps",
+      "short": "CLI apps",
+      "description": "Build command line tools that read config, arguments and input and print friendly output.",
+      "items": [
+        [
+          "Command Line Apps",
+          [
+            "Exiting / Exit Codes"
+          ]
+        ],
+        [
+          "Environment Variables",
+          [
+            "process.env",
+            "dotenv package"
+          ]
+        ],
+        [
+          "Taking Input",
+          [
+            "process.stdin",
+            "Inquirer Package",
+            "prompts package"
+          ]
+        ],
+        [
+          "Printing Output",
+          [
+            "stdout / stderr",
+            "chalk package",
+            "figlet package",
+            "cli-progress"
+          ]
+        ],
+        [
+          "Command line args",
+          [
+            "process.argv",
+            "commander"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Building & consuming APIs",
+      "short": "APIs",
+      "description": "Serve HTTP APIs with a framework, call other APIs and add authentication.",
+      "items": [
+        [
+          "Building & Consuming APIs"
+        ],
+        [
+          "Frameworks",
+          [
+            "Express.js",
+            "fastify",
+            "NestJS",
+            "Hono"
+          ]
+        ],
+        [
+          "Making API Calls",
+          [
+            "http module",
+            "axios",
+            "ky",
+            "fetch",
+            "got package"
+          ]
+        ],
+        [
+          "Authentication",
+          [
+            "jsonwebtoken",
+            "passport.js"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Dev workflow & templates",
+      "short": "Watch & views",
+      "description": "Restart automatically while developing and render server-side HTML with template engines.",
+      "items": [
+        [
+          "Monitor Changes (Dev)",
+          [
+            "--watch",
+            "nodemon"
+          ]
+        ],
+        [
+          "Template Engines",
+          [
+            "ejs",
+            "pug",
+            "marko"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Working with databases",
+      "short": "Databases",
+      "description": "Connect to NoSQL and relational databases through drivers, ODMs, ORMs and query builders.",
+      "items": [
+        [
+          "NoSQL DBs",
+          [
+            "Mongoose",
+            "Prisma",
+            "Native Drivers"
+          ]
+        ],
+        [
+          "Relational",
+          [
+            "Drizzle",
+            "TypeORM",
+            "Knex",
+            "Sequelize",
+            "Prisma",
+            "Native Drivers"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Testing, logging & uptime",
+      "short": "Test & run",
+      "description": "Test the app at several levels, log what it does and keep it running in production.",
+      "items": [
+        [
+          "Testing",
+          [
+            "Vitest",
+            "Jest",
+            "node:test",
+            "Cypress",
+            "Playwright"
+          ]
+        ],
+        [
+          "Logging",
+          [
+            "Winston",
+            "Morgan"
+          ]
+        ],
+        [
+          "Keep app Running",
+          [
+            "pm2"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Advanced runtime",
+      "short": "Advanced",
+      "description": "Use threads, processes and streams and debug memory and performance problems.",
+      "items": [
+        [
+          "Threads^",
+          [
+            "Child Process",
+            "Cluster",
+            "Worker Threads"
+          ]
+        ],
+        [
+          "Streams^"
+        ],
+        [
+          "Common Built-in Modules"
+        ],
+        [
+          "Debugging",
+          [
+            "Garbage Collection",
+            "Memory Leaks",
+            "node --inspect",
+            "Using APM"
+          ]
+        ]
+      ]
+    }
+  ]
+}

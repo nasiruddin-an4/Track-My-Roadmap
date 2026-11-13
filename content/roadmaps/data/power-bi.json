@@ -1,0 +1,337 @@
+{
+  "slug": "power-bi",
+  "title": "Power BI",
+  "tagline": "From connecting and shaping data through modelling and DAX to reports, sharing, governance and automation.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-power-bi",
+  "credit": {
+    "text": "Based on the Power BI roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Install Power BI, understand its licences and see how Desktop, Service and Mobile fit together.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "Installing Power BI",
+            "Licensing Tiers"
+          ]
+        ],
+        [
+          "Power BI Ecosystem",
+          [
+            "Desktop",
+            "Service",
+            "Mobile"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Connecting to data",
+      "short": "Connect data",
+      "description": "Pull data in from files, databases, clouds and APIs and choose how it is stored or queried.",
+      "items": [
+        [
+          "Data Source Types",
+          [
+            "Files",
+            "Databases",
+            "Clouds",
+            "APIs"
+          ]
+        ],
+        [
+          "Connection Modes",
+          [
+            "Import Mode",
+            "DirectQuery",
+            "Direct Lake",
+            "Dual Storage Mode"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Data transformation",
+      "short": "Power Query",
+      "description": "Clean, reshape and combine data in Power Query and write M when the UI is not enough.",
+      "items": [
+        [
+          "Power Query",
+          [
+            "Applied Steps",
+            "Data Profiling"
+          ]
+        ],
+        [
+          "Data Cleaning",
+          [
+            "Data Types & Casting",
+            "Removing Duplicates",
+            "Handling Errors"
+          ]
+        ],
+        [
+          "Column & Value Transforms",
+          [
+            "Changing Text",
+            "Changing Numbers",
+            "Changing Dates",
+            "Conditional Columns",
+            "Custom Columns",
+            "Splitting Columns"
+          ]
+        ],
+        [
+          "Table Operations",
+          [
+            "Joins",
+            "Appending Tables",
+            "Pivot & Transpose"
+          ]
+        ],
+        [
+          "Query Performance",
+          [
+            "Parameters & Functions",
+            "Query Folding",
+            "Incremental Refresh"
+          ]
+        ],
+        [
+          "M Language Basics",
+          [
+            "Advanced Editor"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Data modeling",
+      "short": "Data modeling",
+      "description": "Design a star schema, relate tables correctly and tune the model so reports stay quick.",
+      "items": [
+        [
+          "Schema Design",
+          [
+            "Facts & Dimensions",
+            "Star vs Snowflake Schema",
+            "Granularity"
+          ]
+        ],
+        [
+          "Relationships",
+          [
+            "Relationships and Cardinality",
+            "Cross Filter Direction"
+          ]
+        ],
+        [
+          "Model Objects",
+          [
+            "Calculated Tables & Columns",
+            "Hierarchies",
+            "Aggregations"
+          ]
+        ],
+        [
+          "Model Optimization",
+          [
+            "Performance Analyzer"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "DAX",
+      "short": "DAX",
+      "description": "Write measures with DAX, master filter context and CALCULATE, and move on to advanced calculation features.",
+      "items": [
+        [
+          "Fundamentals",
+          [
+            "DAX vs. M Language",
+            "DAX Syntax",
+            "Columns vs Measures",
+            "Variables in DAX"
+          ]
+        ],
+        [
+          "Function Families",
+          [
+            "Aggregation Functions",
+            "Logical Functions",
+            "Window Functions",
+            "Iterator Functions",
+            "Time Intelligence",
+            "Table Manipulation"
+          ]
+        ],
+        [
+          "Context & Filtering",
+          [
+            "Row vs Filter Context",
+            "CALCULATE Function",
+            "Context Transition"
+          ]
+        ],
+        [
+          "Advanced DAX",
+          [
+            "Quick Measures",
+            "Field Parameters",
+            "Visual Calculations",
+            "Calculation Groups",
+            "DAX Performance"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Data visualization",
+      "short": "Visualization",
+      "description": "Pick the right visual for each question, format and filter it well, and add interactivity and AI-powered visuals.",
+      "items": [
+        [
+          "Visualization Basics",
+          [
+            "Bar & Column Charts",
+            "Line & Area Charts",
+            "Pie & Donut Charts",
+            "Scatter & Bubble Charts",
+            "Combination Charts",
+            "Gauges, Cards, & KPIs",
+            "Matrix & Table Visuals",
+            "Maps",
+            "Custom Visuals",
+            "Design Principles",
+            "Accessibility"
+          ]
+        ],
+        [
+          "Formatting & filtering",
+          [
+            "Formatting & Themes",
+            "Conditional Formatting",
+            "Sorting Data",
+            "Slicers and Filters"
+          ]
+        ],
+        [
+          "Interactivity",
+          [
+            "Drill-through & Drill-down",
+            "Bookmarks",
+            "Buttons & Navigation",
+            "Explore Feature",
+            "Custom Tooltips",
+            "Cross-filtering"
+          ]
+        ],
+        [
+          "Advanced Visuals",
+          [
+            "Decomposition Tree",
+            "Key Influencers",
+            "Small Multiples",
+            "Q&A Visual"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Power BI Service",
+      "short": "Power BI Service",
+      "description": "Publish and share reports, keep data refreshed through gateways and keep people informed with alerts.",
+      "items": [
+        [
+          "Publishing & Sharing",
+          [
+            "Workspaces",
+            "Dashboards vs Reports",
+            "Paginated Reports (RDL)",
+            "Publishing Reports",
+            "Sharing & Permissions",
+            "Apps"
+          ]
+        ],
+        [
+          "Data & Infrastructure",
+          [
+            "On-premises Data Gateway",
+            "Refresh & Change Detection"
+          ]
+        ],
+        [
+          "Collaboration",
+          [
+            "Subscriptions and Alerts"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Security and governance",
+      "short": "Security",
+      "description": "Control who sees which data and keep the tenant compliant and auditable.",
+      "items": [
+        [
+          "Access Control",
+          [
+            "Row-Level Security",
+            "Object-Level Security",
+            "Workspace Roles"
+          ]
+        ],
+        [
+          "Governance",
+          [
+            "Sensitivity Labels",
+            "Data Loss Prevention",
+            "Tenant Settings",
+            "Audit Logs",
+            "Certified Datasets"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Automation and integration",
+      "short": "Automation",
+      "description": "Automate release workflows and connect Power BI to Excel, code, Fabric and your own apps.",
+      "items": [
+        [
+          "Workflow & Lifecycle",
+          [
+            "Power Automate",
+            "Deployment Pipelines"
+          ]
+        ],
+        [
+          "Integrations",
+          [
+            "Power BI Embedded",
+            "REST API",
+            "Power BI with Excel",
+            "Python & R",
+            "Microsoft Fabric"
+          ]
+        ]
+      ]
+    }
+  ]
+}

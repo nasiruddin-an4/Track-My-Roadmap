@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "./tracker.css";
+
+/* Design tokens: one dark slate theme (slate-900 page, slate-800 surfaces, slate-700 lines). */
+:root {
+  --bg: #0F172A; --band: #172033; --surface: #1E293B; --sunk: #273449; --ink: #F1F5F9; --muted: #94A3B8; --line: #334155;
+  --route: #7C95FF; --route-ink: #0F172A; --route-soft: #1E2A55;
+  --done: #43D399; --done-ink: #0F172A; --done-soft: #12322A;
+  --opt: #94A3B8; --opt-soft: #273449;
+  --cont: #5CCFD9; --cont-soft: #0F2E35;
+  --adv: #AE9BFF; --adv-soft: #251E43;
+  --danger: #FF8A8F; --warm: #F2A462;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px rgba(0,0,0,.45);
+  --display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --body: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --top: 72px;
+  /* brand orange, used for highlighted words in headlines */
+  --highlight: #FF5A00;
+  color-scheme: dark;
+}
+
+/* Tailwind names for the same tokens: bg-surface, text-muted, border-line, text-route… */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-band: var(--band); /* "slate-850": between slate-900 and slate-800 */
+  --color-surface: var(--surface);
+  --color-sunk: var(--sunk);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-route: var(--route);
+  --color-route-ink: var(--route-ink);
+  --color-route-soft: var(--route-soft);
+  --color-done: var(--done);
+  --color-done-soft: var(--done-soft);
+  --color-cont: var(--cont);
+  --color-adv: var(--adv);
+  --color-warm: var(--warm);
+  --color-danger: var(--danger);
+  --color-highlight: var(--highlight);
+  --font-sans: var(--body);
+  --font-display: var(--display);
+  --font-mono: var(--mono);
+}
+
+@layer base {
+  html { scroll-padding-top: calc(var(--top) + 72px); }
+  html, body { overflow-x: clip; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  :focus-visible { outline: 2px solid var(--route); outline-offset: 2px; }
+  h1:focus { outline: none; }
+  [hidden] { display: none !important; }
+  /* the admin dashboard has its own sidebar and top bar instead of the site header */
+  body:has(.admin-shell) .site-top { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+}
+
+@layer components {
+  .wrap { max-width: 1280px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .vh { position: absolute !important; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; }
+  .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  .eyebrow { font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+}

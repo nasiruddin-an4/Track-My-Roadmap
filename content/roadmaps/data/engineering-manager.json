@@ -1,0 +1,352 @@
+{
+  "slug": "engineering-manager",
+  "title": "Engineering Manager",
+  "tagline": "Lead people, projects and technical direction, from team building to crises, change and stakeholders.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-engineering-manager",
+  "credit": {
+    "text": "Based on the Engineering Manager roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "The role and technical leadership",
+      "short": "Tech leadership",
+      "description": "Understand what the job is and keep steering the technical direction, quality and standards of your team.",
+      "items": [
+        [
+          "What is Engineering Management?",
+          [
+            "EM vs Tech Lead vs IC"
+          ]
+        ],
+        [
+          "Key Focus Areas",
+          [
+            "People",
+            "Product",
+            "Process"
+          ]
+        ],
+        [
+          "Quality and Process",
+          [
+            "System Monitoring & Performance",
+            "CI/CD Implementation",
+            "Development / Release Workflow",
+            "Testing Strategies",
+            "Technical Standards Setting",
+            "Security Best Practices",
+            "Incident Management"
+          ]
+        ],
+        [
+          "Technical Strategy",
+          [
+            "Technical Roadmapping",
+            "Architectural Decision-Making",
+            "Build vs Buy Evaluation",
+            "Technical Risk Assessment",
+            "Scaling Infrastructure",
+            "Legacy System Retirement"
+          ]
+        ],
+        [
+          "Foundational Knowledge",
+          [
+            "Software Engineering Background",
+            "System Design and Architecture",
+            "Technical Debt and Management",
+            "Code Review Best Practices",
+            "Technical Documentation"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "People management",
+      "short": "People",
+      "description": "Hire, grow and lead the people on your team, and keep communication flowing.",
+      "items": [
+        [
+          "Team Development",
+          [
+            "Hiring and Recruitment",
+            "Team Structure and Design",
+            "Performance Evaluations",
+            "Career Development Planning",
+            "Mentoring and Coaching"
+          ]
+        ],
+        [
+          "Leadership Skills",
+          [
+            "Delegation",
+            "Conflict Resolution",
+            "Feedback Delivery",
+            "Team Motivation",
+            "Trust / Influence Building",
+            "Emotional Intelligence"
+          ]
+        ],
+        [
+          "Communication",
+          [
+            "One-on-One Meetings",
+            "Team Meetings",
+            "Status Reporting",
+            "Stakeholder Management",
+            "Cross-functional Collaboration"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Project management",
+      "short": "Projects",
+      "description": "Plan work, deliver it predictably and measure how the team is doing.",
+      "items": [
+        [
+          "Execution",
+          [
+            "Agile methodologies",
+            "Project Tracking",
+            "Milestone Management",
+            "Scope Management",
+            "Timeline Estimation"
+          ]
+        ],
+        [
+          "Project Planning",
+          [
+            "Resource Allocation",
+            "Sprint Planning",
+            "Release Management",
+            "Risk Management",
+            "Dependency management"
+          ]
+        ],
+        [
+          "Measurement",
+          [
+            "KPI Definition",
+            "Velocity Tracking",
+            "Quality Metrics",
+            "Team Health Metrics",
+            "Project Postmortems"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Business acumen",
+      "short": "Business",
+      "description": "Connect engineering work to strategy, money and how the wider organisation operates.",
+      "items": [
+        [
+          "Strategic Thinking",
+          [
+            "Product strategy alignment",
+            "Business Case Development",
+            "ROI analysis",
+            "Market awareness",
+            "Competitive Analysis"
+          ]
+        ],
+        [
+          "Financial Management",
+          [
+            "Budget Planning",
+            "Resource forecasting",
+            "Cost Optimization",
+            "Vendor Management"
+          ]
+        ],
+        [
+          "Organizational Awareness",
+          [
+            "Company Culture",
+            "Change management",
+            "Organization structure",
+            "Politics navigation",
+            "Cross-department collaboration"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Culture building",
+      "short": "Culture",
+      "description": "Shape a healthy, inclusive team culture and an engineering culture that values learning and quality.",
+      "items": [
+        [
+          "Team Culture",
+          [
+            "Defining and Enforcing Values",
+            "Inclusive environment creation",
+            "Team Traditions and Rituals",
+            "Recognition programs",
+            "Social connections",
+            "Bias Recognition / Mitigation"
+          ]
+        ],
+        [
+          "Engineering Culture",
+          [
+            "Innovation fostering",
+            "Learning culture development",
+            "Knowledge sharing practices",
+            "Technical excellence mindset",
+            "Blameless Post-mortems"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Crisis management",
+      "short": "Crisis",
+      "description": "Prepare for things going wrong, support the team through it and recover well.",
+      "items": [
+        [
+          "Team Support",
+          [
+            "Contingency planning",
+            "Disaster recovery",
+            "Business continuity",
+            "Security incident handling",
+            "Production issues management"
+          ]
+        ],
+        [
+          "Risk Mitigation",
+          [
+            "Contingency planning",
+            "Disaster recovery",
+            "Business continuity",
+            "Security incident handling",
+            "Production issues management"
+          ]
+        ],
+        [
+          "Incident Response",
+          [
+            "Emergency protocols",
+            "War Room Management",
+            "Stakeholder Communication",
+            "Service Recovery",
+            "Post-incident analysis"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Stakeholder management",
+      "short": "Stakeholders",
+      "description": "Build working relationships with partners, customers and executives.",
+      "items": [
+        [
+          "Partner Management",
+          [
+            "Vendor relationships",
+            "Technology partnerships",
+            "Integration management",
+            "API strategy",
+            "External collaboration"
+          ]
+        ],
+        [
+          "Customer Relations",
+          [
+            "Customer feedback integration",
+            "Technical customer support",
+            "Customer success alignment",
+            "Feature prioritization",
+            "Technical partnerships"
+          ]
+        ],
+        [
+          "Executive Communication",
+          [
+            "Board presentations",
+            "Executive summaries",
+            "Strategic proposals",
+            "Budget requests",
+            "Vision alignment"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Knowledge management",
+      "short": "Knowledge",
+      "description": "Write down what matters and spread know-how across the team.",
+      "items": [
+        [
+          "Documentation",
+          [
+            "Architecture documentation",
+            "Process documentation",
+            "Decision records",
+            "Best Practices",
+            "Lessons Learned"
+          ]
+        ],
+        [
+          "Knowledge Transfer",
+          [
+            "Mentoring Programs",
+            "Knowledge bases",
+            "Tech Talks",
+            "Brown Bags"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Change management",
+      "short": "Change",
+      "description": "Lead technical, organisational and team changes without losing people along the way.",
+      "items": [
+        [
+          "Technical Change",
+          [
+            "Migration planning",
+            "Legacy system retirement",
+            "Technology adoption",
+            "Tool transitions",
+            "Process changes"
+          ]
+        ],
+        [
+          "Organizational Change",
+          [
+            "Change strategy",
+            "Impact assessment",
+            "Stakeholder management",
+            "Communication planning",
+            "Resistance management"
+          ]
+        ],
+        [
+          "Team Change",
+          [
+            "Reorganizations",
+            "Team mergers",
+            "Role transitions",
+            "Responsibility shifts",
+            "Culture evolution"
+          ]
+        ]
+      ]
+    }
+  ]
+}

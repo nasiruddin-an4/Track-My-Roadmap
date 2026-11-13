@@ -1,0 +1,342 @@
+{
+  "slug": "data-analyst",
+  "title": "Data Analyst",
+  "tagline": "Turn raw data into decisions with Excel, SQL, Python or R, statistics, visualisation and beyond.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-data-analyst",
+  "credit": {
+    "text": "Based on the Data Analyst roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction to data analytics",
+      "short": "Introduction",
+      "description": "Learn what analysts do, the kinds of analytics and the stages data goes through.",
+      "items": [
+        [
+          "What is Data Analytics"
+        ],
+        [
+          "Types of Data Analytics",
+          [
+            "Descriptive Analytics",
+            "Diagnostic Analytics",
+            "Predictive Analytics",
+            "Prescriptive Analytics"
+          ]
+        ],
+        [
+          "Key Concepts of Data",
+          [
+            "Collection",
+            "Cleanup",
+            "Exploration",
+            "Visualisation",
+            "Statistical Analysis",
+            "Machine Learning"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Excel and SQL foundations",
+      "short": "Excel & SQL",
+      "description": "Build a strong base with spreadsheet functions, charts, pivot tables and SQL queries.",
+      "items": [
+        [
+          "Learn Common Functions",
+          [
+            "IF",
+            "DATEDIF",
+            "VLOOKUP / HLOOKUP",
+            "REPLACE / SUBSTITUTE",
+            "UPPER / LOWER / PROPER",
+            "CONCAT",
+            "TRIM",
+            "AVERAGE",
+            "COUNT",
+            "SUM",
+            "MIN / MAX"
+          ]
+        ],
+        [
+          "Charting"
+        ],
+        [
+          "Pivot Tables"
+        ],
+        [
+          "Learn SQL"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Programming skills",
+      "short": "Programming",
+      "description": "Pick Python or R and learn its main libraries for manipulating and plotting data.",
+      "items": [
+        [
+          "Learn a Programming Lang.!",
+          [
+            "Python",
+            "R"
+          ]
+        ],
+        [
+          "Data Manipulation Libraries",
+          [
+            "Pandas",
+            "Dplyr"
+          ]
+        ],
+        [
+          "Data Visualisation Libraries",
+          [
+            "Matplotlib",
+            "Ggplot2"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Data collection and cleanup",
+      "short": "Data handling",
+      "description": "Gather data from many sources and get it clean and consistent enough to analyse.",
+      "items": [
+        [
+          "Data Collection",
+          [
+            "Databases",
+            "CSV Files",
+            "APIs",
+            "Web Scraping"
+          ]
+        ],
+        [
+          "Data Cleanup",
+          [
+            "Handling Missing Data",
+            "Removing Duplicates",
+            "Finding Outliers",
+            "Data Transformation"
+          ]
+        ],
+        [
+          "Using Libraries for Cleanup",
+          [
+            "Pandas",
+            "Dplyr"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Descriptive analysis",
+      "short": "Descriptive",
+      "description": "Summarise a dataset with measures of centre, spread and shape.",
+      "items": [
+        [
+          "Central Tendency",
+          [
+            "Mean",
+            "Median",
+            "Mode",
+            "Average"
+          ]
+        ],
+        [
+          "Dispersion",
+          [
+            "Range",
+            "Variance",
+            "Standard Deviation"
+          ]
+        ],
+        [
+          "Distribution Space",
+          [
+            "Skewness",
+            "Kurtosis"
+          ]
+        ],
+        [
+          "Descriptive Analysis",
+          [
+            "Generating Statistics",
+            "Visualizing Distributions"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Data visualisation",
+      "short": "Visualisation",
+      "description": "Communicate findings with BI tools, plotting libraries and the right chart for each story.",
+      "items": [
+        [
+          "Tools",
+          [
+            "Tableau",
+            "Power BI"
+          ]
+        ],
+        [
+          "Libraries",
+          [
+            "Matplotlib",
+            "Seaborn",
+            "ggplot2"
+          ]
+        ],
+        [
+          "Charting",
+          [
+            "Bar Charts",
+            "Histograms",
+            "Line Chart",
+            "Stacked Charts",
+            "Scatter Plot",
+            "Heatmap",
+            "Funnel Charts",
+            "Pie Charts"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Statistical analysis",
+      "short": "Statistics",
+      "description": "Test ideas and measure relationships in data so decisions rest on evidence.",
+      "items": [
+        [
+          "Statistical Analysis",
+          [
+            "Hypothesis Testing",
+            "Correlation Analysis",
+            "Regression"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Machine learning",
+      "short": "Machine learning",
+      "description": "Get to know the main types of machine learning, common algorithms and how to judge a model.",
+      "items": [
+        [
+          "Machine Learning Types",
+          [
+            "Reinforcement Learning",
+            "Unsupervised Learning",
+            "Supervised Learning"
+          ]
+        ],
+        [
+          "Popular ML Algorithms",
+          [
+            "Decision Trees",
+            "Naive Bayes",
+            "KNN",
+            "K-Means Clustering",
+            "Logistic Regression"
+          ]
+        ],
+        [
+          "Model Evaluation Techniques"
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Big data technologies",
+      "short": "Big data",
+      "description": "Handle data too large for one machine with distributed storage and processing.",
+      "items": [
+        [
+          "Big Data Concepts"
+        ],
+        [
+          "Data Storage Solutions"
+        ],
+        [
+          "Data Processing Frameworks",
+          [
+            "Hadoop",
+            "Spark"
+          ]
+        ],
+        [
+          "Data Processing Techniques",
+          [
+            "Parallel Processing",
+            "MPI",
+            "MapReduce"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Deep learning (optional)",
+      "short": "Deep learning",
+      "description": "Optionally explore neural networks and train models for images and text.",
+      "items": [
+        [
+          "Learn the Basics?",
+          [
+            "Neural Networks",
+            "CNNs",
+            "RNN"
+          ]
+        ],
+        [
+          "Frameworks?",
+          [
+            "Tensorflow",
+            "Pytorch"
+          ]
+        ],
+        [
+          "Practice Training Models?",
+          [
+            "Image Recognition",
+            "Natural Language Processing"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Keep growing",
+      "short": "Keep growing",
+      "description": "Show your skills with real projects and keep learning alongside the community.",
+      "items": [
+        [
+          "Build a portfolio of projects",
+          [
+            "Predicting sales trends",
+            "Customer Segmentation"
+          ]
+        ],
+        [
+          "Participate in Kaggle Competitions"
+        ],
+        [
+          "Online Courses and Certifications"
+        ],
+        [
+          "Stay Updated and Network"
+        ]
+      ]
+    }
+  ]
+}

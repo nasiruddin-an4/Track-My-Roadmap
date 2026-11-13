@@ -1,0 +1,351 @@
+{
+  "slug": "frontend",
+  "title": "Frontend Developer",
+  "tagline": "From how the web works through HTML, CSS, JavaScript and frameworks to testing, SSR and apps.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-frontend",
+  "credit": {
+    "text": "Based on the Frontend Developer roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "How the internet works",
+      "short": "Internet",
+      "description": "Understand the requests, names and servers that sit behind every page you load.",
+      "items": [
+        [
+          "Internet",
+          [
+            "How does the internet work?",
+            "What is HTTP?",
+            "What is Domain Name?",
+            "What is hosting?",
+            "DNS and how it works?",
+            "Browsers and how they work?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "HTML",
+      "short": "HTML",
+      "description": "Write well-structured markup that is accessible, searchable and handles user input.",
+      "items": [
+        [
+          "HTML",
+          [
+            "Learn the basics",
+            "Writing Semantic HTML",
+            "Forms and Validations",
+            "Accessibility",
+            "SEO Basics"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "CSS",
+      "short": "CSS",
+      "description": "Style pages, build layouts and make them adapt to any screen size.",
+      "items": [
+        [
+          "CSS",
+          [
+            "Learn the basics",
+            "Making Layouts",
+            "Responsive Design"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "JavaScript",
+      "short": "JavaScript",
+      "description": "Add behaviour to pages by working with the DOM and talking to servers.",
+      "items": [
+        [
+          "JavaScript",
+          [
+            "Learn the Basics",
+            "Learn DOM Manipulation",
+            "Fetch API / Ajax (XHR)"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Version control and package managers",
+      "short": "Git & packages",
+      "description": "Track your code with Git, host it online and pull in third-party packages.",
+      "items": [
+        [
+          "Version Control Systems",
+          [
+            "Git"
+          ]
+        ],
+        [
+          "VCS Hosting",
+          [
+            "GitHub",
+            "GitLab?",
+            "Bitbucket?"
+          ]
+        ],
+        [
+          "Package Managers",
+          [
+            "npm",
+            "pnpm?",
+            "yarn?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Pick a framework",
+      "short": "Framework",
+      "description": "Choose one component framework and get productive building real interfaces with it.",
+      "items": [
+        [
+          "Pick a Framework!",
+          [
+            "React",
+            "Vue.js",
+            "Angular",
+            "Svelte",
+            "Solid JS",
+            "Qwik"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Writing modern CSS",
+      "short": "Modern CSS",
+      "description": "Scale your styling with utility classes, naming conventions and preprocessors.",
+      "items": [
+        [
+          "Writing CSS",
+          [
+            "Tailwind"
+          ]
+        ],
+        [
+          "CSS Architecture",
+          [
+            "BEM"
+          ]
+        ],
+        [
+          "CSS Preprocessors",
+          [
+            "Sass",
+            "PostCSS"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Build tools",
+      "short": "Build tools",
+      "description": "Keep code tidy with linters and formatters and ship it efficiently with bundlers.",
+      "items": [
+        [
+          "Linters and Formatters",
+          [
+            "Prettier",
+            "ESLint"
+          ]
+        ],
+        [
+          "Module Bundlers",
+          [
+            "Vite",
+            "esbuild",
+            "SWC?",
+            "Webpack?",
+            "Rollup?",
+            "Parcel?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Testing",
+      "short": "Testing",
+      "description": "Catch regressions early with unit and end-to-end tests.",
+      "items": [
+        [
+          "Testing",
+          [
+            "Vitest",
+            "Jest?",
+            "Playwright",
+            "Cypress?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Authentication and web security",
+      "short": "Auth & security",
+      "description": "Learn how users sign in and how to protect a site against common attacks.",
+      "items": [
+        [
+          "Authentication Strategies",
+          [
+            "JWT",
+            "OAuth",
+            "SSO",
+            "Basic Auth",
+            "Session Auth"
+          ]
+        ],
+        [
+          "Web Security Basics",
+          [
+            "CORS",
+            "HTTPS",
+            "Content Security Policy",
+            "OWASP Security Risks"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Web components and type checking",
+      "short": "Components & TS",
+      "description": "Build reusable native components and add static types to your JavaScript.",
+      "items": [
+        [
+          "Web Components",
+          [
+            "HTML Templates",
+            "Custom Elements",
+            "Shadow DOM"
+          ]
+        ],
+        [
+          "Type Checkers",
+          [
+            "TypeScript"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "SSR, GraphQL and static sites",
+      "short": "SSR & SSG",
+      "description": "Render on the server, query APIs with GraphQL and generate fast static sites.",
+      "items": [
+        [
+          "SSR",
+          [
+            "React",
+            "Next.js",
+            "Astro",
+            "react-router",
+            "Angular",
+            "Vue.js",
+            "Nuxt.js",
+            "Svelte",
+            "Svelte Kit"
+          ]
+        ],
+        [
+          "GraphQL",
+          [
+            "Apollo",
+            "Relay Modern?"
+          ]
+        ],
+        [
+          "Static Site Generators",
+          [
+            "Next.js",
+            "Astro",
+            "Vuepress?",
+            "Eleventy?",
+            "Nuxt.js?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "PWAs, performance and browser APIs",
+      "short": "PWAs & perf",
+      "description": "Make web apps fast, installable and able to use the device features browsers expose.",
+      "items": [
+        [
+          "PWAs"
+        ],
+        [
+          "Measure & Improve Perf.",
+          [
+            "PRPL Pattern",
+            "RAIL Model",
+            "Performance Metrics",
+            "Using Lighthouse",
+            "Using DevTools"
+          ]
+        ],
+        [
+          "Performance Best Practices"
+        ],
+        [
+          "Browser APIs",
+          [
+            "Storage",
+            "Web Sockets",
+            "Server Sent Events",
+            "Service Workers",
+            "Location",
+            "Notifications",
+            "Device Orientation",
+            "Payments",
+            "Credentials"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p14",
+      "title": "Mobile and desktop apps",
+      "short": "Mobile & desktop",
+      "description": "Reuse your web skills to ship apps for phones and desktop operating systems.",
+      "items": [
+        [
+          "Mobile Apps",
+          [
+            "React Native",
+            "Flutter?",
+            "Ionic?"
+          ]
+        ],
+        [
+          "Desktop Apps",
+          [
+            "Electron",
+            "Tauri",
+            "Flutter?"
+          ]
+        ]
+      ]
+    }
+  ]
+}

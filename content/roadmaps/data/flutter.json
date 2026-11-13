@@ -1,0 +1,285 @@
+{
+  "slug": "flutter",
+  "title": "Flutter",
+  "tagline": "From Dart basics and widgets through state management, Firebase and testing to CI/CD and store releases.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-flutter",
+  "credit": {
+    "text": "Based on the Flutter roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Dart basics and dev environment",
+      "short": "Dart & setup",
+      "description": "Learn the core of the Dart language and set up the Flutter SDK and an editor to build with.",
+      "items": [
+        [
+          "Basics of Dart",
+          [
+            "Dart Pad",
+            "Variables",
+            "Built-in Types",
+            "Functions",
+            "Operators",
+            "Control Flow Statements"
+          ]
+        ],
+        [
+          "Development Environment",
+          [
+            "Flutter CLI",
+            "FVM",
+            "VS Code",
+            "Android Studio?",
+            "IntelliJ Idea?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Widgets and assets",
+      "short": "Widgets",
+      "description": "Build interfaces from stateless, stateful and styled widgets and bundle fonts, images and other files.",
+      "items": [
+        [
+          "Widgets",
+          [
+            "Responsive Widgets",
+            "Inherited Widgets",
+            "Stateless Widgets",
+            "Stateful Widgets",
+            "Styled Widgets",
+            "Material Widgets?",
+            "Cupertino Widgets?"
+          ]
+        ],
+        [
+          "Working with Assets",
+          [
+            "Fonts",
+            "Images?",
+            "Other File Types?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Version control",
+      "short": "Version control",
+      "description": "Keep your project in Git and host it on a shared repository service.",
+      "items": [
+        [
+          "Version Control Systems",
+          [
+            "Git"
+          ]
+        ],
+        [
+          "Repo Hosting Services",
+          [
+            "GitHub"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Design principles and packages",
+      "short": "Design & packages",
+      "description": "Structure code with sound design principles and pull in community packages from pub.dev.",
+      "items": [
+        [
+          "Design Principles",
+          [
+            "Dependency Injection",
+            "Design Patterns",
+            "SOLID Principles",
+            "OOP"
+          ]
+        ],
+        [
+          "Package Managers",
+          [
+            "pub.dev",
+            "flutter pub / dart pub"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "APIs, storage and Firebase",
+      "short": "Data & Firebase",
+      "description": "Talk to REST, GraphQL and socket back ends, persist data locally and lean on Firebase services.",
+      "items": [
+        [
+          "Working with APIs",
+          [
+            "JSON Serialize / Deserialize",
+            "Web Sockets",
+            "GraphQL",
+            "RESTful APIs"
+          ]
+        ],
+        [
+          "Storage",
+          [
+            "SQLite?",
+            "Shared Preferences?"
+          ]
+        ],
+        [
+          "Firebase",
+          [
+            "Authentication",
+            "Storage",
+            "Firestore",
+            "Push Notifications",
+            "Remote Config",
+            "Cloud Functions"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Advanced Dart",
+      "short": "Advanced Dart",
+      "description": "Go deeper into Dart's async model, collections, functional style and isolates.",
+      "items": [
+        [
+          "Advanced Dart",
+          [
+            "Core Libraries",
+            "Streams",
+            "Futures",
+            "Lists",
+            "Collections",
+            "Lambdas",
+            "Functional Programming",
+            "Isolates",
+            "Async / Await"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "State management and reactive programming",
+      "short": "State",
+      "description": "Choose a state management approach and handle streams of events reactively.",
+      "items": [
+        [
+          "State Management",
+          [
+            "ChangeNotifier",
+            "ValueNotifier",
+            "Riverpod",
+            "Redux?",
+            "BLoC?",
+            "Provider?",
+            "GetX?"
+          ]
+        ],
+        [
+          "Reactive Programming",
+          [
+            "RxDart"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Animations",
+      "short": "Animations",
+      "description": "Bring screens to life with controllers, animated builders, curves and hero transitions.",
+      "items": [
+        [
+          "Animations",
+          [
+            "Animation Controller",
+            "Animated Builder",
+            "Animated Widget",
+            "Curved Animation",
+            "Hero",
+            "Opacity"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Testing, dev tools and internals",
+      "short": "Testing & tools",
+      "description": "Test at every level, profile with Flutter's dev tools and understand how the framework renders under the hood.",
+      "items": [
+        [
+          "Testing",
+          [
+            "Integration Testing",
+            "Unit Testing",
+            "Widget Testing",
+            "TDD",
+            "BDD"
+          ]
+        ],
+        [
+          "Dev Tools",
+          [
+            "Flutter Inspector",
+            "Flutter Outline",
+            "Memory Allocation"
+          ]
+        ],
+        [
+          "Flutter Internals",
+          [
+            "Render Objects",
+            "3 Trees",
+            "Immutability"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "CI/CD, analytics and deployment",
+      "short": "Ship it",
+      "description": "Automate builds, measure how people use the app and publish it to the App Store and Play Store.",
+      "items": [
+        [
+          "CI / CD",
+          [
+            "Fast Lane",
+            "Bitrise",
+            "Firebase App Dist",
+            "Codemagic?",
+            "GitHub Actions?"
+          ]
+        ],
+        [
+          "Analytics",
+          [
+            "Segment?",
+            "Mix Panel?",
+            "Firebase Analytics?",
+            "Google Analytics?"
+          ]
+        ],
+        [
+          "Deployment",
+          [
+            "Guidelines & Protocols",
+            "AppStore",
+            "Playstore"
+          ]
+        ]
+      ]
+    }
+  ]
+}

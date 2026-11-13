@@ -1,0 +1,278 @@
+{
+  "slug": "java",
+  "title": "Java",
+  "tagline": "Java from syntax and OOP through collections, concurrency, frameworks, data access and testing.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-java",
+  "credit": {
+    "text": "Based on the Java roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Learn the Basics",
+      "short": "Basics",
+      "description": "Learn Java syntax, data types, control flow and how a Java program runs.",
+      "items": [
+        [
+          "Basic Syntax"
+        ],
+        [
+          "Lifecycle of a Program"
+        ],
+        [
+          "Data Types"
+        ],
+        [
+          "Variables and Scopes"
+        ],
+        [
+          "Type Casting"
+        ],
+        [
+          "Strings and Methods"
+        ],
+        [
+          "Math Operations"
+        ],
+        [
+          "Arrays"
+        ],
+        [
+          "Conditionals"
+        ],
+        [
+          "Loops"
+        ],
+        [
+          "Basics of OOP"
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Object Oriented Programming",
+      "short": "OOP",
+      "description": "Model programs with classes and objects and master Java's object-oriented features.",
+      "items": [
+        [
+          "Basics of OOP",
+          [
+            "Classes and Objects",
+            "Attributes and Methods",
+            "Access Specifiers",
+            "Static Keyword",
+            "Final Keyword",
+            "Nested Classes",
+            "Packages"
+          ]
+        ],
+        [
+          "More about OOP",
+          [
+            "Object Lifecycle",
+            "Inheritance",
+            "Abstraction",
+            "Method Chaining",
+            "Encapsulation",
+            "Interfaces",
+            "Enums",
+            "Record",
+            "Method Overloading / Overriding",
+            "Initializer Block",
+            "Static vs Dynamic Binding",
+            "Pass by Value / Pass by Reference"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Language Features",
+      "short": "Language features",
+      "description": "Handle errors and use lambdas, annotations, modules, optionals and dependency injection.",
+      "items": [
+        [
+          "Exception Handling"
+        ],
+        [
+          "Lambda Expressions"
+        ],
+        [
+          "Annotations"
+        ],
+        [
+          "Modules"
+        ],
+        [
+          "Optionals"
+        ],
+        [
+          "Dependency Injection"
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Collections & I/O",
+      "short": "Collections & I/O",
+      "description": "Work with Java's collection types and read and write data and files.",
+      "items": [
+        [
+          "Collections",
+          [
+            "Array vs ArrayList",
+            "Set",
+            "Map",
+            "Queue",
+            "Dequeue",
+            "Stack",
+            "Iterator",
+            "Generic Collections"
+          ]
+        ],
+        [
+          "I/O Operations"
+        ],
+        [
+          "File Operations"
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Concurrency & Core APIs",
+      "short": "Concurrency",
+      "description": "Write concurrent code safely and use the standard APIs for crypto, dates, networking and regex.",
+      "items": [
+        [
+          "Concurrency",
+          [
+            "Threads",
+            "Virtual Threads",
+            "Java Memory Model",
+            "volatile keyword"
+          ]
+        ],
+        [
+          "Cryptography"
+        ],
+        [
+          "Date and Time"
+        ],
+        [
+          "Networking"
+        ],
+        [
+          "Regular Expressions"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Functional Programming",
+      "short": "Functional",
+      "description": "Write expressive code with functional interfaces, composition and the Stream API.",
+      "items": [
+        [
+          "High Order Functions"
+        ],
+        [
+          "Functional Interfaces"
+        ],
+        [
+          "Functional Composition"
+        ],
+        [
+          "Stream API"
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Build Tools & Web Frameworks",
+      "short": "Build & web",
+      "description": "Build projects with a standard build tool and create web apps, ideally with Spring Boot.",
+      "items": [
+        [
+          "Build Tools",
+          [
+            "Maven",
+            "Gradle",
+            "Bazel"
+          ]
+        ],
+        [
+          "Web Frameworks",
+          [
+            "Spring (Spring Boot)",
+            "Quarkus?",
+            "Javalin?",
+            "Play Framework?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Database Access & Logging",
+      "short": "Data & logging",
+      "description": "Connect to databases with JDBC or an ORM and add structured logging to your apps.",
+      "items": [
+        [
+          "Database Access",
+          [
+            "JDBC",
+            "EBean",
+            "Hibernate",
+            "Spring Data JPA"
+          ]
+        ],
+        [
+          "Logging Frameworks",
+          [
+            "Logback",
+            "Log4j2",
+            "SLF4J",
+            "TinyLog"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Testing",
+      "short": "Testing",
+      "description": "Test Java code at the unit, integration and behaviour levels and mock dependencies.",
+      "items": [
+        [
+          "Unit Testing",
+          [
+            "JUnit",
+            "TestNG"
+          ]
+        ],
+        [
+          "Integration Testing",
+          [
+            "REST Assured",
+            "JMeter"
+          ]
+        ],
+        [
+          "Behavior Testing",
+          [
+            "Cucumber-JVM"
+          ]
+        ],
+        [
+          "Mocking",
+          [
+            "Mockito"
+          ]
+        ]
+      ]
+    }
+  ]
+}

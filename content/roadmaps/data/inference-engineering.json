@@ -1,0 +1,362 @@
+{
+  "slug": "inference-engineering",
+  "title": "Inference Engineer",
+  "tagline": "From latency metrics and model internals through GPUs, engines and optimisation to production serving.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-inference-engineering",
+  "credit": {
+    "text": "Based on the Inference Engineer roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction and basic terminology",
+      "short": "Basics",
+      "description": "Learn what inference work involves and the vocabulary used to measure, schedule and plan it.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "Open vs Closed Models",
+            "Inference vs. Training",
+            "Shared vs. Dedicated Inference",
+            "The Inference Stack"
+          ]
+        ],
+        [
+          "Latency Metrics",
+          [
+            "Time to First Token",
+            "Tokens Per Second",
+            "Inter-Token Latency",
+            "Latency vs. Throughput",
+            "Latency Percentiles",
+            "End-to-End Metrics",
+            "Real-Time Factor"
+          ]
+        ],
+        [
+          "Inference Phases",
+          [
+            "Prefill & Decode Phases",
+            "Online vs. Offline Inference",
+            "Asynchronous Inference"
+          ]
+        ],
+        [
+          "Application Context",
+          [
+            "AI-Native Applications",
+            "Consumer vs. B2B",
+            "Reasoning Models"
+          ]
+        ],
+        [
+          "Model Strategy",
+          [
+            "Model Selection",
+            "Model Evaluation",
+            "Fine-Tuning",
+            "Distillation"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Models and architectures",
+      "short": "Models",
+      "description": "Understand the neural network, transformer and diffusion architectures whose cost you will be optimising.",
+      "items": [
+        [
+          "Neural Networks",
+          [
+            "Encoder-Decoder Architecture",
+            "Machine Learning"
+          ]
+        ],
+        [
+          "Large Language Models",
+          [
+            "Transformer Blocks",
+            "Attention Mechanism",
+            "KV Cache",
+            "Mixture of Experts (MoE)",
+            "AI Engineer"
+          ]
+        ],
+        [
+          "Image & Video Models",
+          [
+            "Diffusion Models",
+            "Image Generation Architecture",
+            "Few-Step Image Generation",
+            "Video Generation Models"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Bottlenecks and attention optimisation",
+      "short": "Bottlenecks",
+      "description": "Work out whether a workload is compute- or memory-bound and speed up the attention step accordingly.",
+      "items": [
+        [
+          "Bottleneck Analysis",
+          [
+            "Ops:Byte Ratio",
+            "Arithmetic Intensity",
+            "Roofline Model",
+            "LLM Bottlenecks",
+            "Image & Video Bottlenecks"
+          ]
+        ],
+        [
+          "Attention Optimization",
+          [
+            "FlashAttention",
+            "PagedAttention",
+            "Attention Variants"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Hardware",
+      "short": "Hardware",
+      "description": "Know the GPUs and accelerators you deploy on, how to size them, and when to run models on local or edge devices.",
+      "items": [
+        [
+          "GPU Architecture",
+          [
+            "Compute",
+            "Memory",
+            "Instances & Interconnects",
+            "Sizing & Procurement",
+            "Hopper",
+            "Blackwell",
+            "Grace & Vera"
+          ]
+        ],
+        [
+          "GPU Models",
+          [
+            "NVIDIA",
+            "Other Accelerators"
+          ]
+        ],
+        [
+          "Local & Edge Inference",
+          [
+            "Desktop Inference",
+            "Mobile Inference"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Software stack",
+      "short": "Software",
+      "description": "Move up the stack from CUDA kernels through frameworks and model formats to inference engines, then benchmark the result.",
+      "items": [
+        [
+          "CUDA",
+          [
+            "Kernel Selection & Fusion",
+            "Writing Custom Kernels",
+            "C++"
+          ]
+        ],
+        [
+          "Frameworks & Libraries",
+          [
+            "PyTorch",
+            "Transformers & Diffusers"
+          ]
+        ],
+        [
+          "Model Formats & Runtimes",
+          [
+            "safetensors",
+            "TensorRT",
+            "ONNX Runtime"
+          ]
+        ],
+        [
+          "Inference Engines",
+          [
+            "vLLM",
+            "SGLang",
+            "TensorRT-LLM",
+            "NVIDIA Dynamo"
+          ]
+        ],
+        [
+          "Benchmarking & Profiling",
+          [
+            "Performance Benchmarking",
+            "AIPerf",
+            "Locust",
+            "SGLang Genai-bench",
+            "Profiling Performance"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Quantization and speculative decoding",
+      "short": "Quantize & decode",
+      "description": "Shrink models with quantization while watching quality, and generate tokens faster with speculative decoding.",
+      "items": [
+        [
+          "Quantization",
+          [
+            "Quantization-Aware Training",
+            "Post-Training Quantization",
+            "ModelOpt",
+            "Measuring Quality Impact"
+          ]
+        ],
+        [
+          "Speculative Decoding",
+          [
+            "Draft-Target Decoding",
+            "EAGLE",
+            "N-gram"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Caching, parallelism and disaggregation",
+      "short": "Scale techniques",
+      "description": "Reuse computation through caching and spread large models across GPUs and nodes.",
+      "items": [
+        [
+          "Caching",
+          [
+            "Caching Approaches",
+            "KV Cache Storage",
+            "Cache-Aware Routing",
+            "Long Context Handling"
+          ]
+        ],
+        [
+          "Model Parallelism",
+          [
+            "Pipeline Parallelism",
+            "Tensor Parallelism",
+            "Expert Parallelism",
+            "Multi-Node Inference"
+          ]
+        ],
+        [
+          "Disaggregation",
+          [
+            "NVIDIA Dynamo"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Inference beyond LLMs",
+      "short": "Beyond LLMs",
+      "description": "Apply the same skills to vision-language, embedding, speech and image or video generation models.",
+      "items": [
+        [
+          "Vision Language Models",
+          [
+            "Video Processing for VLMs",
+            "Omni-Modal Models"
+          ]
+        ],
+        [
+          "Embedding Models",
+          [
+            "BERT-style models",
+            "LLM-based models",
+            "Embedding Model Inference"
+          ]
+        ],
+        [
+          "Speech",
+          [
+            "Voice Activity Detection",
+            "Automatic Speech Recognition",
+            "Text-to-Speech (TTS)",
+            "Streaming TTS",
+            "Speech-to-Speech Models"
+          ]
+        ],
+        [
+          "Image & Video Generation",
+          [
+            "Image Generation Inference",
+            "Video Generation Inference"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Containers and autoscaling",
+      "short": "Serving at scale",
+      "description": "Package models for deployment and scale serving up and down with traffic.",
+      "items": [
+        [
+          "Containerization",
+          [
+            "Dependency Management",
+            "NIMs",
+            "Docker"
+          ]
+        ],
+        [
+          "Autoscaling",
+          [
+            "Kubernetes",
+            "Continuous Batching",
+            "Cold Starts",
+            "Routing & Load Balancing",
+            "LoRA-Aware Routing",
+            "Request Queueing",
+            "Scale to Zero",
+            "Independent Component Scaling"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Multi-cloud, testing and deployment",
+      "short": "Production",
+      "description": "Secure GPU capacity across clouds and ship changes safely while keeping cost and health in view.",
+      "items": [
+        [
+          "Multi-Cloud",
+          [
+            "GPU Procurement",
+            "Capacity Management",
+            "Geo-Aware Load Balancing"
+          ]
+        ],
+        [
+          "Testing & Deployment",
+          [
+            "Security and Compliance",
+            "Zero-Downtime Deployment",
+            "Cost Estimation",
+            "Observability"
+          ]
+        ]
+      ]
+    }
+  ]
+}

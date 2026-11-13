@@ -1,0 +1,438 @@
+{
+  "slug": "kotlin",
+  "title": "Kotlin",
+  "tagline": "Learn Kotlin from basic syntax and OOP to coroutines, tooling, multiplatform and real applications.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-kotlin",
+  "credit": {
+    "text": "Based on the Kotlin roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Find out where Kotlin came from, why people choose it and get a working setup.",
+      "items": [
+        [
+          "Introduction to Kotlin",
+          [
+            "History of Kotlin",
+            "Why use Kotlin",
+            "Java Interoperability"
+          ]
+        ],
+        [
+          "Setting up the Environment"
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Language basics",
+      "short": "Basics",
+      "description": "Write your first programs with variables, the basic types and type checks.",
+      "items": [
+        [
+          "Code Organization"
+        ],
+        [
+          "main Function"
+        ],
+        [
+          "Variables",
+          [
+            "val vs var"
+          ]
+        ],
+        [
+          "Type Checks & Casts"
+        ],
+        [
+          "Type Inference"
+        ],
+        [
+          "Data types",
+          [
+            "Integers",
+            "Floats",
+            "Unsigned Integers",
+            "Characters",
+            "Strings",
+            "Booleans",
+            "Arrays"
+          ]
+        ],
+        [
+          "Comments"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Collections and output",
+      "short": "Collections",
+      "description": "Work with lists, sets, maps, ranges and sequences, and print results nicely.",
+      "items": [
+        [
+          "Collections",
+          [
+            "Lists",
+            "Sets",
+            "Maps",
+            "read-only vs mutable",
+            "Iterators"
+          ]
+        ],
+        [
+          "Ranges"
+        ],
+        [
+          "Progressions"
+        ],
+        [
+          "Sequences"
+        ],
+        [
+          "Printing data",
+          [
+            "print & println",
+            "String Templates"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Control flow",
+      "short": "Control flow",
+      "description": "Branch, loop and handle errors the Kotlin way.",
+      "items": [
+        [
+          "Conditional Expressions",
+          [
+            "if",
+            "when"
+          ]
+        ],
+        [
+          "Loops",
+          [
+            "for",
+            "while",
+            "break & continue",
+            "Label Loops"
+          ]
+        ],
+        [
+          "Exceptions",
+          [
+            "Throwing Exceptions",
+            "Catching Exceptions"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Functions",
+      "short": "Functions",
+      "description": "Go from simple functions to lambdas, higher-order functions and extensions.",
+      "items": [
+        [
+          "Standard functions",
+          [
+            "parameters",
+            "return",
+            "varargs"
+          ]
+        ],
+        [
+          "Local Functions"
+        ],
+        [
+          "Member Functions"
+        ],
+        [
+          "Tail-recursive Functions"
+        ],
+        [
+          "Function Types",
+          [
+            "Higher-order Functions",
+            "Lambda Functions",
+            "Anonymous Functions"
+          ]
+        ],
+        [
+          "Extension Functions"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Collection operations",
+      "short": "Collection ops",
+      "description": "Transform, filter, group and aggregate collections with the standard operations.",
+      "items": [
+        [
+          "Collection Operations",
+          [
+            "Transformations",
+            "Filtering",
+            "plus & minus Operators",
+            "Grouping",
+            "Retrieving Collection Parts",
+            "Retrieving single elements",
+            "Ordering",
+            "Aggregate Operations"
+          ]
+        ],
+        [
+          "Collection-specific Operations",
+          [
+            "Lists",
+            "Sets",
+            "Maps"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Classes and objects",
+      "short": "Classes & objects",
+      "description": "Model your domain with classes, inheritance, delegation and Kotlin's special class kinds.",
+      "items": [
+        [
+          "Defining Classes"
+        ],
+        [
+          "Creating Instances"
+        ],
+        [
+          "Class Members",
+          [
+            "Properties",
+            "Methods",
+            "Constructors",
+            "Nested & Inner Classes",
+            "Object Declarations"
+          ]
+        ],
+        [
+          "Inheritance"
+        ],
+        [
+          "Extension Functions"
+        ],
+        [
+          "Visibility Modifiers"
+        ],
+        [
+          "Property Delegates"
+        ],
+        [
+          "More on Classes & Objects",
+          [
+            "Abstract Class",
+            "Interfaces",
+            "Data Classes",
+            "Sealed Class",
+            "Enum Class",
+            "Inline Class",
+            "Class Generics",
+            "Type Aliases"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Null safety and async programming",
+      "short": "Nulls & async",
+      "description": "Avoid null pointer bugs and write concurrent code with coroutines and flows.",
+      "items": [
+        [
+          "Null Safety",
+          [
+            "What is Null Safety",
+            "Nullable vs Non-nullable",
+            "Nullability Check Operators",
+            "Safe Casts"
+          ]
+        ],
+        [
+          "Async Programming",
+          [
+            "Coroutines",
+            "Suspending Functions",
+            "Coroutines Builders",
+            "Coroutines Behavior",
+            "Asynchronous Flow",
+            "Coroutines Best practices"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Packages and ecosystem",
+      "short": "Packages",
+      "description": "Organise code into packages and get to know the standard and official libraries.",
+      "items": [
+        [
+          "Understanding Packages"
+        ],
+        [
+          "Importing Packages"
+        ],
+        [
+          "Standard Library",
+          [
+            "Default Imports",
+            "Opt-in Requirements"
+          ]
+        ],
+        [
+          "Kotlin Libraries",
+          [
+            "Test Library",
+            "Coroutines",
+            "Serialization",
+            "I/O Library",
+            "Date & Time",
+            "JVM Metadata",
+            "Gradle Plugins"
+          ]
+        ],
+        [
+          "Documentation",
+          [
+            "Dokka",
+            "KDoc"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Build tools, I/O and IDEs",
+      "short": "Tooling & I/O",
+      "description": "Build and ship projects, read and write files, and pick a comfortable IDE.",
+      "items": [
+        [
+          "Build Tools",
+          [
+            "Gradle",
+            "Maven",
+            "Build Tool API"
+          ]
+        ],
+        [
+          "CI/CD Tools",
+          [
+            "TeamCity"
+          ]
+        ],
+        [
+          "I/O",
+          [
+            "Creating Files",
+            "Writing & Reading Files",
+            "Buffered Streams"
+          ]
+        ],
+        [
+          "IDEs",
+          [
+            "IntelliJ IDEA",
+            "Android Studio",
+            "Kotlin Notebook"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Kotlin platforms",
+      "short": "Platforms",
+      "description": "Run Kotlin on the JVM, natively, in the browser and across platforms from one codebase.",
+      "items": [
+        [
+          "Kotlin Multiplatform",
+          [
+            "Compose Multiplatform"
+          ]
+        ],
+        [
+          "Kotlin/Java",
+          [
+            "Java from Kotlin",
+            "Kotlin from Java",
+            "Spring Boot"
+          ]
+        ],
+        [
+          "Kotlin/Native",
+          [
+            "C Interoperability",
+            "Swift/Objective-C Interop."
+          ]
+        ],
+        [
+          "Kotlin/WASM"
+        ],
+        [
+          "Kotlin/JavaScript"
+        ],
+        [
+          "Kotlin Scripting"
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Kotlin applications",
+      "short": "Applications",
+      "description": "Put Kotlin to work on Android, servers, data analysis, contests and AI projects.",
+      "items": [
+        [
+          "Android",
+          [
+            "Android Jetpack",
+            "Android Studio",
+            "Android SDK"
+          ]
+        ],
+        [
+          "Server-side Apps",
+          [
+            "Ktor",
+            "Spring",
+            "Quarkus",
+            "Vert.x"
+          ]
+        ],
+        [
+          "Data Analysis",
+          [
+            "Kotlin Notebooks",
+            "Kotlin DataFrame",
+            "Kandy"
+          ]
+        ],
+        [
+          "Competitive Programming"
+        ],
+        [
+          "AI Development",
+          [
+            "Koog"
+          ]
+        ]
+      ]
+    }
+  ]
+}

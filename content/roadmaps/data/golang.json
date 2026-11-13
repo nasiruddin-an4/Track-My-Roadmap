@@ -1,0 +1,468 @@
+{
+  "slug": "golang",
+  "title": "Go",
+  "tagline": "Go from the language basics through interfaces, generics and concurrency to tooling and the ecosystem.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-golang",
+  "credit": {
+    "text": "Based on the Go roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction to Go",
+      "short": "Introduction",
+      "description": "Learn why Go exists, set it up and run your first program.",
+      "items": [
+        [
+          "Introduction to Go",
+          [
+            "Why use Go",
+            "History of Go",
+            "Setting up the Environment",
+            "Hello World in Go",
+            "go command"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Language basics",
+      "short": "Basics",
+      "description": "Declare variables and constants and get to know Go's built-in types.",
+      "items": [
+        [
+          "Variables & Constants",
+          [
+            "var vs :=",
+            "Zero Values",
+            "const and iota",
+            "Scope and Shadowing"
+          ]
+        ],
+        [
+          "Data Types",
+          [
+            "Boolean",
+            "Runes",
+            "Type Conversion"
+          ]
+        ],
+        [
+          "Numeric Types",
+          [
+            "Integers (Signed, Unsigned)",
+            "Floating Points",
+            "Complex Numbers"
+          ]
+        ],
+        [
+          "Strings",
+          [
+            "Raw String Literals",
+            "Interpreted String Literals"
+          ]
+        ],
+        [
+          "Commands & Docs"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Composite types",
+      "short": "Composite types",
+      "description": "Group data with arrays, slices, maps and structs.",
+      "items": [
+        [
+          "Arrays"
+        ],
+        [
+          "Slices",
+          [
+            "Capacity and Growth",
+            "make()",
+            "Slice to Array Conversion",
+            "Array to Slice Conversion"
+          ]
+        ],
+        [
+          "Strings"
+        ],
+        [
+          "Maps",
+          [
+            "Comma-Ok Idiom"
+          ]
+        ],
+        [
+          "Structs",
+          [
+            "Struct Tags & JSON",
+            "Embedding Structs"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Control flow, functions and pointers",
+      "short": "Flow & functions",
+      "description": "Write loops, branches and functions, and understand pointers and memory at a high level.",
+      "items": [
+        [
+          "Loops",
+          [
+            "for loop",
+            "for range",
+            "Iterating Maps",
+            "Iterating Strings",
+            "break",
+            "continue",
+            "goto (discouraged)"
+          ]
+        ],
+        [
+          "Conditionals",
+          [
+            "if",
+            "if-else",
+            "switch"
+          ]
+        ],
+        [
+          "Functions",
+          [
+            "Functions Basics",
+            "Variadic Functions",
+            "Multiple Return Values",
+            "Anonymous Functions",
+            "Closures",
+            "Named Return Values",
+            "Call by Value"
+          ]
+        ],
+        [
+          "Pointers",
+          [
+            "Pointers Basics",
+            "Pointers with Structs",
+            "With Maps & Slices"
+          ]
+        ],
+        [
+          "Get a Brief Overview",
+          [
+            "Memory Management",
+            "Garbage Collection"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Methods, interfaces and generics",
+      "short": "Interfaces",
+      "description": "Attach behaviour to types, program against interfaces and write generic code.",
+      "items": [
+        [
+          "Methods and Interfaces",
+          [
+            "Methods vs Functions",
+            "Pointer Receivers",
+            "Value Receivers"
+          ]
+        ],
+        [
+          "Interfaces",
+          [
+            "Interfaces Basics",
+            "Empty Interfaces",
+            "Embedding Interfaces",
+            "Type Assertions",
+            "Type Switch"
+          ]
+        ],
+        [
+          "Generics",
+          [
+            "Why Generics?",
+            "Generic Functions",
+            "Generic Types / Interfaces",
+            "Type Constraints",
+            "Type Inference"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Error handling",
+      "short": "Errors",
+      "description": "Handle failures the Go way, with explicit error values and the occasional panic.",
+      "items": [
+        [
+          "Error Handling",
+          [
+            "Error Handling Basics",
+            "error interface",
+            "errors.New",
+            "fmt.Errorf",
+            "Wrapping/Unwrapping Errors",
+            "Sentinel Errors",
+            "panic and recover",
+            "Stack Traces & Debugging"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Code organization",
+      "short": "Modules",
+      "description": "Structure projects into packages and modules and manage dependencies.",
+      "items": [
+        [
+          "Modules & Dependencies",
+          [
+            "go mod init",
+            "go mod tidy",
+            "go mod vendor"
+          ]
+        ],
+        [
+          "Packages"
+        ],
+        [
+          "Package Import Rules"
+        ],
+        [
+          "Using 3rd Party Packages"
+        ],
+        [
+          "Publishing Modules"
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Concurrency",
+      "short": "Concurrency",
+      "description": "Run work in parallel with goroutines and channels, and coordinate it safely.",
+      "items": [
+        [
+          "Goroutines"
+        ],
+        [
+          "Channels",
+          [
+            "Buffered vs Unbuffered",
+            "Select Statement"
+          ]
+        ],
+        [
+          "Worker Pools"
+        ],
+        [
+          "sync Package",
+          [
+            "Mutexes",
+            "WaitGroups"
+          ]
+        ],
+        [
+          "context Package",
+          [
+            "Deadlines & Cancellations",
+            "Common Usecases"
+          ]
+        ],
+        [
+          "Concurrency Patterns",
+          [
+            "fan-in",
+            "fan-out",
+            "pipeline"
+          ]
+        ],
+        [
+          "Race Detection"
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Standard library and testing",
+      "short": "Stdlib & testing",
+      "description": "Lean on the standard library and prove your code works with tests and benchmarks.",
+      "items": [
+        [
+          "Standard Library",
+          [
+            "I/O & File Handling",
+            "flag",
+            "time",
+            "encoding/json",
+            "os",
+            "bufio",
+            "slog",
+            "regexp",
+            "go:embed for embedding"
+          ]
+        ],
+        [
+          "Testing & Benchmarking",
+          [
+            "testing package basics",
+            "Table-driven Tests",
+            "Mocks and Stubs",
+            "httptest for HTTP Tests",
+            "Benchmarks",
+            "Coverage"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Ecosystem and popular libraries",
+      "short": "Ecosystem",
+      "description": "Build CLIs, web services and realtime apps with the libraries the community relies on.",
+      "items": [
+        [
+          "Building CLIs",
+          [
+            "Cobra",
+            "urfave/cli",
+            "bubbletea"
+          ]
+        ],
+        [
+          "Web Development",
+          [
+            "net/http (standard)",
+            "gRPC & Protocol Buffers"
+          ]
+        ],
+        [
+          "Frameworks",
+          [
+            "gin?",
+            "echo?",
+            "fiber?",
+            "beego?"
+          ]
+        ],
+        [
+          "ORMs & DB Access",
+          [
+            "pgx",
+            "GORM"
+          ]
+        ],
+        [
+          "Logging",
+          [
+            "Zerolog",
+            "Zap"
+          ]
+        ],
+        [
+          "Realtime Communication",
+          [
+            "Melody",
+            "Centrifugo"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Go toolchain and tools",
+      "short": "Toolchain",
+      "description": "Master the go command and the tools for code quality, security, profiling and builds.",
+      "items": [
+        [
+          "Core Go Commands",
+          [
+            "go run",
+            "go build",
+            "go install",
+            "go fmt",
+            "go mod",
+            "go test",
+            "go clean",
+            "go doc",
+            "go version"
+          ]
+        ],
+        [
+          "Code Generation / Build Tags",
+          [
+            "go generate",
+            "Build Tags"
+          ]
+        ],
+        [
+          "Code Quality and Analysis",
+          [
+            "go vet",
+            "goimports"
+          ]
+        ],
+        [
+          "Linters",
+          [
+            "revive",
+            "staticcheck",
+            "golangci-lint"
+          ]
+        ],
+        [
+          "Security",
+          [
+            "govulncheck"
+          ]
+        ],
+        [
+          "Performance and Debugging",
+          [
+            "pprof",
+            "trace",
+            "Race Detector"
+          ]
+        ],
+        [
+          "Deployment & Tooling",
+          [
+            "Building Executables",
+            "Cross-compilation"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Advanced topics",
+      "short": "Advanced",
+      "description": "Dig into the runtime and the lower-level corners of the language.",
+      "items": [
+        [
+          "Advanced Topics",
+          [
+            "Memory Mgmt. in Depth^",
+            "Escape Analysis^",
+            "Reflection^",
+            "Unsafe Package^",
+            "Build Constraints & Tags^",
+            "CGO Basics^",
+            "Compiler & Linker Flags^",
+            "Plugins & Dynamic Loading^"
+          ]
+        ]
+      ]
+    }
+  ]
+}

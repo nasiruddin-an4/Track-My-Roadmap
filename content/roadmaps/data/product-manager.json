@@ -1,0 +1,451 @@
+{
+  "slug": "product-manager",
+  "title": "Product Manager",
+  "tagline": "Product management from idea and research through strategy, planning, launch, metrics and leadership.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-product-manager",
+  "credit": {
+    "text": "Based on the Product Manager roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Learn what product management is, what a product manager does and how products move through their life.",
+      "items": [
+        [
+          "What is Product Management?"
+        ],
+        [
+          "Product vs Project Management"
+        ],
+        [
+          "Roles and Responsibilities"
+        ],
+        [
+          "Key Skills"
+        ],
+        [
+          "Product Development Lifecycle",
+          [
+            "Development",
+            "Introduction",
+            "Growth",
+            "Maturity",
+            "Decline"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Idea Generation",
+      "short": "Ideas",
+      "description": "Generate and refine product ideas with structured brainstorming and problem framing.",
+      "items": [
+        [
+          "Brainstorming Techniques",
+          [
+            "Mind Mapping",
+            "Brainwriting",
+            "SCAMPER"
+          ]
+        ],
+        [
+          "Iterative Process",
+          [
+            "Discovery",
+            "Selection",
+            "Validation",
+            "Execution"
+          ]
+        ],
+        [
+          "Product Identification",
+          [
+            "Blue Ocean Strategy",
+            "TRIZ (Theory of Inventive Problem Solving)",
+            "Problem Framing"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Market and User Research",
+      "short": "Research",
+      "description": "Study the market and your users, then position the product where it can win.",
+      "items": [
+        [
+          "Market Analysis",
+          [
+            "Identifying Market Needs",
+            "Competitive Analysis",
+            "Emerging Market Trends"
+          ]
+        ],
+        [
+          "User Research",
+          [
+            "User Personas",
+            "User Interviews",
+            "Surveys and Questionnaires",
+            "Ethnographic Research"
+          ]
+        ],
+        [
+          "Positioning",
+          [
+            "USP (Unique Selling Point)",
+            "Market Segmentation",
+            "Case Studies"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Product Strategy",
+      "short": "Strategy",
+      "description": "Set the product's vision and mission and define measurable goals for it.",
+      "items": [
+        [
+          "Vision & Mission",
+          [
+            "Statement",
+            "Proposition",
+            "Capabilities",
+            "Solved Constraints",
+            "Future Constraints",
+            "Reference Materials",
+            "Narrative"
+          ]
+        ],
+        [
+          "Defining Goals",
+          [
+            "Target",
+            "Baseline",
+            "Trend",
+            "Timeframe"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Value & Strategic Thinking",
+      "short": "Value & strategy",
+      "description": "Sharpen the value proposition, avoid feature creep and think strategically about competitors and partners.",
+      "items": [
+        [
+          "Value Proposition",
+          [
+            "Defining Value Proposition",
+            "Value Proposition Canvas"
+          ]
+        ],
+        [
+          "Value vs Features",
+          [
+            "Feature Creep",
+            "Finding Balance"
+          ]
+        ],
+        [
+          "Strategic Thinking",
+          [
+            "Competitive Strategy",
+            "Five Forces Analysis",
+            "Competitive Advantage",
+            "Strategic Partners",
+            "Identify Partners",
+            "Managing Partnerships"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Product Planning",
+      "short": "Planning",
+      "description": "Capture requirements, build and share a roadmap and keep the backlog in order.",
+      "items": [
+        [
+          "Product Requirements",
+          [
+            "Writing PRDs",
+            "User Stories",
+            "Job Stories"
+          ]
+        ],
+        [
+          "Product Roadmap",
+          [
+            "Creating a Roadmap",
+            "Prioritising Features",
+            "Continuous Roadmapping",
+            "Outcome-Based Roadmaps",
+            "Communicating the Roadmap"
+          ]
+        ],
+        [
+          "Backlog Management",
+          [
+            "Prioritization Techniques",
+            "Grooming Sessions",
+            "User Story Mapping"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Product Design",
+      "short": "Design",
+      "description": "Apply UX principles, prototype ideas and test designs with real users.",
+      "items": [
+        [
+          "UX / UI Design",
+          [
+            "Principles of UX Design",
+            "Wireframing and Prototyping",
+            "Design Thinking"
+          ]
+        ],
+        [
+          "Service Design"
+        ],
+        [
+          "Interaction Design"
+        ],
+        [
+          "User Testing",
+          [
+            "Usability Testing",
+            "A/B Testing",
+            "Remote User Testing"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Development and Launch",
+      "short": "Build & launch",
+      "description": "Work with engineering in agile cycles, ship an MVP and plan how the product reaches the market.",
+      "items": [
+        [
+          "Agile Methodology",
+          [
+            "Scrum Basics",
+            "Kanban Basics"
+          ]
+        ],
+        [
+          "Working with Engineering Teams",
+          [
+            "Sprint Planning",
+            "Daily Standups",
+            "Retrospectives",
+            "Minimum Viable Product (MVP)"
+          ]
+        ],
+        [
+          "Go-to-Market Strategy",
+          [
+            "Launch Planning",
+            "Marketing Strategies",
+            "Growth Hacking"
+          ]
+        ],
+        [
+          "Release Strategies",
+          [
+            "Feature Toggles",
+            "Phased Rollouts",
+            "Dark Launches"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Product Metrics",
+      "short": "Metrics",
+      "description": "Track the numbers that show product health and use data to guide decisions.",
+      "items": [
+        [
+          "Key Product Metrics",
+          [
+            "DAU (Daily Active Users)",
+            "MAU (Monthly Active Users)",
+            "Conversion Rate",
+            "Retention Rate",
+            "Churn Rate",
+            "LTV (Lifetime Value)",
+            "CAC (Customer Acquisition Cost)",
+            "North Star Metric"
+          ]
+        ],
+        [
+          "Data-Driven Decision Making",
+          [
+            "A/B Testing",
+            "Cohort Analysis",
+            "Predictive Analytics"
+          ]
+        ],
+        [
+          "Feedback Loops"
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Stakeholder Management",
+      "short": "Stakeholders",
+      "description": "Communicate well, win buy-in and keep every stakeholder engaged and aligned.",
+      "items": [
+        [
+          "Interpersonal Communication",
+          [
+            "Communication Techniques",
+            "Difficult Conversations",
+            "Active Listening",
+            "Conflict Resolution"
+          ]
+        ],
+        [
+          "Business Communication",
+          [
+            "Alignment & Buy-In",
+            "Showing Impact"
+          ]
+        ],
+        [
+          "Managing Stakeholders",
+          [
+            "Identifying Stakeholders",
+            "Stakeholder Mapping",
+            "Stakeholder Engagement",
+            "Remote Stakeholders"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Product Management Tools",
+      "short": "Tools",
+      "description": "Get familiar with the common tools for roadmapping, project tracking, analytics and team chat.",
+      "items": [
+        [
+          "Roadmapping Tools",
+          [
+            "Product Board",
+            "Aha",
+            "Notion"
+          ]
+        ],
+        [
+          "Project Management Tools",
+          [
+            "Jira",
+            "Linear",
+            "Trello"
+          ]
+        ],
+        [
+          "Analytics Tools",
+          [
+            "Amplitude",
+            "Heap",
+            "Looker"
+          ]
+        ],
+        [
+          "Communication Tools",
+          [
+            "Slack",
+            "Teams",
+            "Discord"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Risk Management",
+      "short": "Risk",
+      "description": "Identify, assess, mitigate and keep watch over the risks facing your product.",
+      "items": [
+        [
+          "Identifying Risks",
+          [
+            "Risk Identification Techniques",
+            "Risk Register"
+          ]
+        ],
+        [
+          "Risk Assessment",
+          [
+            "Qualitative Risk Assessment",
+            "Quantitative Risk Assessment"
+          ]
+        ],
+        [
+          "Risk Mitigation",
+          [
+            "Mitigation Strategies",
+            "Contingency Planning"
+          ]
+        ],
+        [
+          "Monitoring and Controlling Risks",
+          [
+            "Risk Monitoring Tools",
+            "Risk Audits"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Advanced Topics",
+      "short": "Advanced",
+      "description": "Scale products and portfolios, use advanced analytics and AI, and lead and influence teams.",
+      "items": [
+        [
+          "Scaling Products",
+          [
+            "Growth Strategies",
+            "Internationalization",
+            "Platform Thinking"
+          ]
+        ],
+        [
+          "Portfolio Management"
+        ],
+        [
+          "Advanced Analysis",
+          [
+            "Predictive Analytics",
+            "ML in Product Mgmt.",
+            "AI in Product Mgmt."
+          ]
+        ],
+        [
+          "Leadership and Influence",
+          [
+            "Building and Leading Teams",
+            "Influencing without Authority",
+            "Emotional Intelligence"
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,425 @@
+{
+  "slug": "redis",
+  "title": "Redis",
+  "tagline": "Master Redis from first commands and core data types to persistence, scaling, tuning and production ops.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-redis",
+  "credit": {
+    "text": "Based on the Redis roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "What is Redis",
+      "short": "Introduction",
+      "description": "Understand what Redis is, what it is used for and when it beats other databases.",
+      "items": [
+        [
+          "Overview of Redis",
+          [
+            "In-memory Data Structure Store",
+            "Key-value Database",
+            "Cache",
+            "Message Broker"
+          ]
+        ],
+        [
+          "Core Use Cases",
+          [
+            "Caching",
+            "Real-time Analytics",
+            "Session Management",
+            "Pub/Sub Messaging",
+            "Leaderboards and Counters"
+          ]
+        ],
+        [
+          "Key Features",
+          [
+            "Data Persistence Options",
+            "Rich Data Structures",
+            "High Performance and Scalability"
+          ]
+        ],
+        [
+          "Redis vs Other Databases",
+          [
+            "Redis vs SQL/NoSQL DBs",
+            "When to choose Redis"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Getting started with Redis",
+      "short": "Getting started",
+      "description": "Install Redis, start a server, connect with the CLI and run your first commands.",
+      "items": [
+        [
+          "Installing Redis Locally",
+          [
+            "Using Package Managers",
+            "Pre-compiled Binaries",
+            "Using Docker"
+          ]
+        ],
+        [
+          "Running Redis",
+          [
+            "Starting the Server",
+            "Connecting using Redis CLI",
+            "Basic Commands / SET, GET"
+          ]
+        ],
+        [
+          "Basic Data Operations",
+          [
+            "Setting and Getting Keys",
+            "DEL",
+            "expire",
+            "TTL"
+          ]
+        ],
+        [
+          "Overview of Data Types"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Core data structures",
+      "short": "Core data types",
+      "description": "Learn the commands and typical uses of strings, lists, sets, hashes and sorted sets.",
+      "items": [
+        [
+          "Strings",
+          [
+            "SET",
+            "GET",
+            "INCR",
+            "DECR",
+            "APPEND",
+            "STRLEN",
+            "More Commands",
+            "Usecases"
+          ]
+        ],
+        [
+          "Lists",
+          [
+            "LPUSH",
+            "RPUSH",
+            "LPOP",
+            "RPOP",
+            "LRANGE",
+            "LINDEX",
+            "LLEN",
+            "LMOVE",
+            "More Commands",
+            "Usecases"
+          ]
+        ],
+        [
+          "Sets",
+          [
+            "SADD",
+            "SREM",
+            "SMEMBERS",
+            "SISMEMBER",
+            "SINTER",
+            "SCARD",
+            "SUNION",
+            "SDIFF",
+            "More Commands",
+            "Usecases"
+          ]
+        ],
+        [
+          "Hashes",
+          [
+            "HSET",
+            "HGET",
+            "HGETALL",
+            "HDEL",
+            "HEXISTS",
+            "More Commands",
+            "Usecases"
+          ]
+        ],
+        [
+          "Sorted Sets",
+          [
+            "ZADD",
+            "ZRANGE",
+            "ZRANK",
+            "ZREM",
+            "ZRANGEBYSCORE",
+            "ZINCRBY",
+            "ZCOUNT",
+            "More Commands",
+            "Usecases"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Working with Redis",
+      "short": "Working with Redis",
+      "description": "Name and manage keys well, keep operations atomic and batch commands for speed.",
+      "items": [
+        [
+          "Key Management",
+          [
+            "Naming Conventions",
+            "Retrieval by Pattern",
+            "Expiration"
+          ]
+        ],
+        [
+          "Atomicity in Redis"
+        ],
+        [
+          "Pipelining"
+        ],
+        [
+          "Batch Operations",
+          [
+            "MSET / MGET"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Advanced data structures",
+      "short": "Advanced types",
+      "description": "Use bitmaps, HyperLogLog, streams and geospatial indexes for specialised problems.",
+      "items": [
+        [
+          "Bitmaps",
+          [
+            "SETBIT",
+            "GETBIT",
+            "BITOP",
+            "BITPOS",
+            "BITCOUNT",
+            "Usecases"
+          ]
+        ],
+        [
+          "HyperLogLog",
+          [
+            "PFMERGE",
+            "PFADD",
+            "PFCOUNT",
+            "Usecases"
+          ]
+        ],
+        [
+          "Streams",
+          [
+            "XADD",
+            "XREAD",
+            "XRANGE",
+            "XLEN",
+            "More Commands",
+            "Usecases"
+          ]
+        ],
+        [
+          "Geospatial Indexes",
+          [
+            "GEOADD",
+            "GEOSEARCH",
+            "More Commands",
+            "Usecases"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Pub/Sub, transactions and Lua",
+      "short": "Pub/Sub & Lua",
+      "description": "Send messages between clients, group commands into transactions and script logic server-side.",
+      "items": [
+        [
+          "Pub/Sub",
+          [
+            "SUBSCRIBE",
+            "UNSUBSCRIBE",
+            "PUBLISH",
+            "More Commands",
+            "Usecases"
+          ]
+        ],
+        [
+          "Transactions",
+          [
+            "WATCH",
+            "EXEC",
+            "MULTI",
+            "Optimistic Locking"
+          ]
+        ],
+        [
+          "Lua Scripting",
+          [
+            "EVAL",
+            "EVALSHA",
+            "Usecases"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Persistence options",
+      "short": "Persistence",
+      "description": "Decide whether and how Redis saves data to disk using RDB, AOF or both.",
+      "items": [
+        [
+          "No Persistence Option"
+        ],
+        [
+          "Snapshotting (RDB)",
+          [
+            "How RDB Works",
+            "Configuring Save Interval",
+            "Usecases / Best Practices"
+          ]
+        ],
+        [
+          "Append-Only File (AOF)",
+          [
+            "How AOF Works",
+            "AOF rewrite & compaction",
+            "Truncation / Corruption",
+            "Usecases"
+          ]
+        ],
+        [
+          "Choosing Right Strategy",
+          [
+            "RDB vs AOF Tradeoffs",
+            "Hybrid Persistence"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Replication and security",
+      "short": "Replication & sec",
+      "description": "Keep Redis available with replicas, Sentinel and clustering, and lock down access.",
+      "items": [
+        [
+          "Replication / HA",
+          [
+            "Replication Basics",
+            "Redis Sentinel",
+            "Clustering"
+          ]
+        ],
+        [
+          "Security",
+          [
+            "Authentication",
+            "Network Security",
+            "SSL/TLS Encryption"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Monitoring, optimization and modules",
+      "short": "Monitor & tune",
+      "description": "Observe and tune Redis performance, and extend it with official modules.",
+      "items": [
+        [
+          "Built-in Tools",
+          [
+            "INFO",
+            "MONITOR"
+          ]
+        ],
+        [
+          "3rd Party Tools",
+          [
+            "RedisInsight",
+            "RedisCommander"
+          ]
+        ],
+        [
+          "Performance Optimization",
+          [
+            "Max Memory Policy",
+            "Memory Management",
+            "Slow Log Analysis",
+            "redis-benchmark",
+            "Monitoring"
+          ]
+        ],
+        [
+          "Redis Modules",
+          [
+            "Search",
+            "RedisTimeSeries",
+            "RedisBloom",
+            "RedisJSON"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Managing Redis in production",
+      "short": "Production",
+      "description": "Configure, back up, upgrade and recover Redis safely in a live environment.",
+      "items": [
+        [
+          "Important Configurations",
+          [
+            "redis.conf"
+          ]
+        ],
+        [
+          "Backup and Recovery",
+          [
+            "RDB and AOF Files"
+          ]
+        ],
+        [
+          "Upgrading Redis",
+          [
+            "Minimizing Downtimes"
+          ]
+        ],
+        [
+          "Disaster Recovery"
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Redis Enterprise",
+      "short": "Enterprise",
+      "description": "Learn what the commercial edition adds and when it is worth considering.",
+      "items": [
+        [
+          "Redis Enterprise",
+          [
+            "Active-Active geo Distribution",
+            "Redis on Flash",
+            "Security and Compliance",
+            "When to consider enterprise"
+          ]
+        ]
+      ]
+    }
+  ]
+}

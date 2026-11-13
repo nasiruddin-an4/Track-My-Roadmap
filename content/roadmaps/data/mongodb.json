@@ -1,0 +1,303 @@
+{
+  "slug": "mongodb",
+  "title": "MongoDB",
+  "tagline": "MongoDB from documents and queries to indexing, aggregation, scaling and security.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-mongodb",
+  "credit": {
+    "text": "Based on the MongoDB roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "MongoDB Basics",
+      "short": "Basics",
+      "description": "Learn what MongoDB is, how it differs from SQL databases and when it is a good fit.",
+      "items": [
+        [
+          "SQL vs NoSQL"
+        ],
+        [
+          "What is MongoDB?"
+        ],
+        [
+          "When to use MongoDB?"
+        ],
+        [
+          "What is MongoDB Atlas?"
+        ],
+        [
+          "MongoDB Terminology"
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Data Model & Data Types",
+      "short": "Data model",
+      "description": "Understand BSON documents, embedding and every data type MongoDB can store.",
+      "items": [
+        [
+          "BSON vs JSON"
+        ],
+        [
+          "Embedded Objects & Arrays"
+        ],
+        [
+          "Data Types",
+          [
+            "Double",
+            "String",
+            "Array",
+            "Object",
+            "Binary Data",
+            "Undefined",
+            "Object ID",
+            "Boolean",
+            "Date",
+            "Null",
+            "Regular Expression",
+            "JavaScript",
+            "Symbol",
+            "Int64 / Long",
+            "Int32/Int",
+            "Timestamp",
+            "Decimal128",
+            "Min Key",
+            "Max Key"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Collections & Methods",
+      "short": "Collections",
+      "description": "Create, read, update and delete documents and learn the concepts behind reliable reads and writes.",
+      "items": [
+        [
+          "Counting Documents"
+        ],
+        [
+          "insert() and relevant"
+        ],
+        [
+          "find() and relevant"
+        ],
+        [
+          "update() and relevant"
+        ],
+        [
+          "delete() and relevant"
+        ],
+        [
+          "bulkWrite() and relevant"
+        ],
+        [
+          "validate()"
+        ],
+        [
+          "Useful concepts",
+          [
+            "Read / Write Concerns",
+            "Cursors",
+            "Retryable Reads / Writes"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Query Operators",
+      "short": "Query operators",
+      "description": "Filter and shape query results with comparison, logical, array, element and projection operators.",
+      "items": [
+        [
+          "Comparison Operators",
+          [
+            "$eq",
+            "$gt",
+            "$lt",
+            "$lte",
+            "$gte",
+            "$ne"
+          ]
+        ],
+        [
+          "Logical Operators",
+          [
+            "$and",
+            "$or",
+            "$not",
+            "$nor"
+          ]
+        ],
+        [
+          "Array Operators",
+          [
+            "$in",
+            "$nin",
+            "$all",
+            "$elemMatch",
+            "$size"
+          ]
+        ],
+        [
+          "Element Operators",
+          [
+            "$exists",
+            "$type",
+            "$regex"
+          ]
+        ],
+        [
+          "Projection Operators",
+          [
+            "$project",
+            "$include",
+            "$exclude",
+            "$slice"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Indexes & Performance",
+      "short": "Indexes",
+      "description": "Create the right indexes and tune queries so reads stay fast as data grows.",
+      "items": [
+        [
+          "Creating Indexes",
+          [
+            "Single Field",
+            "Compound",
+            "Text",
+            "Expiring",
+            "Geospatial Indexes"
+          ]
+        ],
+        [
+          "Performance Optimization",
+          [
+            "Atlas Search Indexes",
+            "Query Optimization"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Aggregation & Transactions",
+      "short": "Aggregation",
+      "description": "Transform data with aggregation pipelines and keep multi-document changes consistent.",
+      "items": [
+        [
+          "Aggregation",
+          [
+            "Pipelines, Stages and Operators"
+          ]
+        ],
+        [
+          "Common Operators",
+          [
+            "$match",
+            "$group",
+            "$sort",
+            "$project",
+            "$skip",
+            "$limit",
+            "$unwind",
+            "$lookup",
+            "$sum"
+          ]
+        ],
+        [
+          "Transactions"
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Developer Tools",
+      "short": "Dev tools",
+      "description": "Connect MongoDB to your code and other systems, and back up and restore your data.",
+      "items": [
+        [
+          "Language Drivers"
+        ],
+        [
+          "MongoDB Connectors",
+          [
+            "Kafka",
+            "Spark",
+            "Elastic Search"
+          ]
+        ],
+        [
+          "Backup & Recovery",
+          [
+            "mongodump",
+            "mongorestore"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Scaling MongoDB",
+      "short": "Scaling",
+      "description": "Scale out with replica sets and sharding and tune the database for heavy workloads.",
+      "items": [
+        [
+          "Replicasets"
+        ],
+        [
+          "Sharded Clusters"
+        ],
+        [
+          "Tuning Configuration"
+        ],
+        [
+          "Indexing"
+        ],
+        [
+          "Query Optimization"
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "MongoDB Security",
+      "short": "Security",
+      "description": "Lock down access, audit activity and encrypt data at rest, in transit and in the client.",
+      "items": [
+        [
+          "Role-based Access Control"
+        ],
+        [
+          "X.509 Certificate Auth"
+        ],
+        [
+          "Kerberos Authentication"
+        ],
+        [
+          "LDAP Proxy Auth"
+        ],
+        [
+          "MongoDB Audit"
+        ],
+        [
+          "Encryption",
+          [
+            "Encryption at Rest",
+            "Queryable Encryption",
+            "Client-Side Field Level",
+            "TLS / SSL Encryption"
+          ]
+        ]
+      ]
+    }
+  ]
+}

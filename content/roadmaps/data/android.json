@@ -1,0 +1,293 @@
+{
+  "slug": "android",
+  "title": "Android Developer",
+  "tagline": "From Kotlin basics and app components to architecture, testing and shipping on the Play Store.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-android",
+  "credit": {
+    "text": "Based on the Android Developer roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Language and fundamentals",
+      "short": "Fundamentals",
+      "description": "Choose Kotlin or Java and get comfortable with the tools and basics every Android app relies on.",
+      "items": [
+        [
+          "Pick a Language!",
+          [
+            "Kotlin",
+            "Java"
+          ]
+        ],
+        [
+          "The Fundamentals",
+          [
+            "Development IDE",
+            "Basics of Kotlin",
+            "Basics of OOP",
+            "Data Structures and Algorithms",
+            "What is Gradle and how to use it",
+            "Create a Basic Hello World App"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Version control",
+      "short": "Version control",
+      "description": "Track your code with Git and host it on a shared platform.",
+      "items": [
+        [
+          "Version Control",
+          [
+            "Git"
+          ]
+        ],
+        [
+          "VCS Hosting",
+          [
+            "GitHub",
+            "Bitbucket",
+            "GitLab"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "App components",
+      "short": "Components",
+      "description": "Understand the building blocks the Android system uses to run and connect parts of an app.",
+      "items": [
+        [
+          "App Components",
+          [
+            "Services",
+            "Content Provider",
+            "Broadcast Receiver"
+          ]
+        ],
+        [
+          "Intent",
+          [
+            "Implicit Intents",
+            "Explicit Intents",
+            "Intent Filters"
+          ]
+        ],
+        [
+          "Activity",
+          [
+            "Activity LifeCycle",
+            "State Changes",
+            "Tasks & Backstack"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Interface and navigation",
+      "short": "UI & navigation",
+      "description": "Build screens with layouts and UI elements, then move between them smoothly.",
+      "items": [
+        [
+          "Layouts",
+          [
+            "Frame",
+            "Linear",
+            "Relative",
+            "Constraint",
+            "RecycleView"
+          ]
+        ],
+        [
+          "Elements",
+          [
+            "TextView",
+            "Toast",
+            "Fragments",
+            "Dialogs",
+            "Buttons",
+            "Bottom Sheet",
+            "ImageView",
+            "Tabs",
+            "EditText",
+            "Drawer",
+            "ListView",
+            "Animations"
+          ]
+        ],
+        [
+          "Jetpack Compose"
+        ],
+        [
+          "App Shortcuts"
+        ],
+        [
+          "Navigation Components"
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Design and architecture",
+      "short": "Architecture",
+      "description": "Structure apps with proven architectural and design patterns and wire dependencies cleanly.",
+      "items": [
+        [
+          "Architectural Patterns",
+          [
+            "MVI",
+            "MVVM",
+            "MVP",
+            "MVC"
+          ]
+        ],
+        [
+          "Design Patterns",
+          [
+            "Repository Pattern",
+            "Builder Pattern",
+            "Factory Pattern"
+          ]
+        ],
+        [
+          "Observer Pattern",
+          [
+            "Flow",
+            "RxKotlin",
+            "RxJava",
+            "LiveData"
+          ]
+        ],
+        [
+          "Dependency Injection",
+          [
+            "Dagger",
+            "Hilt",
+            "Koin",
+            "Kodein"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Storage and networking",
+      "short": "Data & network",
+      "description": "Persist data on the device and talk to remote APIs.",
+      "items": [
+        [
+          "Storage",
+          [
+            "Shared Preferences",
+            "DataStore",
+            "Room Database",
+            "File System"
+          ]
+        ],
+        [
+          "Network",
+          [
+            "Retrofit",
+            "OkHttp",
+            "Apollo-Android"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Asynchronism and common services",
+      "short": "Async & services",
+      "description": "Run work off the main thread and plug in the Firebase and Google services most apps use.",
+      "items": [
+        [
+          "Asynchronism",
+          [
+            "Coroutines",
+            "Threads",
+            "RxJava",
+            "RxKotlin",
+            "WorkManager"
+          ]
+        ],
+        [
+          "Firebase",
+          [
+            "Authentication",
+            "Crashlytics",
+            "Remote Config",
+            "Cloud Messaging",
+            "FireStore"
+          ]
+        ],
+        [
+          "Common Services",
+          [
+            "Google Admob",
+            "Google Play Services",
+            "Google Maps"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Linting, testing and debugging",
+      "short": "Quality",
+      "description": "Keep code clean, prove it works with tests and track down problems with the right tools.",
+      "items": [
+        [
+          "Linting",
+          [
+            "Ktlint",
+            "Detekt"
+          ]
+        ],
+        [
+          "Testing",
+          [
+            "Espresso",
+            "JUnit"
+          ]
+        ],
+        [
+          "Debugging",
+          [
+            "Timber",
+            "Leak Canary",
+            "Chucker",
+            "Jetpack Benchmark"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Distribution",
+      "short": "Distribution",
+      "description": "Sign your app and get it into the hands of testers and users.",
+      "items": [
+        [
+          "Distribution",
+          [
+            "Signed APK"
+          ]
+        ],
+        [
+          "Ways to distribute",
+          [
+            "Firebase Distribution",
+            "Google Playstore"
+          ]
+        ]
+      ]
+    }
+  ]
+}

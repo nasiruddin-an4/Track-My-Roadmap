@@ -1,0 +1,553 @@
+{
+  "slug": "seo",
+  "title": "SEO",
+  "tagline": "Search and AI visibility end to end: technical SEO, content, authority, specializations and measurement.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-seo",
+  "credit": {
+    "text": "Based on the SEO roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction and how search works",
+      "short": "Search basics",
+      "description": "Learn what SEO, GEO and AEO mean and how search engines find, understand and rank pages.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "What is SEO",
+            "What is GEO",
+            "What is AEO"
+          ]
+        ],
+        [
+          "How Search Engines Work",
+          [
+            "Crawling, Indexing, Ranking",
+            "Retrieval vs Ranking",
+            "Personalization, Localization",
+            "Training Data vs Grounding"
+          ]
+        ],
+        [
+          "SEO Terminology",
+          [
+            "Search Intent",
+            "Semantic Search",
+            "Lexical vs Vector Search",
+            "Hybrid Search"
+          ]
+        ],
+        [
+          "Search Intent Semantics",
+          [
+            "SERP, Index, Crawl",
+            "Backlinks & Anchor Text",
+            "Canonical",
+            "Nofollow, Noindex",
+            "Organic vs Paid vs Direct"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Guidelines and risks",
+      "short": "Guidelines",
+      "description": "Know which tactics search engines reward or punish, and how to cope with algorithm changes.",
+      "items": [
+        [
+          "White, Black, Grey Hat SEO"
+        ],
+        [
+          "Spam Policies",
+          [
+            "Link Schemes",
+            "Cloaking & Doorways",
+            "Scaled Content Abuse",
+            "Site Reputation Abuse",
+            "Expired Domain Abuse"
+          ]
+        ],
+        [
+          "Manual Actions & Recovery"
+        ],
+        [
+          "Algorithm Updates",
+          [
+            "Core Updates",
+            "Spam Updates",
+            "Helpful Content System",
+            "Tracking Volatility"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Site architecture and crawling",
+      "short": "Crawling",
+      "description": "Structure a site so search and AI crawlers can reach and index the right pages.",
+      "items": [
+        [
+          "Website Architecture",
+          [
+            "Folders & URL Structure",
+            "Internal Linking",
+            "Site Hierarchy & Depth",
+            "Machine-Readable Content",
+            "Sitemaps",
+            "Robots.txt"
+          ]
+        ],
+        [
+          "HTTP & Status Codes",
+          [
+            "Redirect Chains & Loops"
+          ]
+        ],
+        [
+          "Crawling & Indexing",
+          [
+            "Crawl Budget",
+            "Index Coverage & Bloat",
+            "Log File Analysis",
+            "Managing AI Crawlers",
+            "Controls & Pay-Per-Crawl"
+          ]
+        ],
+        [
+          "Search Crawlers",
+          [
+            "Googlebot",
+            "Bingbot"
+          ]
+        ],
+        [
+          "AI Crawlers",
+          [
+            "GPTBot",
+            "ClaudeBot",
+            "Google-Extended",
+            "PerplexityBot"
+          ]
+        ],
+        [
+          "Site Crawlers",
+          [
+            "Screaming Frog",
+            "Sitebulb"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Rendering, migrations and performance",
+      "short": "Technical SEO",
+      "description": "Handle JavaScript rendering and duplicate URLs, move sites safely and keep pages fast and secure.",
+      "items": [
+        [
+          "Rendering & JavaScript SEO",
+          [
+            "SSR vs CSR vs Hydration",
+            "Canonicalization",
+            "Pagination",
+            "Faceted Navigation",
+            "URL Parameters"
+          ]
+        ],
+        [
+          "Site Migrations",
+          [
+            "Planning & Checklists",
+            "Domain & Protocol Changes",
+            "Redirect Mapping",
+            "Post-Migration Monitoring"
+          ]
+        ],
+        [
+          "Core Web Vitals",
+          [
+            "PageSpeed Insights"
+          ]
+        ],
+        [
+          "Mobile Friendliness"
+        ],
+        [
+          "HTTPS & Security"
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "On-page SEO and keyword research",
+      "short": "Keywords",
+      "description": "Optimise individual pages and find the topics and questions your audience actually searches for.",
+      "items": [
+        [
+          "On-Page SEO",
+          [
+            "Title Tags",
+            "Meta Descriptions",
+            "Heading Structure",
+            "URL Slugs",
+            "Internal Anchor Text",
+            "Image Optimization",
+            "Formatting & Readability",
+            "Keyword Placement"
+          ]
+        ],
+        [
+          "Keyword Research",
+          [
+            "Semrush",
+            "Ahrefs",
+            "Google Keyword Planner",
+            "Volume, Difficulty & Potential",
+            "SERP Analysis"
+          ]
+        ],
+        [
+          "Topic Clusters"
+        ],
+        [
+          "Question Mining",
+          [
+            "People Also Ask",
+            "Forums & Communities",
+            "AI Chat Prompts"
+          ]
+        ],
+        [
+          "Competitor Gap Analysis"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Content quality and entities",
+      "short": "Quality & entities",
+      "description": "Show real expertise, add something new, and describe your content in terms machines understand.",
+      "items": [
+        [
+          "E-E-A-T"
+        ],
+        [
+          "Information Gain"
+        ],
+        [
+          "Primary Data & Visuals",
+          [
+            "Original Research & Surveys",
+            "Proprietary Datasets",
+            "Case Studies & Benchmarks",
+            "Custom Charts & Images"
+          ]
+        ],
+        [
+          "Entity SEO",
+          [
+            "Entities vs Keywords",
+            "Attributes & Relationships",
+            "Disambiguation & Salience",
+            "Knowledge Graphs"
+          ]
+        ],
+        [
+          "Structured Data & Schema",
+          [
+            "Article, FAQ & HowTo",
+            "Breadcrumb, Video & Review",
+            "SameAs & Entity Linking",
+            "Org. & Person Schema",
+            "Product & Place Schema",
+            "Authors & Brands"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "SERP features and content lifecycle",
+      "short": "SERP & lifecycle",
+      "description": "Win rich results and AI extracts, and keep existing content fresh, unique and worth indexing.",
+      "items": [
+        [
+          "Structuring for AI Extraction",
+          [
+            "TL;DRs",
+            "Data Tables",
+            "Direct Answers"
+          ]
+        ],
+        [
+          "Featured Snippets"
+        ],
+        [
+          "SERP Features",
+          [
+            "Sitelinks",
+            "Knowledge Panels",
+            "Image & Video Packs",
+            "Breadcrumb rich result"
+          ]
+        ],
+        [
+          "Content Lifecycle",
+          [
+            "Content Freshness & Decay",
+            "Duplicate Content",
+            "Content Consolidation",
+            "Pruning & Deindexing"
+          ]
+        ],
+        [
+          "AI Tools for Content",
+          [
+            "Surfer SEO",
+            "Clearscope",
+            "MarketMuse",
+            "Frase"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "AI search and GEO",
+      "short": "AI search",
+      "description": "Understand how AI systems retrieve and cite sources, and how to show up in AI answers and agents.",
+      "items": [
+        [
+          "How AI is Changing SEO"
+        ],
+        [
+          "Retrieval Mechanisms",
+          [
+            "RAG",
+            "Embeddings",
+            "Chunking",
+            "Dense Retrieval",
+            "Query Fan-Out",
+            "Multi-Step AI Intent"
+          ]
+        ],
+        [
+          "AI Answer Surfaces",
+          [
+            "AI Overviews",
+            "Google AI Mode",
+            "ChatGPT Search",
+            "Perplexity",
+            "Copilot & Gemini",
+            "Chat-Based Search"
+          ]
+        ],
+        [
+          "Citation Resources"
+        ],
+        [
+          "Preferred Sources"
+        ],
+        [
+          "Agentic Search",
+          [
+            "How Agents Browse",
+            "MCP & Structured Access"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Authority and trust",
+      "short": "Authority",
+      "description": "Earn links, mentions and a consistent brand presence that signal trust to search and AI systems.",
+      "items": [
+        [
+          "Link Building"
+        ],
+        [
+          "Link Metrics",
+          [
+            "Domain Authority",
+            "Page Authority",
+            "Trust Flow",
+            "Citation Flow"
+          ]
+        ],
+        [
+          "Link Attributes",
+          [
+            "Nofollow, Sponsored, UGC"
+          ]
+        ],
+        [
+          "Link Building Tools",
+          [
+            "Ahrefs",
+            "BuzzStream",
+            "Majestic",
+            "Pitchbox"
+          ]
+        ],
+        [
+          "Digital PR",
+          [
+            "Data-Driven PR"
+          ]
+        ],
+        [
+          "Influencer Outreach"
+        ],
+        [
+          "Entity Consistency",
+          [
+            "Author & Org. Consistency",
+            "Directories & Databases",
+            "Social Profiles",
+            "Unlinked Brand Mentions"
+          ]
+        ],
+        [
+          "Community Presence",
+          [
+            "Niche Forums"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Specializations",
+      "short": "Specializations",
+      "description": "Apply SEO to local businesses, international sites, video, e-commerce and news.",
+      "items": [
+        [
+          "Local Search",
+          [
+            "Google Business Profile",
+            "NAP Consistency",
+            "Local Citations",
+            "Local Landing Pages"
+          ]
+        ],
+        [
+          "Local Search Signals",
+          [
+            "Reviews & Velocity",
+            "Local Links",
+            "Local Pack & Maps",
+            "Multi-Location SEO"
+          ]
+        ],
+        [
+          "Local GEO Tools",
+          [
+            "BrightLocal",
+            "Whitespark"
+          ]
+        ],
+        [
+          "International SEO",
+          [
+            "Hreflang",
+            "ccTLD, Subfolder, Subdomain",
+            "Geo-Targeting & Localization"
+          ]
+        ],
+        [
+          "Video SEO"
+        ],
+        [
+          "E-commerce SEO"
+        ],
+        [
+          "News & Discovery SEO",
+          [
+            "Google Discover"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Analytics and measurement",
+      "short": "Analytics",
+      "description": "Track visibility, rankings and traffic so you know what is working.",
+      "items": [
+        [
+          "Google Search Console",
+          [
+            "GSC API & BigQuery Export"
+          ]
+        ],
+        [
+          "Visibility Metrics",
+          [
+            "Impressions, Clicks & CTR",
+            "Position & Share of Search",
+            "Branded vs Non-Branded",
+            "Query & Topic Coverage"
+          ]
+        ],
+        [
+          "Rank Tracking",
+          [
+            "Semrush",
+            "AccuRanker"
+          ]
+        ],
+        [
+          "Traffic Analysis",
+          [
+            "Google Analytics",
+            "Microsoft Clarity",
+            "Google Data Studio",
+            "LLM Referral Traffic"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "AI visibility, testing and audits",
+      "short": "AI visibility",
+      "description": "Measure how often AI answers mention you, run experiments and audit sites end to end.",
+      "items": [
+        [
+          "Zero-Click Attribution"
+        ],
+        [
+          "AI Visibility Measurement",
+          [
+            "Prompt Coverage & Mention",
+            "Citation Rate & Position",
+            "Competitive Answer Share",
+            "Entity & Sentiment",
+            "Ahrefs Brand Radar",
+            "Profound",
+            "Otterly",
+            "Peec"
+          ]
+        ],
+        [
+          "GEO & SEO Testing",
+          [
+            "Content & Schema A/B Tests",
+            "Before/After Prompt Tests",
+            "Competitor Benchmarking"
+          ]
+        ],
+        [
+          "SEO Audits"
+        ]
+      ]
+    }
+  ]
+}

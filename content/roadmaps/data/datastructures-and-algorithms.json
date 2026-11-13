@@ -1,0 +1,276 @@
+{
+  "slug": "datastructures-and-algorithms",
+  "title": "Data Structures & Algorithms",
+  "tagline": "Build up from basic structures and Big-O to trees, graphs, advanced structures and problem-solving patterns.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-datastructures-and-algorithms",
+  "credit": {
+    "text": "Based on the Data Structures & Algorithms roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Language & fundamentals",
+      "short": "Fundamentals",
+      "description": "Choose one language to practise in and make sure the programming basics are solid.",
+      "items": [
+        [
+          "Pick a Language!",
+          [
+            "C# (C Sharp)",
+            "C++",
+            "Python",
+            "Rust",
+            "JavaScript",
+            "Java",
+            "Go",
+            "Ruby"
+          ]
+        ],
+        [
+          "Programming Fundamentals",
+          [
+            "Language Syntax",
+            "Control Structures",
+            "Pseudo Code",
+            "Functions",
+            "OOP Basics"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Basic data structures",
+      "short": "Basic structures",
+      "description": "Learn what data structures are for and get to know the everyday ones.",
+      "items": [
+        [
+          "What are Data Structures"
+        ],
+        [
+          "Why are Data Structures Important"
+        ],
+        [
+          "Basic Data Structures",
+          [
+            "Array",
+            "Linked Lists",
+            "Queues",
+            "Stacks",
+            "Hash Tables"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Algorithmic complexity",
+      "short": "Complexity",
+      "description": "Reason about how running time and memory grow and describe it with asymptotic notation.",
+      "items": [
+        [
+          "Algorithmic Complexity",
+          [
+            "Time vs Space Complexity",
+            "How to Calculate Complexity"
+          ]
+        ],
+        [
+          "Asymptotic Notation",
+          [
+            "Big-O Notation",
+            "Big-θ (Theta) Notation",
+            "Big-Ω (Omega) Notation"
+          ]
+        ],
+        [
+          "Common Runtimes",
+          [
+            "Constant",
+            "Logarithmic",
+            "Linear",
+            "Polynomial",
+            "Exponential",
+            "Factorial"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Sorting & searching",
+      "short": "Sort & search",
+      "description": "Implement the classic sorting algorithms and the two basic ways to search a list.",
+      "items": [
+        [
+          "Sorting Algorithms",
+          [
+            "Bubble Sort",
+            "Merge Sort",
+            "Insertion Sort",
+            "Quick Sort",
+            "Selection Sort",
+            "Heap Sort"
+          ]
+        ],
+        [
+          "Search Algorithms",
+          [
+            "Binary Search",
+            "Linear Search"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Trees",
+      "short": "Trees",
+      "description": "Work with the main kinds of trees and walk and search them in different orders.",
+      "items": [
+        [
+          "Tree Data Structures",
+          [
+            "Binary Trees",
+            "Binary Search Trees",
+            "AVL Trees",
+            "B-Trees",
+            "Heap"
+          ]
+        ],
+        [
+          "Tree Traversal",
+          [
+            "In-Order Traversal",
+            "Pre-Order Traversal",
+            "Post-Order Traversal"
+          ]
+        ],
+        [
+          "Search Algorithms",
+          [
+            "Breadth First Search",
+            "Depth First Search"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Graphs",
+      "short": "Graphs",
+      "description": "Model problems as graphs and apply traversal, shortest-path and spanning-tree algorithms.",
+      "items": [
+        [
+          "Graph Data Structures",
+          [
+            "Directed Graph",
+            "Undirected Graph"
+          ]
+        ],
+        [
+          "Search Algorithms",
+          [
+            "Breadth First Search",
+            "Depth First Search"
+          ]
+        ],
+        [
+          "Shortest Path Algorithms",
+          [
+            "Dijkstra's Algorithm",
+            "Bellman-Ford Algorithm",
+            "A* Algorithm"
+          ]
+        ],
+        [
+          "Minimum Spanning Tree",
+          [
+            "Prim's Algorithm",
+            "Kruskal's Algorithm"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Advanced data structures",
+      "short": "Advanced",
+      "description": "Add specialised structures for prefix lookups, range queries and set merging to your toolkit.",
+      "items": [
+        [
+          "Advanced Data Structures",
+          [
+            "Trie",
+            "Segment Trees",
+            "Fenwick Trees",
+            "Disjoint Set (Union-Find)",
+            "Suffix Trees and Arrays"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Complex structures & indexing",
+      "short": "Indexing",
+      "description": "See the structures databases and storage engines rely on and how indexes are organised.",
+      "items": [
+        [
+          "Complex Data Structures",
+          [
+            "2-3 Trees",
+            "B/B+ Trees",
+            "Skip List",
+            "ISAM"
+          ]
+        ],
+        [
+          "Indexing",
+          [
+            "Linear",
+            "Tree-Based"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Problem solving & practice",
+      "short": "Problem solving",
+      "description": "Learn the recurring techniques and patterns behind algorithm problems and practise them regularly.",
+      "items": [
+        [
+          "Problem Solving Techniques",
+          [
+            "Brute Force",
+            "Backtracking",
+            "Greedy Algorithms",
+            "Randomised Algorithms",
+            "Divide and Conquer",
+            "Kth Element",
+            "Recursion",
+            "Dynamic Programming",
+            "Two Pointer Technique",
+            "Sliding Window Technique",
+            "Island traversal",
+            "Multi-threaded",
+            "Two Heaps",
+            "Merge Intervals",
+            "Cyclic Sort",
+            "Fast and Slow Pointers"
+          ]
+        ],
+        [
+          "Platforms to Practice",
+          [
+            "Leetcode",
+            "Edabit"
+          ]
+        ]
+      ]
+    }
+  ]
+}

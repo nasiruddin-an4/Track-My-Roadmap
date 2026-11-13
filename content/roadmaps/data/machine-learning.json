@@ -1,0 +1,392 @@
+{
+  "slug": "machine-learning",
+  "title": "Machine Learning",
+  "tagline": "From the maths and Python you need through classic ML and model evaluation to deep learning and NLP.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-machine-learning",
+  "credit": {
+    "text": "Based on the Machine Learning roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "See what a machine learning engineer does day to day and how the role differs from an AI engineer.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "What is an ML Engineer?",
+            "ML Engineer vs AI Engineer",
+            "Skills and Responsibilities"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Linear algebra and calculus",
+      "short": "Linear alg & calc",
+      "description": "Build the vector, matrix and derivative intuition that every learning algorithm rests on.",
+      "items": [
+        [
+          "Linear Algebra",
+          [
+            "Matrix & Matrix Operations",
+            "Scalars, Vectors, Tensors",
+            "Singular Value Decomposition",
+            "Determinants, inverse of Matrix",
+            "Eigenvalues, Diagonalization"
+          ]
+        ],
+        [
+          "Calculus",
+          [
+            "Derivatives, Partial Derivatives",
+            "Chain rule of derivation",
+            "Gradient, Jacobian, Hessian"
+          ]
+        ],
+        [
+          "Discrete Mathematics"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Probability and statistics",
+      "short": "Prob & stats",
+      "description": "Reason about uncertainty and summarise data with probability, distributions and statistics.",
+      "items": [
+        [
+          "Probability",
+          [
+            "Basics of Probability",
+            "Bayes Theorem",
+            "Random Variances, PDFs",
+            "Types of Distribution"
+          ]
+        ],
+        [
+          "Statistics",
+          [
+            "Basic concepts",
+            "Descriptive Statistics",
+            "Graphs & Charts",
+            "Inferential Statistics"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Programming fundamentals",
+      "short": "Python",
+      "description": "Get fluent in Python and the core data libraries used throughout machine learning work.",
+      "items": [
+        [
+          "Python"
+        ],
+        [
+          "Basic Syntax",
+          [
+            "Variables and Data Types",
+            "Data Structures",
+            "Loops",
+            "Conditionals",
+            "Exceptions",
+            "Functions, Builtin Functions"
+          ]
+        ],
+        [
+          "Object Oriented Programming"
+        ],
+        [
+          "Essential libraries",
+          [
+            "Numpy",
+            "Pandas",
+            "Matplotlib",
+            "Seaborn"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Data collection and cleaning",
+      "short": "Data prep",
+      "description": "Gather data from many sources and formats, then clean and engineer features ready for modelling.",
+      "items": [
+        [
+          "Data Sources",
+          [
+            "Databases (SQL, No-SQL)",
+            "Internet",
+            "APIs",
+            "Mobile Apps",
+            "IoT"
+          ]
+        ],
+        [
+          "Data Formats",
+          [
+            "CSV",
+            "Excel",
+            "JSON",
+            "Parquet",
+            "Other Data Formats"
+          ]
+        ],
+        [
+          "Preprocessing Techniques",
+          [
+            "Data Cleaning",
+            "Feature Engineering",
+            "Feature Scaling & Normalization",
+            "Dimensionality Reduction",
+            "Feature Selection"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Machine learning basics",
+      "short": "ML basics",
+      "description": "Learn the main families of machine learning and run the full workflow end to end with scikit-learn.",
+      "items": [
+        [
+          "What is Machine Learning?"
+        ],
+        [
+          "Types of Machine Learning",
+          [
+            "Supervised Learning",
+            "Unsupervised Learning",
+            "Semi-supervised Learning",
+            "Self-supervised Learning",
+            "Reinforcement Learning"
+          ]
+        ],
+        [
+          "Scikit-learn",
+          [
+            "Data Loading",
+            "Train - Test Data",
+            "Data Preparation",
+            "Model Selection",
+            "Tuning",
+            "Prediction"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Supervised learning",
+      "short": "Supervised",
+      "description": "Predict labels and values with the standard classification and regression algorithms.",
+      "items": [
+        [
+          "What is Supervised Learning?"
+        ],
+        [
+          "Classification",
+          [
+            "K-Nearest Neighbors (KNN)",
+            "Logistic Regression",
+            "Support Vector Machines",
+            "Decision Trees, Random Forest",
+            "Gradient Boosting Machines"
+          ]
+        ],
+        [
+          "Regression",
+          [
+            "Linear Regression",
+            "Polynomial Regression",
+            "Lasso",
+            "Ridge",
+            "ElasticNet Regularization"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Unsupervised learning",
+      "short": "Unsupervised",
+      "description": "Find structure in unlabelled data through clustering and dimensionality reduction.",
+      "items": [
+        [
+          "What is Unsupervised Learning?"
+        ],
+        [
+          "Clustering",
+          [
+            "Exclusive",
+            "Overlapping",
+            "Hierarchical",
+            "Probabilistic"
+          ]
+        ],
+        [
+          "Dimensionality Reduction",
+          [
+            "Principal Component Analysis",
+            "Autoencoders"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Reinforcement learning",
+      "short": "Reinforcement",
+      "description": "Train agents that learn by acting and collecting rewards, from Q-learning to actor-critic methods.",
+      "items": [
+        [
+          "What is Reinforcement Learning?",
+          [
+            "Deep-Q Networks",
+            "Policy Gradient",
+            "Actor-Critic Methods",
+            "Q-Learning"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Model evaluation",
+      "short": "Evaluation",
+      "description": "Judge models with the right metrics and validation schemes so results hold up on new data.",
+      "items": [
+        [
+          "What is Model Evaluation?"
+        ],
+        [
+          "Why is it important?"
+        ],
+        [
+          "Metrics to Evaluate",
+          [
+            "Accuracy",
+            "Precision",
+            "F1-Score",
+            "Recall",
+            "ROC-AUC",
+            "Log Loss",
+            "Confusion Matrix"
+          ]
+        ],
+        [
+          "Validation Techniques",
+          [
+            "K-Fold Cross Validation",
+            "LOOCV"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Deep learning foundations",
+      "short": "Deep learning",
+      "description": "Understand how neural networks learn and get hands-on with the main deep learning libraries.",
+      "items": [
+        [
+          "Neural Network (NN) Basics",
+          [
+            "Perceptron, Multi-layer Perceptrons",
+            "Forward propagation",
+            "Back Propagation",
+            "Activation Functions",
+            "Loss Functions"
+          ]
+        ],
+        [
+          "Deep Learning Libraries",
+          [
+            "TensorFlow",
+            "Keras",
+            "Scikit-learn",
+            "PyTorch"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Deep learning architectures",
+      "short": "DL architectures",
+      "description": "Study CNNs, RNNs, attention, autoencoders and GANs and the problems each one suits.",
+      "items": [
+        [
+          "Convolutional Neural Network",
+          [
+            "Convolution",
+            "Pooling",
+            "Padding",
+            "Strides"
+          ]
+        ],
+        [
+          "Applications of CNNs",
+          [
+            "Image & Video Recognition",
+            "Image Classification",
+            "Image Segmentation",
+            "Recommendation Systems"
+          ]
+        ],
+        [
+          "Recurrent Neural Networks",
+          [
+            "RNN",
+            "GRU",
+            "LSTM"
+          ]
+        ],
+        [
+          "Attention Mechanisms",
+          [
+            "Self-Attention",
+            "Transformers",
+            "Multi-head Attention"
+          ]
+        ],
+        [
+          "Autoencoders"
+        ],
+        [
+          "Generative Adversarial Networks"
+        ]
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Advanced concepts in ML",
+      "short": "Advanced",
+      "description": "Process human language with NLP techniques and make model decisions explainable.",
+      "items": [
+        [
+          "Natural Language Processing",
+          [
+            "Tokenization",
+            "Lemmatization",
+            "Embeddings",
+            "Attention Models",
+            "Stemming"
+          ]
+        ],
+        [
+          "Explainable AI"
+        ]
+      ]
+    }
+  ]
+}

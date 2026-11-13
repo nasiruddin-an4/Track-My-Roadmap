@@ -1,0 +1,519 @@
+{
+  "slug": "bi-analyst",
+  "title": "BI Analyst",
+  "tagline": "Business intelligence from statistics, SQL and visualisation to BI tools, data architecture and your career.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-bi-analyst",
+  "credit": {
+    "text": "Based on the BI Analyst roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Understand what business intelligence is and what a BI analyst does day to day.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "What is BI?",
+            "Why BI Matters?",
+            "BI Analyst vs Other Roles",
+            "Skills",
+            "Responsibilities"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Business fundamentals",
+      "short": "Business",
+      "description": "Learn how a business runs, how it measures success and who relies on your analysis.",
+      "items": [
+        [
+          "Key Business Functions",
+          [
+            "Finance",
+            "Marketing",
+            "Operations",
+            "HR"
+          ]
+        ],
+        [
+          "Metrics and KPIs"
+        ],
+        [
+          "Stakeholder Identification"
+        ],
+        [
+          "Types of BI Operations",
+          [
+            "Operational BI",
+            "Tactical BI",
+            "Strategic BI"
+          ]
+        ],
+        [
+          "Types of Data Analysis",
+          [
+            "Descriptive Analysis",
+            "Diagnostic Analysis",
+            "Predictive Analysis",
+            "Prescriptive Analysis"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Statistics basics",
+      "short": "Statistics",
+      "description": "Describe data with summary statistics and draw sound conclusions with inferential methods.",
+      "items": [
+        [
+          "Variables and Data Types",
+          [
+            "Categorical vs Numerical",
+            "Discrete vs Continuous"
+          ]
+        ],
+        [
+          "Descriptive Statistics"
+        ],
+        [
+          "Central Tendency",
+          [
+            "Mean",
+            "Median",
+            "Mode"
+          ]
+        ],
+        [
+          "Dispersion",
+          [
+            "Range",
+            "Variance",
+            "STD",
+            "IQR"
+          ]
+        ],
+        [
+          "Distribution",
+          [
+            "Skewness",
+            "Kurtosis"
+          ]
+        ],
+        [
+          "Inferential Statistics"
+        ],
+        [
+          "Correlation Analysis",
+          [
+            "Correlation vs Causation"
+          ]
+        ],
+        [
+          "Regression Analysis",
+          [
+            "Linear Regression",
+            "Beyond Linear Regression"
+          ]
+        ],
+        [
+          "Hypothesis Testing",
+          [
+            "Population & Sample",
+            "Statistical tests",
+            "p-value",
+            "Confidence Intervals",
+            "Types of Errors"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Data fundamentals",
+      "short": "Data basics",
+      "description": "Know the kinds of data you will meet, where it comes from and the formats it arrives in.",
+      "items": [
+        [
+          "What is Data?",
+          [
+            "Analog vs Digital Data"
+          ]
+        ],
+        [
+          "Types of data",
+          [
+            "Structured",
+            "Semistructured",
+            "Unstructured"
+          ]
+        ],
+        [
+          "Data Sources",
+          [
+            "Databases",
+            "Web",
+            "Mobile Apps",
+            "Cloud",
+            "APIs",
+            "IoT"
+          ]
+        ],
+        [
+          "Data Formats",
+          [
+            "Excel",
+            "CSV",
+            "JSON",
+            "XML",
+            "Other formats"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "SQL, data cleaning and EDA",
+      "short": "SQL & cleaning",
+      "description": "Query databases with SQL, then clean, explore and reshape data ready for analysis.",
+      "items": [
+        [
+          "SQL Fundamentals",
+          [
+            "Basic Queries",
+            "Advanced Queries",
+            "Window Functions",
+            "Performance"
+          ]
+        ],
+        [
+          "Popular Databases",
+          [
+            "MySQL",
+            "PostgreSQL",
+            "SQLite",
+            "Oracle"
+          ]
+        ],
+        [
+          "Data Cleaning",
+          [
+            "Standardisation",
+            "Missing Values",
+            "Duplicates",
+            "Outliers"
+          ]
+        ],
+        [
+          "Tools for Data Cleaning",
+          [
+            "Excel",
+            "SQL",
+            "Pandas",
+            "dplyr"
+          ]
+        ],
+        [
+          "Exploratory Data Analysis (EDA)"
+        ],
+        [
+          "Data Transformation Techniques"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Visualizing data",
+      "short": "Visualization",
+      "description": "Pick the right chart for each question and design visuals that are clear and honest.",
+      "items": [
+        [
+          "Visualization Fundamentals"
+        ],
+        [
+          "Chart Categories"
+        ],
+        [
+          "Popular Plots",
+          [
+            "Barplot",
+            "Lineplot",
+            "Histogram",
+            "Scatterplot",
+            "Heatmap",
+            "Map"
+          ]
+        ],
+        [
+          "Visualization Best Practices",
+          [
+            "Color theory",
+            "Accessibility",
+            "Design principles",
+            "Misleading charts",
+            "Mobile-responsiveness"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "BI tools and cloud computing",
+      "short": "Tools & cloud",
+      "description": "Get hands-on with spreadsheets, BI platforms, a programming language and cloud warehouses.",
+      "items": [
+        [
+          "Excel"
+        ],
+        [
+          "BI Platforms",
+          [
+            "Power BI",
+            "Tableau",
+            "Qlik",
+            "Looker"
+          ]
+        ],
+        [
+          "Programming Languages",
+          [
+            "Python",
+            "R"
+          ]
+        ],
+        [
+          "Cloud Computing",
+          [
+            "Cloud Computing Basics",
+            "Cloud data warehouses",
+            "Providers: AWS, GCP, Azure"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Business applications",
+      "short": "Applications",
+      "description": "See how BI is applied in finance, retail, healthcare and manufacturing.",
+      "items": [
+        [
+          "Finance",
+          [
+            "Risk Analytics",
+            "Compliance Reporting",
+            "Financial Performance",
+            "Fraud Detection",
+            "CLV"
+          ]
+        ],
+        [
+          "Retail & E-commerce",
+          [
+            "Sales Performance",
+            "Inventory Optimization",
+            "Marketing Campaigns",
+            "Supply Chain Analytics"
+          ]
+        ],
+        [
+          "Healthcare",
+          [
+            "Patient management",
+            "Hospital Efficiency",
+            "Compliance Reporting",
+            "Public Health"
+          ]
+        ],
+        [
+          "Manufacturing",
+          [
+            "Predictive Maintenance",
+            "Supply chain optimization",
+            "Production Efficiency",
+            "Quality Control"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "BI techniques",
+      "short": "Techniques",
+      "description": "Apply time series, experiments, cohorts and basic machine learning to business questions.",
+      "items": [
+        [
+          "Time Series Analysis",
+          [
+            "Seasonality",
+            "Trends",
+            "Forecasting"
+          ]
+        ],
+        [
+          "A/B Testing"
+        ],
+        [
+          "Cohort Analysis"
+        ],
+        [
+          "Basic Machine Learning",
+          [
+            "Supervised Learning",
+            "Unsupervised Learning",
+            "Reinforcement Learning"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Professional excellence",
+      "short": "Soft skills",
+      "description": "Tell a convincing story with data and work effectively with the people around you.",
+      "items": [
+        [
+          "Communication & Storytelling",
+          [
+            "Storytelling Framework",
+            "Presentation Design",
+            "Dashboard Design",
+            "Writing Executive Summaries"
+          ]
+        ],
+        [
+          "Soft Skills",
+          [
+            "Business Acumen",
+            "Critical Thinking",
+            "Project Management",
+            "Change Management",
+            "Stakeholder Management"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Data governance and ethics",
+      "short": "Governance",
+      "description": "Keep data trustworthy, traceable and private, and watch for bias in your work.",
+      "items": [
+        [
+          "Data Quality",
+          [
+            "Relevance",
+            "Timeliness",
+            "Accessibility",
+            "Interpretability",
+            "Accuracy",
+            "Coherence"
+          ]
+        ],
+        [
+          "Data Lineage"
+        ],
+        [
+          "Ethical Data Use"
+        ],
+        [
+          "Bias Recognition",
+          [
+            "Algorithmic Bias",
+            "Mitigation Strategies"
+          ]
+        ],
+        [
+          "Privacy",
+          [
+            "GDPR",
+            "CCPA"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Data architectures and ETL",
+      "short": "Architecture",
+      "description": "Model data for reporting and understand the warehouses and pipelines that feed BI.",
+      "items": [
+        [
+          "Data Architectures",
+          [
+            "Data Warehouse",
+            "Data Lake",
+            "Data Mart",
+            "Cloud BI Ecosystem"
+          ]
+        ],
+        [
+          "Data Modeling for BI",
+          [
+            "Normalization vs Denormalization",
+            "Fact vs Dimension Tables",
+            "Star vs Snowflake Schema",
+            "Calculated Fields & Measures"
+          ]
+        ],
+        [
+          "ETL basics"
+        ],
+        [
+          "ETL Tools",
+          [
+            "Airflow",
+            "dbt"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Career development",
+      "short": "Career",
+      "description": "Build a portfolio, keep learning in public and prepare to land a BI role.",
+      "items": [
+        [
+          "Building Your Portfolio",
+          [
+            "End-to-end Analytics Project",
+            "Dashboard Design",
+            "Data Pipeline Design"
+          ]
+        ],
+        [
+          "Professional Development"
+        ],
+        [
+          "Certifications"
+        ],
+        [
+          "Networking",
+          [
+            "BI Communities",
+            "BI Competitions",
+            "Open-Source Projects",
+            "Conferences & Webinars"
+          ]
+        ],
+        [
+          "Job Preparation",
+          [
+            "Resume optimization",
+            "Portfolio presentation",
+            "Interview preparation",
+            "Salary negotiation strategies"
+          ]
+        ]
+      ]
+    }
+  ]
+}

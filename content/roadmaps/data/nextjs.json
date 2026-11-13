@@ -1,0 +1,299 @@
+{
+  "slug": "nextjs",
+  "title": "Next.js",
+  "tagline": "Build React apps with Next.js: routing, data fetching, rendering, styling, optimisation, testing and deploys.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-nextjs",
+  "credit": {
+    "text": "Based on the Next.js roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "See why frameworks like React and Next.js exist and where Next.js sits among them.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "JavaScript Basics",
+            "Why Frontend Frameworks",
+            "Why React",
+            "SPA vs SSR"
+          ]
+        ],
+        [
+          "React Frameworks",
+          [
+            "Why Next.js",
+            "Next.js",
+            "Remix"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Getting started",
+      "short": "Getting started",
+      "description": "Learn the rendering strategies Next.js supports and scaffold your first app.",
+      "items": [
+        [
+          "Rendering Strategies",
+          [
+            "SSR",
+            "SPA",
+            "CSR",
+            "SSG"
+          ]
+        ],
+        [
+          "create-next-app"
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Routing",
+      "short": "Routing",
+      "description": "Understand file-based routing, the two routers and how pages, layouts and states fit together.",
+      "items": [
+        [
+          "Next.js Routing Basics"
+        ],
+        [
+          "Types of routers",
+          [
+            "Pages",
+            "App",
+            "Why use App Router"
+          ]
+        ],
+        [
+          "Routing Terminology"
+        ],
+        [
+          "Rendering Pages"
+        ],
+        [
+          "Layouts and Templates"
+        ],
+        [
+          "Loading and Streaming"
+        ],
+        [
+          "Error States"
+        ],
+        [
+          "Routing Patterns",
+          [
+            "Parallel Routes",
+            "Intercepting Routes"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Routes, middleware and i18n",
+      "short": "API & middleware",
+      "description": "Organise routes, build API endpoints, run middleware and serve multiple languages.",
+      "items": [
+        [
+          "Structuring Routes"
+        ],
+        [
+          "API Endpoints",
+          [
+            "Static vs Dynamic",
+            "Caching",
+            "Streaming",
+            "Redirects"
+          ]
+        ],
+        [
+          "Middleware",
+          [
+            "Use cases",
+            "Route Matcher",
+            "Using Cookies",
+            "Setting Headers"
+          ]
+        ],
+        [
+          "Internationalization"
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Working with data",
+      "short": "Data",
+      "description": "Fetch data on the client or server, cache and revalidate it, and mutate it with server actions.",
+      "items": [
+        [
+          "Fetching Locations",
+          [
+            "Client",
+            "Server"
+          ]
+        ],
+        [
+          "Caching Data",
+          [
+            "Memoization in Fetch",
+            "React Cache",
+            "Revalidating Cached Data",
+            "Revalidation Errors"
+          ]
+        ],
+        [
+          "Data Fetching Patterns",
+          [
+            "Parallel vs Sequential",
+            "Preloading Data"
+          ]
+        ],
+        [
+          "Handling Sensitive Data"
+        ],
+        [
+          "Server Actions"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Rendering and runtimes",
+      "short": "Rendering",
+      "description": "Mix client and server components and choose between the Node.js and Edge runtimes.",
+      "items": [
+        [
+          "Rendering",
+          [
+            "Client Rendered",
+            "Server Rendered",
+            "Composition"
+          ]
+        ],
+        [
+          "Runtimes and Types",
+          [
+            "Node.js",
+            "Edge"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Writing CSS",
+      "short": "CSS",
+      "description": "Style your app with global CSS or one of the supported styling approaches.",
+      "items": [
+        [
+          "Global CSS"
+        ],
+        [
+          "Ways to Write CSS",
+          [
+            "CSS Modules",
+            "Tailwind CSS",
+            "Sass",
+            "CSS in JS"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Optimizations",
+      "short": "Optimizations",
+      "description": "Make pages fast with built-in handling for media, fonts, scripts, bundles and telemetry.",
+      "items": [
+        [
+          "Optimizations",
+          [
+            "Images",
+            "Videos",
+            "Fonts",
+            "Metadata",
+            "Package Bundling",
+            "Lazy Loading",
+            "Analytics",
+            "Instrumentation",
+            "OpenTelemetry",
+            "Static Assets",
+            "Scripts",
+            "Third Party Libraries",
+            "Memory Usage"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Configuring",
+      "short": "Configuring",
+      "description": "Set up TypeScript and linting, manage environment variables and extend the defaults.",
+      "items": [
+        [
+          "Setting things Up",
+          [
+            "TypeScript",
+            "ESLint",
+            "Prettier"
+          ]
+        ],
+        [
+          "Environment Variables"
+        ],
+        [
+          "Markdown and MDX"
+        ],
+        [
+          "Custom Server"
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Testing",
+      "short": "Testing",
+      "description": "Cover your app with unit and end-to-end tests using a popular framework.",
+      "items": [
+        [
+          "Testing Frameworks",
+          [
+            "Vitest",
+            "Jest",
+            "Playwright",
+            "Cypress"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Deployment",
+      "short": "Deployment",
+      "description": "Prepare a production build and choose how and where to host it.",
+      "items": [
+        [
+          "Preparing for Production"
+        ],
+        [
+          "Deployment Options",
+          [
+            "Node.js Server",
+            "Docker Container",
+            "Static Export",
+            "Adapters"
+          ]
+        ]
+      ]
+    }
+  ]
+}

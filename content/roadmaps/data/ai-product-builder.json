@@ -1,0 +1,181 @@
+{
+  "slug": "ai-product-builder",
+  "title": "AI Product Builder",
+  "tagline": "Turn an idea into a shipped product using AI app builders, coding agents, testing and simple hosting.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-ai-product-builder",
+  "credit": {
+    "text": "Based on the AI Product Builder roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Definition & scope",
+      "short": "Define & scope",
+      "description": "Pin down the problem, the shape of the app, which features matter first and what limits the tech stack.",
+      "items": [
+        [
+          "AI Product Creation Cycle"
+        ],
+        [
+          "Definition & Scope",
+          [
+            "Problem Definition",
+            "App Anatomy",
+            "Feature Scoping",
+            "Tech Stack & Constraints"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Prototyping",
+      "short": "Prototyping",
+      "description": "Pick a tool to sketch a first working version and put it in front of people early for feedback.",
+      "items": [
+        [
+          "Prototyping",
+          [
+            "Choose a Prototype Tool",
+            "Feedback & Validation"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Generation",
+      "short": "Generation",
+      "description": "Know which AI app builders and agent-style coding tools can generate the bulk of your app.",
+      "items": [
+        [
+          "AI App Builders",
+          [
+            "Lovable",
+            "Replit",
+            "Claude Design",
+            "v0",
+            "Hope",
+            "Bolt"
+          ]
+        ],
+        [
+          "Technical but Powerful",
+          [
+            "Claude Code",
+            "Gemini CLI",
+            "Codex"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Refinement",
+      "short": "Refinement",
+      "description": "Iterate on the generated app with small targeted fixes or bigger structural changes, learning the web basics you need along the way.",
+      "items": [
+        [
+          "Targeted Change"
+        ],
+        [
+          "New Feature / Structural Change"
+        ],
+        [
+          "Use AI-assisted Coding Tools",
+          [
+            "Claude Code",
+            "Codex",
+            "Cursor",
+            "Copilot"
+          ]
+        ],
+        [
+          "Learn by the need",
+          [
+            "HTML / CSS / JavaScript",
+            "React",
+            "Browsers / DevTools",
+            "Node.js"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Collaboration",
+      "short": "Collaboration",
+      "description": "Test the product at every level and manage changes through version control and CI so others can work with you.",
+      "items": [
+        [
+          "Testing & Feedback",
+          [
+            "User Testing",
+            "Unit Testing",
+            "Integration Testing",
+            "E2E Testing"
+          ]
+        ],
+        [
+          "Change Management & CI",
+          [
+            "GitHub",
+            "GitLab",
+            "Bit Cloud",
+            "Azure DevOps"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Deployment",
+      "short": "Deployment",
+      "description": "Choose one hosting route, serverless, a platform service or a full cloud provider, and get the app live.",
+      "items": [
+        [
+          "Serverless Providers",
+          [
+            "Cloudflare",
+            "Vercel",
+            "Bit Cloud"
+          ]
+        ],
+        [
+          "Platform as a Service (PaaS)",
+          [
+            "DigitalOcean",
+            "Render",
+            "Railway"
+          ]
+        ],
+        [
+          "Cloud Providers",
+          [
+            "AWS",
+            "Azure",
+            "GCP"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Data",
+      "short": "Database",
+      "description": "Hook the app up to a real database so it can store and serve user data.",
+      "items": [
+        [
+          "Connect to a Database",
+          [
+            "MongoDB / Atlas",
+            "PostgreSQL / MySQL",
+            "Supabase"
+          ]
+        ]
+      ]
+    }
+  ]
+}

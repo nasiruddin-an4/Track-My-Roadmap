@@ -1,0 +1,320 @@
+{
+  "slug": "leetcode",
+  "title": "LeetCode",
+  "tagline": "Work through the core coding-interview patterns, from arrays and two pointers to graphs and DP.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-leetcode",
+  "credit": {
+    "text": "Based on the LeetCode roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Getting started",
+      "short": "Getting started",
+      "description": "Learn how LeetCode practice works, why patterns matter and pick the language you will solve in.",
+      "items": [
+        [
+          "What is LeetCode"
+        ],
+        [
+          "What are coding patterns"
+        ],
+        [
+          "Pick a language!",
+          [
+            "Python",
+            "JavaScript",
+            "C++",
+            "Java",
+            "Ruby",
+            "Go",
+            "Scala",
+            "Rust"
+          ]
+        ],
+        [
+          "Interview Preparation Tips",
+          [
+            "Struggle before asking for help",
+            "Ask for hints, not solutions",
+            "Always debrief after solving",
+            "Pattern first, code second",
+            "Revisit problems cold after 3 days"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Arrays, hashing and two pointers",
+      "short": "Arrays & pointers",
+      "description": "Start with the most common patterns: lookups with hash maps and scanning with two pointers.",
+      "items": [
+        [
+          "Arrays & Hashing",
+          [
+            "Two Sum",
+            "Valid Anagram",
+            "Contains Duplicate",
+            "Group Anagrams",
+            "Top K Frequent Elements",
+            "More Exercises"
+          ]
+        ],
+        [
+          "Two Pointers",
+          [
+            "Valid Palindrome",
+            "3Sum",
+            "Container With Most Water",
+            "Trapping Rain Water",
+            "Two Sum II",
+            "More Exercises"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Stacks and binary search",
+      "short": "Stacks & search",
+      "description": "Use stacks for nested and monotonic problems and halve the search space with binary search.",
+      "items": [
+        [
+          "Stacks",
+          [
+            "Valid Parentheses",
+            "Min Stack",
+            "Daily Temperatures",
+            "Generate Parentheses",
+            "Largest Rectangle in Histogram",
+            "More Exercises"
+          ]
+        ],
+        [
+          "Binary Search",
+          [
+            "Binary Search",
+            "Search in Rotated Array",
+            "Minimum in Rotated Array",
+            "Koko Eating Bananas",
+            "Median of Two Arrays",
+            "More Exercises"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Sliding window and linked lists",
+      "short": "Window & lists",
+      "description": "Track moving ranges over sequences and get fluent at pointer work on linked lists.",
+      "items": [
+        [
+          "Sliding Window",
+          [
+            "Best Time to Buy and Sell",
+            "Substring Without Repetition",
+            "Minimum Window Substring",
+            "Character Replacement",
+            "Sliding Window Maximum",
+            "More Exercises"
+          ]
+        ],
+        [
+          "Linked List",
+          [
+            "Reverse Linked List",
+            "Merge Two Sorted Lists",
+            "Linked List Cycle",
+            "Reorder List",
+            "Merge K Sorted Lists",
+            "More Exercises"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Trees and heaps",
+      "short": "Trees & heaps",
+      "description": "Traverse and reason about binary trees, and use priority queues for top-k and streaming problems.",
+      "items": [
+        [
+          "Trees",
+          [
+            "Binary Tree Level Order",
+            "Maximum Depth of Binary Tree",
+            "Lowest Common Ancestor",
+            "Binary Tree Maximum Path Sum",
+            "Serialize and Deserialize",
+            "More Exercises"
+          ]
+        ],
+        [
+          "Heap / Priority Queue",
+          [
+            "Kth Largest Element in an Array",
+            "K Closest Points to Origin",
+            "Task Scheduler",
+            "Find Median from Data Stream",
+            "Merge K Sorted Lists",
+            "More Exercises"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Backtracking and tries",
+      "short": "Backtrack & tries",
+      "description": "Explore every option systematically and store words in prefix trees for fast lookups.",
+      "items": [
+        [
+          "Backtracking",
+          [
+            "Subsets",
+            "Combination Sum",
+            "Permutations",
+            "Word Search",
+            "N-Queens",
+            "More Exercises"
+          ]
+        ],
+        [
+          "Tries",
+          [
+            "Implement Trie",
+            "Design Add and Search Words",
+            "Word Search II",
+            "Longest Common Prefix",
+            "Replace Words",
+            "More Exercises"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Graphs",
+      "short": "Graphs",
+      "description": "Model problems as graphs and apply BFS, DFS, topological sort and shortest-path techniques.",
+      "items": [
+        [
+          "Graphs",
+          [
+            "Number of Islands",
+            "Clone Graph",
+            "Pacific Atlantic Water Flow",
+            "Course Schedule",
+            "Word Ladder",
+            "More Exercises"
+          ]
+        ],
+        [
+          "Advanced Graphs",
+          [
+            "Network Delay Time",
+            "Min Cost to Connect All Points",
+            "Cheapest Flights Within K Stops",
+            "Swim in Rising Water",
+            "Reconstruct Itinerary",
+            "More Exercises"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Dynamic programming",
+      "short": "DP",
+      "description": "Break problems into overlapping subproblems, first in one dimension and then in two.",
+      "items": [
+        [
+          "1-D Dynamic Programming",
+          [
+            "Climbing Stairs",
+            "House Robber",
+            "Coin Change",
+            "Longest Increasing Subsequence",
+            "Word Break",
+            "More Exercises"
+          ]
+        ],
+        [
+          "2-D Dynamic Programming",
+          [
+            "Unique Paths",
+            "Longest Common Subsequence",
+            "Edit Distance",
+            "Burst Balloons",
+            "Regular Expression Matching",
+            "More Exercises"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Greedy and intervals",
+      "short": "Greedy & intervals",
+      "description": "Make locally best choices that add up, and sort and merge ranges cleanly.",
+      "items": [
+        [
+          "Greedy",
+          [
+            "Jump Game",
+            "Jump Game II",
+            "Gas Station",
+            "Partition Labels",
+            "Non-overlapping Intervals",
+            "More Exercises"
+          ]
+        ],
+        [
+          "Intervals",
+          [
+            "Merge Intervals",
+            "Insert Interval",
+            "Non-overlapping Intervals",
+            "Meeting Rooms",
+            "Min. Interval to Include Query",
+            "More Exercises"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Bit manipulation and math",
+      "short": "Bits & math",
+      "description": "Finish with problems solved by bit tricks, matrix handling and a little number theory.",
+      "items": [
+        [
+          "Bit Manipulation",
+          [
+            "Single Number",
+            "Number of 1 Bits",
+            "Counting Bits",
+            "Reverse Bits",
+            "Sum of Two Integers",
+            "More Exercises"
+          ]
+        ],
+        [
+          "Math & Geometry",
+          [
+            "Rotate Image",
+            "Spiral Matrix",
+            "Set Matrix Zeroes",
+            "Happy Number",
+            "Pow(x, n)",
+            "More Exercises"
+          ]
+        ]
+      ]
+    }
+  ]
+}

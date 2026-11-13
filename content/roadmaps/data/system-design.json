@@ -1,0 +1,299 @@
+{
+  "slug": "system-design",
+  "title": "System Design",
+  "tagline": "How to design large, scalable systems: trade-offs, data, caching, messaging and cloud patterns.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-system-design",
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction and core trade-offs",
+      "short": "Intro",
+      "description": "Learn what system design is, how to approach it and the first trade-offs you will weigh.",
+      "items": [
+        [
+          "Introduction",
+          ["What is System Design?", "How to approach System Design?"]
+        ],
+        ["Performance vs Scalability"],
+        ["Latency vs Throughput"]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Consistency and the CAP theorem",
+      "short": "Consistency",
+      "description": "Understand why distributed systems must choose between consistency and availability.",
+      "items": [
+        ["Availability vs Consistency"],
+        [
+          "CAP Theorem",
+          [
+            "AP - Availability + Partition Tolerance",
+            "CP - Consistency + Partition Tolerance"
+          ]
+        ],
+        [
+          "Consistency Patterns",
+          ["Weak Consistency", "Eventual Consistency", "Strong Consistency"]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Availability patterns",
+      "short": "Availability",
+      "description": "Keep services up with fail-over and replication, and measure availability in nines.",
+      "items": [
+        ["Fail-Over", ["Active - Active", "Active - Passive"]],
+        ["Replication", ["Master - Slave", "Master - Master"]],
+        [
+          "Availability in Numbers",
+          [
+            "99.9% Availability - three 9s",
+            "99.99% Availability - four 9s",
+            "Availability in Parallel vs Sequence"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Background jobs, DNS and CDNs",
+      "short": "Jobs, DNS & CDN",
+      "description": "Move work off the request path and get content to users quickly from the edge.",
+      "items": [
+        [
+          "Background Jobs",
+          ["Event-Driven", "Schedule Driven", "Returning Results"]
+        ],
+        ["Domain Name System"],
+        ["Content Delivery Networks", ["Push CDNs", "Pull CDNs"]]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Load balancing and the application layer",
+      "short": "Load balancing",
+      "description": "Spread traffic across servers and split applications into independent services.",
+      "items": [
+        [
+          "Load Balancers",
+          [
+            "LB vs Reverse Proxy",
+            "Load Balancing Algorithms",
+            "Layer 7 Load Balancing",
+            "Layer 4 Load Balancing",
+            "Horizontal Scaling"
+          ]
+        ],
+        ["Application Layer", ["Microservices", "Service Discovery"]]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Databases",
+      "short": "Databases",
+      "description": "Choose between relational and NoSQL stores and scale them as data grows.",
+      "items": [
+        ["SQL vs NoSQL"],
+        [
+          "RDBMS",
+          [
+            "Replication",
+            "Sharding",
+            "Federation",
+            "Denormalization",
+            "SQL Tuning"
+          ]
+        ],
+        [
+          "NoSQL",
+          [
+            "Key-Value Store",
+            "Document Store",
+            "Wide Column Store",
+            "Graph Databases"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Caching",
+      "short": "Caching",
+      "description": "Cut latency and load by caching at the right layer with the right strategy.",
+      "items": [
+        [
+          "Caching Strategies",
+          ["Refresh Ahead", "Write-behind", "Write-through", "Cache Aside"]
+        ],
+        [
+          "Types of Caching",
+          [
+            "Client Caching",
+            "CDN Caching",
+            "Web Server Caching",
+            "Database Caching",
+            "Application Caching"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Asynchronism and communication",
+      "short": "Async & comms",
+      "description": "Decouple components with queues and pick the right protocol for services to talk.",
+      "items": [
+        ["Asynchronism", ["Back Pressure", "Task Queues", "Message Queues"]],
+        ["Idempotent Operations"],
+        [
+          "Communication",
+          ["HTTP", "TCP", "UDP", "RPC", "gRPC", "REST", "GraphQL"]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Performance antipatterns",
+      "short": "Antipatterns",
+      "description": "Recognise the common design mistakes that make systems slow under load.",
+      "items": [
+        [
+          "Performance Antipatterns",
+          [
+            "Improper Instantiation",
+            "Monolithic Persistence",
+            "Noisy Neighbor",
+            "Synchronous I/O",
+            "Extraneous Fetching",
+            "Busy Database",
+            "Busy Frontend",
+            "Chatty I/O",
+            "Retry Storm",
+            "No Caching"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Monitoring",
+      "short": "Monitoring",
+      "description": "Watch health, performance, security and usage, and alert when something drifts.",
+      "items": [
+        [
+          "Monitoring",
+          [
+            "Health Monitoring",
+            "Availability Monitoring",
+            "Performance Monitoring",
+            "Security Monitoring",
+            "Usage Monitoring",
+            "Instrumentation",
+            "Visualization & Alerts"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Cloud design patterns",
+      "short": "Cloud patterns",
+      "description": "Get an overview of proven patterns for messaging, data and service structure.",
+      "items": [
+        [
+          "Messaging",
+          [
+            "Sequential Convoy",
+            "Scheduling Agent Supervisor",
+            "Queue-based Load Leveling",
+            "Publisher/Subscriber",
+            "Priority Queue",
+            "Pipes and Filters",
+            "Competing Consumers",
+            "Choreography",
+            "Claim Check",
+            "Async Request Reply"
+          ]
+        ],
+        [
+          "Data Management",
+          [
+            "Valet Key",
+            "Static Content Hosting",
+            "Sharding",
+            "Materialized View",
+            "Index Table",
+            "Event Sourcing",
+            "CQRS",
+            "Cache-Aside"
+          ]
+        ],
+        [
+          "Design & Implementation",
+          [
+            "Strangler Fig",
+            "Sidecar",
+            "Static Content Hosting",
+            "Leader Election",
+            "CQRS",
+            "Pipes & Filters",
+            "Ambassador",
+            "Gateway Routing",
+            "Gateway Offloading",
+            "Gateway Aggregation",
+            "External Config Store",
+            "Compute Resource Consolidation",
+            "Backends for Frontend",
+            "Anti-Corruption Layer"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Reliability patterns",
+      "short": "Reliability",
+      "description": "Design for availability, resiliency and security when parts of the system fail.",
+      "items": [
+        [
+          "Availability",
+          [
+            "Deployment Stamps",
+            "Geodes",
+            "Throttling",
+            "Health Endpoint Monitoring",
+            "Queue-Based Load Leveling"
+          ]
+        ],
+        [
+          "High Availability",
+          [
+            "Deployment Stamps",
+            "Geodes",
+            "Bulkhead",
+            "Health Endpoint Monitoring",
+            "Circuit Breaker"
+          ]
+        ],
+        [
+          "Resiliency",
+          [
+            "Bulkhead",
+            "Circuit Breaker",
+            "Compensating Transaction",
+            "Health Endpoint Monitoring",
+            "Leader Election",
+            "Queue-Based Load Leveling",
+            "Retry",
+            "Scheduler Agent Supervisor"
+          ]
+        ],
+        ["Security", ["Federated Identity", "Gatekeeper", "Valet Key"]]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "slug": "devops",
+  "title": "DevOps Engineer",
+  "tagline": "From a first language and Linux through networking, cloud, IaC and CI/CD to monitoring, Kubernetes and GitOps.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-devops",
+  "credit": {
+    "text": "Based on the DevOps Engineer roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Programming language and operating systems",
+      "short": "Language & OS",
+      "description": "Get comfortable in one scripting-friendly language and learn your way around the operating systems servers run on.",
+      "items": [
+        [
+          "Learn a Programming Language",
+          [
+            "Python",
+            "Go",
+            "Ruby?",
+            "Rust?",
+            "JavaScript / Node.js?"
+          ]
+        ],
+        [
+          "Operating System",
+          [
+            "Ubuntu / Debian",
+            "RHEL / Derivatives",
+            "SUSE Linux?",
+            "FreeBSD",
+            "OpenBSD?",
+            "NetBSD?",
+            "Windows?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Terminal knowledge",
+      "short": "Terminal",
+      "description": "Live in the shell: script tasks, edit files and inspect processes, performance, networks and text from the command line.",
+      "items": [
+        [
+          "Terminal Knowledge",
+          [
+            "Process Monitoring",
+            "Performance Monitoring",
+            "Networking Tools",
+            "Text Manipulation"
+          ]
+        ],
+        [
+          "Scripting",
+          [
+            "Bash",
+            "Power Shell?"
+          ]
+        ],
+        [
+          "Editors",
+          [
+            "Vim / Nano / Emacs"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Version control",
+      "short": "Version control",
+      "description": "Track changes with Git and collaborate through a hosted repository service.",
+      "items": [
+        [
+          "Version Control Systems",
+          [
+            "Git"
+          ]
+        ],
+        [
+          "VCS Hosting",
+          [
+            "GitHub",
+            "GitLab?",
+            "Bitbucket?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Containers and web servers",
+      "short": "Containers & web",
+      "description": "Package apps in containers and understand proxies, caches, firewalls, load balancers and the web servers that front them.",
+      "items": [
+        [
+          "Containers",
+          [
+            "Docker",
+            "LXC?"
+          ]
+        ],
+        [
+          "What is and how to setup X",
+          [
+            "Forward Proxy",
+            "Reverse Proxy",
+            "Caching Server",
+            "Firewall",
+            "Load Balancer"
+          ]
+        ],
+        [
+          "Web Server",
+          [
+            "Nginx",
+            "Caddy?",
+            "Tomcat?",
+            "Apache?",
+            "IIS?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Networking and protocols",
+      "short": "Networking",
+      "description": "Learn the protocols that move data and mail across the internet and the OSI model that ties them together.",
+      "items": [
+        [
+          "Networking & Protocols",
+          [
+            "FTP / SFTP",
+            "DNS",
+            "HTTP",
+            "HTTPS",
+            "SSL / TLS",
+            "SSH",
+            "OSI Model"
+          ]
+        ],
+        [
+          "Email Protocols",
+          [
+            "White / Grey Listing",
+            "SMTP",
+            "DMARC",
+            "IMAP",
+            "SPF",
+            "POP3S",
+            "Domain Keys"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Cloud providers and serverless",
+      "short": "Cloud",
+      "description": "Pick a major cloud provider to go deep on and see how serverless platforms run code without managing servers.",
+      "items": [
+        [
+          "Cloud Providers",
+          [
+            "AWS",
+            "Azure",
+            "Google Cloud",
+            "Digital Ocean?",
+            "Alibaba Cloud?",
+            "Hetzner?",
+            "Contabo?",
+            "Heroku?"
+          ]
+        ],
+        [
+          "Serverless",
+          [
+            "AWS Lambda",
+            "Cloudflare",
+            "Azure Functions?",
+            "Vercel?",
+            "Netlify?",
+            "GCP Functions?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Infrastructure as code",
+      "short": "IaC",
+      "description": "Provision infrastructure from code and keep servers configured consistently.",
+      "items": [
+        [
+          "Provisioning",
+          [
+            "Terraform",
+            "AWS CDK?",
+            "CloudFormation?",
+            "Pulumi?"
+          ]
+        ],
+        [
+          "Configuration Management",
+          [
+            "Ansible",
+            "Chef?",
+            "Puppet?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "CI/CD and secrets",
+      "short": "CI/CD & secrets",
+      "description": "Automate builds and deployments with a pipeline tool and keep credentials out of your code.",
+      "items": [
+        [
+          "CI / CD Tools",
+          [
+            "GitHub Actions",
+            "GitLab CI",
+            "Circle CI",
+            "Jenkins?",
+            "TeamCity?",
+            "Octopus Deploy?"
+          ]
+        ],
+        [
+          "Secret Management",
+          [
+            "Vault",
+            "Sealed Secrets?",
+            "SOPs?",
+            "Cloud Specific Tools?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Monitoring and logging",
+      "short": "Monitoring & logs",
+      "description": "Watch infrastructure and applications, collect logs and trace requests so problems surface quickly.",
+      "items": [
+        [
+          "Infrastructure Monitoring",
+          [
+            "Prometheus",
+            "Grafana",
+            "Datadog",
+            "Zabbix?"
+          ]
+        ],
+        [
+          "Logs Management",
+          [
+            "Elastic Stack",
+            "Loki",
+            "Papertrail?",
+            "Splunk?",
+            "Graylog?"
+          ]
+        ],
+        [
+          "Application Monitoring",
+          [
+            "Jaeger",
+            "New Relic",
+            "Datadog",
+            "Prometheus",
+            "OpenTelemetry"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Container orchestration",
+      "short": "Orchestration",
+      "description": "Run containers at scale with Kubernetes or a managed orchestration service.",
+      "items": [
+        [
+          "Container Orchestration",
+          [
+            "Kubernetes",
+            "GKE / EKS / AKS?",
+            "AWS ECS / Fargate?",
+            "Docker Swarm?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Artifacts, GitOps and service mesh",
+      "short": "GitOps & mesh",
+      "description": "Store build artifacts, drive deployments from Git and manage service-to-service traffic with a mesh.",
+      "items": [
+        [
+          "Artifact Management",
+          [
+            "Artifactory",
+            "Nexus?",
+            "Cloud Smith?"
+          ]
+        ],
+        [
+          "GitOps",
+          [
+            "ArgoCD",
+            "FluxCD?"
+          ]
+        ],
+        [
+          "Service Mesh",
+          [
+            "Istio",
+            "Consul",
+            "Linkerd?",
+            "Envoy?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Cloud design patterns",
+      "short": "Design patterns",
+      "description": "Apply proven patterns for building cloud systems that stay available, consistent and observable.",
+      "items": [
+        [
+          "Cloud Design Patterns",
+          [
+            "Availability",
+            "Data Management",
+            "Design and Implementation",
+            "Management and Monitoring"
+          ]
+        ]
+      ]
+    }
+  ]
+}

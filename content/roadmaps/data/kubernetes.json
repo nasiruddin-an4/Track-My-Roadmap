@@ -1,0 +1,242 @@
+{
+  "slug": "kubernetes",
+  "title": "Kubernetes",
+  "tagline": "Go from your first cluster and deployment to networking, security, scaling and running clusters yourself.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-kubernetes",
+  "credit": {
+    "text": "Based on the Kubernetes roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Learn what Kubernetes is, the vocabulary it uses and how containers fit underneath it.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "Overview of Kubernetes",
+            "Why use Kubernetes",
+            "Key Concepts and Terminologies",
+            "Kubernetes Alternatives"
+          ]
+        ],
+        [
+          "Containers"
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Setting up Kubernetes",
+      "short": "Setup",
+      "description": "Get a cluster running locally or with a managed provider and deploy something to it.",
+      "items": [
+        [
+          "Setting up Kubernetes",
+          [
+            "Deploying your First Application",
+            "Choosing a Managed Provider",
+            "Installing a Local Cluster"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Running applications",
+      "short": "Workloads",
+      "description": "Know the main workload objects and when each one is the right fit.",
+      "items": [
+        [
+          "Running Applications",
+          [
+            "Pods",
+            "ReplicaSets",
+            "Deployments",
+            "StatefulSets",
+            "Jobs"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Services and networking",
+      "short": "Networking",
+      "description": "Expose workloads, balance traffic and understand how pods talk to each other.",
+      "items": [
+        [
+          "Services and Networking",
+          [
+            "External Access to Services",
+            "Load Balancing",
+            "Networking & Pod-to-Pod Communication"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Configuration management",
+      "short": "Configuration",
+      "description": "Feed settings and secrets into pods without baking them into images.",
+      "items": [
+        [
+          "Configuration Management",
+          [
+            "Injecting Pod Config with ConfigMaps",
+            "Using Secrets for Sensitive Data"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Resource management",
+      "short": "Resources",
+      "description": "Control how much CPU and memory workloads and namespaces may use and keep an eye on it.",
+      "items": [
+        [
+          "Resource Management",
+          [
+            "Setting Resource Requests and Limits",
+            "Assigning Quotas to Namespaces",
+            "Monitoring & Optimizing Resource Usage"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Security",
+      "short": "Security",
+      "description": "Lock down who can do what in the cluster, what traffic is allowed and how containers run.",
+      "items": [
+        [
+          "Security",
+          [
+            "Role Based Access Control (RBAC)",
+            "Network Security",
+            "Container and Pod Security"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Monitoring and logging",
+      "short": "Observability",
+      "description": "Collect logs, metrics and traces so you can see the health of what runs in the cluster.",
+      "items": [
+        [
+          "Monitoring and Logging",
+          [
+            "Logs",
+            "Metrics",
+            "Traces",
+            "Resource Health",
+            "Observability Engines"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Autoscaling",
+      "short": "Autoscaling",
+      "description": "Scale pods sideways or upwards and grow the cluster itself as load changes.",
+      "items": [
+        [
+          "Autoscaling",
+          [
+            "Horizontal Pod Autoscaler (HPA)",
+            "Vertical Pod Autoscaler (VPA)",
+            "Cluster Autoscaling"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Scheduling",
+      "short": "Scheduling",
+      "description": "Influence where pods land and which ones win when the cluster runs short.",
+      "items": [
+        [
+          "Scheduling",
+          [
+            "Basics",
+            "Taints and Tolerations",
+            "Topology Spread Constraints",
+            "Pod Priorities",
+            "Evictions"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Storage and volumes",
+      "short": "Storage",
+      "description": "Attach persistent storage and run stateful applications reliably.",
+      "items": [
+        [
+          "Storage and Volumes",
+          [
+            "CSI Drivers",
+            "Stateful Applications"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Deployment patterns",
+      "short": "Deploy patterns",
+      "description": "Automate releases with CI/CD, GitOps and Helm and roll out changes safely.",
+      "items": [
+        [
+          "Deployment Patterns",
+          [
+            "CI / CD Integration",
+            "GitOps",
+            "Helm Charts",
+            "Canary Deployments",
+            "Blue-Green Deployments",
+            "Rolling Updates / Rollbacks"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Advanced topics",
+      "short": "Advanced",
+      "description": "Extend Kubernetes with your own resources and controllers and learn to operate clusters yourself.",
+      "items": [
+        [
+          "Advanced Topics",
+          [
+            "Creating Custom Controllers",
+            "Custom Schedulers and Extenders",
+            "Custom Resource Definitions (CRDs)",
+            "Kubernetes Extensions and APIs"
+          ]
+        ],
+        [
+          "Cluster Operations",
+          [
+            "Should you manage your own Cluster",
+            "Installing the Control Plane",
+            "Adding and Managing Worker Nodes",
+            "Multi-Cluster Management"
+          ]
+        ]
+      ]
+    }
+  ]
+}

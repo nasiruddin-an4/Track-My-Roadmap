@@ -1,0 +1,694 @@
+{
+  "slug": "cyber-security",
+  "title": "Cyber Security",
+  "tagline": "IT, OS and networking foundations through attacks, defences, incident response and cloud security.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-cyber-security",
+  "credit": {
+    "text": "Based on the Cyber Security roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Fundamental IT Skills",
+      "short": "IT skills",
+      "description": "Build a solid base in hardware, connectivity, troubleshooting and everyday software suites.",
+      "items": [
+        [
+          "Computer Hardware Components"
+        ],
+        [
+          "Connection Types and their function",
+          [
+            "NFC",
+            "WiFi",
+            "Bluetooth",
+            "Infrared"
+          ]
+        ],
+        [
+          "OS-Independent Troubleshooting"
+        ],
+        [
+          "Understand Basics of Popular Suites",
+          [
+            "MS Office Suite",
+            "iCloud",
+            "Google Suite"
+          ]
+        ],
+        [
+          "Basics of Computer Networking"
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Operating Systems",
+      "short": "Operating systems",
+      "description": "Get hands-on with Windows, Linux and macOS, from installation to permissions and commands.",
+      "items": [
+        [
+          "Operating Systems",
+          [
+            "Windows",
+            "Linux",
+            "MacOS"
+          ]
+        ],
+        [
+          "Learn for each OS",
+          [
+            "Installation and Configuration",
+            "Different Versions and Differences",
+            "Navigating using GUI and CLI",
+            "Understand Permissions",
+            "Installing Software and Applications",
+            "Performing CRUD on Files",
+            "Troubleshooting",
+            "Common Commands"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Networking Knowledge",
+      "short": "Networking",
+      "description": "Learn the models, protocols, ports, addressing and topologies that every network relies on.",
+      "items": [
+        [
+          "Understand the OSI Model"
+        ],
+        [
+          "Common Protocols and their Uses"
+        ],
+        [
+          "Common Ports and their Uses"
+        ],
+        [
+          "SSL and TLS Basics"
+        ],
+        [
+          "Basics of NAS and SAN"
+        ],
+        [
+          "Basics of Subnetting"
+        ],
+        [
+          "Public vs Private IP Addresses"
+        ],
+        [
+          "IP Terminology",
+          [
+            "localhost",
+            "loopback",
+            "CIDR",
+            "subnet mask",
+            "default gateway"
+          ]
+        ],
+        [
+          "Understand the Terminology",
+          [
+            "VLAN",
+            "DMZ",
+            "ARP",
+            "VM",
+            "DHCP",
+            "DNS",
+            "NAT",
+            "IP",
+            "Router",
+            "Switch",
+            "VPN"
+          ]
+        ],
+        [
+          "Network Types",
+          [
+            "MAN",
+            "LAN",
+            "WAN",
+            "WLAN"
+          ]
+        ],
+        [
+          "Functions of each",
+          [
+            "DHCP",
+            "DNS",
+            "NTP",
+            "IPAM"
+          ]
+        ],
+        [
+          "Network Topologies",
+          [
+            "Star",
+            "Ring",
+            "Mesh",
+            "Bus"
+          ]
+        ],
+        [
+          "Network Protocols",
+          [
+            "SSH",
+            "RDP",
+            "FTP",
+            "SFTP",
+            "HTTP / HTTPS",
+            "SSL / TLS"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Virtualization, Tools & Authentication",
+      "short": "VMs & net tools",
+      "description": "Understand virtual machines, the core network troubleshooting tools and common ways to authenticate.",
+      "items": [
+        [
+          "Common Virtualization Technologies",
+          [
+            "VMWare",
+            "VirtualBox",
+            "esxi",
+            "proxmox"
+          ]
+        ],
+        [
+          "Basics of Virtualization",
+          [
+            "Hypervisor",
+            "GuestOS",
+            "HostOS",
+            "VM"
+          ]
+        ],
+        [
+          "Troubleshooting Tools",
+          [
+            "ipconfig",
+            "ping",
+            "dig",
+            "netstat",
+            "route",
+            "nmap",
+            "tcpdump",
+            "arp",
+            "tracert",
+            "nslookup",
+            "iptables",
+            "Packet Sniffers",
+            "Port Scanners",
+            "Protocol Analyzers"
+          ]
+        ],
+        [
+          "Authentication Methodologies",
+          [
+            "Kerberos",
+            "RADIUS",
+            "LDAP",
+            "SSO",
+            "Certificates",
+            "Local Auth"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Security Concepts",
+      "short": "Security concepts",
+      "description": "Learn the core ideas behind security work, from the CIA triad and zero trust to detection accuracy.",
+      "items": [
+        [
+          "Core Concepts of Zero Trust"
+        ],
+        [
+          "Roles of Compliance and Auditors"
+        ],
+        [
+          "Understand the Definition of Risk"
+        ],
+        [
+          "Understand Backups and Resiliency"
+        ],
+        [
+          "Cyber Kill Chain"
+        ],
+        [
+          "MFA & 2FA"
+        ],
+        [
+          "Honeypots"
+        ],
+        [
+          "Operating System Hardening"
+        ],
+        [
+          "Understand Concept of Isolation"
+        ],
+        [
+          "Basics of IDS and IPS"
+        ],
+        [
+          "Authentication vs Authorization"
+        ],
+        [
+          "Blue / Red / Purple Teams"
+        ],
+        [
+          "False Negative / False Positive"
+        ],
+        [
+          "True Negative / True Positive"
+        ],
+        [
+          "Basics of Threat Intel, OSINT"
+        ],
+        [
+          "Understand Handshakes"
+        ],
+        [
+          "Understand CIA Triad"
+        ],
+        [
+          "Privilege Escalation"
+        ],
+        [
+          "Web Based Attacks and OWASP10"
+        ],
+        [
+          "Learn how Malware works and Types"
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Security Practice & Frameworks",
+      "short": "Practice & stds",
+      "description": "Study hacking tools, forensics, threat hunting, cryptography and the frameworks and standards the field uses.",
+      "items": [
+        [
+          "Understand Common Hacking Tools"
+        ],
+        [
+          "Understand Common Exploit Frameworks"
+        ],
+        [
+          "Understand Concept of Defense in Depth"
+        ],
+        [
+          "Understand Concept of Runbooks"
+        ],
+        [
+          "Understand Basics of Forensics"
+        ],
+        [
+          "Basics and Concepts of Threat Hunting"
+        ],
+        [
+          "Basics of Vulnerability Management"
+        ],
+        [
+          "Basics of Reverse Engineering"
+        ],
+        [
+          "Penetration Testing Rules of Engagement"
+        ],
+        [
+          "Perimeter vs DMZ vs Segmentation"
+        ],
+        [
+          "Basics of Cryptography",
+          [
+            "Salting",
+            "Hashing",
+            "Key Exchange",
+            "Private vs Public Keys",
+            "PKI",
+            "Obfuscation"
+          ]
+        ],
+        [
+          "Understand Frameworks",
+          [
+            "Diamond Model",
+            "Kill Chain",
+            "ATT&CK"
+          ]
+        ],
+        [
+          "Understand Common Standards",
+          [
+            "ISO",
+            "RMF",
+            "NIST",
+            "CIS",
+            "CSF"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Tools, Logs & Monitoring",
+      "short": "Tools & logs",
+      "description": "Use incident response tools, hacking distros and log sources to discover and investigate activity.",
+      "items": [
+        [
+          "Tools for Incident Response and Discovery",
+          [
+            "dig",
+            "nmap",
+            "ping",
+            "arp",
+            "cat",
+            "dd",
+            "tail",
+            "hping",
+            "head",
+            "grep",
+            "nslookup",
+            "tracert",
+            "winhex",
+            "autopsy",
+            "ipconfig",
+            "curl",
+            "wireshark",
+            "memdump",
+            "FTK Imager"
+          ]
+        ],
+        [
+          "Using tools for Unintended Purposes",
+          [
+            "LOLBAS",
+            "GTFOBINS",
+            "WADCOMS"
+          ]
+        ],
+        [
+          "Common Distros for hacking",
+          [
+            "ParrotOS",
+            "Kali Linux"
+          ]
+        ],
+        [
+          "SIEM and SOAR",
+          [
+            "SIEM",
+            "SOAR"
+          ]
+        ],
+        [
+          "Learn how to find and use these logs",
+          [
+            "Event Logs",
+            "syslogs",
+            "netflow",
+            "Packet Captures",
+            "Firewall Logs"
+          ]
+        ],
+        [
+          "Understand Common Tools",
+          [
+            "VirusTotal",
+            "urlscan",
+            "any.run",
+            "Joe Sandbox",
+            "urlvoid",
+            "WHOIS"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Hardening & Incident Response",
+      "short": "Hardening & IR",
+      "description": "Harden systems, choose secure protocols and follow a clear process when an incident happens.",
+      "items": [
+        [
+          "Understand Hardening Concepts",
+          [
+            "MAC-based",
+            "NAC-based",
+            "Port Blocking",
+            "Group Policy",
+            "Sinkholes",
+            "ACLs",
+            "Patching",
+            "Jump Server",
+            "Endpoint Security"
+          ]
+        ],
+        [
+          "Secure vs Unsecure Protocols",
+          [
+            "FTP vs SFTP",
+            "SSL vs TLS",
+            "IPSEC",
+            "DNSSEC",
+            "LDAPS",
+            "SRTP",
+            "S/MIME"
+          ]
+        ],
+        [
+          "Understand the following Terms",
+          [
+            "Antivirus",
+            "Antimalware",
+            "EDR",
+            "DLP",
+            "Firewall & Nextgen Firewall",
+            "HIPS",
+            "NIDS",
+            "NIPS",
+            "Host Based Firewall",
+            "Sandboxing",
+            "EAP vs PEAP",
+            "WPS",
+            "ACL",
+            "WPA vs WPA2 vs WPA3 vs WEP"
+          ]
+        ],
+        [
+          "Understand the Incident Response Process",
+          [
+            "Preparation",
+            "Identification",
+            "Containment",
+            "Eradication",
+            "Recovery",
+            "Lessons Learned"
+          ]
+        ],
+        [
+          "Understand Threat Classification",
+          [
+            "Zero Day",
+            "Known vs Unknown",
+            "APT"
+          ]
+        ],
+        [
+          "Understand Audience",
+          [
+            "Stakeholders",
+            "HR",
+            "Legal",
+            "Compliance",
+            "Management"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Attacks",
+      "short": "Attacks",
+      "description": "Recognise social engineering tricks and the network, web and memory attacks you must defend against.",
+      "items": [
+        [
+          "Attack Types and Differences",
+          [
+            "Phishing",
+            "Whishing",
+            "Whaling",
+            "Smishing",
+            "Spam vs Spim",
+            "Shoulder Surfing",
+            "Tailgating",
+            "Dumpster Diving",
+            "Zero day",
+            "Social Engineering",
+            "Reconnaissance",
+            "Impersonation",
+            "Watering Hole Attack",
+            "Drive by Attack",
+            "Typo Squatting",
+            "Brute Force vs Password Spray"
+          ]
+        ],
+        [
+          "Common Attacks",
+          [
+            "DoS vs DDoS",
+            "MITM",
+            "CSRF",
+            "Spoofing",
+            "SQL Injection",
+            "XSS",
+            "Evil Twin",
+            "VLAN Hopping",
+            "DNS Poisoning",
+            "Deauth Attack",
+            "Replay Attack",
+            "Rogue Access Point",
+            "Buffer Overflow",
+            "Memory Leak",
+            "Pass the Hash",
+            "Directory Traversal"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Cloud Skills and Knowledge",
+      "short": "Cloud",
+      "description": "Apply security thinking to cloud services, models, providers and storage platforms.",
+      "items": [
+        [
+          "Understand the Concept of Security in the Cloud"
+        ],
+        [
+          "Understand the differences between cloud and on-premises"
+        ],
+        [
+          "Understand the concept of Infrastructure as Code"
+        ],
+        [
+          "Understand the Concept of Serverless"
+        ],
+        [
+          "Understand the basics and general flow of deploying in the cloud"
+        ],
+        [
+          "Understand Cloud Services",
+          [
+            "SaaS",
+            "PaaS",
+            "IaaS"
+          ]
+        ],
+        [
+          "Cloud Models",
+          [
+            "Private",
+            "Public",
+            "Hybrid"
+          ]
+        ],
+        [
+          "Common Cloud Environments",
+          [
+            "AWS",
+            "GCP",
+            "Azure"
+          ]
+        ],
+        [
+          "Common Cloud Storage",
+          [
+            "S3",
+            "Dropbox",
+            "iCloud",
+            "Box",
+            "OneDrive",
+            "Google Drive"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Programming Skills",
+      "short": "Programming",
+      "description": "Pick up the scripting and programming languages most useful for automating security work.",
+      "items": [
+        [
+          "Python"
+        ],
+        [
+          "Go"
+        ],
+        [
+          "JavaScript"
+        ],
+        [
+          "C++"
+        ],
+        [
+          "Bash"
+        ],
+        [
+          "Power Shell"
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Certifications & CTFs",
+      "short": "Certs & CTFs",
+      "description": "Sharpen your skills on capture-the-flag platforms and prove them with beginner and advanced certifications.",
+      "items": [
+        [
+          "CTFs (Capture the Flag)",
+          [
+            "HackTheBox",
+            "TryHackMe",
+            "VulnHub",
+            "picoCTF",
+            "SANS Holiday Hack Challenge"
+          ]
+        ],
+        [
+          "Beginner Certifications",
+          [
+            "CompTIA A+",
+            "CompTIA Linux+",
+            "CompTIA Network+",
+            "CCNA",
+            "CompTIA Security+"
+          ]
+        ],
+        [
+          "Advanced Certifications",
+          [
+            "CEH",
+            "CISA",
+            "CISM",
+            "GSEC",
+            "GPEN",
+            "GWAPT",
+            "GIAC",
+            "OSCP",
+            "CREST",
+            "CISSP"
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,463 @@
+{
+  "slug": "software-engineer",
+  "title": "Software Engineer",
+  "years": "2026–2030",
+  "tagline": "From your first language to system design, AI engineering and landing the job.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "se-journey-v1",
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Programming fundamentals",
+      "short": "Fundamentals",
+      "description": "Pick one language and learn to write small programs with it. Everything later builds on this.",
+      "items": [
+        [
+          "Choose one programming language!",
+          ["C++ / C#", "Java", "Go", "Python"]
+        ],
+        [
+          "Programming basics",
+          [
+            "Variables",
+            "Data types",
+            "Operators",
+            "Conditions",
+            "Loops",
+            "Functions",
+            "Recursion",
+            "Exception handling",
+            "Collections",
+            "File handling"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Computer science fundamentals",
+      "short": "CS basics",
+      "description": "The data structures, algorithms and systems knowledge that interviews and real work lean on.",
+      "items": [
+        [
+          "Data structures",
+          [
+            "Arrays",
+            "Strings",
+            "Linked lists",
+            "Stacks",
+            "Queues",
+            "Hash tables",
+            "Trees",
+            "Heaps",
+            "Graphs"
+          ]
+        ],
+        [
+          "Algorithms",
+          [
+            "Searching",
+            "Sorting",
+            "Recursion",
+            "Backtracking",
+            "Greedy",
+            "Dynamic programming",
+            "Graph algorithms"
+          ]
+        ],
+        [
+          "Complexity analysis",
+          ["Big O", "Time complexity", "Space complexity"]
+        ],
+        ["Operating systems", ["Processes", "Threads"]],
+        [
+          "Networking",
+          [
+            "HTTP",
+            "HTTPS",
+            "OSI layers",
+            "TCP, UDP",
+            "DNS",
+            "REST",
+            "WebSockets"
+          ]
+        ],
+        ["Problem solving", ["LeetCode Easy", "LeetCode Medium", "Codeforces?"]]
+      ]
+    },
+    {
+      "id": "career",
+      "title": "Career development",
+      "short": "Career",
+      "description": "Grow your network and public profile alongside every phase, not after it.",
+      "ongoing": true,
+      "items": [
+        [
+          "Professional network~",
+          [
+            "LinkedIn",
+            "GitHub",
+            "Alumni networking",
+            "University clubs",
+            "Hackathons?"
+          ]
+        ],
+        [
+          "Personal branding~",
+          [
+            "Weekly LinkedIn posts",
+            "GitHub commits",
+            "Technical blogging?",
+            "Portfolio updates"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Git & Linux",
+      "short": "Git & Linux",
+      "description": "Version control and the command line you will use every working day.",
+      "items": [
+        [
+          "Git",
+          [
+            "Repository",
+            "Commit",
+            "Branch",
+            "Merge",
+            "Rebase",
+            "Cherry pick",
+            "Pull request",
+            "Git Flow"
+          ]
+        ],
+        ["GitHub", ["Issues", "Actions", "Projects", "Releases"]],
+        [
+          "Linux",
+          [
+            "Bash",
+            "SSH",
+            "Permissions",
+            "Namespaces, cgroups, chroot, UnionFS?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Frontend development",
+      "short": "Frontend",
+      "description": "Build interfaces with HTML, CSS, TypeScript and React, then ship a project.",
+      "items": [
+        ["HTML"],
+        ["CSS", ["Flexbox", "Grid", "Responsive design", "Tailwind CSS"]],
+        [
+          "JavaScript + TypeScript",
+          ["ES6+", "Closures", "Promises", "Async/await", "Modules"]
+        ],
+        [
+          "React",
+          ["Components", "Props", "State", "Hooks", "Routing", "Context API"]
+        ],
+        ["State management", ["Redux Toolkit"]],
+        ["Framework", ["Next.js", "Angular?"]],
+        ["Build a project", ["Dashboard", "Blog", "Portfolio website"]]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Backend development",
+      "short": "Backend",
+      "description": "APIs, auth, databases, caching and testing, ending with a project of your own.",
+      "items": [
+        ["APIs", ["RESTful", "OpenAPI", "Versioning"]],
+        [
+          "Authentication",
+          [
+            "JWT",
+            "Identity providers (Keycloak, Auth0, IdentityServer, OpenID)"
+          ]
+        ],
+        ["Authorization", ["OAuth", "SAML"]],
+        [
+          "Databases",
+          ["Database fundamentals", "PostgreSQL", "MongoDB", "SQL Server?"]
+        ],
+        ["ORM", ["Entity Framework Core", "Hibernate", "Dapper?"]],
+        ["Caching", ["Redis", "In-memory cache"]],
+        ["Background jobs", ["Hangfire", "Quartz?"]],
+        ["Logging", ["ELK", "Seq?"]],
+        [
+          "Testing",
+          ["Unit testing", "Integration testing", "Mocking (Moq, NSubstitute)"]
+        ],
+        [
+          "Security",
+          [
+            "OWASP Top 10",
+            "SQL injection",
+            "XSS",
+            "CSRF",
+            "Rate limiting",
+            "Secrets management"
+          ]
+        ],
+        ["Build a project", ["Blog API", "E-commerce API", "URL shortener"]]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Software development methodologies",
+      "short": "Methodologies",
+      "description": "How teams plan, build and ship software together.",
+      "items": [
+        [
+          "SDLC",
+          [
+            "Requirement gathering",
+            "Analysis",
+            "Design",
+            "Development",
+            "Testing",
+            "Deployment",
+            "Maintenance"
+          ]
+        ],
+        ["Waterfall"],
+        ["Agile"],
+        [
+          "Scrum",
+          [
+            "Sprint planning?",
+            "Daily standup?",
+            "Sprint review?",
+            "Retrospective?"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Cloud & DevOps",
+      "short": "Cloud & DevOps",
+      "description": "Containers, pipelines and cloud hosting for the apps you build.",
+      "items": [
+        ["Containers", ["Docker", "Docker Compose"]],
+        ["CI/CD", ["GitHub Actions", "Azure DevOps?", "GitLab CI?"]],
+        ["Cloud", ["AWS", "Azure?", "Google Cloud?"]],
+        [
+          "Kubernetes",
+          ["Pods", "Deployments", "Services?", "ConfigMaps?", "Secrets?"]
+        ],
+        ["Monitoring", ["Prometheus", "Grafana"]],
+        ["Logging", ["Prometheus", "Grafana", "ELK?"]],
+        ["Networking", ["Load balancer", "Reverse proxy", "CDN"]],
+        ["Build a project", ["Deploy a full-stack application"]]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Software architecture",
+      "short": "Architecture",
+      "description": "Principles and patterns that keep code maintainable as it grows.",
+      "items": [
+        ["SOLID principles"],
+        [
+          "Design patterns",
+          ["Factory", "Strategy", "Observer", "Repository", "Mediator"]
+        ],
+        [
+          "Architecture styles",
+          ["Layered", "Clean", "Hexagonal", "Vertical slice"]
+        ],
+        ["Domain-driven design?"],
+        ["CQRS?"],
+        ["Event-driven architecture?"],
+        ["Monolith"],
+        ["Modular monolith"],
+        ["Microservices"],
+        ["API gateway"],
+        ["Message brokers", ["RabbitMQ", "Kafka?"]]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "System design",
+      "short": "System design",
+      "description": "How large systems scale, and how real products are put together.",
+      "items": [
+        ["Scalability", ["Horizontal scaling", "Vertical scaling"]],
+        ["Caching"],
+        ["Load balancer"],
+        ["Distributed systems^"],
+        ["CAP theorem"],
+        ["Database sharding^"],
+        ["Replication^"],
+        ["Event sourcing^"],
+        [
+          "Explore real systems",
+          ["WhatsApp", "Uber", "YouTube", "Netflix", "Instagram"]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "AI-assisted development",
+      "short": "AI-assisted dev",
+      "description": "Use AI coding tools well in your daily workflow.",
+      "items": [
+        [
+          "AI coding tools",
+          ["Claude Code", "Cursor", "GitHub Copilot", "Windsurf"]
+        ],
+        [
+          "AI workflow",
+          ["Prompting", "Context engineering", "Slash commands", "Code review"]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "AI engineering",
+      "short": "AI engineering",
+      "description": "Build products on top of LLMs: RAG, agents, protocols and evaluation.",
+      "items": [
+        ["LLM APIs", ["OpenAI", "Anthropic", "Gemini"]],
+        [
+          "Prompt engineering",
+          ["One-shot", "Multi-shot", "Chain of thought", "Tree of thought"]
+        ],
+        [
+          "RAG",
+          [
+            "Embeddings",
+            "Chunking",
+            "Vector database",
+            "Retrieval pipeline",
+            "Graph RAG"
+          ]
+        ],
+        [
+          "AI agents",
+          [
+            "Tool calling",
+            "Agent memory",
+            "ReAct",
+            "Plan and execute",
+            "Multi-agent systems",
+            "Tree of thoughts",
+            "Graph of thoughts",
+            "LangGraph?"
+          ]
+        ],
+        ["Protocols", ["MCP", "A2A"]],
+        ["Agent engineering"],
+        ["Harness engineering"],
+        [
+          "Evaluation",
+          [
+            "Hallucination testing",
+            "Prompt evaluation",
+            "AI observability",
+            "Cost optimization"
+          ]
+        ],
+        [
+          "Build a project",
+          [
+            "AI chatbot",
+            "AI assistant",
+            "AI document search",
+            "AI coding assistant"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Communication",
+      "short": "Communication",
+      "description": "Write, design and lead beyond the code.",
+      "items": [
+        ["Technical writing", ["Design documents", "SRS"]],
+        [
+          "Software engineering",
+          [
+            "Product thinking",
+            "Requirement analysis",
+            "Diagramming (class, sequence, etc.)"
+          ]
+        ],
+        ["Leadership", ["Code reviews", "Mentoring", "Technical leadership"]]
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Portfolio & career",
+      "short": "Portfolio",
+      "description": "Package your work, prepare for interviews and land the job.",
+      "items": [
+        [
+          "Portfolio",
+          ["About me", "Skills", "Projects", "Contact", "GitHub", "LinkedIn"]
+        ],
+        [
+          "Projects",
+          [
+            "Live demo",
+            "Source code",
+            "README",
+            "Architecture diagram",
+            "Screenshots"
+          ]
+        ],
+        [
+          "Resume",
+          ["Experience", "Skills", "Projects", "Education", "Achievements"]
+        ],
+        [
+          "Interview preparation",
+          [
+            "DSA revision",
+            "System design",
+            "Behavioral questions",
+            "Mock interviews"
+          ]
+        ],
+        [
+          "Job search",
+          [
+            "Job applications",
+            "Referrals",
+            "Open source contributions",
+            "Networking"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "always",
+      "title": "Always do",
+      "short": "Always do",
+      "description": "Habits to keep going through the whole route.",
+      "ongoing": true,
+      "items": [
+        [
+          "Habits~",
+          [
+            "Build projects",
+            "Push code to GitHub",
+            "Share on LinkedIn",
+            "Read documentation",
+            "Learn from AI",
+            "Review other people’s code",
+            "Solve problems",
+            "Keep learning"
+          ]
+        ]
+      ]
+    }
+  ]
+}

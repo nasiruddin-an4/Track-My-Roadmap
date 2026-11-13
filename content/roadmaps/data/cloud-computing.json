@@ -1,0 +1,308 @@
+{
+  "slug": "cloud-computing",
+  "title": "Cloud Computing",
+  "tagline": "Cloud models, infrastructure, networking, storage, cloud-native design, automation, security and cost.",
+  "category": "Skill",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-cloud-computing",
+  "credit": {
+    "text": "Based on the Cloud Computing roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction",
+      "short": "Introduction",
+      "description": "Cover the groundwork skills and the vocabulary used everywhere in cloud work.",
+      "items": [
+        [
+          "Pre-requisites",
+          [
+            "Python",
+            "Linux",
+            "Shell / Bash",
+            "Version Control",
+            "Networking Basics",
+            "Cybersecurity Basics"
+          ]
+        ],
+        [
+          "Basic Terminology",
+          [
+            "Cloud vs On-Premises",
+            "Region, Availability Zone",
+            "Instance",
+            "Cluster",
+            "Workload",
+            "Multi-Tenancy",
+            "Elasticity",
+            "Scalability",
+            "Provisioning",
+            "Latency & Throughput",
+            "Endpoint",
+            "SLA"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Cloud models",
+      "short": "Cloud models",
+      "description": "Learn how clouds are deployed, which service layers they offer and who the main providers are.",
+      "items": [
+        [
+          "Cloud Deployment Models",
+          [
+            "Public Cloud",
+            "Private Cloud",
+            "Hybrid Cloud",
+            "Multi-Cloud"
+          ]
+        ],
+        [
+          "Cloud Service Models",
+          [
+            "IaaS",
+            "PaaS",
+            "SaaS",
+            "FaaS",
+            "DaaS"
+          ]
+        ],
+        [
+          "Provider Landscape",
+          [
+            "Regional Cloud",
+            "Developer-Focused",
+            "Managed Kubernetes",
+            "Provider Lock-In"
+          ]
+        ],
+        [
+          "Hyperscalers",
+          [
+            "AWS",
+            "GCP",
+            "Azure"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Cloud infrastructure",
+      "short": "Infrastructure",
+      "description": "See what sits under the cloud, from data centers and virtualisation to instances and scaling.",
+      "items": [
+        [
+          "Data Centers",
+          [
+            "Network Topology",
+            "Upstream Connectivity",
+            "Racks, Pods, & Aisles",
+            "Power & Cooling",
+            "Lights-Out Operations"
+          ]
+        ],
+        [
+          "Virtual Machines",
+          [
+            "Hypervisors",
+            "VM Migration, Live Migration"
+          ]
+        ],
+        [
+          "Containers",
+          [
+            "Docker",
+            "VMs vs Containers"
+          ]
+        ],
+        [
+          "Databases",
+          [
+            "Managed Relational DBs",
+            "NoSQL Databases"
+          ]
+        ],
+        [
+          "Instance Types",
+          [
+            "Virtual Machine Instances",
+            "Bare Metal Cloud"
+          ]
+        ],
+        [
+          "Scaling",
+          [
+            "Auto Scaling",
+            "Spot & Reserved Instances"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Cloud networking",
+      "short": "Networking",
+      "description": "Design private networks in the cloud and control how traffic reaches your services.",
+      "items": [
+        [
+          "Core Networking",
+          [
+            "Virtual Private Cloud",
+            "Subnets & Routing",
+            "NAT & IP Management",
+            "VLANs & VXLAN",
+            "SDN",
+            "VPN & Direct Connect"
+          ]
+        ],
+        [
+          "Network Engineering"
+        ],
+        [
+          "Traffic Management",
+          [
+            "DNS in the Cloud",
+            "Load Balancers",
+            "Firewalls & Security Groups",
+            "CDN & Edge Caching"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Cloud storage",
+      "short": "Storage",
+      "description": "Know the kinds of cloud storage and how to manage data over its lifetime.",
+      "items": [
+        [
+          "Storage Types",
+          [
+            "Object Storage",
+            "Block Storage",
+            "File Storage",
+            "NAS and SAN"
+          ]
+        ],
+        [
+          "Data Lifecycle",
+          [
+            "Storage Classes & Tiering",
+            "Data Archiving",
+            "Retention & Compliance"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Cloud-native paradigms",
+      "short": "Cloud-native",
+      "description": "Build with serverless, microservices, edge and managed AI services instead of plain servers.",
+      "items": [
+        [
+          "Serverless Computing",
+          [
+            "Stateless Functions",
+            "Event-Driven Architecture",
+            "Serverless Platforms",
+            "Trade-offs of Serverless"
+          ]
+        ],
+        [
+          "Microservices",
+          [
+            "Monolithic vs Microservices",
+            "Microservices Communication",
+            "Service Mesh"
+          ]
+        ],
+        [
+          "Edge Computing",
+          [
+            "Edge vs Cloud"
+          ]
+        ],
+        [
+          "AI/ML Services"
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "DevOps and automation",
+      "short": "DevOps",
+      "description": "Define infrastructure in code, orchestrate containers and ship changes through pipelines.",
+      "items": [
+        [
+          "Infrastructure as Code",
+          [
+            "Terraform",
+            "Configuration Management",
+            "Levels of Automation"
+          ]
+        ],
+        [
+          "Container Orchestration",
+          [
+            "Kubernetes",
+            "GitOps"
+          ]
+        ],
+        [
+          "CI/CD",
+          [
+            "CI/CD Pipelines",
+            "Artifact Registries",
+            "Deployment Strategies"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Security and identity",
+      "short": "Security",
+      "description": "Control who can do what and keep data protected and compliant.",
+      "items": [
+        [
+          "Access Control",
+          [
+            "Shared Responsibility Model",
+            "IAM",
+            "RBAC"
+          ]
+        ],
+        [
+          "Data Protection",
+          [
+            "Zero Trust",
+            "Encryption",
+            "Secrets Management",
+            "Privacy & Compliance"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Cost management",
+      "short": "Cost",
+      "description": "Understand how cloud is billed and keep spending in check.",
+      "items": [
+        [
+          "Pricing Models",
+          [
+            "Cost Monitoring and Budgets",
+            "Resource Optimization",
+            "FinOps"
+          ]
+        ]
+      ]
+    }
+  ]
+}

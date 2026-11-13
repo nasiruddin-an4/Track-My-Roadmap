@@ -1,0 +1,311 @@
+{
+  "slug": "devsecops",
+  "title": "DevSecOps",
+  "tagline": "Build security into delivery, from foundations and threat modeling to incident response and governance.",
+  "category": "Career path",
+  "level": "Beginner to advanced",
+  "localKey": "tmr-progress-devsecops",
+  "credit": {
+    "text": "Based on the DevSecOps roadmap from roadmap.sh (personal use)"
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "title": "Introduction, programming and scripting",
+      "short": "Code & scripting",
+      "description": "See how DevSecOps differs from DevOps and get comfortable with a language, shell scripting and an editor.",
+      "items": [
+        [
+          "Introduction",
+          [
+            "DevSecOps vs DevOps"
+          ]
+        ],
+        [
+          "Learn a Programming Language!",
+          [
+            "Ruby",
+            "Python",
+            "Rust",
+            "Go",
+            "JavaScript / Node.js"
+          ]
+        ],
+        [
+          "Scripting Knowledge",
+          [
+            "Bash",
+            "PowerShell"
+          ]
+        ],
+        [
+          "Editors",
+          [
+            "Vim / Nano / Emacs"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p2",
+      "title": "Security foundations",
+      "short": "Foundations",
+      "description": "Learn the core ideas of confidentiality, identity checks, common web risks and encryption.",
+      "items": [
+        [
+          "CIA Triad"
+        ],
+        [
+          "Authentication"
+        ],
+        [
+          "Authorization"
+        ],
+        [
+          "OWASP Top 10"
+        ],
+        [
+          "Encryption",
+          [
+            "Symmetric",
+            "Asymmetric"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p3",
+      "title": "Networking basics",
+      "short": "Networking",
+      "description": "Understand how traffic flows and how networks are divided and filtered.",
+      "items": [
+        [
+          "Networking Basics",
+          [
+            "Firewalls",
+            "VLANs",
+            "ACLs",
+            "Network Segmentation",
+            "DNS",
+            "HTTP",
+            "TLS"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p4",
+      "title": "Secure coding and identity",
+      "short": "Code & identity",
+      "description": "Stop injection bugs in your code and grant people only the access they need.",
+      "items": [
+        [
+          "Secure Coding",
+          [
+            "SQL Injection Prevention",
+            "XSS Prevention",
+            "Input Validation Patterns"
+          ]
+        ],
+        [
+          "Identity Basics",
+          [
+            "IAM",
+            "Least Privilege",
+            "Role Based Access"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p5",
+      "title": "Monitoring and security tools",
+      "short": "Monitoring",
+      "description": "Collect and analyse logs and get hands-on with the everyday security testing tools.",
+      "items": [
+        [
+          "Monitoring",
+          [
+            "Log Analysis",
+            "SIEM",
+            "Alert Types"
+          ]
+        ],
+        [
+          "DevSecOps Tools",
+          [
+            "Burp Suite",
+            "Nmap basics",
+            "Wireshark basics"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p6",
+      "title": "Threat modeling",
+      "short": "Threat modeling",
+      "description": "Find what could go wrong in a system before attackers do, using structured methods.",
+      "items": [
+        [
+          "Threat Modeling",
+          [
+            "STRIDE",
+            "PASTA",
+            "Threat Modeling Workflows",
+            "Attack Surface Mapping"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p7",
+      "title": "Cloud and container security",
+      "short": "Cloud & containers",
+      "description": "Secure cloud accounts, keys and container images across your infrastructure.",
+      "items": [
+        [
+          "Cloud Security",
+          [
+            "CSPM",
+            "IAM",
+            "Key Management Service"
+          ]
+        ],
+        [
+          "Container Security",
+          [
+            "Docker",
+            "Kubernetes",
+            "Image Scanning"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p8",
+      "title": "Automating security",
+      "short": "Automation",
+      "description": "Automate patching and responses and scan continuously for known vulnerabilities.",
+      "items": [
+        [
+          "Automating Security",
+          [
+            "SOAR Concepts",
+            "Automated Patching"
+          ]
+        ],
+        [
+          "Vulnerability Scanning Tools",
+          [
+            "Nessus",
+            "Nmap",
+            "OpenVAS",
+            "Qualys"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p9",
+      "title": "Incident response",
+      "short": "Incident response",
+      "description": "Handle a security incident from detection through containment to root cause.",
+      "items": [
+        [
+          "Incident Response",
+          [
+            "IR Lifecycle",
+            "Forensics",
+            "Containment",
+            "Root Cause Analysis"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p10",
+      "title": "Secure architecture",
+      "short": "Architecture",
+      "description": "Design systems with layered defences, zero trust and a protected software supply chain.",
+      "items": [
+        [
+          "Secure Architecture",
+          [
+            "Defense in Depth Concepts",
+            "Zero Trust Concepts",
+            "Secure API Design",
+            "Multi Region Security Planning",
+            "Large Scale Identity Strategy",
+            "IDS",
+            "IPS",
+            "DDoS Mitigation Strategy",
+            "Secure Network Zoning",
+            "Supply Chain Security",
+            "SBOMs",
+            "Build Pipeline Hardening",
+            "Dependency Risk Management"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p11",
+      "title": "Advanced cryptography",
+      "short": "Advanced crypto",
+      "description": "Go deeper into hashing, public key infrastructure and managing certificates over time.",
+      "items": [
+        [
+          "Advanced Crypto.",
+          [
+            "SHA 256",
+            "bcrypt",
+            "Cryptographic Hashing",
+            "PKI Design and Failover",
+            "Certificate Lifecycle"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p12",
+      "title": "Enterprise operations",
+      "short": "Enterprise ops",
+      "description": "Run detection and response at organisation scale across endpoints and teams.",
+      "items": [
+        [
+          "Enterprise Operations",
+          [
+            "EDR Strategy",
+            "SOAR Automation",
+            "Endpoint Detection",
+            "Response Strategy"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "p13",
+      "title": "Governance",
+      "short": "Governance",
+      "description": "Map controls to compliance standards and express security risk in business terms.",
+      "items": [
+        [
+          "Governance",
+          [
+            "Audit & Compliance Mapping",
+            "Risk Quantification"
+          ]
+        ],
+        [
+          "Cybersecurity Frameworks",
+          [
+            "SOC 2",
+            "ISO 27001",
+            "NIST"
+          ]
+        ]
+      ]
+    }
+  ]
+}
