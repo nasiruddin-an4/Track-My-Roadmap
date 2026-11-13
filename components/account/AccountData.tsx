@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/components/auth";
 import { habitSummary, type HabitDoc } from "@/lib/habits";
 import { habitStreaks, localToday, roadmapStat, type CatalogEntry, type RoadmapStat } from "@/lib/progressStats";
+import { loadAllProgress } from "@/lib/progressRow";
 import { profileOf, type Profile } from "@/lib/profile";
 import { HABITS_KEY, readJSON } from "@/lib/storage";
 import { getSupabase } from "@/lib/supabase/client";
@@ -41,7 +42,7 @@ export type AccountData = {
 };
 
 
-type Doc = { done: string[]; updatedAt: number };
+type Doc = { done: string[]; updatedAt: number; completedAt?: number | null };
 
 /** What pages see before the data is ready, and when rendered without the account layout around them
  *  (Next's instant-navigation check renders a page on its own): the pages show their loading skeleton. */
@@ -74,7 +75,7 @@ export function AccountDataProvider({ catalog, children }: { catalog: CatalogEnt
     const rows: Record<string, Doc> = {};
     for (const c of catalog) {
       const d = readJSON<Partial<Doc>>(c.localKey);
-      if (d && Array.isArray(d.done)) rows[c.slug] = { done: d.done, updatedAt: Number(d.updatedAt) || 0 };
+      if (d && Array.isArray(d.done)) rows[c.slug] = { done: d.done, updatedAt: Number(d.updatedAt) || 0, completedAt: Number(d.completedAt) || null };
     }
     const h = readJSON<HabitDoc>(HABITS_KEY);
     // read once on mount: localStorage is outside React
@@ -88,12 +89,11 @@ export function AccountDataProvider({ catalog, children }: { catalog: CatalogEnt
     if (!sb || !uid) return;
     let live = true;
     Promise.all([
-      sb.from("roadmap_progress").select("roadmap, done, updated_at").eq("user_id", uid),
+      loadAllProgress(sb, uid).then((rows) => ({ rows, error: null }), (error) => ({ rows: {} as Record<string, Doc>, error })),
       sb.from("habit_trackers").select("data, updated_at").eq("user_id", uid).maybeSingle(),
     ]).then(([p, h]) => {
       if (!live) return;
-      const rows: Record<string, Doc> = {};
-      for (const r of p.data ?? []) rows[r.roadmap] = { done: r.done ?? [], updatedAt: Number(r.updated_at) || 0 };
+      const rows: Record<string, Doc> = p.rows;
       const hd = h.data ? ({ ...(h.data.data as object), updatedAt: Number(h.data.updated_at) || 0 } as HabitDoc) : null;
       setRemote({ uid, rows, habits: hd && Array.isArray(hd.habits) ? { ...hd, checks: hd.checks || {} } : null, offline: !!(p.error || h.error) });
     }, () => { if (live) setRemote({ uid, rows: {}, habits: null, offline: true }); });
@@ -111,7 +111,7 @@ export function AccountDataProvider({ catalog, children }: { catalog: CatalogEnt
     for (const c of catalog) {
       const doc = newer(local?.rows[c.slug], r?.rows[c.slug]);
       if (!doc?.done.length) continue;
-      const stat = roadmapStat(c, doc.done, doc.updatedAt);
+      const stat = { ...roadmapStat(c, doc.done, doc.updatedAt), completedAt: doc.completedAt ?? null };
       if (stat.done > 0) roadmaps.push(stat);
     }
     roadmaps.sort((a, b) => b.updatedAt - a.updatedAt);

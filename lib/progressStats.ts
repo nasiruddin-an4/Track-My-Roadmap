@@ -27,6 +27,8 @@ export type RoadmapStat = {
   /** one letter per numbered phase: d = done, s = started, u = not started */
   phaseStates: string;
   updatedAt: number;
+  /** when the roadmap was completed, if known (for the certificate date) */
+  completedAt?: number | null;
 };
 
 export function roadmapStat(c: CatalogEntry, ticked: string[], updatedAt: number): RoadmapStat {

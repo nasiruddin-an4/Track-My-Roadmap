@@ -118,7 +118,8 @@ export function buildRoadmap(def: RoadmapDef): Roadmap {
       const key = p.id + "/" + slugify(n.name);
       const kids = (it[1] || []).map((k) => {
         const c = parse(k);
-        const tag: Tag = c.tag === "do" && n.tag === "cont" ? "cont" : c.tag;
+        // an untagged topic inherits its card's tag: everything under an optional card is optional, and so on
+        const tag: Tag = c.tag === "do" ? n.tag : c.tag;
         return { key: key + "/" + slugify(c.name), name: c.name, tag };
       });
       if (!kids.length) {
@@ -132,7 +133,7 @@ export function buildRoadmap(def: RoadmapDef): Roadmap {
       }
       group = null;
       const card: Card = { id: "c" + ++cardSeq, title: n.name, tag: n.tag, mode: n.pick ? "pick" : "list", rows: [], phaseId: p.id, key };
-      if (!n.pick && kids.every((c) => c.tag === "opt"))
+      if (!n.pick && n.tag !== "opt" && kids.every((c) => c.tag === "opt"))
         card.rows.push({ key, name: "Learn the basics of " + n.name, tag: n.tag === "cont" ? "cont" : "do" });
       card.rows.push(...kids);
       ph.cards.push(card);
@@ -259,6 +260,6 @@ export function progressUnitsByPhase(rm: Roadmap): string[][][] {
 
 /** Short labels for what a phase covers: card titles, or the topics themselves for "Key concepts" groups. */
 export function phaseHighlights(ph: Phase, max = 8): { items: string[]; more: number } {
-  const all = ph.cards.flatMap((c) => (/concepts$/.test(c.title) ? c.rows.map((r) => r.name) : [c.title]));
+  const all = ph.cards.flatMap((c) => (c.key ? [c.title] : c.rows.map((r) => r.name))); // "Key concepts" groups have no key
   return { items: all.slice(0, max), more: Math.max(0, all.length - max) };
 }

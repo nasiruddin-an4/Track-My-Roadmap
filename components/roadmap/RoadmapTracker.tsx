@@ -11,14 +11,16 @@ import { useAuth } from "@/components/auth";
 import { Check, Close, Dots, Loop, Search } from "@/components/icons";
 import { useToast } from "@/components/toast";
 import { buildRoadmap, cardTally, computeProgress, videoSlots, type Card, type Phase, type Progress, type RoadmapDef, type Row, type Tag } from "@/lib/roadmap";
-import { ResourceLink, YouTubeMark } from "@/components/roadmap/ResourceLink";
+import { YouTubeMark } from "@/components/roadmap/ResourceLink";
+import { VideoPlayer, type WatchRequest } from "@/components/roadmap/VideoPlayer";
 import { habitSummary, type HabitDoc } from "@/lib/habits";
-import type { ResourceMap } from "@/lib/resources";
+import { loadProgress, saveProgress } from "@/lib/progressRow";
+import type { ResourceMap, TopicResource } from "@/lib/resources";
 import { HABITS_KEY, UI_KEY, writeJSON } from "@/lib/storage";
 import { syncLabel, useCloudDoc, type SyncStatus } from "@/lib/useCloudDoc";
 import { emitLocalChange, useHash, useLocalItem } from "@/lib/useLocal";
 
-type Doc = { done: string[]; updatedAt: number };
+type Doc = { done: string[]; updatedAt: number; completedAt: number | null };
 type Filter = "all" | "todo" | "done";
 
 const TAG_TEXT: Partial<Record<Tag, string>> = { opt: "Optional", adv: "Advanced" };
@@ -28,20 +30,13 @@ const reduced = () => typeof matchMedia !== "undefined" && matchMedia("(prefers-
 
 function progressDoc(slug: string) {
   return {
-    empty: (): Doc => ({ done: [], updatedAt: 0 }),
+    empty: (): Doc => ({ done: [], updatedAt: 0, completedAt: null }),
     normalize: (raw: unknown): Doc => {
       const r = (raw || {}) as Partial<Doc>;
-      return { done: Array.isArray(r.done) ? r.done.filter((x) => typeof x === "string") : [], updatedAt: Number(r.updatedAt) || 0 };
+      return { done: Array.isArray(r.done) ? r.done.filter((x) => typeof x === "string") : [], updatedAt: Number(r.updatedAt) || 0, completedAt: Number(r.completedAt) || null };
     },
-    load: async (sb: SupabaseClient, uid: string): Promise<Doc | null> => {
-      const { data, error } = await sb.from("roadmap_progress").select("done, updated_at").eq("user_id", uid).eq("roadmap", slug).maybeSingle();
-      if (error) throw error;
-      return data ? { done: data.done ?? [], updatedAt: Number(data.updated_at) || 0 } : null;
-    },
-    save: async (sb: SupabaseClient, uid: string, d: Doc) => {
-      const { error } = await sb.from("roadmap_progress").upsert({ user_id: uid, roadmap: slug, done: d.done, updated_at: d.updatedAt });
-      if (error) throw error;
-    },
+    load: (sb: SupabaseClient, uid: string): Promise<Doc | null> => loadProgress(sb, uid, slug),
+    save: (sb: SupabaseClient, uid: string, d: Doc) => saveProgress(sb, uid, slug, d),
   };
 }
 
@@ -52,7 +47,7 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
   const toast = useToast();
   const { user } = useAuth();
   const docOpts = useMemo(() => ({ localKey: def.localKey, ...progressDoc(def.slug) }), [def.localKey, def.slug]);
-  const { doc, update, status, loads } = useCloudDoc<Doc>(docOpts);
+  const { doc, update, status, loads, hydrated } = useCloudDoc<Doc>(docOpts);
   const done = useMemo(() => new Set(doc.done), [doc.done]);
 
   const uiRaw = useLocalItem(UI_KEY);
@@ -63,6 +58,7 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
 
   /* ---------- which phase is open ---------- */
   const [query, setQuery] = useState("");
+  const [watch, setWatch] = useState<WatchRequest | null>(null); // the video popup
   const [filter, setFilter] = useState<Filter>("all");
   const [navId, setNavId] = useState<string | null>(null); // the phase the visitor picked
   const hash = useHash().replace(/^#/, "");
@@ -105,10 +101,26 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
   /* ---------- editing ---------- */
   const lastFull = useRef<Record<string, boolean> | null>(null);
   const edited = useRef(false);
+  const lastEdit = useRef(0);
   const edit = useCallback((fn: (s: Set<string>) => void) => {
     edited.current = true;
+    lastEdit.current = Date.now();
     update((d) => { const s = new Set(d.done); fn(s); return { ...d, done: Array.from(s) }; });
   }, [update]);
+
+  // remember when the roadmap was completed (all required topics, optional ones never needed) for the certificate;
+  // clear it if a required topic is unticked again
+  const complete = useMemo(() => { const q = computeProgress(rm, done, false); return q.total > 0 && q.done === q.total; }, [rm, done]);
+  useEffect(() => {
+    if (!hydrated) return;
+    if (complete && !doc.completedAt) {
+      // just finished here: now; already complete before dates were kept: the last edit is the best guess
+      const at = Date.now() - lastEdit.current < 10_000 ? Date.now() : doc.updatedAt || Date.now();
+      update((d) => (d.completedAt ? d : { ...d, completedAt: at }));
+    } else if (!complete && doc.completedAt) {
+      update((d) => ({ ...d, completedAt: null }));
+    }
+  }, [complete, doc.completedAt, doc.updatedAt, hydrated, update]);
   const toggle = (key: string, on: boolean) => edit((s) => (on ? s.add(key) : s.delete(key)));
 
   // "Phase N complete" when a tick finishes a phase
@@ -149,10 +161,12 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
   /* ---------- views ---------- */
   const isNext = (key: string) => !q && view === p.current && p.next && !p.next.pick && p.next.key === key;
   const nextCard = !q && view === p.current && p.next?.pick ? p.next.cardId : null;
-  const cardProps = { done, countOpt, filter, isNext, nextCard, resources, onToggle: toggle, onAll: markAll };
+  const onWatch = useCallback((topic: string, list: TopicResource[]) => setWatch({ topic, list }), []);
+  const cardProps = { done, countOpt, filter, isNext, nextCard, resources, onWatch, onToggle: toggle, onAll: markAll };
   // the next topic's video: its card's (when videos go on the card heading) or its own
   const nextSlot = p.next && !p.next.pick ? videoSlots(rm.cardById[p.next.cardId])[0] : undefined;
-  const nextWatch = p.next && !p.next.pick ? resources[nextSlot?.whole ? nextSlot.key : p.next.key]?.[0] : undefined;
+  const nextList = p.next && !p.next.pick ? resources[nextSlot?.whole ? nextSlot.key : p.next.key] : undefined;
+  const nextTopic = nextSlot?.whole ? rm.cardById[p.next!.cardId].title : p.next?.label ?? "";
 
   let main: React.ReactNode;
   let rowsShown: Row[] = [];
@@ -221,15 +235,15 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
           <div className="next">
             <div className="next-b">
               <span className="eyebrow">Up next</span>
-              <div className="next-t"><strong>{p.next.label}</strong> <span>{p.next.ctx && !/concepts$/.test(p.next.ctx) ? "in " + p.next.ctx : ""}</span></div>
+              <div className="next-t"><strong>{p.next.label}</strong> <span>{p.next.ctx && rm.cardById[p.next.cardId]?.key ? "in " + p.next.ctx : ""}</span></div>
             </div>
             <div className="next-a">
               {!p.next.pick && <button type="button" className="btn primary" onClick={() => toggle(p.next!.key, true)}><Check size={16} />Mark done</button>}
-              {nextWatch && (
-                <a className="btn" href={nextWatch.url} target="_blank" rel="noopener noreferrer" title={nextWatch.title}>
-                  <YouTubeMark size={16} />Watch<span className="vh">: {nextWatch.title} (opens YouTube in a new tab)</span>
-                </a>
-              )}
+              {nextList?.length ? (
+                <button type="button" className="btn" onClick={() => onWatch(nextTopic, nextList)}>
+                  <YouTubeMark size={16} />Watch<span className="vh"> the recommended video for {nextTopic}</span>
+                </button>
+              ) : null}
               <button type="button" className="btn" onClick={showNext}>{p.next.pick ? "Choose now" : "Show in list"}</button>
             </div>
           </div>
@@ -297,6 +311,7 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
           <main>{main}</main>
         </div>
       </div>
+      <VideoPlayer watch={watch} onClose={() => setWatch(null)} />
     </>
   );
 }
@@ -335,11 +350,11 @@ type CardProps = {
   done: Set<string>; countOpt: boolean; filter: Filter;
   isNext: (key: string) => boolean | null | undefined; nextCard: string | null;
   resources: ResourceMap;
+  onWatch: (topic: string, list: TopicResource[]) => void;
   onToggle: (key: string, on: boolean) => void; onAll: (c: Card) => void;
 };
 
-function CardView({ card, ph, rows, withAll, done, countOpt, filter, isNext, nextCard, resources, onToggle, onAll }: CardProps) {
-  const [openKey, setOpenKey] = useState<string | null>(null);
+function CardView({ card, ph, rows, withAll, done, countOpt, filter, isNext, nextCard, resources, onWatch, onToggle, onAll }: CardProps) {
   const visible = rows.filter((r) => matches(r, done, filter));
   if (!visible.length) return null;
   const pick = card.mode === "pick";
@@ -350,28 +365,15 @@ function CardView({ card, ph, rows, withAll, done, countOpt, filter, isNext, nex
   const slot = videoSlots(card)[0];
   const whole = slot?.whole ? slot : null;
   const cardRes = whole ? resources[whole.key] : undefined;
-  const cardOpen = !!whole && openKey === whole.key;
-  const cardPanel = `vid-${card.id}`;
   return (
     <article className={"card" + (complete ? " complete" : "") + (nextCard === card.id ? " is-next" : "")} data-card={card.id}>
       <div className="card-h">
         <h3>{card.title}</h3>
         {pick ? <span className="tag pick">Pick one</span> : <TagChip tag={card.tag} />}
         <span className="cc mono">{pick ? (t.d ? "Chosen" : "Choose 1") : `${t.d}/${t.t}`}</span>
-        {whole && cardRes?.length ? (
-          <button type="button" className="vid-b" aria-expanded={cardOpen} aria-controls={cardPanel} onClick={() => setOpenKey(cardOpen ? null : whole.key)}
-            aria-label={`${cardOpen ? "Hide" : "Show"} ${cardRes.length} recommended ${cardRes.length === 1 ? "video" : "videos"} for ${card.title}`}>
-            <YouTubeMark size={14} /><span className="mono">{cardRes.length}</span>
-          </button>
-        ) : null}
+        {whole && cardRes?.length ? <WatchButton topic={card.title} list={cardRes} onWatch={onWatch} /> : null}
       </div>
       <div className="cbar"><i style={{ width: (t.t ? (t.d / t.t) * 100 : 0) + "%" }} /></div>
-      {cardOpen && cardRes && (
-        <div id={cardPanel} className="vid-p card-vid">
-          <span className="eyebrow">Recommended for {card.title}</span>
-          {cardRes.map((v) => <ResourceLink key={v.id} r={v} />)}
-        </div>
-      )}
       <div className="rows">
         {visible.map((r) => {
           const res = whole ? undefined : resources[r.key];
@@ -383,22 +385,10 @@ function CardView({ card, ph, rows, withAll, done, countOpt, filter, isNext, nex
               <TagChip tag={r.tag} />
             </label>
           );
-          if (!res?.length) return <div key={r.key} className="row-w">{label}</div>;
-          const open = openKey === r.key;
-          const panelId = `vid-${card.id}-${r.key.replace(/[^a-z0-9-]/gi, "_")}`;
           return (
             <div key={r.key} className="row-w">
               {label}
-              <button type="button" className="vid-b" aria-expanded={open} aria-controls={panelId} onClick={() => setOpenKey(open ? null : r.key)}
-                aria-label={`${open ? "Hide" : "Show"} ${res.length} recommended ${res.length === 1 ? "video" : "videos"} for ${r.name}`}>
-                <YouTubeMark size={14} /><span className="mono">{res.length}</span>
-              </button>
-              {open && (
-                <div id={panelId} className="vid-p">
-                  <span className="eyebrow">Recommended to learn this</span>
-                  {res.map((v) => <ResourceLink key={v.id} r={v} />)}
-                </div>
-              )}
+              {res?.length ? <WatchButton topic={r.name} list={res} onWatch={onWatch} /> : null}
             </div>
           );
         })}
@@ -407,6 +397,16 @@ function CardView({ card, ph, rows, withAll, done, countOpt, filter, isNext, nex
         <div className="card-f"><button type="button" className="link" onClick={() => onAll(card)}>{complete ? "Clear all" : "Mark all done"}</button></div>
       )}
     </article>
+  );
+}
+
+/** Opens the recommended video(s) for a card or topic in the in-page player. */
+function WatchButton({ topic, list, onWatch }: { topic: string; list: TopicResource[]; onWatch: (topic: string, list: TopicResource[]) => void }) {
+  return (
+    <button type="button" className="vid-b" onClick={() => onWatch(topic, list)}
+      aria-label={`Watch ${list.length === 1 ? "the recommended video" : `${list.length} recommended videos`} for ${topic}`}>
+      <YouTubeMark size={14} />Watch{list.length > 1 && <span className="mono">· {list.length}</span>}
+    </button>
   );
 }
 

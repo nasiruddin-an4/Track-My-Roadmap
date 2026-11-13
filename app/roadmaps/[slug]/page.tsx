@@ -18,7 +18,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/roadmaps/[slug]">): Promise<Metadata> {
   const rm = getRoadmap((await params).slug);
-  if (!rm) return {};
+  if (!rm) return { title: "Page not found", robots: { index: false } };
   const { def } = rm;
   const title = `${def.title} Roadmap${def.years ? " " + def.years : ""}`;
   const about = def.tagline.charAt(0).toLowerCase() + def.tagline.slice(1).replace(/\.$/, "");

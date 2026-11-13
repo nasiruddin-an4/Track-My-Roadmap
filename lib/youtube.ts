@@ -49,10 +49,27 @@ export function parseYouTube(input: string, preferPlaylist = false): ParsedYouTu
   }
   if (first === "playlist") return LIST_ID.test(list) ? playlist(list) : null;
   if (["shorts", "embed", "live", "v"].includes(first)) return VIDEO_ID.test(second) ? video(second) : null;
-  if (HANDLE.test(decodeURIComponent(first))) return channel(decodeURIComponent(first));
+  const handle = safeDecode(first); // "@name" may arrive percent-encoded ("%40name")
+  if (handle && HANDLE.test(handle)) return channel(handle);
   if (first === "channel" && CHANNEL_ID.test(second)) return channel(`channel/${second}`);
   if ((first === "c" || first === "user") && LEGACY_NAME.test(second)) return channel(`${first}/${second}`);
   return null;
+}
+
+/** The in-page player address for a saved link (privacy-enhanced youtube-nocookie.com), or null for channels,
+ *  which YouTube doesn't let pages embed. */
+export function embedUrl(url: string): string | null {
+  const p = parseYouTube(url);
+  if (!p || p.kind === "channel") return null;
+  const params = "autoplay=1&rel=0&modestbranding=1&playsinline=1";
+  return p.kind === "video"
+    ? `https://www.youtube-nocookie.com/embed/${p.id}?${params}`
+    : `https://www.youtube-nocookie.com/embed/videoseries?list=${p.id}&${params}`;
+}
+
+/** decodeURIComponent that returns null instead of throwing on a broken "%" escape (e.g. while typing). */
+function safeDecode(s: string): string | null {
+  try { return decodeURIComponent(s); } catch { return null; }
 }
 
 /** Thumbnail for a video id, used when YouTube's info lookup gives none. */

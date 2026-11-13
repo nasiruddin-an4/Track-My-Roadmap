@@ -29,6 +29,12 @@ export function AdminShell({ roadmaps, children }: { roadmaps: RoadmapSummary[];
 
   return (
     <div className="admin-shell min-h-svh bg-bg lg:grid lg:grid-cols-[280px_minmax(0,1fr)]">
+      {/* The dashboard replaces the site header. Next keeps visited pages in the document (hidden) after you
+          leave, so this rule is switched off when this page is hidden, or the header would stay gone. */}
+      <style ref={(el) => {
+        if (el) el.media = "all";
+        return () => { if (el) el.media = "not all"; };
+      }}>{".site-top{display:none}"}</style>
       {open && <button type="button" aria-label="Close menu" className="fixed inset-0 z-30 bg-black/60 lg:hidden" onClick={() => setOpen(false)} />}
       <Sidebar roadmaps={roadmaps} path={path} open={open} onNavigate={() => setOpen(false)} />
 
@@ -75,7 +81,7 @@ function Sidebar({ roadmaps, path, open, onNavigate }: { roadmaps: RoadmapSummar
   return (
     <aside aria-label="Admin"
       className={"fixed inset-y-0 left-0 z-40 flex w-[280px] max-w-[85vw] flex-col border-r border-line bg-band transition-transform duration-200 lg:sticky lg:top-0 lg:z-auto lg:h-svh lg:max-w-none lg:translate-x-0 " +
-        (open ? "translate-x-0 shadow-[var(--shadow)]" : "-translate-x-full")}>
+        (open ? "translate-x-0 shadow-[var(--shadow)]" : "-translate-x-full max-lg:invisible") /* closed on phones: out of the tab order too */}>
       <div className="flex h-16 flex-none items-center gap-2.5 border-b border-line px-5">
         <Link href="/admin" onClick={onNavigate} className="flex items-center gap-2.5">
           <Logo size={32} className="rounded-[8px]" />

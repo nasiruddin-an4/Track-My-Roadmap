@@ -9,6 +9,7 @@ import { Google, Logo } from "@/components/icons";
 import { detectInApp, type InApp } from "@/lib/inapp";
 import { SUPABASE_KEY, SUPABASE_URL } from "@/lib/supabase/client";
 import { emitLocalChange, useLocalItem } from "@/lib/useLocal";
+import { safeNext } from "@/lib/safeNext";
 
 /*
  * The sign-up / log-in page. Both are the same "Continue with …" buttons (an OAuth account is created on
@@ -43,7 +44,7 @@ const COPY = {
 export function AuthPanelFromUrl({ mode }: { mode: "signup" | "login" }) {
   const sp = useSearchParams();
   const raw = sp.get("next") ?? "/";
-  const next = raw.startsWith("/") && !raw.startsWith("//") ? raw : "/";
+  const next = safeNext(raw);
   return <AuthPanel mode={mode} next={next} error={sp.get("error") === "1"} />;
 }
 

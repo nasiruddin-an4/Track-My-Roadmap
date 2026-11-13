@@ -21,6 +21,8 @@ type Month = {
   pct: number[];            // per day 1..days (index 0 = day 1), 0..1
   habits: number;
   top: { name: string; count: number }[];
+  /** for real data: the streak counted across month boundaries */
+  streak?: number;
 };
 
 function fromDoc(doc: HabitDoc, now: Date): Month {
@@ -34,7 +36,29 @@ function fromDoc(doc: HabitDoc, now: Date): Month {
     perHabit[id] = (perHabit[id] || 0) + 1;
   }
   const n = doc.habits.length;
+
+  // streak across months: days in a row with at least ON_TRACK of the habits done, ending today (or yesterday)
+  const perMonth = new Map<string, Map<number, number>>();
+  const doneOn = (dt: Date) => {
+    const mk = monthKey(dt);
+    let counts = perMonth.get(mk);
+    if (!counts) {
+      counts = new Map();
+      for (const t of doc.checks[mk] || []) {
+        const [id, d] = t.split(":");
+        if (ids.has(id)) counts.set(+d, (counts.get(+d) || 0) + 1);
+      }
+      perMonth.set(mk, counts);
+    }
+    return n ? (counts.get(dt.getDate()) || 0) / n : 0;
+  };
+  const day = new Date(y, m, now.getDate());
+  if (doneOn(day) < ON_TRACK) day.setDate(day.getDate() - 1);
+  let streak = 0;
+  while (streak < 3660 && doneOn(day) >= ON_TRACK) { streak++; day.setDate(day.getDate() - 1); }
+
   return {
+    streak,
     year: y, month: m, days, today: now.getDate(), firstDow: new Date(y, m, 1).getDay(), habits: n,
     pct: perDay.map((c) => (n ? c / n : 0)),
     top: doc.habits.map((h) => ({ name: h.name, count: perHabit[h.id] || 0 })).sort((a, b) => b.count - a.count).slice(0, 3),
@@ -70,7 +94,7 @@ function stats(mo: Month) {
   let streak = 0;
   while (i >= 0 && past[i] >= ON_TRACK) { streak++; i--; }
   const todayDone = Math.round((past[mo.today - 1] || 0) * mo.habits);
-  return { avg, perfect, streak, todayDone };
+  return { avg, perfect, streak: mo.streak ?? streak, todayDone };
 }
 
 function level(p: number, future: boolean) {

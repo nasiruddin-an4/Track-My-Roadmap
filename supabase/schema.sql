@@ -106,3 +106,43 @@ drop policy if exists "Admins remove topic resources" on public.topic_resources;
 create policy "Admins remove topic resources" on public.topic_resources
   for delete to authenticated
   using (exists (select 1 from public.admins a where a.user_id = (select auth.uid())));
+
+-- ---------------------------------------------------------------------------
+-- Size limits, so one account can't fill the database. Safe to re-run.
+-- Real use is far below these: the largest roadmap has ~335 topics; 5 years of habits is ~400 KB.
+-- ---------------------------------------------------------------------------
+alter table public.roadmap_progress drop constraint if exists roadmap_progress_limits;
+alter table public.roadmap_progress add constraint roadmap_progress_limits check (
+  roadmap ~ '^[a-z0-9-]{1,80}$'
+  and cardinality(done) <= 1000
+  and octet_length(array_to_string(done, '')) <= 100000
+);
+
+alter table public.habit_trackers drop constraint if exists habit_trackers_limits;
+alter table public.habit_trackers add constraint habit_trackers_limits check (
+  octet_length(data::text) <= 1000000
+);
+
+-- At most 100 roadmap rows per person (there are ~50 roadmaps). Updating an existing row is always allowed.
+create or replace function public.limit_roadmap_rows()
+returns trigger
+language plpgsql
+set search_path = ''
+as $$
+begin
+  if (select count(*) from public.roadmap_progress p
+      where p.user_id = new.user_id and p.roadmap <> new.roadmap) >= 100 then
+    raise exception 'Too many roadmaps for one account' using errcode = 'check_violation';
+  end if;
+  return new;
+end;
+$$;
+revoke all on function public.limit_roadmap_rows() from public, anon, authenticated;
+
+drop trigger if exists limit_roadmap_rows on public.roadmap_progress;
+create trigger limit_roadmap_rows
+  before insert on public.roadmap_progress
+  for each row execute function public.limit_roadmap_rows();
+
+-- When a roadmap was first completed (ms since epoch), for the certificate date. Cleared if a required topic is unticked.
+alter table public.roadmap_progress add column if not exists completed_at bigint;

@@ -8,7 +8,7 @@ import { checkAdmin, listTopicResources } from "@/lib/supabase/admin";
 
 export async function generateMetadata({ params }: PageProps<"/admin/[slug]">): Promise<Metadata> {
   const rm = getRoadmap((await params).slug);
-  return rm ? { title: rm.def.title } : {};
+  return rm ? { title: rm.def.title } : { title: "Page not found", robots: { index: false } };
 }
 
 /** Admin editor for one roadmap's topic videos. */

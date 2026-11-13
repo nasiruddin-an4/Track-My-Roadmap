@@ -75,7 +75,8 @@ export function safeAvatar(url: string | undefined): string | undefined {
   if (!url) return undefined;
   try {
     const u = new URL(url);
-    return u.protocol === "https:" && u.hostname.endsWith(".googleusercontent.com") ? url.replace(/=s\d+(-c)?$/, "=s256-c") : undefined;
+    // Google profile photo hosts only (other googleusercontent.com hosts serve user-uploaded files)
+    return u.protocol === "https:" && /^lh[3-6]\.googleusercontent\.com$/.test(u.hostname) ? url.replace(/=s\d+(-c)?$/, "=s256-c") : undefined;
   } catch {
     return undefined;
   }

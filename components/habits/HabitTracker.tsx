@@ -49,7 +49,16 @@ export function HabitTracker() {
 }
 
 function Tracker() {
-  const [now] = useState(() => new Date());
+  const [now, setNow] = useState(() => new Date());
+  // keep "today" current: a tab left open overnight (common on phones) must tick today, not the day it opened
+  useEffect(() => {
+    const check = () => setNow((prev) => (new Date().toDateString() === prev.toDateString() ? prev : new Date()));
+    const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).getTime() - Date.now();
+    const t = setTimeout(check, midnight + 1000);
+    document.addEventListener("visibilitychange", check);
+    window.addEventListener("focus", check);
+    return () => { clearTimeout(t); document.removeEventListener("visibilitychange", check); window.removeEventListener("focus", check); };
+  }, [now]);
   const toast = useToast();
   const { doc, update } = useCloudDoc<Doc>(habitDoc);
   const H = doc.habits;
@@ -143,7 +152,9 @@ function Tracker() {
     e.preventDefault();
     const name = draft.trim().slice(0, 60);
     if (!name) return;
-    update((x) => ({ ...x, habits: [...x.habits, { id: "h" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), name }] }));
+    // the id is made here, not inside the edit: edits can be replayed when syncing, and must give the same result
+    const id = "h" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+    update((x) => (x.habits.some((y) => y.id === id) ? x : { ...x, habits: [...x.habits, { id, name }] }));
     setDraft("");
     toast("Added " + name);
   };
@@ -281,7 +292,7 @@ function Tracker() {
                   <th className="hcol" scope="row" title={h.name}>{h.name}</th>
                   {days.map((d) => (
                     <td key={d} className={((d - 1) % 7 === 0 ? "ws" : "") + (isToday(d) ? " today" : "")}>
-                      <input type="checkbox" className={"hcb" + (past(d) ? "" : " future")} checked={on(h.id, d)}
+                      <input type="checkbox" className={"hcb" + (past(d) ? "" : " future")} checked={on(h.id, d)} disabled={!past(d)}
                         aria-label={`${h.name}, ${MONTHS[vm - 1]} ${d}`} onChange={(e) => put(ym, h.id, d, e.target.checked)} />
                     </td>
                   ))}

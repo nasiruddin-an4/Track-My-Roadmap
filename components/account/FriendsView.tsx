@@ -11,7 +11,8 @@ export function FriendsView() {
 
   async function invite() {
     if (navigator.share) {
-      try { await navigator.share({ title: "Track My Roadmap", text, url: SITE_URL }); return; } catch { /* closed or unsupported: copy instead */ }
+      try { await navigator.share({ title: "Track My Roadmap", text, url: SITE_URL }); return; }
+      catch (e) { if ((e as Error)?.name === "AbortError") return; /* closed the share sheet; anything else: copy instead */ }
     }
     try { await navigator.clipboard.writeText(`${text} ${SITE_URL}`); setCopied(true); setTimeout(() => setCopied(false), 2500); }
     catch { window.prompt("Copy this invite:", `${text} ${SITE_URL}`); }

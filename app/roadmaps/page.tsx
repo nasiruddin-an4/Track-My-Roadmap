@@ -24,7 +24,7 @@ export default function RoadmapsPage() {
           <span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(rgba(148,163,184,.12)_1px,transparent_1px)] [mask-image:radial-gradient(70%_80%_at_20%_30%,#000,transparent)] bg-[size:22px_22px]" />
           <span className="eyebrow inline-flex w-fit items-center gap-2 rounded-full border border-line bg-surface/60 px-3 py-1 backdrop-blur">
             <span className="size-1.5 rounded-full bg-done shadow-[0_0_0_3px_rgba(67,211,153,.2)]" />
-            Free · No sign-up needed to start
+            Free · Browse without an account
           </span>
           <h1 className="m-0 font-display text-[clamp(2.3rem,5.4vw,3.6rem)] leading-[1.02] font-bold tracking-[-.035em]">
             Find your <span className="text-highlight">roadmap</span>

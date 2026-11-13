@@ -15,7 +15,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/roadmaps/[slug]/track">): Promise<Metadata> {
   const rm = getRoadmap((await params).slug);
-  if (!rm) return {};
+  if (!rm) return { title: "Page not found", robots: { index: false } };
   return { title: `Track: ${rm.def.title} roadmap`, robots: { index: false }, alternates: { canonical: `/roadmaps/${rm.def.slug}` } };
 }
 

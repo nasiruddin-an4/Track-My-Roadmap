@@ -32,12 +32,17 @@ export const checkAdmin = cache(async (): Promise<AdminCheck> => {
 export async function listTopicResources(slug: string): Promise<TopicResource[]> {
   if (!supabaseConfigured) return [];
   const supabase = await createServerSupabase();
-  const { data, error } = await supabase.from("topic_resources").select(RESOURCE_COLUMNS).eq("roadmap", slug);
-  if (error) {
-    console.error("topic_resources:", error.message);
-    return [];
+  const PAGE = 1000, rows: TopicResource[] = [];
+  for (let from = 0; ; from += PAGE) {
+    const { data, error } = await supabase.from("topic_resources").select(RESOURCE_COLUMNS).eq("roadmap", slug).order("id").range(from, from + PAGE - 1);
+    if (error) {
+      console.error("topic_resources:", error.message);
+      return [];
+    }
+    rows.push(...((data ?? []) as TopicResource[]));
+    if (!data || data.length < PAGE) break;
   }
-  return (data ?? []) as TopicResource[];
+  return rows;
 }
 
 export async function getTopicResources(slug: string): Promise<ResourceMap> {
@@ -48,13 +53,19 @@ export async function getTopicResources(slug: string): Promise<ResourceMap> {
 export async function resourceCounts(): Promise<Record<string, { resources: number; keys: string[] }>> {
   if (!supabaseConfigured) return {};
   const supabase = await createServerSupabase();
-  const { data, error } = await supabase.from("topic_resources").select("roadmap, topic_key").limit(10000);
-  if (error) {
-    console.error("topic_resources:", error.message);
-    return {};
+  // the Data API returns at most 1,000 rows per request, so read in pages
+  const PAGE = 1000, rows: { roadmap: string; topic_key: string }[] = [];
+  for (let from = 0; ; from += PAGE) {
+    const { data, error } = await supabase.from("topic_resources").select("roadmap, topic_key").order("id").range(from, from + PAGE - 1);
+    if (error) {
+      console.error("topic_resources:", error.message);
+      return {};
+    }
+    rows.push(...(data ?? []));
+    if (!data || data.length < PAGE) break;
   }
   const out: Record<string, { resources: number; keys: Set<string> }> = {};
-  for (const r of data ?? []) {
+  for (const r of rows) {
     const e = (out[r.roadmap] ??= { resources: 0, keys: new Set() });
     e.resources++;
     e.keys.add(r.topic_key);

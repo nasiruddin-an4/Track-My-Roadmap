@@ -5,7 +5,7 @@
  * Writes go straight to Supabase from the browser; row level security only lets admins write.
  */
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Close, Search } from "@/components/icons";
 import { ResourceLink, YouTubeMark } from "@/components/roadmap/ResourceLink";
 import { useToast } from "@/components/toast";
@@ -37,6 +37,7 @@ export function ResourceEditor({ def, initial }: { def: RoadmapDef; initial: Top
   const rm = useMemo(() => buildRoadmap(def), [def]);
   const toast = useToast();
   const router = useRouter(); // refreshes the sidebar's coverage counts after a change
+  const moving = useRef(false);
   const [rows, setRows] = useState(initial);
   const map = useMemo(() => groupByTopic(rows), [rows]);
   const keys = useMemo(() => allVideoKeys(rm), [rm]);
@@ -81,6 +82,13 @@ export function ResourceEditor({ def, initial }: { def: RoadmapDef; initial: Top
       router.refresh();
     },
     move: async (key, id, dir) => {
+      if (!sb || moving.current) return; // one move at a time, so positions can't interleave
+      moving.current = true;
+      try { await doMove(key, id, dir); } finally { moving.current = false; }
+    },
+  };
+  async function doMove(key: string, id: string, dir: -1 | 1) {
+    {
       if (!sb) return;
       const list = [...(map[key] ?? [])];
       const i = list.findIndex((r) => r.id === id), j = i + dir;
@@ -91,13 +99,19 @@ export function ResourceEditor({ def, initial }: { def: RoadmapDef; initial: Top
       setRows((rs) => rs.map((r) => { const u = changed.find((c) => c.id === r.id); return u ? { ...r, position: u.position } : r; }));
       const results = await Promise.all(changed.map((u) => sb.from("topic_resources").update({ position: u.position }).eq("id", u.id)));
       const err = results.find((r) => r.error)?.error;
-      if (err) { setRows(before); toast(dbError(err)); }
-    },
-  };
+      if (err) {
+        toast(dbError(err));
+        // some updates may have landed: show what the database actually has
+        const { data } = await sb.from("topic_resources").select(RESOURCE_COLUMNS).eq("roadmap", def.slug);
+        setRows(data ? (data as TopicResource[]) : before);
+      }
+    }
+  }
 
   /* ---------- what to show ---------- */
   const q = query.trim().toLowerCase();
-  const keep = (v: VideoSlot) => filter === "all" || (filter === "has") === Boolean(map[v.key]?.length);
+  // the slot being edited stays visible even if a change means it no longer matches the filter
+  const keep = (v: VideoSlot) => filter === "all" || v.key === open || (filter === "has") === Boolean(map[v.key]?.length);
   const visibleCards = (ph: Phase) =>
     ph.cards
       .map((c) => {
@@ -346,24 +360,28 @@ function AddForm({ topic, existing, onAdd }: { topic: string; existing: TopicRes
   // a watch link that sits inside a playlist can be saved as either
   const inList = parseYouTube(url)?.kind === "video" && parseYouTube(url, true)?.kind === "playlist";
 
-  const reset = () => { setUrl(""); setInfo(null); setTitle(""); setChannel(""); setNote(""); setError(""); setAsPlaylist(false); };
+  // each lookup gets a number; a slow answer to an older one (link changed since) is ignored
+  const lookupId = useRef(0);
+  const reset = () => { lookupId.current++; setUrl(""); setInfo(null); setTitle(""); setChannel(""); setNote(""); setError(""); setAsPlaylist(false); setBusy(false); };
 
   const lookup = async (raw: string, playlist = asPlaylist) => {
+    const my = ++lookupId.current;
     setError("");
     if (!parseYouTube(raw, playlist)) { setInfo(null); if (raw.trim()) setError("Paste a YouTube video, playlist or channel link."); return; }
     setBusy(true);
     try {
       const res = await fetch(`/api/youtube-info?url=${encodeURIComponent(raw)}${playlist ? "&playlist=1" : ""}`);
       const data = await res.json();
+      if (my !== lookupId.current) return;
       if (!res.ok) { setInfo(null); setError(data.error ?? "Couldn’t read that link."); return; }
       setInfo(data);
       const handle = data.kind === "channel" ? (parseYouTube(raw)?.id ?? "").replace(/^(channel|c|user)\//, "") : "";
       setTitle(data.title || handle);
       setChannel(data.channel || handle);
     } catch {
-      setError("Couldn’t reach the server. Try again.");
+      if (my === lookupId.current) setError("Couldn’t reach the server. Try again.");
     } finally {
-      setBusy(false);
+      if (my === lookupId.current) setBusy(false);
     }
   };
 
@@ -384,7 +402,7 @@ function AddForm({ topic, existing, onAdd }: { topic: string; existing: TopicRes
         Add a YouTube link for “{topic}”
         <div className="flex gap-2">
           <input className={input} type="url" inputMode="url" value={url} placeholder="https://www.youtube.com/watch?v=…" autoComplete="off"
-            onChange={(e) => { setUrl(e.target.value); setInfo(null); setError(""); }}
+            onChange={(e) => { lookupId.current++; setBusy(false); setUrl(e.target.value); setInfo(null); setError(""); }}
             onPaste={(e) => { const t = e.clipboardData.getData("text"); if (t) { e.preventDefault(); setUrl(t.trim()); setInfo(null); lookup(t); } }} />
           {!info && <button type="submit" className="btn !min-h-10 flex-none" disabled={busy || !url.trim()}>{busy ? "Looking…" : "Look up"}</button>}
         </div>

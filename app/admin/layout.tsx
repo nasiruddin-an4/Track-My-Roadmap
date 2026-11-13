@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 /** Admins get the dashboard frame (sidebar + top bar); anyone else just sees the page, which shows the sign-in or 404. */
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <Suspense fallback={<div className="admin-shell grid min-h-svh place-items-center bg-bg text-muted" aria-busy="true">Loading…</div>}>
+    <Suspense fallback={<div className="grid min-h-[60svh] place-items-center text-muted" aria-busy="true">Loading…</div>}>
       <Frame>{children}</Frame>
     </Suspense>
   );

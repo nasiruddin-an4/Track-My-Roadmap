@@ -50,7 +50,8 @@ export function CertificatesView() {
 function Certificate({ s, name }: { s: RoadmapStat; name: string }) {
   const svg = useRef<SVGSVGElement>(null);
   const [state, setState] = useState<"idle" | "busy" | "error">("idle");
-  const date = s.updatedAt ? new Date(s.updatedAt).toLocaleDateString("en", { day: "numeric", month: "long", year: "numeric" }) : "";
+  const when = s.completedAt || s.updatedAt; // completion date; older progress without one falls back to the last edit
+  const date = when ? new Date(when).toLocaleDateString("en", { day: "numeric", month: "long", year: "numeric" }) : "";
   const W = 1414, H = 1000;
 
   async function save() {

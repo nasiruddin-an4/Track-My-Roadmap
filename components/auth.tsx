@@ -44,9 +44,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const sb = getSupabase();
     if (!sb) return;
-    let first = true;
-    const { data } = sb.auth.onAuthStateChange((_event, session) => {
+    let first = true, hadUser = false;
+    const { data } = sb.auth.onAuthStateChange((event, session) => {
       const u = session?.user ?? null;
+      // signed out (here or in another tab): clear this device's copy and reload, so a tab still showing the
+      // old account can't write its progress into whoever signs in next on this browser
+      if (event === "SIGNED_OUT" && hadUser) { clearLocalData(); location.reload(); return; }
+      hadUser = Boolean(u);
       if (u && !claimDevice(u)) return;
       setUser((prev) => (prev?.id === u?.id ? prev : u));
       if (first) { first = false; setReady(true); }
@@ -66,7 +70,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signOut = useCallback(async () => {
     const sb = getSupabase();
-    if (sb) await sb.auth.signOut();
+    if (sb) await sb.auth.signOut({ scope: "local" }); // this device only; other devices stay signed in
     clearLocalData();
     location.reload();
   }, []);
