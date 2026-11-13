@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Outfit } from "next/font/google";
 import { Suspense } from "react";
 import { AuthProvider } from "@/components/auth";
+import { FeedbackButton } from "@/components/FeedbackButton";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ToastProvider } from "@/components/toast";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
@@ -52,6 +53,11 @@ export const viewport: Viewport = { themeColor: "#FFFFFF", viewportFit: "cover" 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${outfit.variable} ${mono.variable}`} suppressHydrationWarning>
+      <head>
+        {/* remember the address hash before Next's scripts run (some pages rewrite the address while loading);
+            FeedbackButton uses it to reopen the form after "#feedback" links and sign-in */}
+        <script dangerouslySetInnerHTML={{ __html: "window.__tmrHash=location.hash" }} />
+      </head>
       <body>
         <AuthProvider>
           <ToastProvider>
@@ -59,6 +65,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <SiteHeader />
             </Suspense>
             {children}
+            <Suspense fallback={null}>
+              <FeedbackButton />
+            </Suspense>
           </ToastProvider>
         </AuthProvider>
       </body>

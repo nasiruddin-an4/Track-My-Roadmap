@@ -45,6 +45,7 @@ export function SiteFooter({ note }: { note?: string }) {
             <span>© 2026 Track My Roadmap</span>
             <Link href="/privacy" className="transition hover:text-white">Privacy</Link>
             <Link href="/terms" className="transition hover:text-white">Terms</Link>
+            <a href="#feedback" className="transition hover:text-white">Feedback</a>
           </span>
           <span>
             Made by{" "}

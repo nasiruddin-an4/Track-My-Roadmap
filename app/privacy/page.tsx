@@ -31,6 +31,10 @@ export default function PrivacyPage() {
             and notes).
           </li>
           <li>
+            <b>Feedback you send us</b>: your message, an optional rating, and the page you sent it from, linked to
+            your account so we can follow up.
+          </li>
+          <li>
             <b>A copy on your device</b>: the site keeps your progress in your browser’s local storage, so it works
             offline and loads quickly.
           </li>

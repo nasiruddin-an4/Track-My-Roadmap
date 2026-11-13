@@ -27,9 +27,13 @@ const SECTIONS = [
     href: "/admin/videos", label: "Videos", match: (p: string) => p.startsWith("/admin/videos"),
     icon: <><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m10 9.5 5 2.5-5 2.5v-5Z" /></>,
   },
+  {
+    href: "/admin/feedback", label: "Feedback", match: (p: string) => p.startsWith("/admin/feedback"),
+    icon: <path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.4A8.5 8.5 0 1 1 21 12Z" />,
+  },
 ];
 
-export function AdminShell({ roadmaps, children }: { roadmaps: RoadmapSummary[]; children: React.ReactNode }) {
+export function AdminShell({ roadmaps, newFeedback = 0, children }: { roadmaps: RoadmapSummary[]; newFeedback?: number; children: React.ReactNode }) {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   const slug = /^\/admin\/videos\/([^/]+)/.exec(path)?.[1];
@@ -52,7 +56,7 @@ export function AdminShell({ roadmaps, children }: { roadmaps: RoadmapSummary[];
         return () => { if (el) el.media = "not all"; };
       }}>{".site-top{display:none}"}</style>
       {open && <button type="button" aria-label="Close menu" className="fixed inset-0 z-30 bg-black/60 lg:hidden" onClick={() => setOpen(false)} />}
-      <Sidebar roadmaps={roadmaps} path={path} open={open} onNavigate={() => setOpen(false)} />
+      <Sidebar roadmaps={roadmaps} newFeedback={newFeedback} path={path} open={open} onNavigate={() => setOpen(false)} />
 
       <div className="flex min-w-0 flex-col">
         <header className="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-line bg-bg/85 px-4 backdrop-blur-lg sm:px-6 lg:px-8">
@@ -87,7 +91,7 @@ export function AdminShell({ roadmaps, children }: { roadmaps: RoadmapSummary[];
   );
 }
 
-function Sidebar({ roadmaps, path, open, onNavigate }: { roadmaps: RoadmapSummary[]; path: string; open: boolean; onNavigate: () => void }) {
+function Sidebar({ roadmaps, newFeedback, path, open, onNavigate }: { roadmaps: RoadmapSummary[]; newFeedback: number; path: string; open: boolean; onNavigate: () => void }) {
   const [q, setQ] = useState("");
   const list = useMemo(() => {
     const s = q.trim().toLowerCase();
@@ -111,7 +115,8 @@ function Sidebar({ roadmaps, path, open, onNavigate }: { roadmaps: RoadmapSummar
 
       <nav aria-label="Admin sections" className="flex-none p-3">
         {SECTIONS.map((x) => (
-          <SideLink key={x.href} href={x.href} on={x.match(path)} onClick={onNavigate} icon={x.icon}>{x.label}</SideLink>
+          <SideLink key={x.href} href={x.href} on={x.match(path)} onClick={onNavigate} icon={x.icon}
+            badge={x.href === "/admin/feedback" && newFeedback ? newFeedback : undefined}>{x.label}</SideLink>
         ))}
       </nav>
 
@@ -149,12 +154,13 @@ function Sidebar({ roadmaps, path, open, onNavigate }: { roadmaps: RoadmapSummar
   );
 }
 
-function SideLink({ href, on, onClick, icon, children }: { href: string; on: boolean; onClick: () => void; icon: React.ReactNode; children: React.ReactNode }) {
+function SideLink({ href, on, onClick, icon, badge, children }: { href: string; on: boolean; onClick: () => void; icon: React.ReactNode; badge?: number; children: React.ReactNode }) {
   return (
     <Link href={href} onClick={onClick} aria-current={on ? "page" : undefined}
       className={"flex h-10 items-center gap-3 rounded-xl px-3 text-[.94rem] font-semibold transition-colors " + (on ? "bg-sunk text-ink" : "text-muted hover:bg-sunk/60 hover:text-ink")}>
       <NavIcon className={on ? "text-route" : ""}>{icon}</NavIcon>
       {children}
+      {badge ? <span className="ml-auto rounded-full bg-highlight px-2 py-0.5 font-mono text-[.72rem] text-white" aria-label={`${badge} new`}>{badge > 99 ? "99+" : badge}</span> : null}
     </Link>
   );
 }

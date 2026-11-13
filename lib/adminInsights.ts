@@ -39,7 +39,7 @@ export type InsightsResult = { ok: true; data: Insights } | { ok: false; reason:
 
 const PAGE = 1000;
 
-async function allUsers(sb: SupabaseClient): Promise<User[]> {
+export async function allUsers(sb: SupabaseClient): Promise<User[]> {
   const out: User[] = [];
   for (let page = 1; page < 1000; page++) {
     const { data, error } = await sb.auth.admin.listUsers({ page, perPage: PAGE });

@@ -146,3 +146,72 @@ create trigger limit_roadmap_rows
 
 -- When a roadmap was first completed (ms since epoch), for the certificate date. Cleared if a required topic is unticked.
 alter table public.roadmap_progress add column if not exists completed_at bigint;
+
+-- ---------------------------------------------------------------------------
+-- Feedback from signed-in learners. Safe to re-run.
+-- Learners can only add feedback; only admins can read, update (status) or delete it.
+-- ---------------------------------------------------------------------------
+create table if not exists public.feedback (
+  id         uuid        primary key default gen_random_uuid(),
+  user_id    uuid        not null default auth.uid() references auth.users (id) on delete cascade,
+  kind       text        not null check (kind in ('idea', 'bug', 'content', 'other')),
+  rating     smallint    check (rating between 1 and 5),       -- optional "how useful is it so far?"
+  message    text        not null check (char_length(message) between 3 and 2000),
+  page       text        check (char_length(page) <= 200),     -- the page it was sent from
+  status     text        not null default 'new' check (status in ('new', 'read', 'done')),
+  created_at timestamptz not null default now()
+);
+
+create index if not exists feedback_created_idx on public.feedback (created_at desc);
+create index if not exists feedback_user_idx on public.feedback (user_id, created_at);
+
+alter table public.feedback enable row level security;
+revoke all on public.feedback from anon, authenticated;
+grant insert, select, update, delete on public.feedback to authenticated;
+
+drop policy if exists "Send own feedback" on public.feedback;
+create policy "Send own feedback" on public.feedback
+  for insert to authenticated
+  with check ((select auth.uid()) = user_id and status = 'new');
+
+drop policy if exists "Admins read feedback" on public.feedback;
+create policy "Admins read feedback" on public.feedback
+  for select to authenticated
+  using (exists (select 1 from public.admins a where a.user_id = (select auth.uid())));
+
+drop policy if exists "Admins update feedback" on public.feedback;
+create policy "Admins update feedback" on public.feedback
+  for update to authenticated
+  using (exists (select 1 from public.admins a where a.user_id = (select auth.uid())))
+  with check (exists (select 1 from public.admins a where a.user_id = (select auth.uid())));
+
+drop policy if exists "Admins delete feedback" on public.feedback;
+create policy "Admins delete feedback" on public.feedback
+  for delete to authenticated
+  using (exists (select 1 from public.admins a where a.user_id = (select auth.uid())));
+
+-- At most 10 messages per person per day. Learners can't read the feedback table, so the count runs with the
+-- function owner's rights; it lives in a schema the Data API doesn't expose and only counts the sender's rows.
+create schema if not exists private;
+revoke all on schema private from public, anon, authenticated;
+
+create or replace function private.limit_feedback()
+returns trigger
+language plpgsql
+security definer
+set search_path = ''
+as $$
+begin
+  if (select count(*) from public.feedback f
+      where f.user_id = new.user_id and f.created_at > now() - interval '1 day') >= 10 then
+    raise exception 'Too much feedback today' using errcode = 'check_violation';
+  end if;
+  return new;
+end;
+$$;
+revoke all on function private.limit_feedback() from public, anon, authenticated;
+
+drop trigger if exists limit_feedback on public.feedback;
+create trigger limit_feedback
+  before insert on public.feedback
+  for each row execute function private.limit_feedback();

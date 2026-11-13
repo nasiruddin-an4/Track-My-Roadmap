@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { roadmapSummaries } from "@/lib/adminData";
+import { newFeedbackCount } from "@/lib/adminFeedback";
 import { checkAdmin } from "@/lib/supabase/admin";
 
 export const metadata: Metadata = {
@@ -21,5 +22,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 async function Frame({ children }: { children: React.ReactNode }) {
   const check = await checkAdmin();
   if (!check.ok) return children;
-  return <AdminShell roadmaps={await roadmapSummaries()}>{children}</AdminShell>;
+  const [roadmaps, newFeedback] = await Promise.all([roadmapSummaries(), newFeedbackCount()]);
+  return <AdminShell roadmaps={roadmaps} newFeedback={newFeedback}>{children}</AdminShell>;
 }

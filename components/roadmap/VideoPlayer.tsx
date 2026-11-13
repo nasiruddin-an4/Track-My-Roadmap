@@ -17,23 +17,28 @@ export type WatchRequest = { topic: string; list: TopicResource[] };
 export function VideoPlayer({ watch, onClose }: { watch: WatchRequest | null; onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
   const downOnBackdrop = useRef(false);
+  const quietClose = useRef(false); // a close made by the cleanup below, not by the viewer
 
   // Layout effect, so its cleanup also runs when Next hides this page after you navigate away (pages stay in
-  // the document): close the dialog, stop the video (a hidden iframe keeps playing) and release the scroll lock.
+  // the document), and in development when React re-runs effects: close the dialog, pause the video (a hidden
+  // iframe keeps playing) and release the scroll lock. That close keeps the state, so showing the page again
+  // (or React's re-run) reopens the same video.
   useLayoutEffect(() => {
     const d = ref.current, root = document.documentElement;
     if (!d || !watch) return;
+    d.querySelectorAll("iframe").forEach((f) => { if (f.dataset.src) { f.src = f.dataset.src; delete f.dataset.src; } });
     if (!d.open) d.showModal();
     root.dataset.modal = "open";
     return () => {
       delete root.dataset.modal;
-      d.querySelectorAll("iframe").forEach((f) => { f.src = "about:blank"; });
-      if (d.open) d.close();
+      d.querySelectorAll("iframe").forEach((f) => { if (f.src !== "about:blank") { f.dataset.src = f.src; f.src = "about:blank"; } });
+      if (d.open) { quietClose.current = true; d.close(); }
     };
   }, [watch]);
 
   return (
-    <dialog ref={ref} onClose={onClose} aria-labelledby="vp-title"
+    <dialog ref={ref} aria-labelledby="vp-title"
+      onClose={() => { if (quietClose.current) { quietClose.current = false; return; } onClose(); }}
       // close on a click outside the panel, but not when a text selection inside it ends outside
       onMouseDown={(e) => { downOnBackdrop.current = e.target === e.currentTarget; }}
       onClick={(e) => { if (e.target === e.currentTarget && downOnBackdrop.current) e.currentTarget.close(); }}

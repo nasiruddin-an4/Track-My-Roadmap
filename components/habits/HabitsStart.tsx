@@ -34,7 +34,7 @@ export function HabitsStart({ note = true }: { note?: boolean }) {
   return (
     <div className="grid justify-items-start gap-3">
       {signedIn ? (
-        <Link href={TRACK} prefetch className="inline-flex min-h-12 items-center gap-2.5 rounded-[12px] bg-route px-5 text-base font-semibold text-route-ink hover:brightness-110">
+        <Link href={TRACK} className="inline-flex min-h-12 items-center gap-2.5 rounded-[12px] bg-route px-5 text-base font-semibold text-route-ink hover:brightness-110">
           {sum ? "Open my habit tracker" : "Start tracking"} <Arrow />
         </Link>
       ) : ready ? (

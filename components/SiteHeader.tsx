@@ -9,6 +9,7 @@ import { useAuth } from "@/components/auth";
 import { Logo, Wordmark } from "@/components/icons";
 import { escapeInAppOnce } from "@/lib/inapp";
 import { useIsAdmin } from "@/lib/useIsAdmin";
+import { useIsClient } from "@/lib/useLocal";
 
 /* The site has two tools: roadmaps and the habit tracker. Logo left, the two tools centred, account right. */
 
@@ -74,6 +75,8 @@ export function SiteHeader() {
 
 function Account({ path }: { path: string }) {
   const { ready, user, signOut, configured } = useAuth();
+  // the header can finish hydrating after sign-in has been checked; until it has, render what the server did
+  const hydrated = useIsClient();
   const [open, setOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const box = useRef<HTMLDivElement>(null);
@@ -89,7 +92,7 @@ function Account({ path }: { path: string }) {
   }, [open]);
 
   if (!configured) return null;
-  if (!ready) return <span className="block h-11 w-24 rounded-full bg-sunk" aria-hidden="true" />;
+  if (!ready || !hydrated) return <span className="block h-11 w-24 rounded-full bg-sunk" aria-hidden="true" />;
   if (!user) {
     return (
       // On the sign-up / log-in pages themselves the buttons would only point back at the same page.
