@@ -55,7 +55,9 @@ Admins add the best YouTube video, playlist or channel for each topic at `/admin
 1. Run the latest `supabase/schema.sql` in the SQL Editor (it creates `admins` and `topic_resources`; safe to re-run).
 2. Make yourself an admin, using the email you sign in with:
    `insert into public.admins (user_id) select id from auth.users where email = 'you@example.com';`
-3. Sign in, open the account menu → **Admin · Topic videos**.
+3. Sign in with that account: you land on the admin dashboard (Overview, Users, Videos).
+4. For the Overview and Users pages, add the project's **secret key** (Supabase → Project Settings → API Keys → Secret keys)
+   as `SUPABASE_SECRET_KEY` in `.env` and in Vercel's environment variables. It is read on the server only; never prefix it with `NEXT_PUBLIC_`.
 
 Videos attach to topic keys, so renaming a topic hides its videos; the roadmap's admin page lists them under "Not on the roadmap any more".
 

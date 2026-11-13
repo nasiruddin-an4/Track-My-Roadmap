@@ -15,6 +15,10 @@ const KNOWN = new Set(ROADMAP_SLUGS);
 export async function proxy(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
+  // the video editor moved from /admin/<roadmap> to /admin/videos/<roadmap>
+  const old = /^\/admin\/([^/]+)\/?$/.exec(path);
+  if (old && KNOWN.has(old[1])) return NextResponse.redirect(new URL(`/admin/videos/${old[1]}`, request.url), 308);
+
   if (isMissing(path)) {
     // render the site's 404 page with a 404 status: rewrite to an address no route matches
     return NextResponse.rewrite(new URL("/_missing", request.url), { status: 404 });
@@ -42,9 +46,10 @@ export async function proxy(request: NextRequest) {
   return response;
 }
 
-/** /roadmaps/<slug>, /roadmaps/<slug>/track and /admin/<slug> for a slug that doesn't exist; /card/<token> that isn't genuine. */
+/** /roadmaps/<slug>, /roadmaps/<slug>/track and /admin/videos/<slug> for a slug that doesn't exist; /card/<token> that isn't genuine. */
 function isMissing(path: string): boolean {
-  const rm = /^\/(?:roadmaps|admin)\/([^/]+)(?:\/track)?\/?$/.exec(path);
+  const rm = /^\/(?:roadmaps\/([^/]+)(?:\/track)?|admin\/videos\/([^/]+))\/?$/.exec(path);
+  if (rm) rm[1] = rm[1] ?? rm[2];
   if (rm) {
     try { return !KNOWN.has(decodeURIComponent(rm[1])); } catch { return true; } // broken "%" escape
   }

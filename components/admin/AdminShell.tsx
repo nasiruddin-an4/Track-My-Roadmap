@@ -14,11 +14,27 @@ import { Close, Logo, Search } from "@/components/icons";
 import type { RoadmapSummary } from "@/lib/adminData";
 import { profileOf } from "@/lib/profile";
 
+const SECTIONS = [
+  {
+    href: "/admin", label: "Overview", match: (p: string) => p === "/admin",
+    icon: <><rect x="3.5" y="3.5" width="7" height="7" rx="1.5" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.5" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.5" /><rect x="13.5" y="13.5" width="7" height="7" rx="1.5" /></>,
+  },
+  {
+    href: "/admin/users", label: "Users", match: (p: string) => p.startsWith("/admin/users"),
+    icon: <><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20a6.5 6.5 0 0 1 13 0" /><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14a6.5 6.5 0 0 1 3.5 6" /></>,
+  },
+  {
+    href: "/admin/videos", label: "Videos", match: (p: string) => p.startsWith("/admin/videos"),
+    icon: <><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m10 9.5 5 2.5-5 2.5v-5Z" /></>,
+  },
+];
+
 export function AdminShell({ roadmaps, children }: { roadmaps: RoadmapSummary[]; children: React.ReactNode }) {
   const path = usePathname();
   const [open, setOpen] = useState(false);
-  const slug = /^\/admin\/([^/]+)/.exec(path)?.[1];
+  const slug = /^\/admin\/videos\/([^/]+)/.exec(path)?.[1];
   const current = roadmaps.find((r) => r.slug === slug);
+  const section = SECTIONS.find((x) => x.match(path)) ?? SECTIONS[0];
 
   useEffect(() => {
     if (!open) return;
@@ -45,7 +61,7 @@ export function AdminShell({ roadmaps, children }: { roadmaps: RoadmapSummary[];
             <NavIcon><path d="M4 7h16M4 12h16M4 17h16" /></NavIcon>
           </button>
           <nav aria-label="Breadcrumb" className="flex min-w-0 items-center gap-2 text-[.92rem]">
-            <Link href="/admin" className={current ? "text-muted hover:text-ink" : "font-semibold"}>Dashboard</Link>
+            <Link href={section.href} className={current ? "text-muted hover:text-ink" : "font-semibold"}>{section.label}</Link>
             {current && (
               <>
                 <span aria-hidden="true" className="text-muted">/</span>
@@ -94,15 +110,14 @@ function Sidebar({ roadmaps, path, open, onNavigate }: { roadmaps: RoadmapSummar
       </div>
 
       <nav aria-label="Admin sections" className="flex-none p-3">
-        <SideLink href="/admin" on={path === "/admin"} onClick={onNavigate}
-          icon={<><rect x="3.5" y="3.5" width="7" height="7" rx="1.5" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.5" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.5" /><rect x="13.5" y="13.5" width="7" height="7" rx="1.5" /></>}>
-          Dashboard
-        </SideLink>
+        {SECTIONS.map((x) => (
+          <SideLink key={x.href} href={x.href} on={x.match(path)} onClick={onNavigate} icon={x.icon}>{x.label}</SideLink>
+        ))}
       </nav>
 
       <div className="flex min-h-0 flex-1 flex-col border-t border-line">
         <div className="flex-none px-4 pt-4 pb-2">
-          <div className="eyebrow mb-2 px-1">Roadmaps · {roadmaps.length}</div>
+          <div className="eyebrow mb-2 px-1">Add videos · {roadmaps.length} roadmaps</div>
           <label className="flex h-9 items-center gap-2 rounded-lg border border-line bg-bg px-2.5 text-muted focus-within:border-route">
             <Search size={15} />
             <span className="vh">Find a roadmap</span>
@@ -112,11 +127,11 @@ function Sidebar({ roadmaps, path, open, onNavigate }: { roadmaps: RoadmapSummar
         </div>
         <ul className="m-0 min-h-0 flex-1 list-none overflow-y-auto px-3 pb-3">
           {list.map((r) => {
-            const on = path === `/admin/${r.slug}`;
+            const on = path === `/admin/videos/${r.slug}`;
             const full = r.total > 0 && r.topics === r.total;
             return (
               <li key={r.slug}>
-                <Link href={`/admin/${r.slug}`} onClick={onNavigate} aria-current={on ? "page" : undefined}
+                <Link href={`/admin/videos/${r.slug}`} onClick={onNavigate} aria-current={on ? "page" : undefined}
                   className={"flex items-center gap-2 rounded-lg px-2.5 py-2 text-[.88rem] transition-colors " + (on ? "bg-route-soft font-semibold text-ink" : "text-muted hover:bg-sunk/60 hover:text-ink")}>
                   <span aria-hidden="true" className={"size-1.5 flex-none rounded-full " + (full ? "bg-done" : r.topics ? "bg-warm" : "bg-line")} />
                   <span className="min-w-0 flex-1 truncate">{r.title}</span>

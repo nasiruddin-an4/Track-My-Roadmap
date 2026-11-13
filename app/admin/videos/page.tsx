@@ -4,10 +4,10 @@ import { AdminGate } from "@/components/admin/AdminGate";
 import { roadmapSummaries } from "@/lib/adminData";
 import { checkAdmin } from "@/lib/supabase/admin";
 
-export const metadata = { title: "Dashboard" };
+export const metadata = { title: "Videos" };
 
-/** Admin home: totals, then every roadmap with how many of its topics have a recommended video. */
-export default function AdminPage() {
+/** Video coverage: totals, then every roadmap with how many of its topics have a recommended video. */
+export default function AdminVideosPage() {
   return (
     <Suspense fallback={<div className="py-24 text-center text-muted" aria-busy="true">Loading…</div>}>
       <Dashboard />
@@ -29,7 +29,7 @@ async function Dashboard() {
   return (
     <div className="grid gap-8">
       <header className="grid gap-1.5">
-        <h1 className="m-0 font-display text-[clamp(1.6rem,3vw,2.1rem)] leading-tight font-bold tracking-[-.03em]">Dashboard</h1>
+        <h1 className="m-0 font-display text-[clamp(1.6rem,3vw,2.1rem)] leading-tight font-bold tracking-[-.03em]">Videos</h1>
         <p className="m-0 max-w-[64ch] text-muted">
           Add the best YouTube video, playlist or channel for each topic. Learners see them right under the topic in their tracker.
         </p>
@@ -38,7 +38,7 @@ async function Dashboard() {
       <dl className="m-0 grid grid-cols-2 gap-3 xl:grid-cols-4">
         <Stat label="Recommended links" value={links} />
         <Stat label="Topics covered" value={covered} of={total} note={`${pct(covered, total)}% of all topics`} />
-        <Stat label="Roadmaps started" value={started} of={rows.length} />
+        <Stat label="Roadmaps with videos" value={started} of={rows.length} />
         <Stat label="Roadmaps fully covered" value={complete} of={rows.length} />
       </dl>
 
@@ -55,7 +55,7 @@ async function Dashboard() {
             const p = pct(r.topics, r.total);
             return (
               <li key={r.slug} className="border-b border-line last:border-b-0">
-                <Link href={`/admin/${r.slug}`}
+                <Link href={`/admin/videos/${r.slug}`}
                   className="group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 px-4 py-3 transition-colors hover:bg-sunk/40 sm:px-5 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,2fr)_90px_70px_24px]">
                   <b className="truncate font-semibold">{r.title}</b>
                   <span className="hidden truncate text-[.85rem] text-muted md:block">{r.category}</span>

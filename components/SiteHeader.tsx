@@ -148,7 +148,7 @@ function Account({ path }: { path: string }) {
                   className={"flex h-10 items-center gap-3 rounded-xl px-3 text-[.94rem] font-semibold transition-colors " +
                     (path.startsWith("/admin") ? "bg-sunk text-ink" : "text-muted hover:bg-sunk/60 hover:text-ink")}>
                   <NavIcon className={path.startsWith("/admin") ? "text-route" : ""}><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m10 9.5 5 2.5-5 2.5v-5Z" /></NavIcon>
-                  Admin · Topic videos
+                  Admin dashboard
                 </Link>
               </li>
             )}

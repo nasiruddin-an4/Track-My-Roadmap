@@ -48,13 +48,21 @@ export default function PrivacyPage() {
 
       <Section title="Sharing">
         <p>
-          We don’t sell, rent or trade your information. Your progress is private to your account. It is only shared
-          if you create a <b>Road Card</b> link yourself: that link shows your name, photo and a summary of your
-          progress to anyone you give it to.
+          We don’t sell, rent or trade your information. Your progress is private to your account: other users can’t
+          see it. It is only shared if you create a <b>Road Card</b> link yourself: that link shows your name, photo
+          and a summary of your progress to anyone you give it to.
         </p>
         <p>
           Recommended videos open on YouTube, which is run by Google under its own{" "}
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+        </p>
+      </Section>
+
+      <Section title="Who can see it on our side">
+        <p>
+          The site’s administrators can see your name, email, photo, when you joined and were last active, and your
+          roadmap progress, so they can run the service, fix problems, and decide which topics need better learning
+          material. They don’t see your Google password, and they don’t share or sell what they see.
         </p>
       </Section>
 
