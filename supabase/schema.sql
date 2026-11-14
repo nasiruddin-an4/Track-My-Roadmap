@@ -215,3 +215,47 @@ drop trigger if exists limit_feedback on public.feedback;
 create trigger limit_feedback
   before insert on public.feedback
   for each row execute function private.limit_feedback();
+
+-- ---------------------------------------------------------------------------
+-- AI guide: messages used per day, for the daily limit. Safe to re-run.
+-- bucket is 'u:<user id>' for signed-in learners or 'ip:<hash>' for guests (the IP itself is never stored).
+-- Only the server touches it, with the secret key; learners and visitors have no access at all.
+-- ---------------------------------------------------------------------------
+create table if not exists public.assistant_usage (
+  bucket text    not null check (char_length(bucket) <= 80),
+  day    date    not null default current_date,
+  count  integer not null default 0 check (count >= 0),
+  primary key (bucket, day)
+);
+
+alter table public.assistant_usage enable row level security;
+revoke all on public.assistant_usage from public, anon, authenticated;
+
+-- Counts one message and returns the new total for today, or null when the limit is already reached (nothing is
+-- counted then). One statement, so two messages sent at the same moment can't both slip past the limit.
+-- Old days are cleared out now and then, so the table stays small.
+create or replace function public.assistant_take(p_bucket text, p_limit integer)
+returns integer
+language plpgsql
+set search_path = ''
+as $$
+declare
+  used integer;
+begin
+  insert into public.assistant_usage as u (bucket, day, count)
+  values (p_bucket, current_date, 1)
+  on conflict (bucket, day) do update
+    set count = u.count + 1
+    where u.count < p_limit
+  returning u.count into used;
+
+  if random() < 0.01 then
+    delete from public.assistant_usage where day < current_date - 7;
+  end if;
+
+  return used;
+end;
+$$;
+revoke all on function public.assistant_take(text, integer) from public, anon, authenticated;
+grant execute on function public.assistant_take(text, integer) to service_role;
+grant select, insert, update, delete on public.assistant_usage to service_role;

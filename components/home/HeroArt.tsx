@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 
 export type DashPhase = { n: number; t: string; topics: number };
 
@@ -91,23 +91,27 @@ export function HeroDashboard({ title, phases, total, phaseCount }: { title: str
   );
 }
 
-/** The app icon, large, with a warm glow behind it (home hero). */
-export function HeroArt() {
+/**
+ * Full-bleed mountain + summit-flag artwork behind the hero, art-directed: a wide landscape image from 768px up,
+ * a portrait one on phones. On phones the image is pinned full-width to the bottom (its empty sky fading into the
+ * page), so the hero's bottom padding (~68vw, see app/page.tsx) keeps the flagged peak clear of the buttons.
+ * Scrims keep the copy readable on larger screens and the bottom fades into the next section.
+ */
+export function HeroBackdrop() {
+  const common = { alt: "", sizes: "100vw", fetchPriority: "high", loading: "eager" } as const;
+  const { props: { srcSet: wide } } = getImageProps({ ...common, src: "/hero/summit-flag.png", width: 1774, height: 887 });
+  const { props: { srcSet: tall, ...img } } = getImageProps({ ...common, src: "/hero/summit-flag-mobile.png", width: 1024, height: 1536 });
   return (
-    <div aria-hidden="true" className="relative mx-auto grid w-[min(52vw,380px)] place-items-center lg:mr-0">
-      <div className="absolute inset-[-14%] rounded-full bg-[radial-gradient(closest-side,rgba(255,138,0,.55),rgba(255,90,0,.18)_55%,transparent_75%)] blur-2xl" />
-      <Image src="/brand/icon-560.png" alt="" width={560} height={560} priority sizes="(min-width: 1024px) 380px, 52vw"
-        className="relative h-auto w-full drop-shadow-[0_24px_48px_rgba(255,90,0,.35)]" />
+    <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+      <picture>
+        <source media="(min-width: 768px)" srcSet={wide} />
+        <img {...img} srcSet={tall} alt=""
+          className="absolute inset-x-0 -bottom-[14vw] h-auto w-full [mask-image:linear-gradient(to_bottom,transparent,black_40%)]
+            md:inset-0 md:bottom-0 md:h-full md:object-cover md:object-[78%_center] md:[mask-image:none]" />
+      </picture>
+      {/* tablets: text spans the width, so an even tint; desktop: tint only behind the left column */}
+      <div className="absolute inset-0 max-md:hidden bg-[rgba(15,23,42,.72)] lg:bg-transparent lg:bg-[linear-gradient(90deg,rgba(15,23,42,.92)_0%,rgba(15,23,42,.75)_38%,rgba(15,23,42,.15)_70%,transparent_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-b from-transparent to-band md:h-1/3" />
     </div>
-  );
-}
-
-/** Soft, slightly lighter wave shapes behind the hero. */
-export function HeroWaves() {
-  return (
-    <svg aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 h-full w-full [mask-image:linear-gradient(to_bottom,black_55%,transparent_96%)]" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice">
-      <path d="M1440 70C1290 90 1210 250 1120 420S900 690 640 700 180 640 0 690V760H1440Z" fill="#1E293B" opacity=".45" />
-      <path d="M1440 360C1330 380 1250 520 1100 600S760 700 520 690 150 650 0 720V760H1440Z" fill="#1E293B" opacity=".55" />
-    </svg>
   );
 }

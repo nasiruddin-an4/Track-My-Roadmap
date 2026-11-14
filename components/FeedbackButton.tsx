@@ -1,8 +1,8 @@
 "use client";
 
 /*
- * "Feedback" on every page (except /admin): a small button bottom-right, also opened by any link to "#feedback"
- * (the footer has one). Signed-in learners send an optional rating, a kind and a message; the page they were on
+ * The feedback form on every page (except /admin), opened by any link to "#feedback" (the footer has one).
+ * Signed-in learners send an optional rating, a kind and a message; the page they were on
  * is attached. Signed-out visitors are asked to sign in and come straight back to the form.
  */
 import { usePathname } from "next/navigation";
@@ -54,18 +54,8 @@ export function FeedbackButton() {
     if (location.hash === "#feedback") history.replaceState(null, "", location.pathname + location.search);
   };
 
-  return (
-    <>
-      <button type="button" onClick={() => setWanted(true)} aria-haspopup="dialog"
-        className="fixed right-4 bottom-[max(16px,env(safe-area-inset-bottom))] z-30 inline-flex h-11 items-center gap-2 rounded-full border border-line bg-surface/95 px-4 text-[.9rem] font-semibold text-ink shadow-[var(--shadow)] backdrop-blur transition hover:border-route print:hidden">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-route">
-          <path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.4A8.5 8.5 0 1 1 21 12Z" />
-        </svg>
-        <span className="max-sm:sr-only">Feedback</span>
-      </button>
-      {open && <FeedbackDialog path={path} onClose={close} />}
-    </>
-  );
+  // no floating button any more (the AI Tutor's sits there); the form opens from "#feedback" links, e.g. the footer
+  return open ? <FeedbackDialog path={path} onClose={close} /> : null;
 }
 
 function FeedbackDialog({ path, onClose }: { path: string; onClose: () => void }) {

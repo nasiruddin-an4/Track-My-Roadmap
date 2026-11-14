@@ -11,9 +11,9 @@ import { escapeInAppOnce } from "@/lib/inapp";
 import { useIsAdmin } from "@/lib/useIsAdmin";
 import { useIsClient } from "@/lib/useLocal";
 
-/* The site has two tools: roadmaps and the habit tracker. Logo left, the two tools centred, account right. */
+/* The site's tools: roadmaps, the habit tracker and the AI Tutor. Logo left, the tools centred, account right. */
 
-const NAV = [
+const NAV: { href: string; label: string; short: string; accent?: boolean; match: (p: string) => boolean; icon: React.ReactNode }[] = [
   {
     href: "/roadmaps", label: "Roadmaps", short: "Roadmaps",
     match: (p: string) => p.startsWith("/roadmaps"),
@@ -23,6 +23,11 @@ const NAV = [
     href: "/habits", label: "Habit tracker", short: "Habits",
     match: (p: string) => p.startsWith("/habits"),
     icon: <><rect x="3.5" y="5" width="17" height="15.5" rx="3" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4M9 15l2 2 4-4" /></>,
+  },
+  {
+    href: "/ai", label: "AI Tutor", short: "AI", accent: true,
+    match: (p: string) => p === "/ai" || p.startsWith("/ai/"),
+    icon: <path d="M12 3c.4 3.8 1.6 6 3.2 7.4 1.4 1.1 3.2 1.6 5.8 1.6-2.6 0-4.4.5-5.8 1.6C13.6 15 12.4 17.2 12 21c-.4-3.8-1.6-6-3.2-7.4C7.4 12.5 5.6 12 3 12c2.6 0 4.4-.5 5.8-1.6C10.4 9 11.6 6.8 12 3Z" />,
   },
 ];
 
@@ -54,11 +59,12 @@ export function SiteHeader() {
               return (
                 <li key={n.href}>
                   <Link href={n.href} aria-current={on ? "page" : undefined}
-                    className={"inline-flex h-10 items-center gap-2 rounded-full px-3 text-[.95rem] min-[400px]:px-3.5 font-semibold whitespace-nowrap transition-colors sm:px-4 " +
+                    className={"inline-flex h-10 items-center gap-2 rounded-full px-2.5 text-[.92rem] min-[400px]:text-[.95rem] min-[440px]:px-3.5 font-semibold whitespace-nowrap transition-colors sm:px-4 " +
                       (on ? "bg-sunk text-ink shadow-[0_1px_2px_rgba(0,0,0,.3)]" : "text-muted hover:text-ink")}>
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
-                      className={"hidden min-[400px]:block " + (on ? "text-[#FF5A00]" : "")}>{n.icon}</svg>
-                    <span className="sm:hidden">{n.short}</span>
+                      className={(n.accent ? "block text-[#FF5A00] " : "hidden md:block ") + (on ? "text-[#FF5A00]" : "")}>{n.icon}</svg>
+                    {/* very narrow phones: the AI Tutor item is just its sparkle */}
+                    <span className={"sm:hidden " + (n.accent ? "max-[399px]:sr-only" : "")}>{n.short}</span>
                     <span className="hidden sm:inline">{n.label}</span>
                   </Link>
                 </li>
@@ -99,12 +105,15 @@ function Account({ path }: { path: string }) {
       /^\/(login|signup)\b/.test(path) ? null : (
         <div className="flex items-center gap-1.5">
           <Link href={`/login?next=${encodeURIComponent(path)}`}
-            className="hidden h-10 items-center rounded-full px-3.5 text-[.95rem] font-semibold text-muted transition-colors hover:text-ink md:inline-flex">
+            className="hidden h-10 items-center rounded-full px-3.5 text-[.95rem] font-semibold whitespace-nowrap text-muted transition-colors hover:text-ink min-[880px]:inline-flex">
             Log in
           </Link>
+          {/* hover: a shine sweeps across and the button lifts with a glow, like the hero buttons */}
           <Link href={`/signup?next=${encodeURIComponent(path)}`}
-            className="inline-flex h-10 items-center rounded-full bg-route px-4 text-[.95rem] font-semibold whitespace-nowrap text-route-ink transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-route">
-            Sign up
+            className="group relative inline-flex h-10 items-center overflow-hidden rounded-full bg-route px-3.5 text-[.95rem] font-semibold whitespace-nowrap text-route-ink transition duration-300 hover:brightness-110 hover:shadow-[0_8px_24px_rgba(124,149,255,.45)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-route motion-safe:hover:-translate-y-px motion-safe:active:translate-y-0 min-[400px]:px-4">
+            <span aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 -left-2/3 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-out motion-safe:group-hover:translate-x-[320%]" />
+            <span className="relative">Sign up</span>
           </Link>
         </div>
       )

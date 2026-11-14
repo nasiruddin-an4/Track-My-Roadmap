@@ -66,3 +66,13 @@ Videos attach to topic keys, so renaming a topic hides its videos; the roadmap's
 The Vercel project builds this folder as a Next.js app (`vercel.json` sets the framework). Add the two `NEXT_PUBLIC_SUPABASE_*` environment variables under Settings → Environment Variables, then redeploy.
 
 Progress from the original one-page site carries over automatically on any device that used it: the new app reads the same browser storage keys and uploads them to the account on first sign-in.
+
+## AI Tutor
+
+The AI Tutor page (`/ai`, linked from the navbar and a floating button on the home page) recommends roadmaps and where to start (`components/ai/AiChat.tsx`, `app/api/assistant/route.ts`, prompt in `lib/assistant/prompt.ts`, providers in `lib/assistant/providers.ts`).
+
+1. Add one AI key to `.env` and to Vercel's environment variables (server only; never prefix with `NEXT_PUBLIC_`). Without one the page says the AI Tutor isn't switched on yet.
+   - `GROQ_API_KEY` (used first if set): Groq, model `openai/gpt-oss-120b`. Groq's free tier allows only about 8,000 tokens a minute for this model, shared by every visitor, which is roughly two questions a minute; past that the tutor says it's busy. Upgrade the Groq plan before launch.
+   - `ANTHROPIC_API_KEY`: Claude Opus 5.5, with the full roadmap catalogue cached between requests.
+2. Run the latest `supabase/schema.sql` (it adds `assistant_usage` and `assistant_take`), with `SUPABASE_SECRET_KEY` set. That enforces the daily limits: 5 messages per guest IP, 30 per signed-in learner (`lib/assistant/limit.ts`). Until then the limit is only counted per server instance.
+3. Signed-in learners' progress is read from their account, so the tutor can say where they are and suggest the next topic.

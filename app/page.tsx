@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HeroArt, HeroWaves } from "@/components/home/HeroArt";
+import { AiTutorButton } from "@/components/home/AiTutorButton";
+import { HeroBackdrop } from "@/components/home/HeroArt";
 import { LegacyRedirect } from "@/components/home/LegacyRedirect";
 import { RoadmapFinder } from "@/components/home/RoadmapFinder";
 import { Arrow, Check } from "@/components/icons";
@@ -58,8 +59,9 @@ export default function Home() {
 
       {/* hero */}
       <section className="relative isolate overflow-hidden">
-        <HeroWaves />
-        <div className="wrap grid grid-cols-[minmax(0,1fr)] items-center gap-14 pt-16 pb-24 sm:pt-20 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:pt-28 lg:pb-36">
+        <HeroBackdrop />
+        <AiTutorButton />
+        <div className="wrap grid grid-cols-[minmax(0,1fr)] items-center gap-14 pt-16 pb-[68vw] sm:pt-20 md:pb-24 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:pt-28 lg:pb-36">
           <div className="grid gap-7">
             <span className="flex items-center gap-3 font-mono text-[.8rem] font-medium tracking-[.18em] text-ink uppercase">
               <svg width="26" height="20" viewBox="0 0 26 20" fill="none" stroke="#FF5A00" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 4 2 10l5 6M19 4l5 6-5 6M15 2l-4 16" /></svg>
@@ -74,14 +76,24 @@ export default function Home() {
               the daily habits that get you there. Free, and saved to your Google account.
             </p>
             <div className="grid gap-3 pt-1 sm:flex sm:flex-wrap">
-              <Link href="#roadmaps" className="btn primary !min-h-14 !rounded-[14px] !px-7 !text-[1.05rem]">Choose a roadmap <Arrow size={18} /></Link>
-              <Link href="/habits" prefetch className="btn !min-h-14 !rounded-[14px] !border-muted/50 !bg-transparent !px-6 !text-[1.05rem] hover:!border-ink">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4" /><rect x="7.5" y="13" width="3" height="3" rx=".6" /></svg>
+              {/* hover: a shine sweeps across, the button lifts and the arrow slides on (no movement with reduced motion) */}
+              <Link href="#roadmaps"
+                className="btn primary group relative overflow-hidden !min-h-14 !rounded-[14px] !px-7 !text-[1.05rem] transition duration-300 hover:shadow-[0_12px_32px_rgba(124,149,255,.4)] motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0">
+                <span aria-hidden="true"
+                  className="pointer-events-none absolute inset-y-0 -left-2/3 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/45 to-transparent opacity-0 group-hover:opacity-100 motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-out motion-safe:group-hover:translate-x-[320%]" />
+                <span className="relative">Choose a roadmap</span>
+                <span className="relative motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:translate-x-1"><Arrow size={18} /></span>
+              </Link>
+              {/* hover: the calendar rolls a little (with a bounce), the button lifts and lights up */}
+              <Link href="/habits" prefetch
+                className="btn group !min-h-14 !rounded-[14px] !border-muted/50 !bg-transparent !px-6 !text-[1.05rem] transition duration-300 hover:!border-ink hover:!bg-white/[.05] motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0">
+                <span className="grid place-items-center motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-[cubic-bezier(.34,1.56,.64,1)] motion-safe:group-hover:-rotate-12 motion-safe:group-hover:scale-115 group-hover:text-[#FF5A00]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4" /><rect x="7.5" y="13" width="3" height="3" rx=".6" /></svg>
+                </span>
                 Start the habit tracker
               </Link>
             </div>
           </div>
-          <HeroArt />
         </div>
       </section>
 
