@@ -20,9 +20,14 @@ export async function generateMetadata({ params }: PageProps<"/roadmaps/[slug]">
   const rm = getRoadmap((await params).slug);
   if (!rm) return { title: "Page not found", robots: { index: false } };
   const { def } = rm;
-  const title = `${def.title} Roadmap${def.years ? " " + def.years : ""}`;
+  const isSoftwareEngineer = def.slug === "software-engineer";
+  const title = isSoftwareEngineer
+    ? `Software Engineering Roadmap${def.years ? ` ${def.years}` : ""}`
+    : `${def.title} Roadmap${def.years ? " " + def.years : ""}`;
   const about = def.tagline.charAt(0).toLowerCase() + def.tagline.slice(1).replace(/\.$/, "");
-  let description = `Free ${def.title} roadmap${def.years ? ` for ${def.years}` : ""}: ${rm.numbered.length} phases and ${topicCount(rm)} topics, ${about}.`;
+  let description = isSoftwareEngineer
+    ? `Free software engineering roadmap: ${rm.numbered.length} phases and ${topicCount(rm)} topics, from programming fundamentals to project work, system design and career preparation. Preview the route and track progress.`
+    : `Free ${def.title} roadmap${def.years ? ` for ${def.years}` : ""}: ${rm.numbered.length} phases and ${topicCount(rm)} topics, ${about}.`;
   if (description.length < 130) description += " Track your progress with Google.";
   return pageMeta(title, description, `/roadmaps/${def.slug}`);
 }
@@ -88,7 +93,7 @@ async function RoadmapOverview({ params }: { params: PageProps<"/roadmaps/[slug]
             {def.years && <span className="rounded-full border border-line px-3 py-1 font-mono text-[.78rem] text-muted">{def.years}</span>}
           </div>
           <h1 className="m-0 max-w-[16ch] font-display text-[clamp(2.5rem,5.6vw,4.2rem)] leading-[1] font-bold tracking-[-.04em] text-balance">
-            {def.title} <span className="text-highlight">roadmap</span>
+            {def.slug === "software-engineer" ? "Software Engineering" : def.title} <span className="text-highlight">roadmap</span>
           </h1>
           <p className="m-0 max-w-[54ch] text-[clamp(1.08rem,1.6vw,1.25rem)] leading-relaxed text-muted">{def.tagline}</p>
           <ul className="m-0 flex list-none flex-wrap gap-2 p-0" aria-label="At a glance">
@@ -110,6 +115,8 @@ async function RoadmapOverview({ params }: { params: PageProps<"/roadmaps/[slug]
           </div>
         </div>
       </section>
+
+      {def.slug === "software-engineer" && <SoftwareEngineeringGuide />}
 
       {/* route + sticky start card */}
       <div className="wrap grid gap-12 pt-6 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-14">
@@ -182,6 +189,48 @@ async function RoadmapOverview({ params }: { params: PageProps<"/roadmaps/[slug]
 
       <SiteFooter note={def.credit?.text} />
     </>
+  );
+}
+
+function SoftwareEngineeringGuide() {
+  return (
+    <section aria-labelledby="software-guide-heading" className="wrap border-b border-line py-14 sm:py-16">
+      <div className="grid max-w-[74ch] gap-5">
+        <span className="eyebrow">How to use this learning path</span>
+        <h2 id="software-guide-heading" className="m-0 font-display text-[clamp(1.8rem,4vw,2.5rem)] leading-[1.05] font-bold tracking-[-.03em]">
+          A practical software engineering roadmap, at your own pace
+        </h2>
+        <p className="m-0 leading-relaxed text-muted">
+          A software engineering roadmap is most useful as a guide to what to learn next, not a race to finish a checklist.
+          This path moves from core programming knowledge to building software, understanding how systems work, and
+          presenting your skills for a role.
+        </p>
+        <ol className="m-0 grid list-none gap-3 p-0 sm:grid-cols-3">
+          <li className="grid content-start gap-2 rounded-[18px] border border-line bg-surface p-5">
+            <h3 className="m-0 font-display text-[1.1rem] font-bold">Find your starting point</h3>
+            <p className="m-0 text-[.95rem] text-muted">
+              New to coding? Begin with the fundamentals. Already have experience? Review the phases and focus on gaps.
+            </p>
+          </li>
+          <li className="grid content-start gap-2 rounded-[18px] border border-line bg-surface p-5">
+            <h3 className="m-0 font-display text-[1.1rem] font-bold">Learn by building</h3>
+            <p className="m-0 text-[.95rem] text-muted">
+              Apply concepts in small projects. Practice, testing and deployment help turn lessons into skills you can demonstrate.
+            </p>
+          </li>
+          <li className="grid content-start gap-2 rounded-[18px] border border-line bg-surface p-5">
+            <h3 className="m-0 font-display text-[1.1rem] font-bold">Keep a record of progress</h3>
+            <p className="m-0 text-[.95rem] text-muted">
+              Mark topics as you learn, pick up where you left off, and use your project work to shape a portfolio.
+            </p>
+          </li>
+        </ol>
+        <p className="m-0 leading-relaxed text-muted">
+          You can preview this free software engineering learning path without an account. Sign in with Google when
+          you want to save progress and see what to study next.
+        </p>
+      </div>
+    </section>
   );
 }
 

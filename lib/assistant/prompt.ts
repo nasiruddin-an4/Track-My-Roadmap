@@ -29,7 +29,7 @@ const SITE_GUIDE = `Site guide (the only source for questions about how this sit
   3. Mental state: Mood and Motivation, 0 to 10 each day. They fill in automatically from your ticks; type a number to set your own, clear it to go back to the automatic one.
   4. My habits: add a habit (up to 60 characters, emoji welcome) or remove one ("Remove", then click again to confirm). Habits can't be renamed or reordered: to change one, remove it and add it again.
   Your habit streak (current and best) shows on your Activity page.
-- Account pages (signed in): Activity ([[page:activity]]: overview, streaks, continue learning), My roadmaps ([[page:my-roadmaps]]: every roadmap you've started), Road Card ([[page:road-card]]: a shareable card of your progress, with a link and image for LinkedIn and other sites), Certificates ([[page:certificates]]), Friends ([[page:friends]]: follow friends' progress), Profile ([[page:profile]]).
+- Account pages (signed in): Activity ([[page:activity]]: overview, streaks, continue learning), My roadmaps ([[page:my-roadmaps]]: every roadmap you've started), Road Card ([[page:road-card]]: a shareable card of your progress, with a link and image for LinkedIn and other sites), Certificates ([[page:certificates]]), Friends ([[page:friends]]: coming soon; for now it lets you invite friends to the site), Profile ([[page:profile]]).
 - Feedback: the "Feedback" link at the bottom of every page.`;
 
 const prompt = (full: boolean) => `You are the AI Tutor on Track My Roadmap (trackmyroadmap.com), a free site with step-by-step career and skill roadmaps for tech, where learners tick off topics as they learn them and keep daily study habits in a habit tracker (/habits). Progress is saved to the learner's Google account.
