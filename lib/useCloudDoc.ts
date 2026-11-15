@@ -38,6 +38,8 @@ export function useCloudDoc<T extends Doc>(opts: CloudDocOptions<T>) {
 
   const [doc, setDoc] = useState<T>(opts.empty);
   const [hydrated, setHydrated] = useState(false);
+  /** The account's copy has been read at least once (or the read failed), so `doc` is as complete as it'll get. */
+  const [reached, setReached] = useState(false);
   const [loads, setLoads] = useState(0);
   const [status, setStatus] = useState<SyncStatus>("device");
   const docRef = useRef(doc);
@@ -121,6 +123,8 @@ export function useCloudDoc<T extends Doc>(opts: CloudDocOptions<T>) {
           setStatus("offline");
           if (pending.current.length && !timer.current) timer.current = setTimeout(() => retry.current(), 15000); // try again
         }
+      } finally {
+        if (uidRef.current === id) setReached(true);
       }
     });
   }, [show]);
@@ -169,7 +173,9 @@ export function useCloudDoc<T extends Doc>(opts: CloudDocOptions<T>) {
     }
   }, [show, sync]);
 
-  return { doc, update, status: uid ? status : ("device" as SyncStatus), loads, hydrated };
+  // settled: this device is read, sign-in is known, and (when signed in) the account has been checked
+  const settled = hydrated && ready && (!uid || !getSupabase() || reached);
+  return { doc, update, status: uid ? status : ("device" as SyncStatus), loads, hydrated, settled };
 }
 
 export function syncLabel(s: SyncStatus) {
