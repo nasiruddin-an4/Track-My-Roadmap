@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAccount } from "@/components/account/AccountData";
 import { Avatar } from "@/components/account/AccountShell";
 import { Bar, btnGhost, Loading, PageHead } from "@/components/account/ui";
@@ -9,6 +9,14 @@ import { useAuth } from "@/components/auth";
 
 export function ProfileView() {
   const a = useAccount();
+  // the CV Builder card names the primary CV; quietly falls back to the plain card if the list can't load
+  const [cvs, setCvs] = useState<{ title: string; isPrimary: boolean }[] | null>(null);
+  useEffect(() => {
+    let live = true;
+    fetch("/api/cv", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).then((j) => { if (live && j) setCvs(j.cvs); }).catch(() => {});
+    return () => { live = false; };
+  }, []);
+  const primaryCv = cvs?.find((c) => c.isPrimary);
   const { signOut } = useAuth();
   const [busy, setBusy] = useState(false);
   if (a.status === "loading") return <Loading />;
@@ -39,6 +47,23 @@ export function ProfileView() {
           </ul>
         </div>
       </section>
+
+      <Link href="/cv" className="group mt-4 flex items-center gap-4 rounded-[20px] border border-line bg-surface p-5 transition-colors hover:border-highlight">
+        <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-[rgba(255,90,0,.12)] text-highlight" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M6 2.5h8.5L19 7v13.5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-17a1 1 0 0 1 1-1Z" /><path d="M14 2.5V7h5M8.5 12h7M8.5 15.5h7M8.5 8.5h3" />
+          </svg>
+        </span>
+        <span className="grid min-w-0 flex-1 gap-0.5">
+          <b className="font-display text-[1.1rem]">CV Builder</b>
+          <span className="truncate text-[.9rem] text-muted">
+            {primaryCv ? <>Primary CV: <span className="text-ink">{primaryCv.title}</span>{cvs && cvs.length > 1 ? ` · ${cvs.length} CVs` : ""}</>
+              : cvs?.length ? `${cvs.length} ${cvs.length === 1 ? "CV" : "CVs"} · open to edit or make one your primary CV`
+              : "Make an ATS-friendly CV and download it as a PDF."}
+          </span>
+        </span>
+        <span className="font-semibold text-highlight transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+      </Link>
 
       <section className="mt-8 grid gap-4" aria-labelledby="skillsH">
         <h2 id="skillsH" className="m-0 font-display text-[1.3rem] font-bold tracking-[-.02em]">Your strongest roadmaps</h2>

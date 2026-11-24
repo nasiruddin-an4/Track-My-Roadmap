@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
     return [{ source: "/:path*", headers: SECURITY_HEADERS }];
   },
   cacheComponents: true,
+  // CV PDF rendering and CV file reading load their own engines and fonts at run time; keep them out of the bundle
+  serverExternalPackages: ["@react-pdf/renderer", "unpdf", "mammoth"],
   partialPrefetching: true,
   turbopack: {
     rules: {

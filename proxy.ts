@@ -76,12 +76,13 @@ function validCardToken(token: string): boolean {
 }
 
 function needsSession(path: string): boolean {
-  return /^\/roadmaps\/[^/]+\/track\/?$/.test(path) || /^\/(habits\/track|account|admin|api\/road-card|api\/youtube-info)(\/|$)/.test(path);
+  return /^\/roadmaps\/[^/]+\/track\/?$/.test(path) || /^\/(habits\/track|account|admin|cv|api\/road-card|api\/youtube-info|api\/cv)(\/|$)/.test(path);
 }
 
 export const config = {
   matcher: [
     "/roadmaps/:slug", "/roadmaps/:slug/track", "/admin/:path*", "/card/:token",
     "/habits/track", "/account/:path*", "/api/road-card", "/api/youtube-info",
+    "/cv", "/cv/:path*", "/api/cv/:path*",
   ],
 };

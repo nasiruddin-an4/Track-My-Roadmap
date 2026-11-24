@@ -16,6 +16,7 @@ export const ACCOUNT_NAV = [
   { href: "/account/roadmaps", label: "Roadmaps", icon: <path d="M9 4 3 6.5v13.5L9 17.5l6 2.5 6-2.5V4l-6 2.5L9 4Zm0 0v13.5m6-11V20" /> },
   { href: "/account/card", label: "Road Card", icon: <><rect x="2.5" y="5" width="19" height="14" rx="2.5" /><circle cx="8.5" cy="11" r="2" /><path d="M5.5 16a3 3 0 0 1 6 0M14 10h4.5M14 13.5h3" /></> },
   { href: "/account/certificates", label: "Certificates", icon: <><circle cx="12" cy="9" r="5.5" /><path d="m8.5 13.5-1.5 7 5-2.5 5 2.5-1.5-7" /></> },
+  { href: "/cv", label: "CV Builder", icon: <><path d="M6 2.5h8.5L19 7v13.5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-17a1 1 0 0 1 1-1Z" /><path d="M14 2.5V7h5M8.5 12h7M8.5 15.5h7M8.5 8.5h3" /></> },
 ] as const;
 
 export function NavIcon({ children, className = "" }: { children: React.ReactNode; className?: string }) {

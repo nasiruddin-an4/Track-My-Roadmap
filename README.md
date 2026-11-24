@@ -76,3 +76,17 @@ The AI Tutor page (`/ai`, linked from the navbar and a floating button on the ho
    - `ANTHROPIC_API_KEY`: Claude Opus 5.5, with the full roadmap catalogue cached between requests.
 2. Run the latest `supabase/schema.sql` (it adds `assistant_usage` and `assistant_take`), with `SUPABASE_SECRET_KEY` set. That enforces the daily limits: 5 messages per guest IP, 30 per signed-in learner (`lib/assistant/limit.ts`). Until then the limit is only counted per server instance.
 3. Signed-in learners' progress is read from their account, so the tutor can say where they are and suggest the next topic.
+
+## CV Builder
+
+`/cv` (linked from the Profile page and the account menu): ATS-friendly CVs with a live preview, PDF and Word export, CV import from PDF/DOCX, suggestions from the learner's roadmap progress, an ATS check against a job description, AI rewrites, versions and share links. Code in `components/cv/`, `lib/cv/` and `app/api/cv/`.
+
+1. Run `supabase/cv.sql` in the SQL Editor (after `schema.sql`). It adds the `cvs` table and a private `cv-uploads` storage bucket, each limited to the owner's own rows and files. Safe to re-run.
+2. For CV import, the ATS check and AI rewrites, add these to `.env` and Vercel's environment variables (server only). Without them, importing says it isn't switched on and everything else still works.
+   - `ANTHROPIC_API_KEY`: Claude reads uploaded CVs. (The AI Tutor keeps using Groq first if `GROQ_API_KEY` is set.)
+   - `CV_AI_MODEL`: the Claude model that reads CVs, e.g. `claude-opus-5-5`.
+   - `CV_PARSE_DAILY_LIMIT` (optional, default 10): imports per learner per day, counted in `assistant_usage`.
+   - `CV_AI_DAILY_LIMIT` (optional, default 30): ATS checks plus AI rewrites per learner per day. Both also have a short per-minute limit (`lib/cv/limits.ts`).
+3. ATS score (`lib/cv/ats.ts`): the AI only reads keywords from the job description; matching and scoring (keywords 60, structure 25, wording 15) is plain code, so the editor recalculates it live as the CV changes.
+4. Versions and sharing: a CV can be duplicated (to tailor it for another job) and one can be the primary CV, shown on the Profile page. Export as PDF or Word (`lib/cv/pdf.tsx`, `lib/cv/docx.ts`); both draw from `layoutCv()` in `lib/cv/format.ts`, as does the on-screen preview, so all three match. Share links are off by default; turning one on makes an unguessable `/cv/s/<token>` page, and turning it off (or making a new link) stops the old one working. Visitors reach a shared CV only through the `shared_cv()` database function.
+5. `npm test` runs the unit tests (schema, formatting and layout, ownership filtering, upload checks, roadmap suggestions, ATS scoring).

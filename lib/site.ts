@@ -3,7 +3,7 @@ export const SITE_URL = "https://www.trackmyroadmap.com";
 export const SITE_NAME = "Track My Roadmap";
 
 /** Pages that are only for signed-in users; crawlers are asked to skip them. */
-export const PRIVATE_PATHS = ["/roadmaps/*/track", "/habits/track", "/auth/", "/login", "/signup", "/account", "/admin"];
+export const PRIVATE_PATHS = ["/roadmaps/*/track", "/habits/track", "/auth/", "/login", "/signup", "/account", "/admin", "/cv"];
 
 const OG_IMAGE = { url: "/og-image.png", width: 1200, height: 630, alt: "Track My Roadmap: career roadmaps and a daily habit tracker" };
 
