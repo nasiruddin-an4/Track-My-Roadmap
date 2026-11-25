@@ -18,7 +18,8 @@ type Cv = { title: string; pageSize: PageSize; data: CvData };
 type SaveState = "saved" | "pending" | "saving" | "error" | "invalid";
 
 /** /cv/:id: section forms on the left, the live page on the right (tabs on phones). Saves itself. */
-export function CvEditor({ id }: { id: string }) {
+/** `ai`: the ATS check and AI writing help are switched on (they need the AI key); hidden otherwise. */
+export function CvEditor({ id, ai }: { id: string; ai: boolean }) {
   const router = useRouter();
   const toast = useToast();
   const [cv, setCv] = useState<Cv | null>(null);
@@ -204,9 +205,9 @@ export function CvEditor({ id }: { id: string }) {
         )}
       </div>
 
-      {/* phones: edit, preview or ATS check */}
-      <div className="mb-4 grid grid-cols-3 gap-1 rounded-xl border border-line bg-surface p-1 lg:hidden" role="tablist" aria-label="View">
-        {(["edit", "preview", "check"] as const).map((t) => (
+      {/* phones: edit, preview or (with AI) ATS check */}
+      <div className={"mb-4 grid gap-1 rounded-xl border border-line bg-surface p-1 lg:hidden " + (ai ? "grid-cols-3" : "grid-cols-2")} role="tablist" aria-label="View">
+        {(ai ? (["edit", "preview", "check"] as const) : (["edit", "preview"] as const)).map((t) => (
           <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => { setTab(t); if (t !== "edit") setSide(t); }}
             className={"h-11 rounded-lg font-semibold " + (tab === t ? "bg-sunk text-ink" : "text-muted")}>
             {t === "edit" ? "Edit" : t === "preview" ? "Preview" : "ATS check"}
@@ -242,8 +243,8 @@ export function CvEditor({ id }: { id: string }) {
               placeholder="2–3 lines: who you are, what you build, and what you’re looking for."
               hint="Keep it short. Mention your main skills and the kind of role you want."
               onChange={(v) => setData((x) => ({ ...x, basics: { ...x.basics, summary: v } }))} />
-            <SummaryAssist cvId={id} current={d.basics.summary ?? ""} flush={flush}
-              onAccept={(t) => setData((x) => ({ ...x, basics: { ...x.basics, summary: t } }))} />
+            {ai && <SummaryAssist cvId={id} current={d.basics.summary ?? ""} flush={flush}
+              onAccept={(t) => setData((x) => ({ ...x, basics: { ...x.basics, summary: t } }))} />}
           </Card>
 
           <Card id="sec-skills" title="Skills" count={d.skills.length}>
@@ -280,8 +281,8 @@ export function CvEditor({ id }: { id: string }) {
                   </div>
                   <div className="sm:col-span-2">
                     <BulletsField label="What you did" value={w.highlights} placeholder={"Built …\nImproved …"} onChange={(v) => patch({ highlights: v })} />
-                    <BulletAssist cvId={id} bullets={w.highlights} position={w.position} company={w.name}
-                      onReplace={(j, t) => patch({ highlights: w.highlights.map((h, k) => (k === j ? t : h)) })} />
+                    {ai && <BulletAssist cvId={id} bullets={w.highlights} position={w.position} company={w.name}
+                      onReplace={(j, t) => patch({ highlights: w.highlights.map((h, k) => (k === j ? t : h)) })} />}
                   </div>
                   {issues[`work.${i}.startDate`] && <p className="m-0 text-[.8rem] text-danger sm:col-span-2">{issues[`work.${i}.startDate`]}</p>}
                 </div>
@@ -300,8 +301,8 @@ export function CvEditor({ id }: { id: string }) {
                     placeholder="What it is and what you built it with." onChange={(v) => patch({ description: v })} />
                   <div className="sm:col-span-2">
                     <BulletsField label="Highlights" value={p.highlights} onChange={(v) => patch({ highlights: v })} />
-                    <BulletAssist cvId={id} bullets={p.highlights ?? []} position={p.name}
-                      onReplace={(j, t) => patch({ highlights: (p.highlights ?? []).map((h, k) => (k === j ? t : h)) })} />
+                    {ai && <BulletAssist cvId={id} bullets={p.highlights ?? []} position={p.name}
+                      onReplace={(j, t) => patch({ highlights: (p.highlights ?? []).map((h, k) => (k === j ? t : h)) })} />}
                   </div>
                 </div>
               )} />
@@ -357,15 +358,15 @@ export function CvEditor({ id }: { id: string }) {
         </div>
 
         <div className={(tab !== "edit" ? "block" : "hidden") + " min-w-0 lg:sticky lg:top-[calc(var(--top)+88px)] lg:block lg:max-h-[calc(100vh-var(--top)-104px)] lg:self-start lg:overflow-y-auto"}>
-          <div className="mb-3 hidden grid-cols-2 gap-1 rounded-xl border border-line bg-surface p-1 lg:grid" role="tablist" aria-label="Side panel">
+          {ai && <div className="mb-3 hidden grid-cols-2 gap-1 rounded-xl border border-line bg-surface p-1 lg:grid" role="tablist" aria-label="Side panel">
             {(["preview", "check"] as const).map((t) => (
               <button key={t} type="button" role="tab" aria-selected={side === t} onClick={() => setSide(t)}
                 className={"h-10 rounded-lg font-semibold " + (side === t ? "bg-sunk text-ink" : "text-muted")}>
                 {t === "preview" ? "Preview" : "ATS check"}
               </button>
             ))}
-          </div>
-          {side === "preview"
+          </div>}
+          {!ai || side === "preview"
             ? <CvPreview data={d} pageSize={cv.pageSize} />
             : <AtsCheckPanel cvId={id} data={d} flush={flush} onAddKeyword={addKeyword} onGoTo={goTo} />}
         </div>

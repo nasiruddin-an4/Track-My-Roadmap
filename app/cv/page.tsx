@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { CvList } from "@/components/cv/CvList";
+import { cvAiConfigured } from "@/lib/cv/ai";
 import { SignInGate } from "@/components/SignInGate";
 import { SiteFooter } from "@/components/SiteFooter";
 import { isSignedIn } from "@/lib/supabase/server";
@@ -22,7 +23,8 @@ async function Gate() {
   }
   return (
     <>
-      <CvList />
+      {/* importing a CV needs the AI key; without it the page offers "start from scratch" only */}
+      <CvList ai={cvAiConfigured()} />
       <SiteFooter note="Your CVs are private to your account." />
     </>
   );

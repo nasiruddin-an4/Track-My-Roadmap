@@ -82,7 +82,7 @@ The AI Tutor page (`/ai`, linked from the navbar and a floating button on the ho
 `/cv` (linked from the Profile page and the account menu): ATS-friendly CVs with a live preview, PDF and Word export, CV import from PDF/DOCX, suggestions from the learner's roadmap progress, an ATS check against a job description, AI rewrites, versions and share links. Code in `components/cv/`, `lib/cv/` and `app/api/cv/`.
 
 1. Run `supabase/cv.sql` in the SQL Editor (after `schema.sql`). It adds the `cvs` table and a private `cv-uploads` storage bucket, each limited to the owner's own rows and files. Safe to re-run.
-2. For CV import, the ATS check and AI rewrites, add these to `.env` and Vercel's environment variables (server only). Without them, importing says it isn't switched on and everything else still works.
+2. For CV import, the ATS check and AI rewrites, add these to `.env` and Vercel's environment variables (server only). Without them those three features are hidden (no upload box, ATS check tab or AI buttons) and everything else works: writing a CV, the preview, PDF and Word export, roadmap suggestions, versions and share links. Adding the keys switches them on, with no code change.
    - `ANTHROPIC_API_KEY`: Claude reads uploaded CVs. (The AI Tutor keeps using Groq first if `GROQ_API_KEY` is set.)
    - `CV_AI_MODEL`: the Claude model that reads CVs, e.g. `claude-opus-5-5`.
    - `CV_PARSE_DAILY_LIMIT` (optional, default 10): imports per learner per day, counted in `assistant_usage`.

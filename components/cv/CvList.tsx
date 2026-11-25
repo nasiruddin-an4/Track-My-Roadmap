@@ -13,7 +13,8 @@ import { CvUploadDropzone, type ParseResult } from "./CvUploadDropzone";
 import { btnOrange } from "./ui";
 
 /** /cv: the person's CVs, and the way to start a new one. */
-export function CvList() {
+/** `ai`: CV import is switched on (it needs the AI key). Without it, people start from scratch. */
+export function CvList({ ai }: { ai: boolean }) {
   const router = useRouter();
   const toast = useToast();
   const [cvs, setCvs] = useState<CvSummary[] | null>(null);
@@ -94,7 +95,7 @@ export function CvList() {
         </div>
         {cvs && cvs.length > 0 && (
           <div className="flex flex-wrap gap-2">
-            <button type="button" className={btnGhost} aria-expanded={importing} onClick={() => setImporting((v) => !v)}>↑ Import CV</button>
+            {ai && <button type="button" className={btnGhost} aria-expanded={importing} onClick={() => setImporting((v) => !v)}>↑ Import CV</button>}
             <button type="button" className={btnOrange} onClick={create} disabled={busy}>{busy ? "Creating…" : "+ New CV"}</button>
           </div>
         )}
@@ -107,18 +108,18 @@ export function CvList() {
           {[0, 1, 2].map((i) => <div key={i} className="h-40 animate-pulse rounded-[20px] bg-surface" />)}
         </div>
       ) : !cvs.length ? (
-        <div className="grid gap-4 md:grid-cols-2">
-          <section className="grid content-start gap-4 rounded-[22px] border border-line bg-surface p-6 sm:p-8" aria-labelledby="upH">
+        <div className={"grid gap-4 " + (ai ? "md:grid-cols-2" : "max-w-[640px]")}>
+          {ai && <section className="grid content-start gap-4 rounded-[22px] border border-line bg-surface p-6 sm:p-8" aria-labelledby="upH">
             <div className="grid gap-1">
               <span className="eyebrow">Have a CV already?</span>
               <h2 id="upH" className="m-0 font-display text-[1.45rem] font-bold tracking-[-.02em]">Upload your CV</h2>
               <p className="m-0 text-muted">We’ll read it into sections for you to check, then turn it into a clean, ATS-friendly layout.</p>
             </div>
             <CvUploadDropzone onParsed={setReview} />
-          </section>
+          </section>}
           <section className="grid content-start gap-4 rounded-[22px] border border-line bg-surface p-6 sm:p-8" aria-labelledby="newH">
             <div className="grid gap-1">
-              <span className="eyebrow">Starting fresh?</span>
+              <span className="eyebrow">{ai ? "Starting fresh?" : "Start here"}</span>
               <h2 id="newH" className="m-0 font-display text-[1.45rem] font-bold tracking-[-.02em]">Start from scratch</h2>
               <p className="m-0 text-muted">Your name and email are filled in, and we’ll suggest skills and certificates from your roadmaps.</p>
             </div>
@@ -134,7 +135,7 @@ export function CvList() {
         </div>
       ) : (
         <>
-        {importing && (
+        {ai && importing && (
           <section className="mb-6 grid gap-3 rounded-[22px] border border-line bg-surface p-5 sm:p-6" aria-label="Import a CV">
             <p className="m-0 text-muted">Upload a CV to make a new one from it. Your other CVs aren’t changed.</p>
             <CvUploadDropzone onParsed={(r) => { setImporting(false); setReview(r); }} />

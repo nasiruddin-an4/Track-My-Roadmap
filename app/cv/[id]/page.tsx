@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { CvEditor } from "@/components/cv/CvEditor";
+import { cvAiConfigured } from "@/lib/cv/ai";
 import { SignInGate } from "@/components/SignInGate";
 import { isSignedIn } from "@/lib/supabase/server";
 
@@ -20,5 +21,6 @@ async function Editor({ params }: { params: PageProps<"/cv/[id]">["params"] }) {
     return <SignInGate title="your CV" heading="Sign in to edit your CV" backHref="/cv" backLabel="Back to the CV Builder" />;
   }
   const { id } = await params;
-  return <CvEditor id={id} />;
+  // the ATS check and AI writing help only show when the AI key is set (lib/cv/ai.ts)
+  return <CvEditor id={id} ai={cvAiConfigured()} />;
 }
