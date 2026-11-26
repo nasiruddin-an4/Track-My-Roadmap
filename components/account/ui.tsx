@@ -39,7 +39,7 @@ export function Bar({ pct, className = "" }: { pct: number; className?: string }
 
 /** One started roadmap: progress, where you are, and a way back in. */
 export function RoadmapRow({ s }: { s: RoadmapStat }) {
-  const finished = s.pct >= 100;
+  const finished = s.complete;
   return (
     <li className="grid gap-3 rounded-2xl border border-line bg-surface p-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:gap-6 sm:p-5">
       <div className="grid min-w-0 gap-2">

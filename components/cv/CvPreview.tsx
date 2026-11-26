@@ -1,8 +1,12 @@
 "use client";
 
+import { Hind_Siliguri } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import { layoutCv, type Run } from "@/lib/cv/format";
 import type { CvData, PageSize } from "@/lib/cv/schema";
+
+// the font Bengali CVs are printed in (lib/cv/pdf.tsx), so the preview matches the PDF; only fetched when used
+const hind = Hind_Siliguri({ subsets: ["bengali", "latin"], weight: ["400", "700"], preload: false, display: "swap" });
 
 /*
  * The "classic" template on screen: the same lines as the PDF and Word file (layoutCv in lib/cv/format.ts), drawn at
@@ -35,8 +39,9 @@ export function CvPreview({ data, pageSize }: { data: CvData; pageSize: PageSize
   return (
     <div ref={box} className="w-full">
       <div style={{ height: height * scale }} className="relative">
-        <div ref={sheet} className="cv-sheet absolute top-0 left-0 origin-top-left"
-          style={{ width: w, minHeight: h, transform: `scale(${scale})`,
+        <div ref={sheet} lang={data.locale === "bn" ? "bn" : "en"}
+          className={"cv-sheet absolute top-0 left-0 origin-top-left" + (data.locale === "bn" ? " cv-bn" : "")}
+          style={{ width: w, minHeight: h, transform: `scale(${scale})`, fontFamily: data.locale === "bn" ? hind.style.fontFamily : undefined,
             backgroundImage: `repeating-linear-gradient(to bottom, transparent 0, transparent ${h - 1}px, #cbd5e1 ${h - 1}px, #cbd5e1 ${h}px)` }}>
           <Sheet data={data} />
         </div>

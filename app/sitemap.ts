@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { ROADMAPS } from "@/content/roadmaps";
 import { SITE_URL } from "@/lib/site";
+import { TOOLS } from "@/lib/tools/registry";
 
-/** sitemap.xml: the public pages. New roadmaps are added automatically. */
+/** sitemap.xml: the public pages. New roadmaps and student tools are added automatically. */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${SITE_URL}/`, changeFrequency: "weekly", priority: 1 },
@@ -13,6 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
     { url: `${SITE_URL}/habits`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/tools`, changeFrequency: "monthly", priority: 0.8 },
+    ...TOOLS.map((t) => ({
+      url: `${SITE_URL}/tools/${t.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: t.slug === "photo-signature-resizer" ? 0.8 : 0.7,
+    })),
     { url: `${SITE_URL}/privacy`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/terms`, changeFrequency: "yearly", priority: 0.2 },
   ];

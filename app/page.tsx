@@ -6,9 +6,13 @@ import { LegacyRedirect } from "@/components/home/LegacyRedirect";
 import { RoadmapFinder } from "@/components/home/RoadmapFinder";
 import { Arrow, Check } from "@/components/icons";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ToolCard } from "@/components/tools/ToolCard";
 import { FEATURED_ROADMAP_SLUGS, ROADMAPS } from "@/content/roadmaps";
 import { topicCount } from "@/lib/roadmap";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { getTool, TOOLS } from "@/lib/tools/registry";
+
+const HOME_TOOLS = ["photo-signature-resizer", "compress-image", "merge-pdf", "bijoy-unicode-converter"];
 
 const WEBSITE_SCHEMA = {
   "@context": "https://schema.org",
@@ -41,7 +45,7 @@ const CREATOR = [
 ];
 
 const FAQ: [string, React.ReactNode][] = [
-  ["Is it free?", "Yes. Every roadmap and the habit tracker are free to use."],
+  ["Is it free?", "Yes. Every roadmap, the habit tracker and the student tools are free to use."],
   ["Do I need an account?", "You can read every roadmap without one. To track your progress, sign in with Google. It’s free, and your progress is then saved to your account."],
   ["Where is my progress saved?", "In your Google-linked account, so it’s the same on every device you sign in on. Only you can see it."],
   ["Who writes the roadmaps?", <>The Software Engineer roadmap is based on the 2026–2030 Software Engineering roadmap by Ittahaduzzaman Akash on roadmap.sh. More roadmaps are on the way, and soon teachers will be able to publish their own.</>],
@@ -152,6 +156,23 @@ export default function Home() {
             ))}
           </ul>
         </div>
+      </section>
+
+      {/* student tools */}
+      <section aria-labelledby="toolsH" className="wrap pb-20 sm:pb-24">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <SectionHead eyebrow="Student tools" id="toolsH" title="Free tools for forms and assignments" />
+          <p className="m-0 max-w-[52ch] text-[.95rem] leading-relaxed text-muted">
+            Resize your photo and signature for job and admission forms, shrink images and PDFs for upload, and convert
+            Bijoy to Unicode. No sign-up, and your files never leave your device.
+          </p>
+        </div>
+        <ul className="m-0 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
+          {HOME_TOOLS.map((slug) => <li key={slug}><ToolCard tool={getTool(slug)} compact /></li>)}
+        </ul>
+        <Link href="/tools" className="mt-5 inline-flex items-center gap-1.5 text-[.95rem] font-semibold text-route hover:underline">
+          See all {TOOLS.length} tools <Arrow size={14} />
+        </Link>
       </section>
 
       {/* creators */}

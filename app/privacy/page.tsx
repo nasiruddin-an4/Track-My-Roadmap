@@ -31,6 +31,10 @@ export default function PrivacyPage() {
             and notes).
           </li>
           <li>
+            <b>Your CVs</b>, if you use the CV Builder: what you write in them, and any CV file you import. Only you
+            can open them, unless you turn on a share link.
+          </li>
+          <li>
             <b>Feedback you send us</b>: your message, an optional rating, and the page you sent it from, linked to
             your account so we can follow up.
           </li>
@@ -59,6 +63,22 @@ export default function PrivacyPage() {
         <p>
           Recommended videos open on YouTube, which is run by Google under its own{" "}
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+        </p>
+      </Section>
+
+      <Section title="Student tools and AI">
+        <p>
+          The student tools (photo resizer, image and PDF tools, ready-made documents and the Bijoy converter) work
+          inside your browser: your files and what you type in them are never sent to us. Details you type into a
+          document template are remembered on your device only.
+        </p>
+        <p>
+          A few features use AI to answer you: the AI Tutor, the CV Builder’s import, check and rewrite, and the
+          note reader. What you give them (your message, your CV, or photos of your notes) is sent to our AI
+          provider, <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Anthropic</a>{" "}
+          or <a href="https://groq.com/privacy-policy" target="_blank" rel="noopener noreferrer">Groq</a>, only to produce
+          that answer. We don’t keep photos of your notes; for daily limits we store only how many times you used each
+          feature that day.
         </p>
       </Section>
 

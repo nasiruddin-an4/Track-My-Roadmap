@@ -104,9 +104,9 @@ export function summarise(users: User[], progress: ProgressRaw[], habits: HabitR
     const updatedAt = Number(row.updated_at) || 0;
     if (!c || !done.length) continue;
     const s = roadmapStat(c, done, updatedAt);
-    if (s.done === 0) continue;
+    if (s.done === 0 && s.phasesDone === 0) continue;
     bump(row.user_id, updatedAt);
-    const complete = s.total > 0 && s.done === s.total;
+    const complete = s.complete;
     const list = byUser.get(row.user_id) ?? [];
     list.push({ slug: c.slug, title: c.title, done: s.done, total: s.total, pct: s.pct, complete, current: s.current ? `Phase ${s.current.num}: ${s.current.title}` : null, updatedAt });
     byUser.set(row.user_id, list);

@@ -11,6 +11,6 @@ export const CATALOG: CatalogEntry[] = ROADMAPS.map((rm) => {
     title: rm.def.title,
     category: rm.def.category,
     localKey: rm.def.localKey,
-    phases: rm.numbered.map((ph, i) => ({ title: ph.title, units: units[i] })),
+    phases: rm.numbered.map((ph, i) => ({ id: ph.id, title: ph.title, units: units[i] })),
   };
 });

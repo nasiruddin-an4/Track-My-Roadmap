@@ -150,6 +150,14 @@ export function buildRoadmap(def: RoadmapDef): Roadmap {
 
 /* ---------- progress ---------- */
 
+/**
+ * A learner can mark a phase complete without ticking every topic in it ("I'm done with this phase, move me on").
+ * The mark is saved in the same `done` list as ticked topics, as "@phase/<phase id>": topic keys never start with
+ * "@", so it never counts as a topic, and it syncs and saves exactly like a tick. Unticked topics stay unticked.
+ */
+export const PHASE_MARK = "@phase/";
+export const phaseMark = (phaseId: string) => PHASE_MARK + phaseId;
+
 export type Unit = { tag: Tag; done: boolean; key: string; label: string; ctx?: string; pick?: boolean; cardId: string };
 export type Tally = { d: number; t: number };
 export type Status = "done" | "current" | "started" | "upcoming" | "ongoing";
@@ -177,7 +185,12 @@ export function cardTally(card: Card, ph: Phase, done: Set<string>, countOpt: bo
 
 export type Progress = {
   tallies: Record<string, Tally>;
+  /** the phase is complete: every counted topic ticked, or marked complete by the learner */
   full: Record<string, boolean>;
+  /** the learner marked the phase complete (whether or not every topic is ticked) */
+  marked: Record<string, boolean>;
+  /** every numbered phase is complete */
+  complete: boolean;
   current: Phase | null;
   next: Unit | null;
   done: number;
@@ -189,13 +202,14 @@ export type Progress = {
 };
 
 export function computeProgress(rm: Roadmap, done: Set<string>, countOpt: boolean): Progress {
-  const tallies: Record<string, Tally> = {}, full: Record<string, boolean> = {};
+  const tallies: Record<string, Tally> = {}, full: Record<string, boolean> = {}, marked: Record<string, boolean> = {};
   let D = 0, T = 0, phasesDone = 0, current: Phase | null = null;
   for (const ph of rm.phases) {
     const t = tally(ph.cards.flatMap((c) => cardUnits(c, done)), ph, countOpt);
     tallies[ph.id] = t;
     if (ph.ongoing) continue;
-    const f = t.t > 0 && t.d === t.t;
+    marked[ph.id] = done.has(phaseMark(ph.id));
+    const f = (t.t > 0 && t.d === t.t) || marked[ph.id];
     full[ph.id] = f;
     D += t.d; T += t.t;
     if (f) phasesDone++;
@@ -216,7 +230,8 @@ export function computeProgress(rm: Roadmap, done: Set<string>, countOpt: boolea
     if (ph === current) return "current";
     return tallies[ph.id].d > 0 ? "started" : "upcoming";
   };
-  return { tallies, full, current, next, done: D, total: T, phasesDone, habitsDone, habitsTotal, status };
+  const complete = rm.numbered.length > 0 && phasesDone === rm.numbered.length;
+  return { tallies, full, marked, complete, current, next, done: D, total: T, phasesDone, habitsDone, habitsTotal, status };
 }
 
 /* ---------- recommended videos ---------- */
@@ -256,6 +271,15 @@ export function progressUnits(rm: Roadmap): string[][] {
 export function progressUnitsByPhase(rm: Roadmap): string[][][] {
   return rm.numbered.map((ph) =>
     ph.cards.flatMap((c) => (c.mode === "pick" ? [c.rows.map((r) => keyHash(r.key))] : c.rows.filter((r) => counted(r.tag, ph, false)).map((r) => [keyHash(r.key)]))));
+}
+
+/** A topic and where it sits on its roadmap, looked up by key (null if the key isn't on this roadmap). */
+export function topicInfo(rm: Roadmap, key: string): { topic: string; card: string | null; phase: string; tag: Tag } | null {
+  for (const ph of rm.phases)
+    for (const c of ph.cards)
+      for (const r of c.rows)
+        if (r.key === key) return { topic: r.name, card: c.key ? c.title : null, phase: ph.title, tag: r.tag };
+  return null;
 }
 
 /** Short labels for what a phase covers: card titles, or the topics themselves for "Key concepts" groups. */

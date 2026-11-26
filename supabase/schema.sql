@@ -259,3 +259,21 @@ $$;
 revoke all on function public.assistant_take(text, integer) from public, anon, authenticated;
 grant execute on function public.assistant_take(text, integer) to service_role;
 grant select, insert, update, delete on public.assistant_usage to service_role;
+
+-- ---------------------------------------------------------------------------
+-- "What is this?" explanations of roadmap topics. The AI writes one the first time any learner asks about a
+-- topic; everyone after that gets the saved copy, so each topic costs one AI call ever. Read and written only by
+-- the server with the secret key (app/api/explain); learners never touch the table. Delete a row to have that
+-- topic explained again. Safe to re-run.
+-- ---------------------------------------------------------------------------
+create table if not exists public.topic_explanations (
+  roadmap    text        not null check (roadmap ~ '^[a-z0-9-]{1,80}$'),
+  topic_key  text        not null check (char_length(topic_key) between 1 and 300),
+  body       text        not null check (char_length(body) between 1 and 1500),
+  created_at timestamptz not null default now(),
+  primary key (roadmap, topic_key)
+);
+
+alter table public.topic_explanations enable row level security;
+revoke all on public.topic_explanations from public, anon, authenticated;
+grant select, insert, update, delete on public.topic_explanations to service_role;

@@ -78,7 +78,12 @@ const sectionOrder = z.array(z.enum(SECTION_KEYS)).max(SECTION_KEYS.length * 2).
   return out;
 });
 
+/** The language the CV is written in: section names, months and digits follow it. English when left out. */
+export const CV_LOCALES = ["en", "bn"] as const;
+export type CvLocale = (typeof CV_LOCALES)[number];
+
 export const cvDataSchema = z.object({
+  locale: z.enum(CV_LOCALES).optional(),
   basics,
   work: z.array(work).max(20),
   education: z.array(education).max(10),

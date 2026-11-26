@@ -74,7 +74,7 @@ function Certificate({ s, name }: { s: RoadmapStat; name: string }) {
           <text x={W / 2} y="360" fill="#475569" fontSize="28" textAnchor="middle">This certifies that</text>
           <text x={W / 2} y="460" fill="#0F172A" fontSize="76" fontWeight="700" textAnchor="middle">{clip(name, 30)}</text>
           <line x1={W / 2 - 330} y1="495" x2={W / 2 + 330} y2="495" stroke="#CBD5E1" strokeWidth="2" />
-          <text x={W / 2} y="565" fill="#475569" fontSize="28" textAnchor="middle">has completed every topic of the</text>
+          <text x={W / 2} y="565" fill="#475569" fontSize="28" textAnchor="middle">has completed every phase of the</text>
           <text x={W / 2} y="640" fill="#1E2A55" fontSize="52" fontWeight="700" textAnchor="middle">{clip(s.title, 34)} Roadmap</text>
           <text x={W / 2} y="700" fill="#475569" fontSize="26" textAnchor="middle">{s.phaseCount} phases · {s.total} topics</text>
 

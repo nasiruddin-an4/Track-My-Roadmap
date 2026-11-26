@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   // CV PDF rendering and CV file reading load their own engines and fonts at run time; keep them out of the bundle
   serverExternalPackages: ["@react-pdf/renderer", "unpdf", "mammoth"],
+  // Bengali CVs embed Hind Siliguri, read from disk by lib/cv/pdf.tsx; ship the files with the routes that make PDFs
+  outputFileTracingIncludes: {
+    "/api/cv/**/*": ["./lib/cv/fonts/**/*"],
+  },
   partialPrefetching: true,
   turbopack: {
     rules: {
