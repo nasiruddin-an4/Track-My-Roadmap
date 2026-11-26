@@ -54,7 +54,7 @@ export function NotesReader({ enabled, readLimit, studyLimit }: { enabled: boole
   const [copied, setCopied] = useState(false);
 
   if (!enabled) {
-    return <Notice>The note reader isn’t switched on yet. The other student tools all work: try them from the list below.</Notice>;
+    return <Notice>The note reader isn’t switched on yet. Every other tool works: try them from the list below.</Notice>;
   }
   if (!configured) return <Notice>The note reader needs accounts, which aren’t set up on this server.</Notice>;
   if (!ready) return <div className="grid min-h-40 place-items-center text-muted" aria-busy="true"><Spinner /></div>;

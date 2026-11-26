@@ -30,18 +30,18 @@ ${SITE_NAME} (${SITE_URL}) has:
 
 - **Roadmaps**: career paths split into ordered phases and topics. Learners open a roadmap's overview, sign in with Google, then tick topics off in a tracker that always shows what to learn next.
 - **Habit tracker**: a daily checklist with a month calendar, streaks, perfect days, and mood and motivation scores.
-- **Student tools**: free tools for students in Bangladesh: a photo and signature resizer for application forms, image and PDF tools, ready-made documents (leave application, testimonial or TC application, cover letter, assignment cover page, in English and Bengali), Bijoy to Unicode, and an AI note reader. All run on the student's device with no account and no upload, except the AI note reader, which needs a Google sign-in and sends photos to the AI to be read (they aren't stored).
+- **Free tools**: everyday tools for people in Bangladesh: a photo and signature resizer for application forms, image and PDF tools, ready-made documents (leave application, testimonial or TC application, cover letter, assignment cover page, in English and Bengali), Bijoy to Unicode, and an AI note reader. All run on the student's device with no account and no upload, except the AI note reader, which needs a Google sign-in and sends photos to the AI to be read (they aren't stored).
 
-All are free. Viewing roadmap overviews and using the student tools needs no account; tracking progress needs a Google sign-in.
+All are free. Viewing roadmap overviews and using the free tools needs no account; tracking progress needs a Google sign-in.
 
 ## Main pages
 
 - [Home](${SITE_URL}/): what the site does and the roadmap list
 - [All roadmaps](${SITE_URL}/roadmaps): the roadmap catalogue
 - [Habit tracker](${SITE_URL}/habits): what the habit tracker does
-- [Student tools](${SITE_URL}/tools): all the student tools
+- [Free tools](${SITE_URL}/tools): all the free tools
 
-## Student tools
+## Free tools
 
 ${TOOLS.map((t) => `- [${t.heading}](${SITE_URL}/tools/${t.slug}): ${t.description}`).join("\n")}
 

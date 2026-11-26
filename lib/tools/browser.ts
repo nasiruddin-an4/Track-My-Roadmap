@@ -1,6 +1,6 @@
 /*
- * Browser-only helpers for the student tools: open images, draw and encode them, render PDF pages, and save
- * files. Everything happens on the student's own device; nothing here sends a file anywhere.
+ * Browser-only helpers for the free tools: open images, draw and encode them, render PDF pages, and save
+ * files. Everything happens on the person's own device; nothing here sends a file anywhere.
  * Heavy libraries (PDF.js, the zip writer) load on first use, so tool pages stay light.
  */
 import { fitToSize, type FitOptions } from "./fitSize";

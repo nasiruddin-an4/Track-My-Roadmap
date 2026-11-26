@@ -17,7 +17,8 @@ const ICONS: Record<string, React.ReactNode> = {
   "testimonial-application": <>{DOC}<circle cx="12" cy="13.5" r="2.5" /><path d="m10.5 15.6-1 3.4 2.5-1.2 2.5 1.2-1-3.4" /></>,
   "cover-letter": <><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m3.5 6.5 8.5 6.5 8.5-6.5" /></>,
   "assignment-cover-page": <><path d="M5 3h11l3 3v15H5z" /><path d="M9 8h6M8 12h8M10 16h4" /></>,
-  "handwriting-to-text": <><path d="M3 19c2.5-1 4-3.5 5.5-7S11 5 12.5 5 13 9 12 12.5s-1 6 1 6c1.8 0 3-2.2 4-4" /><path d="M16 4.5 19.5 8M21 3l-1.5 1.5" /></>,
+  "cv-builder": <>{DOC}<circle cx="12" cy="12" r="2" /><path d="M8.5 17.5c.7-1.6 2-2.4 3.5-2.4s2.8.8 3.5 2.4" /></>,
+  "handwriting-to-text":<><path d="M3 19c2.5-1 4-3.5 5.5-7S11 5 12.5 5 13 9 12 12.5s-1 6 1 6c1.8 0 3-2.2 4-4" /><path d="M16 4.5 19.5 8M21 3l-1.5 1.5" /></>,
 };
 
 export const GROUP_TONE: Record<ToolGroup, string> = {

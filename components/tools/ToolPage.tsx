@@ -4,6 +4,7 @@ import { Arrow, Chevron } from "@/components/icons";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getTool, TOOL_GROUPS, TOOLS } from "@/lib/tools/registry";
 import { pageMeta, SITE_NAME, SITE_URL } from "@/lib/site";
+import { RememberTool } from "./RememberTool";
 import { ToolCard } from "./ToolCard";
 import { ToolIcon } from "./ToolIcon";
 
@@ -44,10 +45,11 @@ export function ToolPage({ slug, children }: { slug: string; children: React.Rea
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+      <RememberTool slug={slug} />
       <div className="wrap">
         <nav aria-label="Breadcrumb" className="pt-6 text-[.88rem] text-muted sm:pt-8">
           <ol className="m-0 flex list-none flex-wrap items-center gap-1.5 p-0">
-            <li><Link href="/tools" className="font-semibold hover:text-ink">Student tools</Link></li>
+            <li><Link href="/tools" className="font-semibold hover:text-ink">Free tools</Link></li>
             <li aria-hidden="true" className="text-line"><Chevron size={14} /></li>
             <li aria-current="page" className="text-ink">{tool.name}</li>
           </ol>
@@ -105,7 +107,7 @@ export function ToolPage({ slug, children }: { slug: string; children: React.Rea
         <section aria-labelledby="moreH" className="grid gap-5">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <h2 id="moreH" className="m-0 font-display text-[1.6rem] font-bold tracking-[-.02em]">More free tools</h2>
-            <Link href="/tools" className="inline-flex items-center gap-1.5 text-[.95rem] font-semibold text-route hover:underline">All student tools <Arrow size={14} /></Link>
+            <Link href="/tools" className="inline-flex items-center gap-1.5 text-[.95rem] font-semibold text-route hover:underline">All tools <Arrow size={14} /></Link>
           </div>
           <ul className="m-0 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
             {related.map((t) => <li key={t.slug}><ToolCard tool={t} compact /></li>)}

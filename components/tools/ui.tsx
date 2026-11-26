@@ -6,7 +6,7 @@ import { Close } from "@/components/icons";
 import { SignInButton } from "@/components/SignInButton";
 import { formatBytes } from "@/lib/tools/files";
 
-/* Building blocks shared by the student tools. */
+/* Building blocks shared by the free tools. */
 
 /** Files a visitor can add at once without an account. Signing in (free) lifts the limit. */
 export const GUEST_BATCH = 10;

@@ -66,9 +66,9 @@ export default function PrivacyPage() {
         </p>
       </Section>
 
-      <Section title="Student tools and AI">
+      <Section title="Free tools and AI">
         <p>
-          The student tools (photo resizer, image and PDF tools, ready-made documents and the Bijoy converter) work
+          The free tools (photo resizer, image and PDF tools, letters and documents, and the Bijoy converter) work
           inside your browser: your files and what you type in them are never sent to us. Details you type into a
           document template are remembered on your device only.
         </p>

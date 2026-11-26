@@ -1,5 +1,5 @@
 /*
- * Small helpers for file names, sizes and page lists, shared by the student tools.
+ * Small helpers for file names, sizes and page lists, shared by the free tools.
  * No runtime imports: the unit tests run this file directly.
  */
 

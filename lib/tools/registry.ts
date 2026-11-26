@@ -1,18 +1,22 @@
 /*
- * The student tools: names, page copy, how-to steps, FAQs and where each one points students next.
+ * The free tools: names, page copy, how-to steps, FAQs and where each one points people next.
  * The /tools page, every tool page, the sitemap and llms.txt are all built from this list.
  */
 
 export type ToolGroup = "forms" | "templates" | "study" | "images" | "pdf" | "bangla";
 
-export const TOOL_GROUPS: { key: ToolGroup; title: string; text: string }[] = [
-  { key: "forms", title: "Application photos", text: "Exact sizes for job, admission and scholarship forms." },
-  { key: "templates", title: "Ready-made documents", text: "Applications, a cover letter and assignment cover pages, in English or Bangla." },
-  { key: "study", title: "Study with AI", text: "Turn handwritten notes into text, a summary and a quiz." },
-  { key: "images", title: "Image tools", text: "Shrink, convert and combine pictures for uploads." },
-  { key: "pdf", title: "PDF tools", text: "Assignments, certificates and project reports." },
-  { key: "bangla", title: "Bangla", text: "Typing and converting Bengali text." },
+/** In the order the /tools page shows them. `short` is the filter chip's label. */
+export const TOOL_GROUPS: { key: ToolGroup; title: string; short: string; text: string }[] = [
+  { key: "forms", title: "Photos for forms", short: "Form photos", text: "Exact sizes and KB limits for job, admission and passport forms." },
+  { key: "pdf", title: "PDF tools", short: "PDF", text: "Merge, split, shrink and number PDFs, or turn pages into pictures." },
+  { key: "images", title: "Image tools", short: "Images", text: "Shrink, convert and combine pictures for uploads." },
+  { key: "templates", title: "Letters and documents", short: "Documents", text: "Ready-to-print applications, a cover letter and cover pages, in English or Bangla." },
+  { key: "bangla", title: "Bangla", short: "Bangla", text: "Bijoy and Unicode Bengali text." },
+  { key: "study", title: "AI helpers", short: "AI", text: "Turn handwriting into text, a summary or a quiz." },
 ];
+
+/** Shown first on the /tools page. */
+export const POPULAR_TOOLS = ["photo-signature-resizer", "compress-image", "merge-pdf", "compress-pdf"];
 
 export type Tool = {
   slug: string;
@@ -32,7 +36,7 @@ export type Tool = {
   keywords: string[];
   steps: string[];
   faq: [string, string][];
-  /** where a student might want to go after using the tool */
+  /** where someone might want to go after using the tool */
   next: { href: string; label: string; text: string };
   /** false when the tool sends something to a server (the AI note reader); every other tool runs on the device */
   onDevice?: boolean;
@@ -51,7 +55,7 @@ export const TOOLS: Tool[] = [
     summary: "Exact pixel size and KB limit for job and admission forms.",
     bn: "চাকরি ও ভর্তির আবেদনের জন্য ছবি ও স্বাক্ষর রিসাইজ করুন",
     group: "forms",
-    keywords: ["photo resizer 300x300", "signature resizer 300x80", "teletalk photo size", "photo resize 100kb", "signature 60kb", "ছবি রিসাইজ", "স্বাক্ষর রিসাইজ"],
+    keywords: ["photo resizer 300x300", "signature resizer 300x80", "teletalk photo size", "photo resize 100kb", "signature 60kb", "passport photo", "job application photo", "crop", "ছবি রিসাইজ", "স্বাক্ষর রিসাইজ", "পাসপোর্ট ছবি"],
     steps: [
       "Choose Photo or Signature, then the form you’re applying to. Not listed? Pick Custom and type the size from your circular.",
       "Add your picture. Drag it to centre your face (or signature) and zoom with the slider.",
@@ -111,13 +115,13 @@ export const TOOLS: Tool[] = [
   {
     slug: "cover-letter",
     name: "Cover letter",
-    title: "Cover Letter Template for Fresh Graduates and Students",
+    title: "Cover Letter Template for Job Applications",
     description: "Write a cover letter for a job or internship in minutes: fill in the job, the company and what you can offer, then print it, save a PDF or download it for Word. Free.",
     heading: "Cover letter",
     summary: "For a first job or an internship.",
     bn: "চাকরির আবেদনের কভার লেটার",
     group: "templates",
-    keywords: ["cover letter", "cover letter for fresher", "cover letter template", "job application letter", "internship cover letter"],
+    keywords: ["cover letter", "cover letter for fresher", "cover letter template", "job application letter", "internship cover letter", "job", "letter"],
     steps: [
       "Fill in the job, the company and where you saw it.",
       "Say who you are in one line, and list what you can offer, one point per line.",
@@ -156,20 +160,20 @@ export const TOOLS: Tool[] = [
     slug: "handwriting-to-text",
     name: "Handwriting to text",
     title: "Handwriting to Text: Turn Notes into Text, a Summary and a Quiz",
-    description: "Photograph your handwritten notes, in Bangla or English, and get them as typed text. Then let AI make a revision summary or a practice quiz from them. Free with a Google sign-in.",
+    description: "Photograph handwritten notes, letters or pages, in Bangla or English, and get them as typed text. Then let AI make a summary or a practice quiz from them. Free with a Google sign-in.",
     heading: "Handwriting to text",
-    summary: "Notes to typed text, then a summary or a quiz.",
+    summary: "Handwriting to typed text, then a summary or a quiz.",
     bn: "হাতে লেখা নোট থেকে টেক্সট, সারাংশ ও কুইজ",
     group: "study",
     onDevice: false,
-    keywords: ["handwriting to text", "notes to text", "image to text bangla", "handwritten notes ocr", "হাতের লেখা থেকে টেক্সট"],
+    keywords: ["handwriting to text", "notes to text", "image to text", "image to text bangla", "ocr", "handwritten notes ocr", "summary", "quiz", "হাতের লেখা থেকে টেক্সট"],
     steps: [
       "Sign in, then add photos of up to 3 pages of notes.",
       "Read them: the text appears in a box where you can fix any word.",
       "Make a revision summary, or take a practice quiz on your own notes.",
     ],
     faq: [
-      ["Why do I need to sign in?", "Reading handwriting uses AI, which costs us money for every page. Signing in lets us give each student a fair daily allowance, shown on the page."],
+      ["Why do I need to sign in?", "Reading handwriting uses AI, which costs us money for every page. Signing in lets us give everyone a fair daily allowance, shown on the page."],
       ["Are my photos kept?", "No. Your photos are sent securely to our server and to our AI provider, Anthropic, only so the writing can be read. We don’t save them; we only count how many readings you used today."],
       ["Does it read Bangla handwriting?", "Yes, Bangla and English. Neat writing, good light and a photo taken straight on give the best result. Words it can’t read are marked [?] so you can fix them."],
       ["Can I use typed notes?", "Yes. Paste them into the text box and make a summary or a quiz straight away."],
@@ -185,7 +189,7 @@ export const TOOLS: Tool[] = [
     summary: "Shrink photos and scans to 50, 100 or 200 KB for uploads.",
     bn: "ছবির সাইজ কমান: ৫০, ১০০ বা ২০০ কেবি",
     group: "images",
-    keywords: ["compress image to 100kb", "compress image to 50kb", "reduce photo size", "image size reducer", "ছবির সাইজ কমানো"],
+    keywords: ["compress image to 100kb", "compress image to 50kb", "reduce photo size", "image size reducer", "kb", "jpg", "shrink", "ছবির সাইজ কমানো"],
     steps: [
       "Add one or more images (JPG, PNG, WebP; HEIC in Safari).",
       "Pick the size limit the form gives you, or type your own.",
@@ -225,9 +229,9 @@ export const TOOLS: Tool[] = [
     slug: "image-to-pdf",
     name: "Image to PDF",
     title: "Image to PDF: Combine Photos into One PDF",
-    description: "Turn photos of your assignment pages, notes or documents into one PDF, in the order you choose, on A4 or Letter pages. Free, and your photos stay on your device.",
+    description: "Turn photos or scans of documents, receipts, notes or assignment pages into one PDF, in the order you choose, on A4 or Letter pages. Free, and your photos stay on your device.",
     heading: "Images to one PDF",
-    summary: "Turn photos of assignment pages into one PDF.",
+    summary: "Turn photos or scans into one PDF.",
     bn: "ছবি থেকে একটি PDF বানান",
     group: "images",
     keywords: ["image to pdf", "jpg to pdf", "photo to pdf", "assignment pdf", "ছবি থেকে পিডিএফ"],
@@ -247,12 +251,12 @@ export const TOOLS: Tool[] = [
     slug: "merge-pdf",
     name: "Merge PDF",
     title: "Merge PDF Files into One",
-    description: "Combine several PDFs into one file in the order you want: assignment parts, certificates or a full project report. Free, in your browser, with no upload.",
+    description: "Combine several PDFs into one file in the order you want: documents, certificates, invoices or a full report. Free, in your browser, with no upload.",
     heading: "Merge PDFs into one",
-    summary: "Combine assignment parts or certificates into one file.",
+    summary: "Combine several PDFs into one file.",
     bn: "একাধিক PDF এক ফাইলে যুক্ত করুন",
     group: "pdf",
-    keywords: ["merge pdf", "combine pdf", "join pdf files", "পিডিএফ যুক্ত করা"],
+    keywords: ["merge pdf", "combine pdf", "join pdf files", "পিডিএফ যুক্ত করা", "পিডিএফ"],
     steps: [
       "Add two or more PDFs.",
       "Put them in order with the arrows.",
@@ -293,10 +297,10 @@ export const TOOLS: Tool[] = [
     title: "Compress PDF: Reduce PDF Size for Uploads",
     description: "Make a scanned PDF, certificate or document small enough to upload to a job or admission form. Choose how strong, see the new size, and download. Free, with no upload.",
     heading: "Compress a PDF",
-    summary: "Shrink scanned certificates and documents for upload.",
+    summary: "Shrink scanned documents and certificates for upload.",
     bn: "PDF ফাইলের সাইজ কমান",
     group: "pdf",
-    keywords: ["compress pdf", "reduce pdf size", "pdf size reducer", "compress pdf to 1mb", "পিডিএফ সাইজ কমানো"],
+    keywords: ["compress pdf", "reduce pdf size", "pdf size reducer", "compress pdf to 1mb", "shrink", "kb", "mb", "পিডিএফ সাইজ কমানো"],
     steps: [
       "Add a PDF.",
       "Choose Strong, Balanced or Light.",
@@ -336,9 +340,9 @@ export const TOOLS: Tool[] = [
     slug: "pdf-page-numbers",
     name: "Add page numbers",
     title: "Add Page Numbers to a PDF",
-    description: "Number the pages of your project report, thesis or assignment PDF. Choose where the numbers go, the style, the first number, and skip the cover page. Free and private.",
+    description: "Number the pages of a report, thesis, contract or assignment PDF. Choose where the numbers go, the style, the first number, and skip the cover page. Free and private.",
     heading: "Add page numbers to a PDF",
-    summary: "Number a project report, with or without the cover.",
+    summary: "Number any PDF, with or without a cover page.",
     bn: "PDF-এ পৃষ্ঠা নম্বর যোগ করুন",
     group: "pdf",
     keywords: ["add page numbers to pdf", "number pdf pages", "pdf page numbering", "পৃষ্ঠা নম্বর"],

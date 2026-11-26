@@ -87,13 +87,13 @@ Every topic in the tracker has a **?** button that opens a 2–3 sentence explan
 - Writing new ones is limited per learner per day: `EXPLAIN_DAILY_LIMIT` (default 40). Saved ones are unlimited.
 - To fix or redo an explanation, edit or delete its row in `topic_explanations` (Supabase → Table Editor).
 
-## Student tools
+## Free tools
 
 `/tools` (in the navbar): free tools that need no account. Photo and signature resizer for application forms, compress, convert and image-to-PDF, merge, split and compress PDFs, PDF to image, page numbers, and Bijoy ↔ Unicode. Everything runs in the browser, so files never leave the student's device and there's no server cost.
 
 - Page copy, FAQs and the "next step" link for each tool: `lib/tools/registry.ts` (the sitemap and llms.txt read it too). Tool UIs: `components/tools/`. Pages: `app/tools/<slug>/page.tsx`.
 - Photo/signature sizes: `lib/tools/presets.ts`. Add a form there and it appears in the resizer; only list sizes you've confirmed from a circular.
-- Without an account a student can work on 10 files at a time (`GUEST_BATCH` in `components/tools/ui.tsx`); signing in lifts it.
+- Without an account someone can work on 10 files at a time (`GUEST_BATCH` in `components/tools/ui.tsx`); signing in lifts it.
 - PDF editing uses pdf-lib (`lib/tools/pdfOps.ts`), page drawing uses PDF.js via unpdf, and zips use fflate. All three load only when a tool needs them.
 - Bijoy conversion is plain code in `lib/tools/bijoy.ts`, tested on real words in `bijoy.test.ts`.
 - Ready-made documents (leave application, testimonial/TC application, cover letter, assignment cover page) live in `lib/tools/templates.ts`: each is a form plus a layout in English and/or Bengali. The page prints them (Save as PDF) and builds the Word file in the browser. Add a template there, then a page in `app/tools/<slug>/` and an entry in the registry.

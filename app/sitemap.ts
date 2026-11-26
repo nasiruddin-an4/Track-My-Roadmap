@@ -3,7 +3,7 @@ import { ROADMAPS } from "@/content/roadmaps";
 import { SITE_URL } from "@/lib/site";
 import { TOOLS } from "@/lib/tools/registry";
 
-/** sitemap.xml: the public pages. New roadmaps and student tools are added automatically. */
+/** sitemap.xml: the public pages. New roadmaps and tools are added automatically. */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${SITE_URL}/`, changeFrequency: "weekly", priority: 1 },

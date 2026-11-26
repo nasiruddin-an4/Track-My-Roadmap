@@ -11,7 +11,7 @@ import { escapeInAppOnce } from "@/lib/inapp";
 import { useIsAdmin } from "@/lib/useIsAdmin";
 import { useIsClient } from "@/lib/useLocal";
 
-/* The site's tools: roadmaps, the habit tracker, student tools and the AI Tutor. Logo left, the tools centred, account right. */
+/* The site's tools: roadmaps, the habit tracker, free tools and the AI Tutor. Logo left, the tools centred, account right. */
 
 const NAV: { href: string; label: string; short: string; accent?: boolean; match: (p: string) => boolean; icon: React.ReactNode }[] = [
   {
@@ -25,7 +25,7 @@ const NAV: { href: string; label: string; short: string; accent?: boolean; match
     icon: <><rect x="3.5" y="5" width="17" height="15.5" rx="3" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4M9 15l2 2 4-4" /></>,
   },
   {
-    href: "/tools", label: "Student tools", short: "Tools",
+    href: "/tools", label: "Free tools", short: "Tools",
     match: (p: string) => p.startsWith("/tools"),
     icon: <><rect x="3.5" y="3.5" width="7" height="7" rx="1.8" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.8" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.8" /><path d="M17 13.5v7M13.5 17h7" /></>,
   },

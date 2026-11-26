@@ -45,7 +45,7 @@ const CREATOR = [
 ];
 
 const FAQ: [string, React.ReactNode][] = [
-  ["Is it free?", "Yes. Every roadmap, the habit tracker and the student tools are free to use."],
+  ["Is it free?", "Yes. Every roadmap, the habit tracker and the tools are free to use."],
   ["Do I need an account?", "You can read every roadmap without one. To track your progress, sign in with Google. It’s free, and your progress is then saved to your account."],
   ["Where is my progress saved?", "In your Google-linked account, so it’s the same on every device you sign in on. Only you can see it."],
   ["Who writes the roadmaps?", <>The Software Engineer roadmap is based on the 2026–2030 Software Engineering roadmap by Ittahaduzzaman Akash on roadmap.sh. More roadmaps are on the way, and soon teachers will be able to publish their own.</>],
@@ -158,10 +158,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* student tools */}
+      {/* free tools */}
       <section aria-labelledby="toolsH" className="wrap pb-20 sm:pb-24">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <SectionHead eyebrow="Student tools" id="toolsH" title="Free tools for forms and assignments" />
+          <SectionHead eyebrow="Free tools" id="toolsH" title="Free tools for photos, PDFs and paperwork" />
           <p className="m-0 max-w-[52ch] text-[.95rem] leading-relaxed text-muted">
             Resize your photo and signature for job and admission forms, shrink images and PDFs for upload, and convert
             Bijoy to Unicode. No sign-up, and your files never leave your device.

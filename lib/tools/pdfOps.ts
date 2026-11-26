@@ -1,6 +1,6 @@
 /*
- * PDF changes for the student tools: merge, pick or split pages, add page numbers, and build a PDF from images.
- * Built on pdf-lib, bytes in and bytes out, so the same code runs in the browser (students' files never
+ * PDF changes for the free tools: merge, pick or split pages, add page numbers, and build a PDF from images.
+ * Built on pdf-lib, bytes in and bytes out, so the same code runs in the browser (people's files never
  * leave their device) and in the unit tests.
  */
 import { degrees, PDFDocument, rgb, StandardFonts } from "pdf-lib";
@@ -11,7 +11,7 @@ export { LockedPdfError, pageLabel, type NumberStyle, type Spot };
 
 const PRODUCER = "Track My Roadmap (trackmyroadmap.com/tools)";
 
-/** Opens a PDF, turning pdf-lib's errors into ones a student can act on. */
+/** Opens a PDF, turning pdf-lib's errors into ones anyone can act on. */
 export async function openPdf(bytes: Uint8Array, name?: string): Promise<PDFDocument> {
   try {
     return await PDFDocument.load(bytes, { updateMetadata: false });

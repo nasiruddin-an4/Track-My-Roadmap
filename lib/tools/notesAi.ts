@@ -6,7 +6,7 @@ import { takeQuota } from "@/lib/assistant/limit";
 
 /*
  * The note reader: Claude reads photos of handwritten notes, then turns the text into a revision summary or a quiz.
- * Unlike the other student tools this one needs a server, because reading handwriting takes an AI model; the
+ * Unlike the other free tools this one needs a server, because reading handwriting takes an AI model; the
  * photos are sent to Claude to be read and are not saved anywhere.
  *   ANTHROPIC_API_KEY        the Claude API key (without it the page says the tool isn't switched on)
  *   NOTES_AI_MODEL           optional; defaults to claude-opus-5-5
@@ -73,7 +73,7 @@ async function ask<S extends z.ZodType>(
   throw new NotesAiError("invalid");
 }
 
-const READ_SYSTEM = `You transcribe photos of a student's handwritten notes into text, so they can study from them.
+const READ_SYSTEM = `You transcribe photos of handwritten notes, letters or pages into text, so the person can use and study them.
 - Copy exactly what is written, in the language it is written in (Bengali, English, or both). Never translate.
 - Keep the structure: headings, numbered and bulleted lists, line breaks, and the order on the page.
 - Write maths and science in plain text, e.g. x^2 + 3x - 4 = 0, H2O, a/b.
@@ -94,8 +94,8 @@ export async function readNotes(jpegs: string[]): Promise<{ found: boolean; text
   return { found: out.found && !!out.text.trim(), text: out.text.trim() };
 }
 
-const SUMMARY_SYSTEM = `You help a student revise from their own class notes.
-Write a revision summary of the notes the student gives you:
+const SUMMARY_SYSTEM = `You help someone understand and revise their own notes.
+Write a summary of the notes they give you:
 - title: what the notes are about, in a few words.
 - points: the 4 to 10 most important ideas, one short sentence each, in the order they appear.
 - terms: up to 8 key terms or formulas from the notes, each with a one-line meaning taken from the notes.
@@ -113,8 +113,8 @@ export async function summarizeNotes(text: string): Promise<NotesSummary> {
   return ask(summarySchema, SUMMARY_SYSTEM, [{ type: "text", text: `<notes>\n${text}\n</notes>` }], "low", (o) => o.points.length > 0);
 }
 
-const QUIZ_SYSTEM = `You write practice quizzes from a student's class notes.
-Write 5 multiple-choice questions that check understanding of the notes the student gives you:
+const QUIZ_SYSTEM = `You write practice quizzes from someone's own notes.
+Write 5 multiple-choice questions that check understanding of the notes they give you:
 - each question has exactly 4 options and exactly one correct option; answer is its position, 0 to 3.
 - vary the position of the correct option, and make the wrong options believable.
 - why: one sentence explaining the right answer, based on the notes.

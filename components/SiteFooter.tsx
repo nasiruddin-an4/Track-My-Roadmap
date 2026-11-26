@@ -38,8 +38,8 @@ export function SiteFooter({ note }: { note?: string }) {
               />
               <FooterLink
                 href="/tools"
-                label="Student tools"
-                detail="Photo resizer, PDF tools, Bijoy to Unicode"
+                label="Free tools"
+                detail="Photo resizer, PDF tools, letters, Bijoy to Unicode"
               />
             </div>
           </nav>
