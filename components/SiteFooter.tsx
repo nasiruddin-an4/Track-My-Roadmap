@@ -36,6 +36,11 @@ export function SiteFooter({ note }: { note?: string }) {
                 label="Habit tracker"
                 detail="Build your daily routine"
               />
+              <FooterLink
+                href="/tools"
+                label="Student tools"
+                detail="Photo resizer, PDF tools, Bijoy to Unicode"
+              />
             </div>
           </nav>
         </div>

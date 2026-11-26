@@ -2,7 +2,8 @@
  * Progress summaries shared by the account pages (browser) and the shareable Road Card (server),
  * so both show the same numbers.
  */
-import { keyHash } from "@/lib/roadmap";
+// relative import, so the unit tests can run this file directly
+import { keyHash, PHASE_MARK } from "./roadmap.ts";
 
 /** One roadmap as the summaries need it: hashed progress units per numbered phase (see progressUnitsByPhase). */
 export type CatalogEntry = {
@@ -10,16 +11,20 @@ export type CatalogEntry = {
   title: string;
   category: string;
   localKey: string;
-  phases: { title: string; units: string[][] }[];
+  /** `id` matches the learner's "marked complete" entries (see PHASE_MARK) */
+  phases: { id: string; title: string; units: string[][] }[];
 };
 
 export type RoadmapStat = {
   slug: string;
   title: string;
   category: string;
+  /** topics ticked, and the share of all counted topics (what the learner actually ticked) */
   done: number;
   total: number;
   pct: number;
+  /** every phase complete (all topics ticked, or marked complete): the roadmap is finished */
+  complete: boolean;
   phasesDone: number;
   phaseCount: number;
   /** first phase not yet finished (null when the roadmap is complete) */
@@ -33,13 +38,14 @@ export type RoadmapStat = {
 
 export function roadmapStat(c: CatalogEntry, ticked: string[], updatedAt: number): RoadmapStat {
   const done = new Set(ticked.map(keyHash));
+  const marked = new Set(ticked.filter((k) => k.startsWith(PHASE_MARK)).map((k) => k.slice(PHASE_MARK.length)));
   let d = 0, t = 0, phasesDone = 0;
   let current: RoadmapStat["current"] = null;
   let phaseStates = "";
   c.phases.forEach((ph, i) => {
     const pd = ph.units.filter((u) => u.some((k) => done.has(k))).length;
     d += pd; t += ph.units.length;
-    const full = ph.units.length > 0 && pd === ph.units.length;
+    const full = (ph.units.length > 0 && pd === ph.units.length) || marked.has(ph.id);
     phaseStates += full ? "d" : pd > 0 ? "s" : "u";
     if (full) phasesDone++;
     else if (!current) current = { num: i + 1, title: ph.title };
@@ -47,6 +53,7 @@ export function roadmapStat(c: CatalogEntry, ticked: string[], updatedAt: number
   return {
     slug: c.slug, title: c.title, category: c.category,
     done: d, total: t, pct: t ? Math.floor((d / t) * 100) : 0,
+    complete: c.phases.length > 0 && phasesDone === c.phases.length,
     phasesDone, phaseCount: c.phases.length, current, phaseStates, updatedAt,
   };
 }

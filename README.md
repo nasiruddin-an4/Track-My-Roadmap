@@ -34,6 +34,8 @@ npm run dev                  # http://localhost:3000
 
 Item format: `["Topic"]` or `["Card title", ["Topic", "Topic"]]`. End a name with `?` for optional, `^` for advanced, `~` for an ongoing habit, `!` on a card title for "pick one". Topic keys are built from names, so renaming a topic resets its tick for everyone.
 
+A phase is complete when all its required topics are ticked, or when the learner presses "Mark phase complete" (it moves them to the next phase and leaves unticked topics unticked; "Reopen phase" undoes it). That mark is saved in the same `done` list as `@phase/<phase id>` (`phaseMark` in `lib/roadmap.ts`), so it needs no database change. Topic counts and percentages only count real ticks; a roadmap is finished (Completed list, certificate) when every phase is complete. `computeProgress` (tracker) and `roadmapStat` (profile, Road Card, CV, admin) both apply this rule; `lib/roadmap.test.ts` checks they agree.
+
 ## Set up Supabase (once)
 
 1. Create a project at [supabase.com](https://supabase.com).
@@ -77,6 +79,26 @@ The AI Tutor page (`/ai`, linked from the navbar and a floating button on the ho
 2. Run the latest `supabase/schema.sql` (it adds `assistant_usage` and `assistant_take`), with `SUPABASE_SECRET_KEY` set. That enforces the daily limits: 5 messages per guest IP, 30 per signed-in learner (`lib/assistant/limit.ts`). Until then the limit is only counted per server instance.
 3. Signed-in learners' progress is read from their account, so the tutor can say where they are and suggest the next topic.
 
+### "What is this?" on topics
+
+Every topic in the tracker has a **?** button that opens a 2–3 sentence explanation (`components/roadmap/TopicExplain.tsx`, `app/api/explain/route.ts`, `lib/explain.ts`, prompt in `lib/explainText.ts`). It uses the same AI as the tutor (Groq first, else Claude) and appears only when one of those keys is set.
+
+- Run the latest `supabase/schema.sql` (it adds `topic_explanations`, with `SUPABASE_SECRET_KEY` set). The first learner to ask about a topic gets a new explanation, which is saved there; everyone after gets the saved copy, so each topic costs one AI call ever. Without the table, explanations are only kept in each server's memory and get written again.
+- Writing new ones is limited per learner per day: `EXPLAIN_DAILY_LIMIT` (default 40). Saved ones are unlimited.
+- To fix or redo an explanation, edit or delete its row in `topic_explanations` (Supabase → Table Editor).
+
+## Student tools
+
+`/tools` (in the navbar): free tools that need no account. Photo and signature resizer for application forms, compress, convert and image-to-PDF, merge, split and compress PDFs, PDF to image, page numbers, and Bijoy ↔ Unicode. Everything runs in the browser, so files never leave the student's device and there's no server cost.
+
+- Page copy, FAQs and the "next step" link for each tool: `lib/tools/registry.ts` (the sitemap and llms.txt read it too). Tool UIs: `components/tools/`. Pages: `app/tools/<slug>/page.tsx`.
+- Photo/signature sizes: `lib/tools/presets.ts`. Add a form there and it appears in the resizer; only list sizes you've confirmed from a circular.
+- Without an account a student can work on 10 files at a time (`GUEST_BATCH` in `components/tools/ui.tsx`); signing in lifts it.
+- PDF editing uses pdf-lib (`lib/tools/pdfOps.ts`), page drawing uses PDF.js via unpdf, and zips use fflate. All three load only when a tool needs them.
+- Bijoy conversion is plain code in `lib/tools/bijoy.ts`, tested on real words in `bijoy.test.ts`.
+- Ready-made documents (leave application, testimonial/TC application, cover letter, assignment cover page) live in `lib/tools/templates.ts`: each is a form plus a layout in English and/or Bengali. The page prints them (Save as PDF) and builds the Word file in the browser. Add a template there, then a page in `app/tools/<slug>/` and an entry in the registry.
+- **Handwriting to text** (`/tools/handwriting-to-text`) is the one tool that uses a server: Claude reads the photos (`lib/tools/notesAi.ts`, `app/api/tools/notes/route.ts`), then can write a summary or a quiz. It needs `ANTHROPIC_API_KEY`; without it the page says it isn't switched on. Signed-in learners only, with daily limits counted in `assistant_usage`: `NOTES_READ_DAILY_LIMIT` (default 5 readings of up to 3 pages) and `NOTES_STUDY_DAILY_LIMIT` (default 15 summaries or quizzes). `NOTES_AI_MODEL` overrides the model (default `claude-opus-5-5`). Photos aren't stored.
+
 ## CV Builder
 
 `/cv` (linked from the Profile page and the account menu): ATS-friendly CVs with a live preview, PDF and Word export, CV import from PDF/DOCX, suggestions from the learner's roadmap progress, an ATS check against a job description, AI rewrites, versions and share links. Code in `components/cv/`, `lib/cv/` and `app/api/cv/`.
@@ -90,3 +112,4 @@ The AI Tutor page (`/ai`, linked from the navbar and a floating button on the ho
 3. ATS score (`lib/cv/ats.ts`): the AI only reads keywords from the job description; matching and scoring (keywords 60, structure 25, wording 15) is plain code, so the editor recalculates it live as the CV changes.
 4. Versions and sharing: a CV can be duplicated (to tailor it for another job) and one can be the primary CV, shown on the Profile page. Export as PDF or Word (`lib/cv/pdf.tsx`, `lib/cv/docx.ts`); both draw from `layoutCv()` in `lib/cv/format.ts`, as does the on-screen preview, so all three match. Share links are off by default; turning one on makes an unguessable `/cv/s/<token>` page, and turning it off (or making a new link) stops the old one working. Visitors reach a shared CV only through the `shared_cv()` database function.
 5. `npm test` runs the unit tests (schema, formatting and layout, ownership filtering, upload checks, roadmap suggestions, ATS scoring).
+6. Bengali CVs: the "CV language" switch in the editor sets `locale: "bn"` on the CV. Section names, months, digits and "Present" become Bengali (`lib/cv/format.ts`). The PDF embeds Hind Siliguri (SIL Open Font License, `lib/cv/fonts/`, shipped with the CV routes by `outputFileTracingIncludes` in `next.config.ts`); the Word file uses Nirmala UI for Bengali; the preview loads the same font. The ATS check is hidden for Bengali CVs, since it scores English keywords. Text copied out of a Bengali PDF can come out in the wrong letter order (a PDF limitation), so the editor suggests the Word file for job sites that read CVs automatically.

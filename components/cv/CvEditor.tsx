@@ -184,6 +184,9 @@ export function CvEditor({ id, ai }: { id: string; ai: boolean }) {
 
   const d = cv.data;
   const status = { saved: "✓ Saved", pending: "Unsaved changes", saving: "Saving…", error: "Not saved", invalid: "Not saved" }[save];
+  const bn = d.locale === "bn";
+  // the ATS check reads English keywords and wording, so it's offered for English CVs only
+  const ats = ai && !bn;
 
   return (
     <div className="wrap pb-16">
@@ -206,8 +209,8 @@ export function CvEditor({ id, ai }: { id: string; ai: boolean }) {
       </div>
 
       {/* phones: edit, preview or (with AI) ATS check */}
-      <div className={"mb-4 grid gap-1 rounded-xl border border-line bg-surface p-1 lg:hidden " + (ai ? "grid-cols-3" : "grid-cols-2")} role="tablist" aria-label="View">
-        {(ai ? (["edit", "preview", "check"] as const) : (["edit", "preview"] as const)).map((t) => (
+      <div className={"mb-4 grid gap-1 rounded-xl border border-line bg-surface p-1 lg:hidden " + (ats ? "grid-cols-3" : "grid-cols-2")} role="tablist" aria-label="View">
+        {(ats ? (["edit", "preview", "check"] as const) : (["edit", "preview"] as const)).map((t) => (
           <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => { setTab(t); if (t !== "edit") setSide(t); }}
             className={"h-11 rounded-lg font-semibold " + (tab === t ? "bg-sunk text-ink" : "text-muted")}>
             {t === "edit" ? "Edit" : t === "preview" ? "Preview" : "ATS check"}
@@ -217,6 +220,26 @@ export function CvEditor({ id, ai }: { id: string; ai: boolean }) {
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
         <div className={(tab === "edit" ? "grid" : "hidden") + " content-start gap-4 lg:grid"}>
+          <div className="flex flex-wrap items-center justify-between gap-3 rounded-[18px] border border-line bg-surface px-5 py-3.5">
+            <span className="grid min-w-0 flex-1 basis-56 gap-0.5">
+              <b className="font-display">CV language</b>
+              <span className="text-[.84rem] text-muted">
+                {bn
+                  ? "Section names, months and digits are in Bengali; type your details in Bengali. The PDF prints perfectly, but text copied out of it can come out jumbled, so if a job site reads your CV automatically, upload the Word file. (The ATS check is for English CVs.)"
+                  : "Applying for a local or government job? Make this CV in Bengali."}
+              </span>
+            </span>
+            <div role="radiogroup" aria-label="CV language" className="flex gap-1 rounded-xl bg-bg p-1 ring-1 ring-line">
+              {(["en", "bn"] as const).map((lc) => (
+                <button key={lc} type="button" role="radio" aria-checked={(d.locale ?? "en") === lc}
+                  onClick={() => setData((x) => ({ ...x, locale: lc }))}
+                  className={"h-9 rounded-lg px-3.5 text-[.92rem] font-semibold transition-colors "
+                    + ((d.locale ?? "en") === lc ? "bg-route text-route-ink" : "text-muted hover:text-ink")}>
+                  {lc === "en" ? "English" : <span lang="bn">বাংলা</span>}
+                </button>
+              ))}
+            </div>
+          </div>
           <RoadmapAutofillPanel data={d} onApply={setData} />
           <Card id="sec-basics" title="Contact details" open>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -358,7 +381,7 @@ export function CvEditor({ id, ai }: { id: string; ai: boolean }) {
         </div>
 
         <div className={(tab !== "edit" ? "block" : "hidden") + " min-w-0 lg:sticky lg:top-[calc(var(--top)+88px)] lg:block lg:max-h-[calc(100vh-var(--top)-104px)] lg:self-start lg:overflow-y-auto"}>
-          {ai && <div className="mb-3 hidden grid-cols-2 gap-1 rounded-xl border border-line bg-surface p-1 lg:grid" role="tablist" aria-label="Side panel">
+          {ats && <div className="mb-3 hidden grid-cols-2 gap-1 rounded-xl border border-line bg-surface p-1 lg:grid" role="tablist" aria-label="Side panel">
             {(["preview", "check"] as const).map((t) => (
               <button key={t} type="button" role="tab" aria-selected={side === t} onClick={() => setSide(t)}
                 className={"h-10 rounded-lg font-semibold " + (side === t ? "bg-sunk text-ink" : "text-muted")}>
@@ -366,7 +389,7 @@ export function CvEditor({ id, ai }: { id: string; ai: boolean }) {
               </button>
             ))}
           </div>}
-          {!ai || side === "preview"
+          {!ats || side === "preview"
             ? <CvPreview data={d} pageSize={cv.pageSize} />
             : <AtsCheckPanel cvId={id} data={d} flush={flush} onAddKeyword={addKeyword} onGoTo={goTo} />}
         </div>

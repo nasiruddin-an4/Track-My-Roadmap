@@ -5,7 +5,7 @@
  *
  * Type-only imports here (no local runtime imports): the unit tests run this file directly with `node --test`.
  */
-import type { CvData, SectionKey } from "./schema";
+import type { CvData, CvLocale, SectionKey } from "./schema";
 
 export const SECTION_LABELS: Record<SectionKey, string> = {
   summary: "Summary",
@@ -17,20 +17,39 @@ export const SECTION_LABELS: Record<SectionKey, string> = {
   languages: "Languages",
 };
 
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+/** Section names as Bengali CVs in Bangladesh usually write them. */
+export const SECTION_LABELS_BN: Record<SectionKey, string> = {
+  summary: "সারসংক্ষেপ",
+  skills: "দক্ষতা",
+  work: "কর্ম অভিজ্ঞতা",
+  projects: "প্রকল্প",
+  education: "শিক্ষাগত যোগ্যতা",
+  certificates: "সার্টিফিকেট ও প্রশিক্ষণ",
+  languages: "ভাষা",
+};
 
-/** "2023-05" → "May 2023", "2023" → "2023". Anything else comes back as it was. */
-export function fmtDate(d?: string): string {
+export const sectionLabel = (k: SectionKey, locale: CvLocale = "en") => (locale === "bn" ? SECTION_LABELS_BN : SECTION_LABELS)[k];
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const MONTHS_BN = ["জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"];
+const WORDS = { en: { present: "Present", result: "Result" }, bn: { present: "বর্তমান", result: "ফলাফল" } } as const;
+
+/** 2023 → ২০২৩ */
+export const bengaliDigits = (s: string) => s.replace(/\d/g, (d) => String.fromCharCode(0x09e6 + Number(d)));
+
+/** "2023-05" → "May 2023" (or "মে ২০২৩"), "2023" → "2023". Anything else comes back as it was. */
+export function fmtDate(d?: string, locale: CvLocale = "en"): string {
   if (!d) return "";
   const m = /^(\d{4})(?:-(\d{2}))?/.exec(d.trim());
   if (!m) return d.trim();
-  const month = m[2] ? MONTHS[Number(m[2]) - 1] : undefined;
-  return month ? `${month} ${m[1]}` : m[1];
+  const month = m[2] ? (locale === "bn" ? MONTHS_BN : MONTHS)[Number(m[2]) - 1] : undefined;
+  const year = locale === "bn" ? bengaliDigits(m[1]) : m[1];
+  return month ? `${month} ${year}` : year;
 }
 
 /** "May 2023 – Jun 2024", or "May 2023 – Present" when `ongoing` and there's no end date. */
-export function dateRange(start?: string, end?: string, ongoing = false): string {
-  const a = fmtDate(start), b = fmtDate(end) || (ongoing && a ? "Present" : "");
+export function dateRange(start?: string, end?: string, ongoing = false, locale: CvLocale = "en"): string {
+  const a = fmtDate(start, locale), b = fmtDate(end, locale) || (ongoing && a ? WORDS[locale].present : "");
   if (a && b) return `${a} – ${b}`;
   return a || b;
 }
@@ -98,7 +117,7 @@ export type Entry = { head: Run[]; meta?: string; paras: string[]; bullets: stri
 export type LaidSection =
   | { key: SectionKey; title: string; kind: "lines"; lines: Run[][] }
   | { key: SectionKey; title: string; kind: "entries"; entries: Entry[] };
-export type CvLayout = { name: string; label: string; contact: string; sections: LaidSection[] };
+export type CvLayout = { locale: CvLocale; name: string; label: string; contact: string; sections: LaidSection[] };
 
 const tt = (s?: string) => (s ?? "").trim();
 const joined = (...parts: (string | undefined)[]) => parts.map(tt).filter(Boolean).join(", ");
@@ -107,7 +126,8 @@ const head = (bold: string, rest?: string): Run[] => [{ text: bold, bold: true }
 
 function laySection(d: CvData, key: SectionKey): LaidSection | null {
   if (!hasContent(d, key)) return null;
-  const title = SECTION_LABELS[key];
+  const lc = d.locale ?? "en";
+  const title = sectionLabel(key, lc);
   switch (key) {
     case "summary":
       return { key, title, kind: "lines", lines: [[{ text: tt(d.basics.summary) }]] };
@@ -116,7 +136,7 @@ function laySection(d: CvData, key: SectionKey): LaidSection | null {
     case "work":
       return { key, title, kind: "entries", entries: d.work.filter((w) => tt(w.position) || tt(w.name)).map((w) => ({
         head: head(tt(w.position) || tt(w.name), joined(tt(w.position) ? w.name : "", w.location)),
-        meta: dateRange(w.startDate, w.endDate, true) || undefined, paras: [], bullets: bulletsOf(w.highlights),
+        meta: dateRange(w.startDate, w.endDate, true, lc) || undefined, paras: [], bullets: bulletsOf(w.highlights),
       })) };
     case "projects":
       return { key, title, kind: "entries", entries: d.projects.filter((p) => tt(p.name)).map((p) => ({
@@ -125,12 +145,12 @@ function laySection(d: CvData, key: SectionKey): LaidSection | null {
     case "education":
       return { key, title, kind: "entries", entries: d.education.filter((e) => tt(e.institution)).map((e) => {
         const what = joined(e.studyType, e.area);
-        const meta = [dateRange(e.startDate, e.endDate), tt(e.score) && `Result: ${tt(e.score)}`].filter(Boolean).join(" | ");
+        const meta = [dateRange(e.startDate, e.endDate, false, lc), tt(e.score) && `${WORDS[lc].result}: ${tt(e.score)}`].filter(Boolean).join(" | ");
         return { head: head(what || tt(e.institution), what ? tt(e.institution) : undefined), meta: meta || undefined, paras: [], bullets: [] };
       }) };
     case "certificates":
       return { key, title, kind: "lines", lines: d.certificates.filter((c) => tt(c.name)).map((c) => {
-        const by = joined(c.issuer, fmtDate(c.date));
+        const by = joined(c.issuer, fmtDate(c.date, lc));
         return [{ text: tt(c.name), bold: true }, ...(by ? [{ text: ` — ${by}` }] : []), ...(tt(c.url) ? [{ text: ` | ${tt(c.url)}` }] : [])];
       }) };
     case "languages":
@@ -141,7 +161,7 @@ function laySection(d: CvData, key: SectionKey): LaidSection | null {
 
 export function layoutCv(d: CvData): CvLayout {
   return {
-    name: tt(d.basics.name), label: tt(d.basics.label), contact: contactParts(d.basics).join(" | "),
+    locale: d.locale ?? "en", name: tt(d.basics.name), label: tt(d.basics.label), contact: contactParts(d.basics).join(" | "),
     sections: d.sectionOrder.map((k) => laySection(d, k)).filter((s): s is LaidSection => !!s),
   };
 }

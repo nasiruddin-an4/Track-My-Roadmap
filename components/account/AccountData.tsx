@@ -112,7 +112,8 @@ export function AccountDataProvider({ catalog, children }: { catalog: CatalogEnt
       const doc = newer(local?.rows[c.slug], r?.rows[c.slug]);
       if (!doc?.done.length) continue;
       const stat = { ...roadmapStat(c, doc.done, doc.updatedAt), completedAt: doc.completedAt ?? null };
-      if (stat.done > 0) roadmaps.push(stat);
+      // a roadmap counts as started once a topic is ticked or a phase is marked complete
+      if (stat.done > 0 || stat.phasesDone > 0) roadmaps.push(stat);
     }
     roadmaps.sort((a, b) => b.updatedAt - a.updatedAt);
     const habitDoc = newer(local?.habits, r?.habits);
@@ -122,8 +123,9 @@ export function AccountDataProvider({ catalog, children }: { catalog: CatalogEnt
       status: ready ? "ready" : "loading",
       offline: !!r?.offline,
       roadmaps,
-      inProgress: roadmaps.filter((s) => s.pct < 100),
-      completed: roadmaps.filter((s) => s.pct >= 100),
+      // finished = every phase complete (all topics ticked, or the learner marked the phase complete)
+      inProgress: roadmaps.filter((s) => !s.complete),
+      completed: roadmaps.filter((s) => s.complete),
       topicsDone: roadmaps.reduce((n, s) => n + s.done, 0),
       habits,
       lastActive: Math.max(0, habits.updatedAt, ...roadmaps.map((s) => s.updatedAt)),

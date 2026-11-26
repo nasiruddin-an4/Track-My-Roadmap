@@ -11,7 +11,7 @@ import { escapeInAppOnce } from "@/lib/inapp";
 import { useIsAdmin } from "@/lib/useIsAdmin";
 import { useIsClient } from "@/lib/useLocal";
 
-/* The site's tools: roadmaps, the habit tracker and the AI Tutor. Logo left, the tools centred, account right. */
+/* The site's tools: roadmaps, the habit tracker, student tools and the AI Tutor. Logo left, the tools centred, account right. */
 
 const NAV: { href: string; label: string; short: string; accent?: boolean; match: (p: string) => boolean; icon: React.ReactNode }[] = [
   {
@@ -23,6 +23,11 @@ const NAV: { href: string; label: string; short: string; accent?: boolean; match
     href: "/habits", label: "Habit tracker", short: "Habits",
     match: (p: string) => p.startsWith("/habits"),
     icon: <><rect x="3.5" y="5" width="17" height="15.5" rx="3" /><path d="M3.5 10h17M8.5 3v4M15.5 3v4M9 15l2 2 4-4" /></>,
+  },
+  {
+    href: "/tools", label: "Student tools", short: "Tools",
+    match: (p: string) => p.startsWith("/tools"),
+    icon: <><rect x="3.5" y="3.5" width="7" height="7" rx="1.8" /><rect x="13.5" y="3.5" width="7" height="7" rx="1.8" /><rect x="3.5" y="13.5" width="7" height="7" rx="1.8" /><path d="M17 13.5v7M13.5 17h7" /></>,
   },
   {
     href: "/ai", label: "AI Tutor", short: "AI", accent: true,
@@ -59,13 +64,14 @@ export function SiteHeader() {
               return (
                 <li key={n.href}>
                   <Link href={n.href} aria-current={on ? "page" : undefined}
-                    className={"inline-flex h-10 items-center gap-2 rounded-full px-2.5 text-[.92rem] min-[400px]:text-[.95rem] min-[440px]:px-3.5 font-semibold whitespace-nowrap transition-colors sm:px-4 " +
+                    // phones and small tablets: a tab bar (icon over a short label) so all four fit beside the logo;
+                    // from md up: icon and full label side by side
+                    className={"inline-flex h-10 flex-col items-center justify-center gap-[3px] rounded-full px-1.5 text-[.7rem] leading-none font-semibold whitespace-nowrap transition-colors min-[400px]:px-3 md:flex-row md:gap-2 md:px-4 md:text-[.95rem] md:leading-normal " +
                       (on ? "bg-sunk text-ink shadow-[0_1px_2px_rgba(0,0,0,.3)]" : "text-muted hover:text-ink")}>
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
-                      className={(n.accent ? "block text-[#FF5A00] " : "hidden md:block ") + (on ? "text-[#FF5A00]" : "")}>{n.icon}</svg>
-                    {/* very narrow phones: the AI Tutor item is just its sparkle */}
-                    <span className={"sm:hidden " + (n.accent ? "max-[399px]:sr-only" : "")}>{n.short}</span>
-                    <span className="hidden sm:inline">{n.label}</span>
+                      className={"block flex-none " + (n.accent || on ? "text-[#FF5A00]" : "")}>{n.icon}</svg>
+                    <span className="md:hidden">{n.short}</span>
+                    <span className="hidden md:inline">{n.label}</span>
                   </Link>
                 </li>
               );

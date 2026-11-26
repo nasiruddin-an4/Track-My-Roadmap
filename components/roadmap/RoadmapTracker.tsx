@@ -6,12 +6,13 @@
  */
 import type { SupabaseClient } from "@supabase/supabase-js";
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { useAuth } from "@/components/auth";
 import { Check, Close, Dots, Loop, Search } from "@/components/icons";
 import { useToast } from "@/components/toast";
-import { buildRoadmap, cardTally, computeProgress, videoSlots, type Card, type Phase, type Progress, type RoadmapDef, type Row, type Tag } from "@/lib/roadmap";
+import { buildRoadmap, cardTally, computeProgress, phaseMark, videoSlots, type Card, type Phase, type Progress, type RoadmapDef, type Row, type Tag, type Tally } from "@/lib/roadmap";
 import { YouTubeMark } from "@/components/roadmap/ResourceLink";
+import { ExplainButton, ExplainPanel } from "@/components/roadmap/TopicExplain";
 import { VideoPlayer, type WatchRequest } from "@/components/roadmap/VideoPlayer";
 import { habitSummary, type HabitDoc } from "@/lib/habits";
 import { loadProgress, saveProgress } from "@/lib/progressRow";
@@ -42,7 +43,8 @@ function progressDoc(slug: string) {
 
 const NO_RESOURCES: ResourceMap = {};
 
-export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: RoadmapDef; resources?: ResourceMap }) {
+/** `explain`: show the "What is this?" button on each topic (an AI provider is set up; see lib/explain.ts). */
+export function RoadmapTracker({ def, resources = NO_RESOURCES, explain = false }: { def: RoadmapDef; resources?: ResourceMap; explain?: boolean }) {
   const rm = useMemo(() => buildRoadmap(def), [def]);
   const toast = useToast();
   const { user } = useAuth();
@@ -108,9 +110,9 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
     update((d) => { const s = new Set(d.done); fn(s); return { ...d, done: Array.from(s) }; });
   }, [update]);
 
-  // remember when the roadmap was completed (all required topics, optional ones never needed) for the certificate;
-  // clear it if a required topic is unticked again
-  const complete = useMemo(() => { const q = computeProgress(rm, done, false); return q.total > 0 && q.done === q.total; }, [rm, done]);
+  // remember when the roadmap was completed (every phase complete: its required topics ticked, or marked complete by
+  // the learner; optional topics are never needed) for the certificate; clear it if a phase is reopened
+  const complete = useMemo(() => computeProgress(rm, done, false).complete, [rm, done]);
   useEffect(() => {
     if (!hydrated) return;
     if (complete && !doc.completedAt) {
@@ -136,11 +138,13 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
     else toast(`All ${rm.numbered.length} phases complete. Time to ship and apply.`);
   }, [p, rm, toast, view, select]);
 
-  const markAll = (card: Card) => {
-    const req = card.rows.filter((r) => r.tag !== "opt" || countOpt);
-    const all = req.every((r) => done.has(r.key));
-    edit((s) => (all ? card.rows.forEach((r) => s.delete(r.key)) : req.forEach((r) => s.add(r.key))));
+  /** Finish a phase without ticking anything: topics the learner didn't tick stay unticked. Then open the next phase. */
+  const completePhase = (ph: Phase) => {
+    edit((s) => s.add(phaseMark(ph.id)));
+    const nx = ph.num ? rm.numbered[ph.num] : undefined;
+    if (nx) select(nx, true);
   };
+  const reopenPhase = (ph: Phase) => edit((s) => s.delete(phaseMark(ph.id)));
 
   const showNext = () => {
     if (!p.next) return;
@@ -162,7 +166,7 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
   const isNext = (key: string) => !q && view === p.current && p.next && !p.next.pick && p.next.key === key;
   const nextCard = !q && view === p.current && p.next?.pick ? p.next.cardId : null;
   const onWatch = useCallback((topic: string, list: TopicResource[]) => setWatch({ topic, list }), []);
-  const cardProps = { done, countOpt, filter, isNext, nextCard, resources, onWatch, onToggle: toggle, onAll: markAll };
+  const cardProps = { done, countOpt, filter, isNext, nextCard, resources, onWatch, onToggle: toggle, slug: def.slug, explain };
   // the next topic's video: its card's (when videos go on the card heading) or its own
   const nextSlot = p.next && !p.next.pick ? videoSlots(rm.cardById[p.next.cardId])[0] : undefined;
   const nextList = p.next && !p.next.pick ? resources[nextSlot?.whole ? nextSlot.key : p.next.key] : undefined;
@@ -196,7 +200,7 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
                     <span className="eyebrow">{g.ph.ongoing ? "Ongoing" : "Phase " + pad(g.ph.num!)}</span>
                     <button type="button" className="link" onClick={() => select(g.ph, true)}>{g.ph.title} →</button>
                   </div>
-                  <div className="cards">{vis.map((h) => <CardView key={h.c.id} card={h.c} ph={g.ph} rows={h.rows} withAll={false} {...cardProps} />)}</div>
+                  <div className="cards">{vis.map((h) => <CardView key={h.c.id} card={h.c} ph={g.ph} rows={h.rows} {...cardProps} />)}</div>
                 </section>
               );
             })}
@@ -249,8 +253,12 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
           </div>
         )}
         <Toolbar filter={filter} setFilter={setFilter} rows={rowsShown} done={done} />
-        <div className="cards">{ph.cards.map((c) => <CardView key={c.id} card={c} ph={ph} rows={c.rows} withAll {...cardProps} />)}</div>
+        <div className="cards">{ph.cards.map((c) => <CardView key={c.id} card={c} ph={ph} rows={c.rows} {...cardProps} />)}</div>
         <EmptyFilter rows={rowsShown} done={done} filter={filter} />
+        {!ph.ongoing && (
+          <PhaseFinish ph={ph} next={nx} tally={t} full={!!p.full[ph.id]} marked={!!p.marked[ph.id]}
+            onComplete={() => completePhase(ph)} onReopen={() => reopenPhase(ph)} onNext={() => nx && select(nx, true)} />
+        )}
         {!ph.ongoing && (
           <nav className="pager" aria-label="Phase navigation">
             {prev && <button type="button" className="pg" onClick={() => select(prev, true)}><span className="eyebrow">← Phase {prev.num}</span><span className="pg-t">{prev.title}</span></button>}
@@ -280,7 +288,12 @@ export function RoadmapTracker({ def, resources = NO_RESOURCES }: { def: Roadmap
       <div className="wrap shell">
         <aside className="rail" aria-label="Your route">
           <nav className="route" aria-labelledby="routeH">
-            <div className="eyebrow" id="routeH">The route · {rm.numbered.length} phases</div>
+            <div className="route-h">
+              <div className="eyebrow" id="routeH">Your route · {rm.numbered.length} phases</div>
+              <div className="route-sum"><b>{p.phasesDone}</b> of {rm.numbered.length} phases complete</div>
+              {/* one segment per phase: green done, orange where you are, blue started */}
+              <div className="segs" aria-hidden="true">{rm.numbered.map((ph) => <i key={ph.id} data-st={p.status(ph)} />)}</div>
+            </div>
             <ol>{rm.numbered.map((ph) => <Stop key={ph.id} ph={ph} mode="rail" {...stopProps} />)}</ol>
           </nav>
           {rm.ongoing.length > 0 && (
@@ -345,22 +358,24 @@ function EmptyFilter({ rows, done, filter }: { rows: Row[]; done: Set<string>; f
   return <div className="empty">{filter === "done" ? "Nothing ticked off here yet." : "Everything here is done. Nice work."}</div>;
 }
 
+// Topics are only ever ticked one at a time, by the learner. (A card-level "Mark all done" used to tick every topic in
+// the card, including ones the learner never chose; finishing a phase early is "Mark phase complete" instead.)
 type CardProps = {
-  card: Card; ph: Phase; rows: Row[]; withAll: boolean;
+  card: Card; ph: Phase; rows: Row[];
   done: Set<string>; countOpt: boolean; filter: Filter;
   isNext: (key: string) => boolean | null | undefined; nextCard: string | null;
   resources: ResourceMap;
   onWatch: (topic: string, list: TopicResource[]) => void;
-  onToggle: (key: string, on: boolean) => void; onAll: (c: Card) => void;
+  onToggle: (key: string, on: boolean) => void;
+  slug: string; explain: boolean;
 };
 
-function CardView({ card, ph, rows, withAll, done, countOpt, filter, isNext, nextCard, resources, onWatch, onToggle, onAll }: CardProps) {
+function CardView({ card, ph, rows, done, countOpt, filter, isNext, nextCard, resources, onWatch, onToggle, slug, explain }: CardProps) {
   const visible = rows.filter((r) => matches(r, done, filter));
   if (!visible.length) return null;
   const pick = card.mode === "pick";
   const t = cardTally(card, ph, done, countOpt);
   const complete = t.t > 0 && t.d === t.t;
-  const hasReq = card.rows.filter((r) => r.tag !== "opt").length > 1;
   // videos for the whole card sit on its heading; otherwise ("Key concepts", "Pick one") on each topic
   const slot = videoSlots(card)[0];
   const whole = slot?.whole ? slot : null;
@@ -385,18 +400,26 @@ function CardView({ card, ph, rows, withAll, done, countOpt, filter, isNext, nex
               <TagChip tag={r.tag} />
             </label>
           );
-          return (
-            <div key={r.key} className="row-w">
-              {label}
-              {res?.length ? <WatchButton topic={r.name} list={res} onWatch={onWatch} /> : null}
-            </div>
-          );
+          return <TopicRow key={r.key} row={r} label={label} res={res} onWatch={onWatch} slug={slug} explain={explain} />;
         })}
       </div>
-      {withAll && !pick && hasReq && (
-        <div className="card-f"><button type="button" className="link" onClick={() => onAll(card)}>{complete ? "Clear all" : "Mark all done"}</button></div>
-      )}
     </article>
+  );
+}
+
+/** One topic: its checkbox, its video (if any) and "What is this?", which opens a short explanation underneath. */
+function TopicRow({ row, label, res, onWatch, slug, explain }: {
+  row: Row; label: React.ReactNode; res?: TopicResource[]; onWatch: (topic: string, list: TopicResource[]) => void; slug: string; explain: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const id = useId();
+  return (
+    <div className="row-w">
+      {label}
+      {res?.length ? <WatchButton topic={row.name} list={res} onWatch={onWatch} /> : null}
+      {explain && <ExplainButton topic={row.name} open={open} controls={id} onToggle={() => setOpen(!open)} />}
+      {open && <ExplainPanel id={id} slug={slug} topicKey={row.key} topic={row.name} />}
+    </div>
   );
 }
 
@@ -414,21 +437,72 @@ function TagChip({ tag }: { tag: Tag }) {
   return TAG_TEXT[tag] ? <span className={"tag " + tag}>{TAG_TEXT[tag]}</span> : null;
 }
 
+/** The end of a phase: mark it complete and move on (only ticked topics count as done), or see that it's done. */
+function PhaseFinish({ ph, next, tally, full, marked, onComplete, onReopen, onNext }: {
+  ph: Phase; next?: Phase; tally: Tally; full: boolean; marked: boolean;
+  onComplete: () => void; onReopen: () => void; onNext: () => void;
+}) {
+  const left = tally.t - tally.d;
+  if (full) {
+    return (
+      <section className="finish is-done" aria-label={`Phase ${ph.num} complete`}>
+        <span className="finish-ic" aria-hidden="true"><Check size={18} /></span>
+        <div className="finish-t">
+          <b>Phase {ph.num} complete</b>
+          <p>
+            {left > 0
+              ? `You marked it complete with ${tally.d} of ${tally.t} topics ticked. The other ${left} stay unticked, so you can come back to them any time.`
+              : `All ${tally.t} topics ticked.`}
+            {!next && " That was the last phase: the roadmap is complete."}
+          </p>
+        </div>
+        <div className="finish-a">
+          {marked && left > 0 && <button type="button" className="btn ghost" onClick={onReopen}>Reopen phase</button>}
+          {next && <button type="button" className="btn primary" onClick={onNext}>Go to Phase {next.num} →</button>}
+        </div>
+      </section>
+    );
+  }
+  return (
+    <section className="finish" aria-label={`Finish Phase ${ph.num}`}>
+      <div className="finish-t">
+        <b>Done with this phase?</b>
+        <p>
+          Mark it complete {next ? <>to move on to <strong>Phase {next.num}: {next.title}</strong></> : "to finish the roadmap"}.
+          {" "}Only the {tally.d} topic{tally.d === 1 ? "" : "s"} you ticked count as done; the other {left} stay unticked.
+        </p>
+      </div>
+      <div className="finish-a">
+        <button type="button" className="btn primary" onClick={onComplete}><Check size={16} />Mark Phase {ph.num} complete</button>
+      </div>
+    </section>
+  );
+}
+
+/** One phase on the route: a numbered marker (a tick when done), its name, and how far along it is. */
 function Stop({ ph, mode, p, view, onGo }: { ph: Phase; mode: "rail" | "strip"; p: Progress; view: Phase | null; onGo: (ph: Phase) => void }) {
   const st = p.status(ph), t = p.tallies[ph.id], sel = ph === view;
+  const pct = t.t ? Math.round((t.d / t.t) * 100) : 0;
+  const partly = !!p.marked[ph.id] && t.d < t.t;
   const mk = (
     <span className="mk" aria-hidden="true">
       {ph.ongoing ? <Loop /> : <><span className="n">{ph.num}</span><Check size={14} className="ck" /></>}
     </span>
   );
-  const label = `${ph.ongoing ? "" : `Phase ${ph.num}, `}${ph.title}, ${t.d} of ${t.t} done${st === "current" ? ", you’re here" : ""}`;
+  const meta = st === "done" ? (partly ? `Complete · ${t.d}/${t.t} ticked` : "Complete")
+    : st === "current" ? <><em>You’re here</em> · {t.d}/{t.t}</>
+    : st === "started" ? `In progress · ${t.d}/${t.t}`
+    : st === "ongoing" ? `${t.d}/${t.t} · ongoing`
+    : `${t.t} topics`;
+  const label = `${ph.ongoing ? "" : `Phase ${ph.num}, `}${ph.title}, ${st === "done" ? "complete, " : ""}${t.d} of ${t.t} topics done${st === "current" ? ", you’re here" : ""}`;
   const btn = (
     <button type="button" className="stop" data-st={st} aria-current={sel ? "page" : undefined} aria-label={label} onClick={() => onGo(ph)}>
       {mk}
       {mode === "strip" ? <span className="st-n">{ph.short}</span> : (
         <span className="st-t">
           <span className="st-n">{ph.title}</span>
-          <span className="st-c">{t.d}/{t.t}{st === "current" ? <> · <em>You’re here</em></> : st === "done" ? " · Complete" : ""}</span>
+          <span className="st-c">{meta}</span>
+          {(st === "current" || st === "started") && <span className="st-bar" aria-hidden="true"><i style={{ width: pct + "%" }} /></span>}
         </span>
       )}
     </button>

@@ -73,3 +73,22 @@ test("the shared layout: the person's order, empty parts left out, one line per 
   ].join("\n"));
   assert.deepEqual(layoutCv(emptyCv()).sections, []);
 });
+
+test("Bengali CVs: section names, months, digits and 'Present' in Bengali; what the person typed is left alone", () => {
+  const d = emptyCv({ name: "নাসির উদ্দিন" });
+  d.locale = "bn";
+  d.work = [{ name: "টেলিটক", position: "জুনিয়র ডেভেলপার", startDate: "2023-01", highlights: ["React দিয়ে ড্যাশবোর্ড তৈরি"] }];
+  d.education = [{ institution: "ঢাকা বিশ্ববিদ্যালয়", studyType: "বিএসসি", startDate: "2018", endDate: "2022-06", score: "CGPA 3.6" }];
+  const l = layoutCv(d);
+  assert.equal(l.locale, "bn");
+  const work = l.sections.find((s) => s.key === "work")!;
+  assert.equal(work.title, "কর্ম অভিজ্ঞতা");
+  assert.equal(work.kind === "entries" && work.entries[0].meta, "জানুয়ারি ২০২৩ – বর্তমান");
+  const edu = l.sections.find((s) => s.key === "education")!;
+  assert.equal(edu.title, "শিক্ষাগত যোগ্যতা");
+  assert.equal(edu.kind === "entries" && edu.entries[0].meta, "২০১৮ – জুন ২০২২ | ফলাফল: CGPA 3.6");
+  assert.equal(fmtDate("2024-12", "bn"), "ডিসেম্বর ২০২৪");
+  // English stays the default
+  assert.equal(layoutCv(emptyCv()).locale, "en");
+  assert.equal(dateRange("2023-01", undefined, true), "Jan 2023 – Present");
+});

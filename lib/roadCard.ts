@@ -106,7 +106,7 @@ export async function cardFor(sb: SupabaseClient, user: User, tzOffset: number):
     const row = bySlug.get(c.slug);
     if (!row?.done?.length) return [];
     const s = roadmapStat(c, row.done, Number(row.updated_at) || 0);
-    return s.done > 0 ? [s] : [];
+    return s.done > 0 || s.phasesDone > 0 ? [s] : [];
   });
   const top = [...stats].sort((x, y) => y.pct - x.pct || y.updatedAt - x.updatedAt).slice(0, 3);
 
@@ -121,7 +121,7 @@ export async function cardFor(sb: SupabaseClient, user: User, tzOffset: number):
     j: profile.joined?.slice(0, 7),
     t: stats.reduce((n, s) => n + s.done, 0),
     r: stats.length,
-    c: stats.filter((s) => s.pct >= 100).length,
+    c: stats.filter((s) => s.complete).length,
     s: streak,
     m: top.map((s) => [s.slug, s.pct]),
   };

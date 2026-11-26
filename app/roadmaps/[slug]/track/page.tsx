@@ -6,6 +6,7 @@ import { SignInGate } from "@/components/SignInGate";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ROADMAPS } from "@/content/roadmaps";
 import { getRoadmap } from "@/content/roadmaps";
+import { explainConfigured } from "@/lib/explain";
 import { getTopicResources } from "@/lib/supabase/admin";
 import { getViewer } from "@/lib/supabase/server";
 
@@ -38,7 +39,7 @@ async function Tracker({ params }: { params: PageProps<"/roadmaps/[slug]/track">
   const resources = await getTopicResources(rm.def.slug);
   return (
     <>
-      <RoadmapTracker def={rm.def} resources={resources} />
+      <RoadmapTracker def={rm.def} resources={resources} explain={explainConfigured()} />
       <SiteFooter note={rm.def.credit?.text} />
     </>
   );
